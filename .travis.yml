@@ -1,0 +1,20 @@
+language: python
+python:
+    - '3.8'
+
+install:
+    - pip install -r requirements-dev.txt
+
+env:
+    - PYTHONPATH=/home/travis/build/alisha-bhatia/demo
+
+script:
+    - make tests
+
+# deploy to heroku on push to master
+deploy:
+    - provider: heroku
+      api_key: $HEROKU_API_KEY
+      app: demo-repo22
+      on:
+          branch: master
