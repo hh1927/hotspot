@@ -15,7 +15,7 @@ api = Api(app)
 class HelloWorld(Resource):
     """
     The purpose of the HelloWorld class is to have a simple test to see if the
-    app is working at all.
+    app is working at all. 
     """
     def get(self):
         """
