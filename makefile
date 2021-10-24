@@ -3,7 +3,7 @@ API_DIR = API
 DB_DIR = db
 #REQ_DIR = ./requirements
 REQ_DIR = .
-PYDOC = python3 -m pydoc -w
+PYDOC = python3 -m pydoc -w 
 
 FORCE:
 
