@@ -1,8 +1,7 @@
 from unittest import TestCase, skip 
 import API.endpoints as ep
 
-
- class EndpointTestCase(TestCase):
+class EndpointTestCase(TestCase):
      def setUp(self):
          pass
 
