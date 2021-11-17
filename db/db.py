@@ -12,7 +12,7 @@ def fetch_pets():
     return {"tigers": 2, "lions": 3, "zebras": 1}
 
 
-#def create_cuser(name, demographic, age, categories, location):
+# def create_cuser(name, demographic, age, categories, location):
 #    """
 #    A function that will save a user to the data base
 #    """
