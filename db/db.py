@@ -29,5 +29,5 @@ def fetch_cusers():
     '''
     A function to return all cusers in the data store.
     '''
-    return {"Sara": ["woman", 25, ("clubbing", "brunch"), "NYC"] , "John":["man",21, ("bars", "sports"), "NYC"], "Jane":["woman", 32, ("art", "sports"), "NYC"]}
-
+    return {"Sara": ["woman", 25, ("clubbing", "brunch"), "NYC"], "John": ["man", 21, ("bars", "sports"), "NYC"], 
+            "Jane": ["woman", 32, ("art", "sports"), "NYC"]}
