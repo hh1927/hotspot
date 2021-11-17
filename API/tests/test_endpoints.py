@@ -1,6 +1,5 @@
 from unittest import TestCase, skip 
-
- import API.endpoints as ep
+import API.endpoints as ep
 
 
  class EndpointTestCase(TestCase):
