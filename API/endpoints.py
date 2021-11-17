@@ -50,7 +50,7 @@ class Pets(Resource):
         """
         return db.fetch_pets()
 
- 
+
 @api.route('/cuser')
 class Cuser(Resource):
     """
