@@ -49,3 +49,13 @@ class Pets(Resource):
         This method returns all pets.
         """
         return db.fetch_pets()
+@api.route('/cuser')
+class Cuser(Resource):
+    """
+    This class supports fetching a list of all cusers.
+    """
+    def get(self):
+        """
+        This method returns all cusers.
+        """
+        return db.fetch_cusers()
