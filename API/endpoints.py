@@ -38,8 +38,8 @@ class Endpoints(Resource):
         """
         endpoints = sorted(rule.rule for rule in api.app.url_map.iter_rules())
         return {"Available endpoints": endpoints}
-    
-   
+
+
 '''
 @api.route('/pets')
 class Pets(Resource):
