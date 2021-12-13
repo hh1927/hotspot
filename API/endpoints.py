@@ -10,7 +10,7 @@ import db.db as db
 app = Flask(__name__)
 api = Api(app)
 
-
+'''
 @api.route('/hello')
 class HelloWorld(Resource):
     """
@@ -23,7 +23,7 @@ class HelloWorld(Resource):
         It just answers with "hello world."
         """
         return {'hello': 'world'}
-
+'''
 
 @api.route('/endpoints')
 class Endpoints(Resource):
@@ -38,7 +38,7 @@ class Endpoints(Resource):
         endpoints = sorted(rule.rule for rule in api.app.url_map.iter_rules())
         return {"Available endpoints": endpoints}
 
-
+'''
 @api.route('/pets')
 class Pets(Resource):
     """
@@ -49,12 +49,12 @@ class Pets(Resource):
         This method returns all pets.
         """
         return db.fetch_pets()
-
+'''
 
 @api.route('/cuser')
 class Cuser(Resource):
     """
-    This class supports fetching a list of all cusers.
+    This class supports fetching a list of all customer users, specifically the users who want something to do tonight.
     """
     def get(self):
         """
