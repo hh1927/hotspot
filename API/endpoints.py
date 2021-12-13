@@ -25,6 +25,7 @@ class HelloWorld(Resource):
         return {'hello': 'world'}
 '''
 
+
 @api.route('/endpoints')
 class Endpoints(Resource):
     """
@@ -38,6 +39,7 @@ class Endpoints(Resource):
         endpoints = sorted(rule.rule for rule in api.app.url_map.iter_rules())
         return {"Available endpoints": endpoints}
 
+    
 '''
 @api.route('/pets')
 class Pets(Resource):
@@ -51,10 +53,12 @@ class Pets(Resource):
         return db.fetch_pets()
 '''
 
+
 @api.route('/cuser')
 class Cuser(Resource):
     """
-    This class supports fetching a list of all customer users, specifically the users who want something to do tonight.
+    This class supports fetching a list of all customer users, 
+    specifically the users who want something to do tonight.
     """
     def get(self):
         """
