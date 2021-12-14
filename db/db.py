@@ -21,7 +21,7 @@ if TEST_MODE:
 else:
     DB_NAME = "cloudDB"
 
-#fields in db 
+# fields in db
 NAME = "name"
 AGE = "age"
 CITY = "city"
