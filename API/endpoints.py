@@ -61,3 +61,15 @@ class Cuser(Resource):
     def get(self):
         # This method returns all cusers.
         return db.fetch_cusers()
+
+@api.route('/Inv')
+class Inv(Resource):
+    """
+    This class supports fetching a list of all invites,
+    from the business including time, place and number of people allowed.
+    """
+    def get(self):
+        """
+        This method returns all invs.
+        """
+        return db.fetch_invs()
