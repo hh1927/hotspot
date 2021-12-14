@@ -61,19 +61,19 @@ class Cuser(Resource):
     def get(self):
         # This method returns all cusers.
         return db.fetch_cusers()
-
+    
+    
 @api.route('/buser')
 class Buser(Resource):
-    """
-    This class supports fetching a list of all business users, 
-    specifically the users who are hosting events.
-    """
+    # This class supports fetching a list of all business users, 
+    # specifically the users who are hosting events.
     def get(self):
         """
         This method returns all busers.
         """
         return db.fetch_busers()
 
+    
 @api.route('/Inv')
 class Inv(Resource):
     """
@@ -86,6 +86,7 @@ class Inv(Resource):
         """
         return db.fetch_invs()
 
+    
 @api.route('/Inv_Response')
 class Inv_Response(Resource):
     '''
