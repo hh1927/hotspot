@@ -10,7 +10,7 @@ import os
 # At first, it will just contain stubs that return fake data.
 # Gradually, we will fill in actual calls to our datastore.
 
-import db.db_connect as dbc
+# import db.db_connect as dbc
 
 DEMO_HOME = os.environ["DEMO_HOME"]
 TEST_MODE = os.environ.get("TEST_MODE", 0)
@@ -29,10 +29,10 @@ CITY = "city"
 OK = 0
 NOT_FOUND = 1
 DUPLICATE = 2
-client = dbc.get_client()
-if client is None:
-    print("Failed to connect to MongoDB.")
-    exit(1)
+# client = dbc.get_client()
+# if client is None:
+#    print("Failed to connect to MongoDB.")
+#    exit(1)
 
 # def create_cuser(name, demographic, age, categories, location):
 #    """
