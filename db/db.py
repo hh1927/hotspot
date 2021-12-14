@@ -3,14 +3,31 @@ This file will manage interactions with our data store.
 At first, it will just contain stubs that return fake data.
 Gradually, we will fill in actual calls to our datastore.
 """
+import os
 
+import db.db_connect as dbc
 
-def fetch_pets():
-    """
-    A function to return all pets in the data store.
-    """
-    return {"tigers": 2, "lions": 3, "zebras": 1}
+DEMO_HOME = os.environ["DEMO_HOME"]
+TEST_MODE = os.environ.get("TEST_MODE", 0)
 
+if TEST_MODE:
+    # this one should be changed!
+    DB_NAME = "cuser_DB"
+else:
+    DB_NAME = "cloudDB"
+
+#fields in db 
+NAME = "name"
+AGE = "age"
+CITY = "city"
+
+OK = 0
+NOT_FOUND = 1
+DUPLICATE = 2
+client = dbc.get_client()
+if client is None:
+    print("Failed to connect to MongoDB.")
+    exit(1)
 
 # def create_cuser(name, demographic, age, categories, location):
 #    """
