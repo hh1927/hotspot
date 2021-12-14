@@ -62,7 +62,6 @@ class Cuser(Resource):
         # This method returns all cusers.
         return db.fetch_cusers()
 
-
 @api.route('/buser')
 class Buser(Resource):
     """
@@ -75,7 +74,6 @@ class Buser(Resource):
         """
         return db.fetch_busers()
 
-
 @api.route('/Inv')
 class Inv(Resource):
     """
@@ -87,7 +85,6 @@ class Inv(Resource):
         This method returns all invs.
         """
         return db.fetch_invs()
-
 
 @api.route('/Inv_Response')
 class Inv_Response(Resource):
