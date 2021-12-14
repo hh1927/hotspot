@@ -57,7 +57,7 @@ class Pets(Resource):
 @api.route('/cuser')
 class Cuser(Resource):
     # This class supports fetching a list of all customer users,
-    # specifically the users who want something to do tonight. 
+    # specifically the users who want something to do tonight.
     def get(self):
         # This method returns all cusers.
         return db.fetch_cusers()
