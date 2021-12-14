@@ -14,7 +14,7 @@ script:
 #deploy to heroku on push to master
 deploy:
     - provider: heroku
-      api_key: -iLsqBYfo7Bnb5I7V4JT2w
+      api_key: -92a28ac8-3a56-4f37-817e-671bb43c527f
       app: hotspot
       on:
           branch: master
