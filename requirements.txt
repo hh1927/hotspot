@@ -3,3 +3,6 @@ flask-restx
 flake8
 gunicorn
 pymongo[srv]
+nose
+nose2
+coverage
