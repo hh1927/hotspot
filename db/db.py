@@ -81,7 +81,9 @@ def fetch_invs():
     on the event including company, date,
     time, and age requirement.
     '''
-    return ["Catch", "10/21/1999", "10:00 PM", 21]
+    return {"Catch": ["10/21/1999", "10:00 PM", 21],
+            "Penny Farthing": ["10/21/2000", "8:00 PM", 21],
+            "Fleur Room": ["10/21/2001", "4:00 PM", 18]}
 
 
 def get_inv_response():
