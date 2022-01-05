@@ -53,7 +53,7 @@ class EndpointTestCase(TestCase):
         new_inv_response = new_entity_name("invite response")
         # ret = inv_response.post(new_inv_response)
         invite_responses = db.get_inv_response()
-        self.assertIn(new_inv_response, invite_respoonses)
+        self.assertIn(new_inv_response, invite_responses)
           
     def test_inv1(self): 
         """
