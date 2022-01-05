@@ -51,6 +51,7 @@ DUPLICATE = 2
 #    create = json.dumps(user)
 #    print(create)
 
+
 def user_exists(username):
     """
     See if a user with username is in the db.
@@ -88,8 +89,8 @@ def add_buser(username):
     else:
         dbc.insert_doc(USERS, {USER_NM: username})
         return OK
-    
-    
+
+
 def add_inv_response(username):
     """
     Add a user to the inv response db.
