@@ -75,7 +75,7 @@ def fetch_clientList():
             "Jane": ["woman", 32, 5]}
 
 
-def get_Inv_Response():
+def get_inv_response():
     '''
     A function to returns a list of invite info,
     including name, age, party size
