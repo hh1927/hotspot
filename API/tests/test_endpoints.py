@@ -79,7 +79,7 @@ class EndpointTestCase(TestCase):
         invs = ep.Inv(Resource)
         ret = invs.get()
         for val in ret.values():
-            self.assertIsInstance(val, dict)
+            self.assertIsInstance(val, list)
     
     def test_ClientList1(self): 
         """
