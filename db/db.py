@@ -81,7 +81,7 @@ def fetch_invs():
     on the event including company, date,
     time, and age requirement.
     '''
-    return {["Catch", "10/21/1999", "10:00 PM", 21]}
+    return ["Catch", "10/21/1999", "10:00 PM", 21]
 
 
 def get_inv_response():
@@ -89,4 +89,4 @@ def get_inv_response():
     A function to returns a list of invite info,
     including name, age, party size
     '''
-    return {["Sara", 25, 3]}
+    return ["Sara", 25, 3]
