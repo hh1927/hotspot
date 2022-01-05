@@ -6,6 +6,8 @@ The endpoint called `endpoints` will return all available endpoints.
 from http import HTTPStatus
 from flask import Flask
 from flask_restx import Resource, Api
+import werkzeug.exceptions as wz
+
 import db.db as db
 
 app = Flask(__name__)
