@@ -55,9 +55,11 @@ def fetch_cusers():
             "John": ["man", 21, ("bars", "sports"), "NYC"],
             "Jane": ["woman", 32, ("art", "sports"), "NYC"]}
 
+
 def fetch_clientList():
     '''
-    A function to returns list of clients, their sex, age, and size of additional party
+    A function to returns list of clients,
+    their sex, age, and size of additional party
     '''
     return {"Sara": ["woman", 25, 3],
             "John": ["man", 21, 1],
