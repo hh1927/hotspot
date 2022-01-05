@@ -55,6 +55,7 @@ def fetch_cusers():
             "John": ["man", 21, ("bars", "sports"), "NYC"],
             "Jane": ["woman", 32, ("art", "sports"), "NYC"]}
 
+
 def get_busers():
     '''
     A function to return all cusers in the data store.
@@ -62,6 +63,7 @@ def get_busers():
     return {"Catch": [("clubbing", "brunch"), "NYC"],
             "Penny Farthing": [("bars", "sports"), "NYC"],
             "Fleur Room": [("art", "clubbing"), "NYC"]}
+
 
 def fetch_clientList():
     '''
@@ -71,3 +73,11 @@ def fetch_clientList():
     return {"Sara": ["woman", 25, 3],
             "John": ["man", 21, 1],
             "Jane": ["woman", 32, 5]}
+
+
+def get_Inv_Response():
+    '''
+    A function to returns a list of invite info,
+    including name, age, party size
+    '''
+    return {["Sara", 25, 3]}
