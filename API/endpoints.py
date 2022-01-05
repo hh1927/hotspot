@@ -57,6 +57,22 @@ class Buser(Resource):
         This method returns all busers.
         """
         return db.fetch_busers()
+    @api.response(HTTPStatus.OK, 'Success')
+    @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
+    @api.response(HTTPStatus.NOT_ACCEPTABLE, 'A duplicate key')
+    def post(self, username):
+        """
+        This method adds a user to the chatroom.
+        """
+        """
+        This method adds a room to the room db.
+        """
+        ret = db.add_buser(username)
+        if ret == db.NOT_FOUND:
+            raise (wz.NotFound("User db not found."))
+        elif ret == db.DUPLICATE:
+            raise (wz.NotAcceptable("User name already exists."))
+        return f"{username} added."
 
 
 @api.route('/Inv')
@@ -83,6 +99,22 @@ class Inv_Response(Resource):
         returns the response for the Invite
         """
         return db.fetch_invRes()
+    @api.response(HTTPStatus.OK, 'Success')
+    @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
+    @api.response(HTTPStatus.NOT_ACCEPTABLE, 'A duplicate key')
+    def post(self, username):
+        """
+        This method adds a user to the chatroom.
+        """
+        """
+        This method adds a room to the room db.
+        """
+        ret = db.add_inv_response(username)
+        if ret == db.NOT_FOUND:
+            raise (wz.NotFound("User db not found."))
+        elif ret == db.DUPLICATE:
+            raise (wz.NotAcceptable("User name already exists."))
+        return f"{username} added."
 
 
 @api.route('/clientList')
