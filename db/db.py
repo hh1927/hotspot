@@ -65,6 +65,28 @@ def get_busers():
             "Fleur Room": [("art", "clubbing"), "NYC"]}
 
 
+def add_buser(username):
+    """
+    Add a buser to business db
+    """
+    if user_exists(username):
+        return DUPLICATE
+    else:
+        dbc.insert_doc(USERS, {USER_NM: username})
+        return OK
+    
+    
+def add_inv_response(username):
+    """
+    Add a user to the inv response db.
+    """
+    if user_exists(username):
+        return DUPLICATE
+    else:
+        dbc.insert_doc(USERS, {USER_NM: username})
+        return OK
+
+
 def fetch_clientList():
     '''
     A function to returns list of clients,
