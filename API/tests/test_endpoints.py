@@ -113,7 +113,7 @@ class EndpointTestCase(TestCase):
         """
         rl = ep.recList(Resource)
         ret = rl.get()
-        self.assertIsInstance(ret, list)
+        self.assertIsInstance(ret, dict)
           
     def test_recList2(self):
         """
