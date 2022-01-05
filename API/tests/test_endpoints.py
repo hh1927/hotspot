@@ -49,7 +49,7 @@ class EndpointTestCase(TestCase):
         See if we can successfully create a new invite.
         Post-condition: user is in DB.
         """
-        inv_response = ep.inv_response(Resource)
+        inv_response = ep.Inv_response(Resource)
         new_inv_response = new_entity_name("invite response")
         ret = inv_response.post(new_inv_response)
         invite_responses = db.get_inv_response()
@@ -59,7 +59,7 @@ class EndpointTestCase(TestCase):
         """
         Post-condition 1: return is a dictionary.
         """
-        invs = ep.inv(Resource)
+        invs = ep.Inv(Resource)
         ret = invs.get()
         self.assertIsInstance(ret, dict)
           
@@ -67,7 +67,7 @@ class EndpointTestCase(TestCase):
         """
         Post-condition 2: keys to the dict are strings
         """
-        invs = ep.inv(Resource)
+        invs = ep.Inv(Resource)
         ret = invs.get()
         for key in ret:
             self.assertIsInstance(key, str)
@@ -76,7 +76,7 @@ class EndpointTestCase(TestCase):
         """
         Post-condition 3: the values in the dict are themselves dicts
         """
-        invs = ep.inv(Resource)
+        invs = ep.Inv(Resource)
         ret = invs.get()
         for val in ret.values():
             self.assertIsInstance(val, dict)
