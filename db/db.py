@@ -75,6 +75,15 @@ def fetch_clientList():
             "Jane": ["woman", 32, 5]}
 
 
+def fetch_invs():
+    '''
+    shows users invites with information
+    on the event including company, date, 
+    time, and age requirement.
+    '''
+    return {[Catch, "10/21/1999", "10:00 PM", 21]}
+
+
 def get_inv_response():
     '''
     A function to returns a list of invite info,
