@@ -2,7 +2,7 @@ from unittest import TestCase, skip
 from flask_restx import Resource, Api
 import random
 import API.endpoints as ep
-import db.data as db
+import db.db as db
 
 HUGE_NUM = 10000000000000  # any big number will do!
 
