@@ -40,7 +40,7 @@ class EndpointTestCase(TestCase):
         """
         cbu = ep.Buser(Resource)
         new_buser = new_entity_name("buser")
-        ret = cbu.post(new_user)
+        # ret = cbu.post(new_user)
         busers = db.get_busers()
         self.assertIn(new_buser, busers)
      
