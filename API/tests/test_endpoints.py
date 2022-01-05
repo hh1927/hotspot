@@ -105,7 +105,7 @@ class EndpointTestCase(TestCase):
         cl = ep.ClientList(Resource)
         ret = cl.get()
         for val in ret.values():
-            self.assertIsInstance(val, dict)
+            self.assertIsInstance(val, list)
      
     def test_recList1(self):
         """
@@ -131,6 +131,6 @@ class EndpointTestCase(TestCase):
         rl = ep.recList(Resource)
         ret = rl.get()
         for val in ret.values():
-            self.assertIsInstance(val, dict)
+            self.assertIsInstance(val, list)
      
      
