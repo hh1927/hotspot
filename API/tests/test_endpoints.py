@@ -11,17 +11,17 @@ def new_entity_name(entity_type):
     return f"new {entity_type}" + str(int_name)
 
 class EndpointTestCase(TestCase):
-     def setUp(self):
+    def setUp(self):
          pass
 
-     def tearDown(self):
+    def tearDown(self):
          pass
 
-     def test_hello(self):
+    def test_hello(self):
         self.assertTrue(True)
 
 
-    @skip("In the middle of making this work.")
+     @skip("In the middle of making this work.")
     def test_cuser(self):
         """
         See if we can successfully create a new consumer user.
@@ -44,7 +44,7 @@ class EndpointTestCase(TestCase):
         busers = db.get_busers()
         self.assertIn(new_buser, busers)
      
-     def test_inv_response(self): 
+    def test_inv_response(self): 
         """
         See if we can successfully create a new invite.
         Post-condition: user is in DB.
@@ -55,7 +55,7 @@ class EndpointTestCase(TestCase):
         invite_responses = db.get_inv_response()
         self.assertIn(new_inv_response, invite_respoonses)
           
-     def test_inv1(self): 
+    def test_inv1(self): 
         """
         Post-condition 1: return is a dictionary.
         """
@@ -63,7 +63,7 @@ class EndpointTestCase(TestCase):
         ret = invs.get()
         self.assertIsInstance(ret, dict)
           
-     def test_inv2(self):
+    def test_inv2(self):
         """
         Post-condition 2: keys to the dict are strings
         """
@@ -80,8 +80,8 @@ class EndpointTestCase(TestCase):
         ret = invs.get()
         for val in ret.values():
             self.assertIsInstance(val, dict)
-     
-     def test_ClientList1(self): 
+    
+    def test_ClientList1(self): 
         """
         Post-condition 1: return is a dictionary.
         """
@@ -89,7 +89,7 @@ class EndpointTestCase(TestCase):
         ret = cl.get()
         self.assertIsInstance(ret, dict)
           
-     def test_ClientList2(self):
+    def test_ClientList2(self):
         """
         Post-condition 2: keys to the dict are strings
         """
@@ -107,7 +107,7 @@ class EndpointTestCase(TestCase):
         for val in ret.values():
             self.assertIsInstance(val, dict)
      
-     def test_recList1(self):
+    def test_recList1(self):
         """
         Post-condition 1: return is a dictionary.
         """
@@ -115,7 +115,7 @@ class EndpointTestCase(TestCase):
         ret = rl.get()
         self.assertIsInstance(ret, dict)
           
-     def test_recList2(self):
+    def test_recList2(self):
         """
         Post-condition 2: keys to the dict are strings
         """
