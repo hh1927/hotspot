@@ -21,7 +21,7 @@ class EndpointTestCase(TestCase):
         self.assertTrue(True)
 
 
-     @skip("In the middle of making this work.")
+    @skip("In the middle of making this work.")
     def test_cuser(self):
         """
         See if we can successfully create a new consumer user.
