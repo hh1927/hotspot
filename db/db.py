@@ -10,7 +10,7 @@ import os
 # At first, it will just contain stubs that return fake data.
 # Gradually, we will fill in actual calls to our datastore.
 
-# import db.db_connect as dbc
+import db.db_connect as dbc
 
 DEMO_HOME = os.environ["DEMO_HOME"]
 TEST_MODE = os.environ.get("TEST_MODE", 0)
@@ -50,6 +50,15 @@ DUPLICATE = 2
 #            "location": location}
 #    create = json.dumps(user)
 #    print(create)
+
+def user_exists(username):
+    """
+    See if a user with username is in the db.
+    Returns True of False.
+    """
+    rec = dbc.fetch_one(USERS, filters={USER_NM: username})
+    print(f"{rec=}")
+    return rec is not None
 
 
 def fetch_cusers():
