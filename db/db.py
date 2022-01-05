@@ -26,6 +26,11 @@ NAME = "name"
 AGE = "age"
 CITY = "city"
 
+USERS = "users"
+
+# field names in our DB:
+USER_NM = "userName"
+
 OK = 0
 NOT_FOUND = 1
 DUPLICATE = 2
