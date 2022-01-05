@@ -55,6 +55,13 @@ def fetch_cusers():
             "John": ["man", 21, ("bars", "sports"), "NYC"],
             "Jane": ["woman", 32, ("art", "sports"), "NYC"]}
 
+def get_busers():
+    '''
+    A function to return all cusers in the data store.
+    '''
+    return {"Catch": [("clubbing", "brunch"), "NYC"],
+            "Penny Farthing": [("bars", "sports"), "NYC"],
+            "Fleur Room": [("art", "clubbing"), "NYC"]}
 
 def fetch_clientList():
     '''
