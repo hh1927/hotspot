@@ -111,6 +111,34 @@ def fetch_clientList():
             "John": ["man", 21, 1],
             "Jane": ["woman", 32, 5]}
 
+def fetch_clientHist():
+    '''
+    A function to returns list of ALL PAST clients,
+    their sex and age to the business
+    '''
+    return {"Sara": ["woman", 25],
+            "John": ["man", 21],
+            "Jane": ["woman", 32]}
+
+
+def fetch_recList():
+    '''
+    A function to returns list of recommendations
+    '''
+    return {"Catch": ["10/21/1999", "10:00 PM", 21],
+            "Penny Farthing": ["10/21/2000", "8:00 PM", 21],
+            "Fleur Room": ["10/21/2001", "4:00 PM", 18]}
+
+
+def fetch_revHist():
+    '''
+    A function to returns list of ALL past places visted and 
+    reviews out of 5 and date
+    '''
+    return {"Catch": ["10/21/1999", 4],
+            "Penny Farthing": ["10/21/2000", 1],
+            "Fleur Room": ["10/21/2001", 5]}
+
 
 def fetch_invs():
     '''
