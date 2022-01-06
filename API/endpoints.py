@@ -164,6 +164,7 @@ class recList(Resource):
         '''
         return db.fetch_recList()
 
+
 @api.route('/revHist')
 class revHist(Resource):
     '''
