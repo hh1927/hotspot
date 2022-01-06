@@ -136,6 +136,20 @@ class ClientList(Resource):
         return db.fetch_clientList()
 
 
+@api.route('/clientHist')
+class ClientHist(Resource):
+    '''
+    Gives list of ALL past clients
+    for further analytic purposes
+    for businesses
+    '''
+    def get(self):
+        '''
+        returns the list of prev clients for the business user
+        '''
+        return db.fetch_clientHist()
+
+
 @api.route('/recList')
 class recList(Resource):
     '''
@@ -148,4 +162,17 @@ class recList(Resource):
         '''
         returns the recommendation list for the customer user
         '''
-        return db.fetch_clientList()
+        return db.fetch_recList()
+
+@api.route('/revHist')
+class revHist(Resource):
+    '''
+    Gives list of ALL past reviews
+    for further analytic purposes
+    for businesses
+    '''
+    def get(self):
+        '''
+        returns the recommendation list for the customer user
+        '''
+        return db.fetch_revHist()
