@@ -10,7 +10,7 @@ env:
     - PYTHONPATH=/home/travis/build/alisha-bhatia/hotspot
 
 script:
-    - make all_tests
+    - make tests
 
 #deploy to heroku on push to master
 deploy:
