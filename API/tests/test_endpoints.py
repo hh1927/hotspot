@@ -106,6 +106,32 @@ class EndpointTestCase(TestCase):
         ret = cl.get()
         for val in ret.values():
             self.assertIsInstance(val, list)
+            
+    def test_ClientHist1(self): 
+        """
+        Post-condition 1: return is a dictionary.
+        """
+        cl = ep.ClientHist(Resource)
+        ret = cl.get()
+        self.assertIsInstance(ret, dict)
+          
+    def test_ClientHist2(self):
+        """
+        Post-condition 2: keys to the dict are strings
+        """
+        cl = ep.ClientHist(Resource)
+        ret = cl.get()
+        for key in ret:
+            self.assertIsInstance(key, str)
+
+    def test_ClientHist3(self):
+        """
+        Post-condition 3: the values in the dict are themselves dicts
+        """
+        cl = ep.ClientHist(Resource)
+        ret = cl.get()
+        for val in ret.values():
+            self.assertIsInstance(val, list)
      
     def test_recList1(self):
         """
@@ -133,4 +159,28 @@ class EndpointTestCase(TestCase):
         for val in ret.values():
             self.assertIsInstance(val, list)
      
-     
+    def test_revHist1(self):
+        """
+        Post-condition 1: return is a dictionary.
+        """
+        rl = ep.revHist(Resource)
+        ret = rl.get()
+        self.assertIsInstance(ret, dict)
+          
+    def test_revHist2(self):
+        """
+        Post-condition 2: keys to the dict are strings
+        """
+        rl = ep.revHist(Resource)
+        ret = rl.get()
+        for key in ret:
+            self.assertIsInstance(key, str)
+
+    def test_revHist3(self):
+        """
+        Post-condition 3: the values in the dict are themselves dicts
+        """
+        rl = ep.revHist(Resource)
+        ret = rl.get()
+        for val in ret.values():
+            self.assertIsInstance(val, list)  
