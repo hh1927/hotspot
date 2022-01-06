@@ -111,6 +111,7 @@ def fetch_clientList():
             "John": ["man", 21, 1],
             "Jane": ["woman", 32, 5]}
 
+
 def fetch_clientHist():
     '''
     A function to returns list of ALL PAST clients,
@@ -132,7 +133,7 @@ def fetch_recList():
 
 def fetch_revHist():
     '''
-    A function to returns list of ALL past places visted and 
+    A function to returns list of ALL past places visted and
     reviews out of 5 and date
     '''
     return {"Catch": ["10/21/1999", 4],
