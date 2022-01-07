@@ -55,11 +55,11 @@ class Cuser(Resource):
 class Buser(Resource):
     # This class supports fetching a list of all business users,
     # specifically the users who are hosting events.
-    #def get(self):
+    # def get(self):
         """
         This method returns all busers.
         """
-        #return db.fetch_busers()
+    # return db.fetch_busers()
 
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
@@ -98,11 +98,11 @@ class Inv_Response(Resource):
     This class supports the customer accepting or denying their invite
     from the business
     '''
-    #def get(self):
+    # def get(self):
         """
         returns the response for the Invite
         """
-        #return db.fetch_invRes()
+    # return db.fetch_invRes()
 
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
