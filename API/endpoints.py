@@ -174,6 +174,6 @@ class revHist(Resource):
     '''
     def get(self):
         '''
-        returns the recommendation list for the customer user
+        returns all reviews the customer user inputted
         '''
         return db.fetch_revHist()
