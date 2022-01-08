@@ -137,10 +137,16 @@ class Inv_Response(Resource):
     This class supports the customer accepting or denying their invite
     from the business
     '''
-
+    def get(self):
+        '''
+        returns invite responses
+        '''
+        return db.fetch_invResponse()
+    '''
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
     @api.response(HTTPStatus.NOT_ACCEPTABLE, 'A duplicate key')
+    
     def post(self, username):
         """
         returns the response for the Invite
@@ -151,6 +157,7 @@ class Inv_Response(Resource):
         elif ret == db.DUPLICATE:
             raise (wz.NotAcceptable("User name already exists."))
         return f"{username} added."
+    '''
 
 
 @api.route('/clientList')
