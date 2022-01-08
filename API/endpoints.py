@@ -57,7 +57,7 @@ class Pets(Resource):
 '''
 
 
-@api.route('/Cusers/create/<username>')
+@api.route('/cusers/create/<username>')
 class CreateCuser(Resource):
     """
     This class supports adding Customer users.
