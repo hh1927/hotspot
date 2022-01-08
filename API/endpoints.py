@@ -79,8 +79,7 @@ class CreateCuser(Resource):
 @api.route('/cusers/all')
 class GetCuser(Resource):
     """
-    This class supports fetching a list of all business users,
-    specifically the users who are hosting events.
+    This class supports fetching a list of all consumer users
     """
     def get(self):
         """
@@ -92,7 +91,7 @@ class GetCuser(Resource):
 @api.route('/busers/create/<username>')
 class Buser(Resource):
     """
-    This class supports fetching a list of all business users,
+    This class supports business users,
     specifically the users who are hosting events.
     """
     def post(self, username):
@@ -149,10 +148,7 @@ class Inv_Response(Resource):
     @api.response(HTTPStatus.NOT_ACCEPTABLE, 'A duplicate key')
     def post(self, username):
         """
-        This method adds a user to the chatroom.
-        """
-        """
-        This method adds a room to the room db.
+        returns the response for the Invite
         """
         ret = db.add_inv_response(username)
         if ret == db.NOT_FOUND:
