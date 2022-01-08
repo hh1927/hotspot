@@ -174,3 +174,11 @@ def fetch_promos():
     return {"Lady's night": ["Catch", "Penny Farthing"],
             "Happy hour": ["Fleur Room"],
             "Half price apps": ["Penny Farthing", "Fleur Room"]}
+
+
+def fetch_invResponse():
+    '''
+    A function to return invite responses
+    '''
+    return {"Catch": ["Sara", 4]
+            "Penny Farthing": ["John", 3]}
