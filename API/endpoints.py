@@ -3,28 +3,28 @@ This is the file containing all of the endpoints for our flask app.
 The endpoint called `endpoints` will return all available endpoints.
 """
 from http import HTTPStatus
-#import json
+# import json
 from flask import Flask, request, jsonify
 from flask_restx import Resource, Api
 import werkzeug.exceptions as wz
 
 import db.db as db
 import db.data as data
-#import werkzeug.exceptions as wz
+# import werkzeug.exceptions as wz
 
 from flask.json import JSONEncoder
 
 from bson import json_util
 
 # define a cu
-# stom encoder point to the json_util provided by pymongo 
+# stom encoder point to the json_util provided by pymongo
 # (or its dependency bson)
 
 
 class CustomJSONEncoder(JSONEncoder):
     def default(self, obj): return json_util.default(obj)
 
-    
+
 app = Flask(__name__)
 api = Api(app)
 app.json_encoder = CustomJSONEncoder
@@ -79,7 +79,7 @@ class CreateUser(Resource):
         data.add_cuser(json_data)
         return f"{username} added."
 
-    
+
 @api.route('/cusers/all')
 class GetCuser(Resource):
     """
@@ -91,8 +91,8 @@ class GetCuser(Resource):
         This method returns all busers.
         """
         return data.fetch_cusers()
-    
-    
+
+
 @api.route('/busers/create/<username>')
 class Buser(Resource):
     """
@@ -105,7 +105,7 @@ class Buser(Resource):
         """
         """
         This method adds a room to the room db.
-        """        
+        """ 
         json_data = request.get_json(force=True)
         json_data['name'] = username
         # print(json_data)
@@ -223,8 +223,9 @@ class revHist(Resource):
         '''
         returns all reviews the customer user inputted
         '''
-        return db.fetch_revHist()
-    
+        return db.fet    ch_revHist()
+
+
 @api.route('/buser/interest')
 class clientsTypes(Resource):
     """
