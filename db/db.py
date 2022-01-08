@@ -173,4 +173,4 @@ def fetch_promos():
     '''
     return {"Lady's night": ["Catch", "Penny Farthing"],
             "Happy hour": ["Fleur Room"],
-            "Half price apps": ["Penny Farthing", "Fleur Room]}
+            "Half price apps": ["Penny Farthing", "Fleur Room"]}
