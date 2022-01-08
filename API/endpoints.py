@@ -58,9 +58,9 @@ class Pets(Resource):
 
 
 @api.route('/users/create/<username>')
-class CreateUser(Resource):
+class CreateCuser(Resource):
     """
-    This class supports adding a user to the chat room.
+    This class supports adding Customer users.
     """
 
     @api.response(HTTPStatus.OK, 'Success')
@@ -68,10 +68,7 @@ class CreateUser(Resource):
     @api.response(HTTPStatus.NOT_ACCEPTABLE, 'A duplicate key')
     def post(self, username):
         """
-        This method adds a user to the chatroom.
-        """
-        """
-        This method adds a room to the room db.
+        This method adds a customer user.
         """
         json_data = request.get_json(force=True)
         json_data['name'] = username
@@ -100,10 +97,7 @@ class Buser(Resource):
     """
     def post(self, username):
         """
-        This method adds a user to the chatroom.
-        """
-        """
-        This method adds a room to the room db.
+        This method adds a Business User.
         """
         json_data = request.get_json(force=True)
         json_data['name'] = username
