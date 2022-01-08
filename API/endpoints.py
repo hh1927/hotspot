@@ -223,7 +223,7 @@ class revHist(Resource):
         '''
         returns all reviews the customer user inputted
         '''
-        return db.fet    ch_revHist()
+        return db.fetch_revHist()
 
 
 @api.route('/buser/interest')
