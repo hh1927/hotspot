@@ -26,10 +26,16 @@
  - Use Swagger for initial interaction with server.
  - Use Swagger, pydoc and good docstrings for documentation.
  - Endpoints:
- -   Create a business user with `/create_buser` endpoint. Inputs: Name, Hours, Location,Club type, Pictures, Age restrictions, Quota, Demographic they want, 
- -   Create a consumer user with '/create_cuser' endpoint. Inputs: Name, Age, Demographics, Initial Club Interest Categories, Location
- -   Create an RSVP with '/create_invite' endpoint. Inputs: Business Name, Location, Time of, Number of +1s
- -   Take input from Consumer and "sending" response to business with '/invite_response' endpoint. Inputs: Accept or Deny, Number of Additional People
- -   Keep track of Consumer preferences with '/rec_response' endpoint. Inputs: Thumbs Up or Thumbs Down
- -   Generate list of recommendations with '/rec_list' endpoint. Inputs: Consumer preferences, Business demographic, Consumer demographic
- -   Reset list of recommendations with 'reset_list' endpoint. Resets at 4:00 am.
+    - ‘/Inv’- Fetch all invites. Inputs: N/A
+    - ‘/Inv_Response’— Returns the response to an invite. Inputs: N/A
+    - ‘/buser/interest’— Returns business’s categories of interest. Inputs: N/A
+    - ‘/buser/promos’— Returns business’s promos. Inputs: N/A
+    - ‘/busers/create/<username>‘ — Creates a business user. Inputs: username 
+    - ‘/users/create/<username>’— Create a consumer user. Inputs: username
+    -  ‘/busers/all’— Fetch list of all business users. Inputs: N/A
+    - ‘/clientHist’— Returns list of all previous clients from the business year. Inputs: N/A
+    - ‘/clientList’—  Returns list of clients for a business user. Inputs: N/A
+    - ‘/cusers/all'— Returns all consumers. Inputs: N/A
+    - ‘/endpoints’— Returns list of all possible endpoints. Inputs: N/A
+    - ‘/recList’ — returns list of recommendations for consumer.  Inputs: N/A
+    - ‘/revHist’ — returns all reviews that a customer inputted. Inputs: N/A
