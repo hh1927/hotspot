@@ -83,7 +83,7 @@ class GetCuser(Resource):
     """
     def get(self):
         """
-        This method returns all busers.
+        This method returns all Cusers.
         """
         return db.fetch_cusers()
 
