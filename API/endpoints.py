@@ -6,7 +6,7 @@ from http import HTTPStatus
 # import json
 from flask import Flask, request, jsonify
 from flask_restx import Resource, Api
-import werkzeug.exceptions as wz
+# import werkzeug.exceptions as wz
 
 import db.db as db
 # import werkzeug.exceptions as wz
@@ -146,7 +146,7 @@ class Inv_Response(Resource):
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
     @api.response(HTTPStatus.NOT_ACCEPTABLE, 'A duplicate key')
-    
+
     def post(self, username):
         """
         returns the response for the Invite
