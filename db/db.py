@@ -180,5 +180,5 @@ def fetch_invResponse():
     '''
     A function to return invite responses
     '''
-    return {"Catch": ["Sara", 4]
+    return {"Catch": ["Sara", 4],
             "Penny Farthing": ["John", 3]}
