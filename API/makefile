@@ -1,7 +1,8 @@
-DOCFILES = $(shell ls *.py | sed 's/.py/.html/')
+#DOCFILES = $(shell ls *.py | sed 's/.py/.html/')
 
-docs: $(DOCFILES)
+#docs: $(DOCFILES)
 
-%.html: %.py
-	pydoc3 -w ./$<
-	git add $@
+#%.html: %.py
+#	pydoc3 -w ./$<
+#	git add $@
+include ../common.mk
