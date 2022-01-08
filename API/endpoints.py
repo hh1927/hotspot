@@ -60,7 +60,6 @@ class Buser(Resource):
         This method returns all busers.
         """
     # return db.fetch_busers()
-
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
     @api.response(HTTPStatus.NOT_ACCEPTABLE, 'A duplicate key')
