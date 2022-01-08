@@ -139,9 +139,9 @@ class Inv_Response(Resource):
     from the business
     '''
     # def get(self):
-        """
-        returns the response for the Invite
-        """
+    """
+    returns the response for the Invite
+    """
     # return db.fetch_invRes()
 
     @api.response(HTTPStatus.OK, 'Success')
