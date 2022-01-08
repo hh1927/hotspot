@@ -75,7 +75,7 @@ class CreateUser(Resource):
         """
         json_data = request.get_json(force=True)
         json_data['name'] = username
-        data.add_cuser(json_data)
+        db.add_cuser(json_data)
         return f"{username} added."
 
 
@@ -89,7 +89,7 @@ class GetCuser(Resource):
         """
         This method returns all busers.
         """
-        return data.fetch_cusers()
+        return db.fetch_cusers()
 
 
 @api.route('/busers/create/<username>')
@@ -108,7 +108,7 @@ class Buser(Resource):
         json_data = request.get_json(force=True)
         json_data['name'] = username
         # print(json_data)
-        data.add_buser(json_data)
+        db.add_buser(json_data)
         return jsonify(json_data)
 
 
@@ -122,7 +122,7 @@ class GetBuser(Resource):
         """
         This method returns all busers.
         """
-        return data.fetch_busers()
+        return db.fetch_busers()
 
 
 @api.route('/Inv')
