@@ -21,13 +21,13 @@ class EndpointTestCase(TestCase):
         self.assertTrue(True)
 
 
-   # @skip("In the middle of making this work.")
+    # @skip("In the middle of making this work.")
     def test_cuser(self):
         """
         See if we can successfully create a new consumer user.
         Post-condition: user is in DB.
         """
-        ccu = ep.Cuser(Resource)
+        ccu = ep.CreateCuser(Resource)
         new_cuser = new_entity_name("user")
         ret = ccu.post(new_cuser)
         cusers = db.get_cusers()
