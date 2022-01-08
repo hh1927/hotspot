@@ -83,7 +83,7 @@ class GetCuser(Resource):
     """
     def get(self):
         """
-        This method returns all Cusers.
+        This method returns all customer users.
         """
         return db.fetch_cusers()
 
@@ -113,7 +113,7 @@ class GetBuser(Resource):
     """
     def get(self):
         """
-        This method returns all busers.
+        This method returns all business users.
         """
         return db.fetch_busers()
 
