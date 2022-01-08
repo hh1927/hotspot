@@ -165,3 +165,12 @@ def fetch_clientType():
     A function to return client categories of interest
     '''
     return ["Sports Bar", "Club", "Speakeasy"]
+
+
+def fetch_promos():
+    '''
+    A function to return that week's promos
+    '''
+    return {"Lady's night": ["Catch", "Penny Farthing"],
+            "Happy hour": ["Fleur Room"],
+            "Half price apps": ["Penny Farthing", "Fleur Room]}
