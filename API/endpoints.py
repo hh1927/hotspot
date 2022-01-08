@@ -68,7 +68,7 @@ class CreateCuser(Resource):
     @api.response(HTTPStatus.NOT_ACCEPTABLE, 'A duplicate key')
     def post(self, username):
         """
-        This method adds a customer user.
+        This method creates a new Customer User.
         """
         json_data = request.get_json(force=True)
         json_data['name'] = username
@@ -96,7 +96,7 @@ class Buser(Resource):
     """
     def post(self, username):
         """
-        This method adds a Business User.
+        This method creates a new Business User.
         """
         json_data = request.get_json(force=True)
         json_data['name'] = username
