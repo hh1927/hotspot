@@ -158,3 +158,10 @@ def get_inv_response():
     including name, age, party size
     '''
     return ["Sara", 25, 3]
+
+
+def fetch_clientType():
+    '''
+    A function to return client categories of interest
+    '''
+    return ["Sports Bar", "Club", "Speakeasy"]
