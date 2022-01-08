@@ -105,7 +105,7 @@ class Buser(Resource):
         """
         """
         This method adds a room to the room db.
-        """ 
+        """
         json_data = request.get_json(force=True)
         json_data['name'] = username
         # print(json_data)
