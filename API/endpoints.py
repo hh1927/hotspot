@@ -137,11 +137,6 @@ class Inv_Response(Resource):
     This class supports the customer accepting or denying their invite
     from the business
     '''
-    # def get(self):
-    """
-    returns the response for the Invite
-    """
-    # return db.fetch_invRes()
 
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
