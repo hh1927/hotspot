@@ -21,25 +21,25 @@ HOTSPOT_HOME = os.environ["HOTSPOT_HOME"]
 # else:
 # DB_NAME = "cloudDB"
 
+CUSERS = "cusers"
+BUSERS = "busers"
+
 # fields in db
 NAME = "name"
 GENDER = "gender"
 AGE = "age"
-INTERESTS = "clubinteresttypes"
+INTERESTS = "clubInterestType"
 CITY = "city"
-
-USERS = "users"
-
-# field names in our DB:
-USER_NM = "userName"
+LOCATIONTYPE = "locationType"
 
 OK = 0
 NOT_FOUND = 1
 DUPLICATE = 2
-# client = dbc.get_client()
-# if client is None:
-#    print("Failed to connect to MongoDB.")
-#    exit(1)
+
+client = dbc.get_client()
+if client is None:
+    print("Failed to connect to MongoDB.")
+    exit(1)
 
 # def create_cuser(name, demographic, age, categories, location):
 #    """
@@ -90,7 +90,6 @@ def add_buser(username):
         return DUPLICATE
     else:
         dbc.insert_doc(USERS, {USER_NM: username})
-        return OK
 
 
 def add_inv_response(username):
