@@ -3,11 +3,11 @@
   "Gender": "Female",
   "Age": "28",
   "Interests": ["art", "brunch"],
-  "City": "NYC"
+  "City": "Chicago"
   },
   "Nick":{
     "Gender": "Male",
     "Age": "32"
     "Interests": ["clubs", "sports"],
-    "City": "NYC"
+    "City": "Los Angeles"
 }
