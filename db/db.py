@@ -25,6 +25,8 @@ CUSERS = "cusers"
 BUSERS = "busers"
 
 # fields in db
+CUSER_NM = "cuserName"
+BUSER_NM = "buserName"
 NAME = "name"
 GENDER = "gender"
 AGE = "age"
@@ -54,12 +56,22 @@ if client is None:
 #    print(create)
 
 
-def user_exists(username):
+def buser_exists(username):
     """
-    See if a user with username is in the db.
+    See if a buser with username is in the db.
     Returns True of False.
     """
-    rec = dbc.fetch_one(USERS, filters={USER_NM: username})
+    rec = dbc.fetch_one(BUSERS, filters={BUSER_NM: username})
+    print(f"{rec=}")
+    return rec is not None
+
+
+def cuser_exists(username):
+    """
+    See if a cuser with username is in the db.
+    Returns True of False.
+    """
+    rec = dbc.fetch_one(CUSERS, filters={CUSER_NM: username})
     print(f"{rec=}")
     return rec is not None
 
@@ -68,18 +80,20 @@ def fetch_cusers():
     '''
     A function to return all cusers in the data store.
     '''
-    return {"Sara": ["woman", 25, ("clubbing", "brunch"), "NYC"],
+    return dbc.fetch_all(CUSERS, CUSER_NM)
+    '''return {"Sara": ["woman", 25, ("clubbing", "brunch"), "NYC"],
             "John": ["man", 21, ("bars", "sports"), "NYC"],
-            "Jane": ["woman", 32, ("art", "sports"), "NYC"]}
+            "Jane": ["woman", 32, ("art", "sports"), "NYC"]}'''
 
 
-def get_busers():
+def fetch_busers():
     '''
-    A function to return all cusers in the data store.
+    A function to return all busers in the data store.
     '''
-    return {"Catch": [("clubbing", "brunch"), "NYC"],
+    return dbc.fetch_all(BUSERS, BUSER_NM)
+    '''return {"Catch": [("clubbing", "brunch"), "NYC"],
             "Penny Farthing": [("bars", "sports"), "NYC"],
-            "Fleur Room": [("art", "clubbing"), "NYC"]}
+            "Fleur Room": [("art", "clubbing"), "NYC"]}'''
 
 
 def add_buser(username):
@@ -89,7 +103,8 @@ def add_buser(username):
     if user_exists(username):
         return DUPLICATE
     else:
-        dbc.insert_doc(USERS, {USER_NM: username})
+        dbc.insert_doc(BUSERS, {BUSER_NM: username})
+        return OK
 
 
 def add_inv_response(username):
