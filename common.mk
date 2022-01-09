@@ -12,11 +12,11 @@ FORCE:
 tests: lint unit
 
 unit: FORCE
-        $(TESTFINDER) --with-coverage
+ $(TESTFINDER) --with-coverage
 
 lint: FORCE
-        $(LINTER) *.py
+ $(LINTER) *.py
 
 docs: FORCE
-        $(PYDOC) ./*.py
-        git add ./*.html
+ $(PYDOC) ./*.py
+ git add ./*.html
