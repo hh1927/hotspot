@@ -103,7 +103,11 @@ def add_buser(username):
     if user_exists(username):
         return DUPLICATE
     else:
-        dbc.insert_doc(BUSERS, {BUSER_NM: username})
+        dbc.insert_doc(BUSERS, {
+            BUSER_NM: username,
+            "LocationType":["bars, arts"],
+            "City":"NYC"
+        })
         return OK
 
 
@@ -114,7 +118,14 @@ def add_cuser(username):
     if user_exists(username):
         return DUPLICATE
     else:
-        dbc.insert_doc(CUSERS, {CUSER_NM: username})
+        try:
+            dbc.insert_doc(CUSERS, {
+                CUSER_NM: username,
+                "Gender":"xxxx",
+                "Age":"00",
+                "Interests":["xxxx","xxxx"],
+                "Location": "NYC"
+            })
         return OK
 
 
