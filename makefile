@@ -9,6 +9,7 @@ github: FORCE
 dev_env: FORCE
 	- ./setup.sh HOTSPOT_HOME
 	pip install -r $(REQ_DIR)/requirements-dev.txt
+	#check if pip3 will work
 
 all_tests: FORCE
 	cd $(API_DIR); make tests
