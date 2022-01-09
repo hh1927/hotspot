@@ -7,3 +7,4 @@ nose
 nose2
 coverage
 werkzeug
+black
