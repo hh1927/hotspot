@@ -107,6 +107,17 @@ def add_buser(username):
         return OK
 
 
+def add_cuser(username):
+    """
+    Add a cuser to business db
+    """
+    if user_exists(username):
+        return DUPLICATE
+    else:
+        dbc.insert_doc(CUSERS, {CUSER_NM: username})
+        return OK
+
+
 def add_inv_response(username):
     """
     Add a user to the inv response db.
