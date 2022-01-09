@@ -42,7 +42,7 @@ def get_client():
                                 + f"/{cloud_svc}?{db_nm}?",
                                 + "retryWrites=true&w=majority",
                                 server_api=ServerApi('1'), tls=True, 
-                               tlsAllowInvalidCertificates=True)
+                                tlsAllowInvalidCertificates=True)
     return client
 
 
