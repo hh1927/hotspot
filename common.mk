@@ -15,7 +15,9 @@ unit: FORCE
 	$(TESTFINDER) --with-coverage
 
 lint: FORCE
-	$(LINTER) *.py
+	#$(LINTER) *.py
+	$(LINTER) $(API_DIR)/*.py
+	$(LINTER) $(DB_DIR)/*.py
 
 docs: FORCE
 	$(PYDOC) ./*.py
