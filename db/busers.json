@@ -1,10 +1,10 @@
 {
 "The Grayson":{
-  "locationType":("Sports Bar"),
+  "locationType":["Sports", "Bars"],
   "city": "NYC"
 }
 "RH Rooftop":{
-  "locationType":("Brunch"), 
+  "locationType":["Brunch", "Dinner], 
   "city": "NYC"
 }
 
