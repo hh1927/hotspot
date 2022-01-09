@@ -33,6 +33,7 @@ AGE = "age"
 INTERESTS = "clubInterestType"
 CITY = "city"
 LOCATIONTYPE = "locationType"
+PARTY = "sizeOfParty"
 
 OK = 0
 NOT_FOUND = 1
@@ -56,22 +57,22 @@ if client is None:
 #    print(create)
 
 
-def buser_exists(username):
+def buser_exists(busername):
     """
     See if a buser with username is in the db.
     Returns True of False.
     """
-    rec = dbc.fetch_one(BUSERS, filters={BUSER_NM: username})
+    rec = dbc.fetch_one(BUSERS, filters={BUSER_NM: busername})
     print(f"{rec=}")
     return rec is not None
 
 
-def cuser_exists(username):
+def cuser_exists(cusername):
     """
     See if a cuser with username is in the db.
     Returns True of False.
     """
-    rec = dbc.fetch_one(CUSERS, filters={CUSER_NM: username})
+    rec = dbc.fetch_one(CUSERS, filters={CUSER_NM: cusername})
     print(f"{rec=}")
     return rec is not None
 
@@ -96,7 +97,7 @@ def fetch_busers():
             "Fleur Room": [("art", "clubbing"), "NYC"]}'''
 
 
-def add_buser(username):
+def add_buser(busername):
     """
     Add a buser to business db
     """
@@ -104,23 +105,23 @@ def add_buser(username):
         return DUPLICATE
     else:
         dbc.insert_doc(BUSERS, {
-            BUSER_NM: username,
+            BUSER_NM: busername,
             "LocationType":["bars, arts"],
             "City":"NYC"
         })
         return OK
 
 
-def add_cuser(username):
+def add_cuser(cusername):
     """
     Add a cuser to business db
     """
-    if user_exists(username):
+    if user_exists(cusername):
         return DUPLICATE
     else:
         try:
             dbc.insert_doc(CUSERS, {
-                CUSER_NM: username,
+                CUSER_NM: cusername,
                 "Gender":"xxxx",
                 "Age":"00",
                 "Interests":["xxxx","xxxx"],
@@ -129,39 +130,39 @@ def add_cuser(username):
         return OK
 
 
-def add_inv_response(username):
+def add_inv_response(cusername):
     """
     Add a user to the inv response db.
     """
-    if user_exists(username):
+    if user_exists(cusername):
         return DUPLICATE
     else:
-        dbc.insert_doc(USERS, {USER_NM: username})
+        dbc.insert_doc(CUSERS, {CUSER_NM: cusername})
         return OK
 
-# Modified till here
 
-
-def fetch_clientList():
+def fetch_clientList(busername):
     '''
     A function to returns list of clients,
     their sex, age, and size of additional party
     '''
-    return {"Sara": ["woman", 25, 3],
+    return dbc.fetch_all(CUSERS, CUSER_NM,AGE,PARTY, {"owner": busername})
+    '''return {"Sara": ["woman", 25, 3],
             "John": ["man", 21, 1],
-            "Jane": ["woman", 32, 5]}
+            "Jane": ["woman", 32, 5]}'''
 
 
-def fetch_clientHist():
+def fetch_clientHist(busername):
     '''
     A function to returns list of ALL PAST clients,
     their sex and age to the business
     '''
-    return {"Sara": ["woman", 25],
+    return dbc.fetch_all(CUSERS, CUSER_NM,GENDER,AGE)
+    '''return {"Sara": ["woman", 25],
             "John": ["man", 21],
-            "Jane": ["woman", 32]}
+            "Jane": ["woman", 32]}'''
 
-
+# Modified till here
 def fetch_recList():
     '''
     A function to returns list of recommendations
