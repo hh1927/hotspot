@@ -6,6 +6,7 @@ import json
 import pymongo as pm
 import bson.json_util as bsutil
 
+
 # all of these will eventually be put in the env:
 user_nm = "ab8541"
 cloud_db = "serverlessinstance0.irvgp.mongodb.net"
@@ -14,9 +15,12 @@ cloud_mdb = "mongodb+srv"
 db_params = "retryWrites=true&w=majority"
 db_nm = "hotspotDB"
 
+if int(os.environ.get("TEST_MODE", '')) == 1:
+    dn_nm = 'test_hotspotDB'
+
+
 REMOTE = "0"
 LOCAL = "1"
-
 
 client = None
 
@@ -39,6 +43,7 @@ def get_client():
                                 server_api=ServerApi('1'), tls=True, 
                                tlsAllowInvalidCertificates=True)
     return client
+
 
 def fetch_one(collect_nm, filters={}):
     """
