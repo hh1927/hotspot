@@ -117,6 +117,8 @@ def add_inv_response(username):
         dbc.insert_doc(USERS, {USER_NM: username})
         return OK
 
+# Modified till here
+
 
 def fetch_clientList():
     '''
