@@ -4,18 +4,19 @@ python:
 
 install:
     - pip install -r ./requirements.txt
-    - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
+    #- rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
 
 env:
-    - PYTHONPATH=/home/travis/build/alisha-bhatia/hotspot
+    - PYTHONPATH=/home/travis/build/hh1927/hotspot
 
 script:
-    - make tests
+    - make all_tests
 
 #deploy to heroku on push to master
 deploy:
     - provider: heroku
-      api_key: 92a28ac8-3a56-4f37-817e-671bb43c527f
+      api_key: $HEROKU_API_KEY
+      #api_key: 92a28ac8-3a56-4f37-817e-671bb43c527f
       app: teamhotspot
       on:
           branch: master
