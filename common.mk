@@ -19,4 +19,4 @@ lint: FORCE
 
 docs: FORCE
  $(PYDOC) ./*.py
- git add ./*.html
+	git add ./*.html
