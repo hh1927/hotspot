@@ -23,7 +23,9 @@ HOTSPOT_HOME = os.environ["HOTSPOT_HOME"]
 
 # fields in db
 NAME = "name"
+GENDER = "gender"
 AGE = "age"
+INTERESTS = "clubinteresttypes"
 CITY = "city"
 
 USERS = "users"
