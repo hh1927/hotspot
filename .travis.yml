@@ -7,10 +7,10 @@ install:
     - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
 
 env:
-    - PYTHONPATH=/home/travis/build/hh1927/hotspot
+    - PYTHONPATH=/home/travis/build/alisha-bhatia/hotspot
 
 script:
-    - make all_tests
+    - make tests
 
 #deploy to heroku on push to master
 deploy:
