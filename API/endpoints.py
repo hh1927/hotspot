@@ -108,8 +108,7 @@ class Buser(Resource):
             raise (wz.NotFound("User db could not be found.")
         elif ret == db.DUPLICATE:
             raise (wz.NotAcceptable(f"user {username} already exists."))
-        else:
-            raise f"{username} added."
+        return f"{username} added."
         '''json_data = request.get_json(force=True)
         json_data['name'] = username
         # print(json_data)
