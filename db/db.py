@@ -13,13 +13,13 @@ import os
 import db.db_connect as dbc
 
 HOTSPOT_HOME = os.environ["HOTSPOT_HOME"]
-#TEST_MODE = os.environ.get("TEST_MODE", 0)
+# TEST_MODE = os.environ.get("TEST_MODE", 0)
 
-#if TEST_MODE:
-    # this one should be changed!
-    #DB_NAME = "cuser_DB"
-#else:
-    #DB_NAME = "cloudDB"
+# if TEST_MODE:
+# this one should be changed!
+# DB_NAME = "cuser_DB"
+# else:
+# DB_NAME = "cloudDB"
 
 # fields in db
 NAME = "name"
