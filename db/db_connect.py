@@ -11,7 +11,7 @@ import urllib
 
 # all of these will eventually be put in the env:
 user_nm = "hotspot"
-cloud_svc = "serverlessinstance0.irvgp.mongodb.net"
+cloud_svc = "cluster0.q05tp.mongodb.net"
 passwd = os.environ.get("MONGO_PASSWD", '')
 cloud_mdb = "mongodb+srv"
 db_params = "retryWrites=true&w=majority"
