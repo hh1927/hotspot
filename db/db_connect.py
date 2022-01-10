@@ -6,7 +6,6 @@ import json
 import pymongo as pm
 from pymongo.server_api import ServerApi
 import bson.json_util as bsutil
-import urllib
 
 
 # all of these will eventually be put in the env:
