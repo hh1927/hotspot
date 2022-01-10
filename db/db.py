@@ -133,8 +133,6 @@ def add_cuser(cusername):
                 },
             )
             return OK
-        except:
-            return DUPLICATE
 
 
 def add_inv_response(cusername):
