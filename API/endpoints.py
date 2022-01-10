@@ -3,7 +3,7 @@ This is the file containing all of the endpoints for our flask app.
 The endpoint called `endpoints` will return all available endpoints.
 """
 from http import HTTPStatus
-import json
+#import json
 from flask import Flask, request, jsonify
 from flask_restx import Resource, Api
 import db.db as db
@@ -17,7 +17,9 @@ from flask.json import JSONEncoder
 from bson import json_util
 
 # define a cu
-# stom encoder point to the json_util provided by pymongo (or its dependency bson)
+# stom encoder point to the json_util 
+# provided by pymongo (or its dependency bson)
+
 class CustomJSONEncoder(JSONEncoder):
     def default(self, obj): return json_util.default(obj)
 
