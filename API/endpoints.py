@@ -3,30 +3,28 @@ This is the file containing all of the endpoints for our flask app.
 The endpoint called `endpoints` will return all available endpoints.
 """
 from http import HTTPStatus
-
-# from flask import Flask, request, jsonify
-from flask import Flask
+import json
+from flask import Flask, request, jsonify
 from flask_restx import Resource, Api
-import werkzeug.exceptions as wz
-
 import db.db as db
 
-# from flask.json import JSONEncoder
+import werkzeug.exceptions as wz
 
-# from bson import json_util
+import db.data as data
+
+from flask.json import JSONEncoder
+
+from bson import json_util
 
 # define a cu
-# stom encoder point to the json_util provided by pymongo
-# (or its dependency bson)
-
-
-# class CustomJSONEncoder(JSONEncoder):
-#    def default(self, obj): return json_util.default(obj)
+# stom encoder point to the json_util provided by pymongo (or its dependency bson)
+class CustomJSONEncoder(JSONEncoder):
+    def default(self, obj): return json_util.default(obj)
 
 
 app = Flask(__name__)
 api = Api(app)
-# app.json_encoder = CustomJSONEncoder
+app.json_encoder = CustomJSONEncoder
 
 
 # corrected
@@ -60,17 +58,19 @@ class CreateCuser(Resource):
         """
         This method creates a new Customer User.
         """
+        """
+        # old version
         ret = db.add_cuser(username)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
             raise (wz.NotAcceptable(f"user {username} already exists."))
         return f"{username} added."
-
-        # json_data = request.get_json(force=True)
-        # json_data['name'] = username
-        # db.add_cuser(json_data)
-        # return f"{username} added."
+        """
+        json_data = request.get_json(force=True)
+        json_data['name'] = username
+        data.add_cuser(json_data)
+        return f"{username} added."
 
 
 # corrected
@@ -86,13 +86,17 @@ class ListCuser(Resource):
         """
         This method returns all customer users.
         """
+        """
+        # old version
         allCusers = db.fetch_cusers()
         if allCusers is None:
             raise (wz.NotFound("user couldnt be found."))
         else:
             return allCusers
+        """
+        return data.fetch_cusers()
 
-
+    
 # corrected
 @api.route("/busers/create/<username>")
 class Buser(Resource):
@@ -101,25 +105,28 @@ class Buser(Resource):
     specifically the users who are hosting events.
     """
 
-    @api.response(HTTPStatus.OK, "Success")
-    @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
+    # @api.response(HTTPStatus.OK, "Success")
+    # @api.response(HTTPStatus.NOT_FOUND, "Not Found")
+    # @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
     def post(self, username):
         """
         This method creates a new Business User.
         """
+        """
+         # old version
         ret = db.add_buser(username)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
             raise (wz.NotAcceptable(f"user {username} already exists."))
         return f"{username} added."
-        # json_data = request.get_json(force=True)
-        # json_data['name'] = username
+        """
+        json_data = request.get_json(force=True)
+        json_data['name'] = username
         # print(json_data)
-        # db.add_buser(json_data)
-        # return jsonify(json_data)
-
+        db.add_buser(json_data)
+        return jsonify(json_data)
+    
 
 # corrected
 @api.route("/busers/all")
@@ -129,17 +136,21 @@ class ListBuser(Resource):
     specifically the users who are hosting events.
     """
 
-    @api.response(HTTPStatus.OK, "Success")
-    @api.response(HTTPStatus.NOT_FOUND, "Not Found")
+    # @api.response(HTTPStatus.OK, "Success")
+    # @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     def get(self):
         """
         This method returns all business users.
         """
+        """
+        # old version
         allBusers = db.fetch_busers()
         if allBusers is None:
             raise (wz.NotFound("user couldnt be found."))
         else:
             return allBusers
+        """
+        return data.fetch_busers()
 
 
 # corrected
@@ -150,19 +161,23 @@ class Inv(Resource):
     from the business including time, place and number of people allowed.
     """
 
-    @api.response(HTTPStatus.OK, "Success")
-    @api.response(HTTPStatus.NOT_FOUND, "Not Found")
+    # @api.response(HTTPStatus.OK, "Success")
+    # @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     def get(self):
         """
         This method returns all invs.
         """
+        """
+        # old version
         allInvs = db.fetch_invs()
         if allInvs is None:
             raise (wz.NotFound("invite couldnt be found."))
         else:
             return allInvs
+        """
+        return db.fetch_invRes()
 
-
+    
 # corrected
 @api.route("/Inv_Response")
 class Inv_Response(Resource):
@@ -171,17 +186,21 @@ class Inv_Response(Resource):
     from the business
     """
 
-    @api.response(HTTPStatus.OK, "Success")
-    @api.response(HTTPStatus.NOT_FOUND, "Not Found")
+    # @api.response(HTTPStatus.OK, "Success")
+    # @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     def get(self):
         """
         returns invite responses
         """
+        """
+        # old version
         allInvRes = db.get_inv_response()
         if allInvRes is None:
             raise (wz.NotFound("invite couldnt be found."))
         else:
             return allInvRes
+        """
+        return db.fetch_invRes()
 
 
 # corrected
@@ -193,17 +212,21 @@ class ClientList(Resource):
     including number of total people per party, and time
     """
 
-    @api.response(HTTPStatus.OK, "Success")
-    @api.response(HTTPStatus.NOT_FOUND, "Not Found")
+    # @api.response(HTTPStatus.OK, "Success")
+    # @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     def get(self):
         """
         returns the client list for the business user
         """
+        """
+        # old version
         allClientList = db.fetch_clientList()
         if allClientList is None:
             raise (wz.NotFound("Client List couldnt be found."))
         else:
             return allClientList
+        """
+        return db.fetch_clientList()
 
 
 # corrected
@@ -238,18 +261,21 @@ class recList(Resource):
     similar demographics
     """
 
-    @api.response(HTTPStatus.OK, "Success")
-    @api.response(HTTPStatus.NOT_FOUND, "Not Found")
+    # @api.response(HTTPStatus.OK, "Success")
+    # @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     def get(self):
         """
         returns the recommendation list for the customer user
         """
+        """
+        # old version
         allRecList = db.fetch_recList()
         if allRecList is None:
             raise (wz.NotFound("Rec List couldnt be found."))
         else:
             return allRecList
-
+        """
+        return db.fetch_clientList()
 
 # corrected
 @api.route("/revHist")
@@ -280,17 +306,21 @@ class clientsTypes(Resource):
     a business user is interested in.
     """
 
-    @api.response(HTTPStatus.OK, "Success")
-    @api.response(HTTPStatus.NOT_FOUND, "Not Found")
+    # @api.response(HTTPStatus.OK, "Success")
+    # @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     def get(self):
         """
         returns client interests.
         """
+        """
+        # old version
         allClientType = db.fetch_clientType()
         if allClientType is None:
             raise (wz.NotFound("Rec List couldnt be found."))
         else:
             return allClientType
+        """
+        return db.fetch_clientType()
 
 
 @api.route("/buser/promos")
@@ -299,17 +329,21 @@ class promos(Resource):
     This class supports fetching that week's promos
     """
 
-    @api.response(HTTPStatus.OK, "Success")
-    @api.response(HTTPStatus.NOT_FOUND, "Not Found")
+    # @api.response(HTTPStatus.OK, "Success")
+    # @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     def get(self):
         """
         returns current promos.
         """
+        """
+        # old version
         allPromos = db.fetch_promos()
         if allPromos is None:
             raise (wz.NotFound("Buser has no available promos."))
         else:
             return allPromos
+        """
+        return db.fetch_promos()
 
 
 @api.route("/cusers/delete/<username>")
