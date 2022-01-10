@@ -28,6 +28,7 @@ app = Flask(__name__)
 api = Api(app)
 # app.json_encoder = CustomJSONEncoder
 
+
 # corrected
 @api.route("/endpoints")
 class Endpoints(Resource):
@@ -99,12 +100,6 @@ class Buser(Resource):
     This class supports business users,
     specifically the users who are hosting events.
     """
-
-    def post(self, username):
-        """
-        This method creates a new Business User.
-        """
-
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
@@ -132,12 +127,6 @@ class ListBuser(Resource):
     This class supports fetching a list of all business users,
     specifically the users who are hosting events.
     """
-
-    def get(self):
-        """
-        This method returns all business users.
-        """
-
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     def get(self):
