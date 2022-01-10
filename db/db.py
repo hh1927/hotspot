@@ -101,7 +101,7 @@ def add_buser(busername):
     """
     Add a buser to business db
     """
-    if user_exists(username):
+    if buser_exists(busername):
         return DUPLICATE
     else:
         dbc.insert_doc(BUSERS, {
@@ -116,7 +116,7 @@ def add_cuser(cusername):
     """
     Add a cuser to business db
     """
-    if user_exists(cusername):
+    if cuser_exists(cusername):
         return DUPLICATE
     else:
         try:
@@ -129,14 +129,14 @@ def add_cuser(cusername):
             })
             return OK
         except:
-            return FALSE
+            return DUPLICATE
 
 
 def add_inv_response(cusername):
     """
     Add a user to the inv response db.
     """
-    if user_exists(cusername):
+    if cuser_exists(cusername):
         return DUPLICATE
     else:
         dbc.insert_doc(CUSERS, {CUSER_NM: cusername})
