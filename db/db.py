@@ -132,7 +132,7 @@ def add_cuser(cusername):
                     "Location": "NYC",
                 },
             )
-            return OK
+     return OK
 
 
 def add_inv_response(cusername):
