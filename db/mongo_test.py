@@ -5,5 +5,5 @@ import pymongo as pm
 client = pm.MongoClient()
 print(client)
 
-db = client["DesignDB"]
+db = client["myFirstDatabase"]
 print(db)
