@@ -100,6 +100,7 @@ class Buser(Resource):
     This class supports business users,
     specifically the users who are hosting events.
     """
+
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
@@ -127,6 +128,7 @@ class ListBuser(Resource):
     This class supports fetching a list of all business users,
     specifically the users who are hosting events.
     """
+
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     def get(self):

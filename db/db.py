@@ -129,8 +129,8 @@ def add_cuser(cusername):
                 "Age": "00",
                 "Interests": ["xxxx", "xxxx"],
                 "Location": "NYC",
-                },
-            )
+            },
+        )
         return OK
 
 
