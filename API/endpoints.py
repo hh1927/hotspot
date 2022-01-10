@@ -60,6 +60,8 @@ class CreateCuser(Resource):
         """
         This method creates a new Customer User.
         """
+        """
+        # old version
         ret = data.add_cuser(username)
         if ret == data.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
@@ -67,12 +69,10 @@ class CreateCuser(Resource):
             raise (wz.NotAcceptable(f"user {username} already exists."))
         return f"{username} added."
         """
-        # old version
         json_data = request.get_json(force=True)
         json_data['name'] = username
         data.add_cuser(json_data)
         return f"{username} added."
-        """
         
 
 # corrected
@@ -113,6 +113,8 @@ class Buser(Resource):
         """
         This method creates a new Business User.
         """
+        """
+        # old version
         ret = db.add_buser(username)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
@@ -120,13 +122,11 @@ class Buser(Resource):
             raise (wz.NotAcceptable(f"user {username} already exists."))
         return f"{username} added."
         """
-         # old version
         json_data = request.get_json(force=True)
         json_data['name'] = username
         # print(json_data)
         db.add_buser(json_data)
         return jsonify(json_data)
-        """
     
 
 # corrected
