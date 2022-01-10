@@ -62,10 +62,10 @@ class CreateCuser(Resource):
             raise (wz.NotAcceptable(f"user {username} already exists."))
         return f"{username} added."
 
-        '''json_data = request.get_json(force=True)
-        json_data['name'] = username
-        db.add_cuser(json_data)
-        return f"{username} added."''''
+        #json_data = request.get_json(force=True)
+        #json_data['name'] = username
+        #db.add_cuser(json_data)
+        #return f"{username} added."
 
 #corrected
 @api.route('/cusers/all')
@@ -109,11 +109,11 @@ class Buser(Resource):
         elif ret == db.DUPLICATE:
             raise (wz.NotAcceptable(f"user {username} already exists."))
         return f"{username} added."
-        '''json_data = request.get_json(force=True)
-        json_data['name'] = username
-        # print(json_data)
-        db.add_buser(json_data)
-        return jsonify(json_data)'''
+        #json_data = request.get_json(force=True)
+        #json_data['name'] = username
+        #print(json_data)
+        #db.add_buser(json_data)
+        #return jsonify(json_data)
 
 #corrected
 @api.route('/busers/all')
