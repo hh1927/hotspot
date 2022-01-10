@@ -59,9 +59,7 @@ print(f"{key_name=}")
 collect = read_collection(json_file)
 
 for entity_nm in collect:
-    new_entity = new_ent_from_json(key_name,
-                                   entity_nm,
-                                   collect[entity_nm])
+    new_entity = new_ent_from_json(key_name, entity_nm, collect[entity_nm])
     print(f"{new_entity=}")
     collection.insert_one(new_entity)
 

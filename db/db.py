@@ -1,4 +1,3 @@
-
 """
 This file will manage interactions with our data store.
 At first, it will just contain stubs that return fake data.
@@ -78,23 +77,23 @@ def cuser_exists(cusername):
 
 
 def fetch_cusers():
-    '''
+    """
     A function to return all cusers in the data store.
-    '''
+    """
     return dbc.fetch_all(CUSERS, CUSER_NM)
-    '''return {"Sara": ["woman", 25, ("clubbing", "brunch"), "NYC"],
+    """return {"Sara": ["woman", 25, ("clubbing", "brunch"), "NYC"],
             "John": ["man", 21, ("bars", "sports"), "NYC"],
-            "Jane": ["woman", 32, ("art", "sports"), "NYC"]}'''
+            "Jane": ["woman", 32, ("art", "sports"), "NYC"]}"""
 
 
 def fetch_busers():
-    '''
+    """
     A function to return all busers in the data store.
-    '''
+    """
     return dbc.fetch_all(BUSERS, BUSER_NM)
-    '''return {"Catch": [("clubbing", "brunch"), "NYC"],
+    """return {"Catch": [("clubbing", "brunch"), "NYC"],
             "Penny Farthing": [("bars", "sports"), "NYC"],
-            "Fleur Room": [("art", "clubbing"), "NYC"]}'''
+            "Fleur Room": [("art", "clubbing"), "NYC"]}"""
 
 
 def add_buser(busername):
@@ -104,11 +103,14 @@ def add_buser(busername):
     if buser_exists(busername):
         return DUPLICATE
     else:
-        dbc.insert_doc(BUSERS, {
-            BUSER_NM: busername,
-            "LocationType":["bars, arts"],
-            "City":"NYC"
-        })
+        dbc.insert_doc(
+            BUSERS,
+            {
+                BUSER_NM: busername,
+                "LocationType": ["bars, arts"],
+                "City": "NYC",
+            },
+        )
         return OK
 
 
@@ -120,13 +122,16 @@ def add_cuser(cusername):
         return DUPLICATE
     else:
         try:
-            dbc.insert_doc(CUSERS, {
-                CUSER_NM: cusername,
-                "Gender":"xxxx",
-                "Age":"00",
-                "Interests":["xxxx","xxxx"],
-                "Location": "NYC"
-            })
+            dbc.insert_doc(
+                CUSERS,
+                {
+                    CUSER_NM: cusername,
+                    "Gender": "xxxx",
+                    "Age": "00",
+                    "Interests": ["xxxx", "xxxx"],
+                    "Location": "NYC",
+                },
+            )
             return OK
         except:
             return DUPLICATE
@@ -144,84 +149,92 @@ def add_inv_response(cusername):
 
 
 def fetch_clientList(busername):
-    '''
+    """
     A function to returns list of clients,
     their sex, age, and size of additional party
-    '''
-    return dbc.fetch_all(CUSERS, CUSER_NM,AGE,PARTY, {"owner": busername})
-    '''return {"Sara": ["woman", 25, 3],
+    """
+    return dbc.fetch_all(CUSERS, CUSER_NM, AGE, PARTY, {"owner": busername})
+    """return {"Sara": ["woman", 25, 3],
             "John": ["man", 21, 1],
-            "Jane": ["woman", 32, 5]}'''
+            "Jane": ["woman", 32, 5]}"""
 
 
 def fetch_clientHist(busername):
-    '''
+    """
     A function to returns list of ALL PAST clients,
     their sex and age to the business
-    '''
-    return dbc.fetch_all(CUSERS, CUSER_NM,GENDER,AGE)
-    '''return {"Sara": ["woman", 25],
+    """
+    return dbc.fetch_all(CUSERS, CUSER_NM, GENDER, AGE)
+    """return {"Sara": ["woman", 25],
             "John": ["man", 21],
-            "Jane": ["woman", 32]}'''
+            "Jane": ["woman", 32]}"""
+
 
 # Modified till here
 def fetch_recList():
-    '''
+    """
     A function to returns list of recommendations
-    '''
-    return {"Catch": ["10/21/1999", "10:00 PM", 21],
-            "Penny Farthing": ["10/21/2000", "8:00 PM", 21],
-            "Fleur Room": ["10/21/2001", "4:00 PM", 18]}
+    """
+    return {
+        "Catch": ["10/21/1999", "10:00 PM", 21],
+        "Penny Farthing": ["10/21/2000", "8:00 PM", 21],
+        "Fleur Room": ["10/21/2001", "4:00 PM", 18],
+    }
 
 
 def fetch_revHist():
-    '''
+    """
     A function to returns list of ALL past places visted and
     reviews out of 5 and date
-    '''
-    return {"Catch": ["10/21/1999", 4],
-            "Penny Farthing": ["10/21/2000", 1],
-            "Fleur Room": ["10/21/2001", 5]}
+    """
+    return {
+        "Catch": ["10/21/1999", 4],
+        "Penny Farthing": ["10/21/2000", 1],
+        "Fleur Room": ["10/21/2001", 5],
+    }
 
 
 def fetch_invs():
-    '''
+    """
     shows users invites with information
     on the event including company, date,
     time, and age requirement.
-    '''
-    return {"Catch": ["10/21/1999", "10:00 PM", 21],
-            "Penny Farthing": ["10/21/2000", "8:00 PM", 21],
-            "Fleur Room": ["10/21/2001", "4:00 PM", 18]}
+    """
+    return {
+        "Catch": ["10/21/1999", "10:00 PM", 21],
+        "Penny Farthing": ["10/21/2000", "8:00 PM", 21],
+        "Fleur Room": ["10/21/2001", "4:00 PM", 18],
+    }
 
 
 def get_inv_response():
-    '''
+    """
     A function to returns a list of invite info,
     including name, age, party size
-    '''
+    """
     return ["Sara", 25, 3]
 
 
 def fetch_clientType():
-    '''
+    """
     A function to return client categories of interest
-    '''
+    """
     return ["Sports Bar", "Club", "Speakeasy"]
 
 
 def fetch_promos():
-    '''
+    """
     A function to return that week's promos
-    '''
-    return {"Lady's night": ["Catch", "Penny Farthing"],
-            "Happy hour": ["Fleur Room"],
-            "Half price apps": ["Penny Farthing", "Fleur Room"]}
+    """
+    return {
+        "Lady's night": ["Catch", "Penny Farthing"],
+        "Happy hour": ["Fleur Room"],
+        "Half price apps": ["Penny Farthing", "Fleur Room"],
+    }
 
 
 def fetch_invResponse():
-    '''
+    """
     A function to return invite responses
-    '''
-    return {"Catch": ["Sara", 4],
-            "Penny Farthing": ["John", 3]}
+    """
+    return {"Catch": ["Sara", 4], "Penny Farthing": ["John", 3]}
