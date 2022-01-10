@@ -120,7 +120,13 @@ def add_cuser(cusername):
         return DUPLICATE
     else:
         try:
-            dbc.insert_doc(CUSERS, {CUSER_NM: cusername,"Gender":"xxxx","Age":"00","Interests":["xxxx","xxxx"],"Location": "NYC",})
+            dbc.insert_doc(CUSERS, {
+                CUSER_NM: cusername,
+                "Gender":"xxxx",
+                "Age":"00",
+                "Interests":["xxxx","xxxx"],
+                "Location": "NYC"
+            })
         return OK
 
 
