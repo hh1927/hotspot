@@ -1,5 +1,10 @@
 flask
 flask-restx
+flake8
 gunicorn
-werkzeug
 pymongo[srv]
+nose
+nose2
+coverage
+werkzeug
+black
