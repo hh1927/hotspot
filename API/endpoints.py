@@ -105,7 +105,7 @@ class Buser(Resource):
         """
         ret = db.add_buser(username)
         if ret == db.NOT_FOUND:
-            raise (wz.NotFound("User db could not be found.")
+            raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
             raise (wz.NotAcceptable(f"user {username} already exists."))
         return f"{username} added."
