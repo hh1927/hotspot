@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export passwd=$MONGO_PASSWD
-export db="cloud_DB"
+export db="myFirstDatabase"
 export collect="Cusers"
 export key="cuserName"
 
