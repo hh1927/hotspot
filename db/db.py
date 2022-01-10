@@ -127,7 +127,7 @@ def add_cuser(cusername):
                 "Interests":["xxxx","xxxx"],
                 "Location": "NYC"
             })
-        return OK
+            return OK
 
 
 def add_inv_response(cusername):
