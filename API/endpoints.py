@@ -3,30 +3,30 @@ This is the file containing all of the endpoints for our flask app.
 The endpoint called `endpoints` will return all available endpoints.
 """
 from http import HTTPStatus
-#import json
-from flask import Flask, request, jsonify
-from flask_restx import Resource, Api
-import db.db as db
 
+# from flask import Flask, request, jsonify
+from flask import Flask
+from flask_restx import Resource, Api
 import werkzeug.exceptions as wz
 
-import db.data as data
+import db.db as db
 
-from flask.json import JSONEncoder
+# from flask.json import JSONEncoder
 
-from bson import json_util
+# from bson import json_util
 
 # define a cu
-# stom encoder point to the json_util 
-# provided by pymongo (or its dependency bson)
+# stom encoder point to the json_util provided by pymongo
+# (or its dependency bson)
 
-class CustomJSONEncoder(JSONEncoder):
-    def default(self, obj): return json_util.default(obj)
+
+# class CustomJSONEncoder(JSONEncoder):
+#    def default(self, obj): return json_util.default(obj)
 
 
 app = Flask(__name__)
 api = Api(app)
-app.json_encoder = CustomJSONEncoder
+# app.json_encoder = CustomJSONEncoder
 
 
 # corrected
@@ -60,20 +60,18 @@ class CreateCuser(Resource):
         """
         This method creates a new Customer User.
         """
-        """
-        # old version
-        ret = data.add_cuser(username)
-        if ret == data.NOT_FOUND:
+        ret = db.add_cuser(username)
+        if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
             raise (wz.NotAcceptable(f"user {username} already exists."))
         return f"{username} added."
-        """
-        json_data = request.get_json(force=True)
-        json_data['name'] = username
-        data.add_cuser(json_data)
-        return f"{username} added."
-        
+
+        # json_data = request.get_json(force=True)
+        # json_data['name'] = username
+        # db.add_cuser(json_data)
+        # return f"{username} added."
+
 
 # corrected
 @api.route("/cusers/all")
@@ -88,16 +86,13 @@ class ListCuser(Resource):
         """
         This method returns all customer users.
         """
-        allCusers = data.fetch_cusers()
+        allCusers = db.fetch_cusers()
         if allCusers is None:
             raise (wz.NotFound("user couldnt be found."))
         else:
             return allCusers
-        """
-        # old version
-        return data.fetch_cusers()
-        """
-    
+
+
 # corrected
 @api.route("/busers/create/<username>")
 class Buser(Resource):
@@ -113,21 +108,18 @@ class Buser(Resource):
         """
         This method creates a new Business User.
         """
-        """
-        # old version
         ret = db.add_buser(username)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
             raise (wz.NotAcceptable(f"user {username} already exists."))
         return f"{username} added."
-        """
-        json_data = request.get_json(force=True)
-        json_data['name'] = username
+        # json_data = request.get_json(force=True)
+        # json_data['name'] = username
         # print(json_data)
-        db.add_buser(json_data)
-        return jsonify(json_data)
-    
+        # db.add_buser(json_data)
+        # return jsonify(json_data)
+
 
 # corrected
 @api.route("/busers/all")
@@ -143,17 +135,13 @@ class ListBuser(Resource):
         """
         This method returns all business users.
         """
-        allBusers = data.fetch_busers()
+        allBusers = db.fetch_busers()
         if allBusers is None:
             raise (wz.NotFound("user couldnt be found."))
         else:
             return allBusers
-        """
-        # old version
-        return data.fetch_busers()
-        """
 
-        
+
 # corrected
 @api.route("/Inv")
 class Inv(Resource):
@@ -173,12 +161,8 @@ class Inv(Resource):
             raise (wz.NotFound("invite couldnt be found."))
         else:
             return allInvs
-        """
-        # old version
-        return db.fetch_invRes()
-        """
-        
-    
+
+
 # corrected
 @api.route("/Inv_Response")
 class Inv_Response(Resource):
@@ -198,10 +182,6 @@ class Inv_Response(Resource):
             raise (wz.NotFound("invite couldnt be found."))
         else:
             return allInvRes
-        """
-        # old version
-        return db.fetch_invRes()
-        """
 
 
 # corrected
@@ -224,10 +204,6 @@ class ClientList(Resource):
             raise (wz.NotFound("Client List couldnt be found."))
         else:
             return allClientList
-        """
-        # old version
-        return db.fetch_clientList()
-        """
 
 
 # corrected
@@ -273,10 +249,7 @@ class recList(Resource):
             raise (wz.NotFound("Rec List couldnt be found."))
         else:
             return allRecList
-        """
-        # old version
-        return db.fetch_clientList()
-        """
+
 
 # corrected
 @api.route("/revHist")
@@ -318,11 +291,7 @@ class clientsTypes(Resource):
             raise (wz.NotFound("Rec List couldnt be found."))
         else:
             return allClientType
-        """
-        # old version
-        return db.fetch_clientType()
-        """
-        
+
 
 @api.route("/buser/promos")
 class promos(Resource):
@@ -341,11 +310,7 @@ class promos(Resource):
             raise (wz.NotFound("Buser has no available promos."))
         else:
             return allPromos
-        """
-        # old version
-        return db.fetch_promos()
-        """
-        
+
 
 @api.route("/cusers/delete/<username>")
 class DeleteCuser(Resource):
