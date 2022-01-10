@@ -121,18 +121,17 @@ def add_cuser(cusername):
     if cuser_exists(cusername):
         return DUPLICATE
     else:
-        try:
-            dbc.insert_doc(
-                CUSERS,
-                {
-                    CUSER_NM: cusername,
-                    "Gender": "xxxx",
-                    "Age": "00",
-                    "Interests": ["xxxx", "xxxx"],
-                    "Location": "NYC",
+        dbc.insert_doc(
+            CUSERS,
+            {
+                CUSER_NM: cusername,
+                "Gender": "xxxx",
+                "Age": "00",
+                "Interests": ["xxxx", "xxxx"],
+                "Location": "NYC",
                 },
             )
-    return OK
+        return OK
 
 
 def add_inv_response(cusername):
