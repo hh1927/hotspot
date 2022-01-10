@@ -1,3 +1,3 @@
 #!/bin/bash
 
-mongosh "mongodb+srv://serverlessinstance0.irvgp.mongodb.net/hotspotDB" --apiVersion 1 --username hotspot
+mongosh "mongodb+srv://cluster0.q05tp.mongodb.net/myFirstDatabase" --apiVersion 1 --username hotspot
