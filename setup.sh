@@ -19,8 +19,8 @@ else
     exit 1
 fi
 
-export demo_home_present=`grep $proj_home "$HOME/$login_script"`
-if [ -z "$demo_home_present" ]
+export hotspot_home_present=`grep $proj_home "$HOME/$login_script"`
+if [ -z "$hotspot_home_present" ]
 then
     export wd=`pwd`
     echo "export $proj_home=$wd" >> $HOME/$login_script
