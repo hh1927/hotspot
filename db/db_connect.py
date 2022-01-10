@@ -15,7 +15,7 @@ passwd = os.environ.get("MONGO_PASSWD", '')
 cloud_mdb = "mongodb+srv"
 db_params = "retryWrites=true&w=majority"
 
-db_nm = "hotspotDB"
+db_nm = "myFirstDatabase"
 if int(os.environ.get("TEST_MODE", "")) == 1:
     dn_nm = "test_hotspotDB"
 
