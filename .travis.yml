@@ -15,8 +15,8 @@ script:
 #deploy to heroku on push to master
 deploy:
     - provider: heroku
-      api_key: $HEROKU_API_KEY
-      #api_key: 92a28ac8-3a56-4f37-817e-671bb43c527f
+      #api_key: $HEROKU_API_KEY
+      api_key: 92a28ac8-3a56-4f37-817e-671bb43c527f
       app: teamhotspot
       on:
           branch: master
