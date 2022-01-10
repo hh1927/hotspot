@@ -9,9 +9,9 @@ import bson.json_util as bsutil
 
 
 # all of these will eventually be put in the env:
-user_nm = "ab8541"
-cloud_db = "serverlessinstance0.irvgp.mongodb.net"
-passwd = os.environ.get("MONGO_PASSWD", "")
+user_nm = "ab8541@nyu.edu"
+cloud_svc = "serverlessinstance0.irvgp.mongodb.net"
+passwd = os.environ.get("MONGO_PASSWD", '')
 cloud_mdb = "mongodb+srv"
 db_params = "retryWrites=true&w=majority"
 
@@ -39,7 +39,7 @@ def get_client():
     else:
         print("Connecting to Mongo remotely.")
         client = pm.MongoClient(
-            f"mongodb+srv://{user_nm}:{passwd}.@" + f"/{cloud_mdb}?{db_nm}?"
+            f"mongodb+srv://{user_nm}:{passwd}.@" + f"/{cloud_svc}?{db_nm}?"
             +"retryWrites=true&w=majority",
             server_api=ServerApi("1"),
             tls=True,
