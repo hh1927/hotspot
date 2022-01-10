@@ -8,6 +8,7 @@ install:
 
 env:
     - PYTHONPATH=/home/travis/build/alisha-bhatia/hotspot
+    - PATH=/home/travis/build/alisha-bhatia/hotspot
 
 script:
     - make tests
