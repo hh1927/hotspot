@@ -60,8 +60,8 @@ class CreateCuser(Resource):
         """
         This method creates a new Customer User.
         """
-        ret = db.add_cuser(username)
-        if ret == db.NOT_FOUND:
+        ret = data.add_cuser(username)
+        if ret == data.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
             raise (wz.NotAcceptable(f"user {username} already exists."))
@@ -88,7 +88,7 @@ class ListCuser(Resource):
         """
         This method returns all customer users.
         """
-        allCusers = db.fetch_cusers()
+        allCusers = data.fetch_cusers()
         if allCusers is None:
             raise (wz.NotFound("user couldnt be found."))
         else:
@@ -143,7 +143,7 @@ class ListBuser(Resource):
         """
         This method returns all business users.
         """
-        allBusers = db.fetch_busers()
+        allBusers = data.fetch_busers()
         if allBusers is None:
             raise (wz.NotFound("user couldnt be found."))
         else:
