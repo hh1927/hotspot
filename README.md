@@ -14,11 +14,11 @@
  - the business' consumer list is reset at the end of the day
 
  CRUD: Create - Read - Update - Delete. How can the users transform the data your API accesses?
-     - Have 2 separate  "create" functions, one for each type of user [Business and Consumer]
-     - Read through both user types to match the consumers to businesses, to fulfill business quotas.
-     - Update Business Quotas depending on their daily requirements
-     - Update Consumer recommendations depending on their interests and their location requirements each day
-     - Delete: each type of User can delete their profiles
+ - Have 2 separate  "create" functions, one for each type of user [Business and Consumer]
+ - Read through both user types to match the consumers to businesses, to fulfill business quotas.
+ - Update Business Quotas depending on their daily requirements
+ - Update Consumer recommendations depending on their interests and their location requirements each day
+ - Delete: each type of User can delete their profiles
 
  ## Design
 
