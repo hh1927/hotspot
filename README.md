@@ -2,7 +2,8 @@
 
  - Create a Business User 
  - Create a Consumer User
-Process for each day (Loop):
+
+ - Process for each day (Loop):
  - At the beginning of the day, Businesses set their quotas
  - At the beginning of the day, Consumers set their preferences by choosing three types of places they are interested in visiting that night, and preferred location
  - Based on their interests, they are shown their daily curated list (three businesses [one at a time])
