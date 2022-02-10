@@ -42,3 +42,47 @@
     - ‘/bList’— Fetch list of all business users. Inputs: N/A
     - ‘/cList'— Returns all consumers. Inputs: N/A
     - ‘/endpoints’— Returns list of all possible endpoints. Inputs: N/A
+
+## Frontend Walkthrough
+ 
+ # CUSER SIDE
+    - Logo briefly shows when opening the app
+             - goes away without interaction
+    - Homepage opens up to a list carousel with 4 interactable "buttons"
+          EVENT: The image of the Event (Flyer) or Space with small description of the event location and time
+             - when tapped, a more comprehensive description is revealed. 
+             - when tapped again, the description is re-concealed.
+          PROFILE
+             - when tapped, it shows the user their own profile that they may edit
+          RSVP
+             - when tapped, it will ask the user to give party size and confirm reservation
+          NEXT
+             - when tapped, it will skip to the next Event and the previous Event will no longer be accessible
+          EXIT
+ 
+    - Profile Page is accessible through the profile button.
+          - shows the user their current information
+          - Name and Age are not subject to change
+          - All other fields can be modified
+                 Location
+                 Bar Type (may be a drop down selection)
+          - User can see photos present and add/remove photos from library
+          EXIT
+ 
+    - RSVP Page
+          - Displays General Information of the event
+          - Gives fields required to fill to RSVP
+                 Party Size
+                 Name and Age of Each Guest (will expose according to size)
+          RSVP
+                 when tapped, Confirms reservation. Will only show Event page for the rest of the night
+          CANCEL
+                 when tapped, Returns to Event list screen to continue skipping
+          EXIT
+ 
+  - Confirmation Page
+          - shows event page without interaction options
+          - after the day is complete this returns the Homepage that reveals the next days carousel of events.
+ 
+
+  
