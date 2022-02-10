@@ -4,13 +4,14 @@
  - Create a Consumer User
 
  - Process for each day (Loop):
- - At the beginning of the day, Businesses set their quotas
- - At the beginning of the day, Consumers set their preferences by choosing three types of places they are interested in visiting that night, and preferred location
- - Based on their interests, they are shown their daily curated list (three businesses [one at a time])
-       If they are interested, they will then be prompted to share their total party size attending, and get details about the event (which is all that they will   then see for the rest of the night. This resets every day, and the next day they are prompted to select interests and preferred location again)
+ - At the beginning of the day, Businesses set their max guests or quotas.
+ - At the beginning of the day, Consumers update their profile preferences by choosing the types of places (max 3) they are interested in visiting that night, and preferred location.
+ - Based on their interests, they are shown their daily curated list (for example if there are three businesses, they will only see one at a time)
+       They are able to click on the event to view the highlights before skipping (there is no going backwards after they skip).
+       If they are interested, they will then be prompted to share their total party size attending (RSVP) and get further details about the event (which is all that they will then see for the rest of the night. This resets every day, and the next day they are prompted to update their interests and preferred location again)
        if they are not interested, they will be shown the next business on the list, and are unable to go back to the first business.
  - Once the consumer sends in their party size, they are then put on the business' Consumer list, which lists all the consumers coming to the business that night
- - the Party size is then subtracted from the business' total quota
+ - the Party size is then subtracted from the business' total guests/quotas
  - the business' consumer list is reset at the end of the day
 
  CRUD: Create - Read - Update - Delete. How can the users transform the data your API accesses?
