@@ -80,9 +80,9 @@
                  when tapped, Returns to Event list screen to continue skipping
           EXIT
  
-   - Confirmation Page
+    - Confirmation Page
           - shows event page without interaction options
-          - after the day is complete this returns the Homepage that reveals the next days carousel of events.
+          - after the day is complete this returns the Homepage that reveals the next days carousel of events
  
 
   
