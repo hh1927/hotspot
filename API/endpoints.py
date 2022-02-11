@@ -122,8 +122,9 @@ class Buser(Resource):
 
 
 # corrected
-@api.route("/busers/all")
-class ListBuser(Resource):
+@api.route("/blist")  #updated api route
+class ListBuser(name, age_rest, business_type, Resource): #added additional inputs to determine business 
+                                                          #inputs then used to call blist
     """
     This class supports fetching a list of all business users,
     specifically the users who are hosting events.
