@@ -10,23 +10,28 @@ export default function Home(){
 
   return (
     <div className="content">
-      <h1>🤗 SWE React Demo </h1>
+      <h1>HotSpot </h1>
       <div>
-        <p className="quote">"A list is only as strong as its weakest link"</p>
-        <p className="quote-author">- Donald Knuth</p>
+        <p className="quote">"Events for tonight and only tonight."</p>
       </div>
+      <div>
+        <form>
+          <label>
+            Username: <input type="text" />
+          </label>
+          <label>
+            Password: <input type="text" />
+          </label>
+        </form>
+
+      </div>
+      
       <button
         onClick={() => navigateToPage('/rooms')}
         className="page-button"
       >
-        View All Rooms
+        Login
       </button>
-      <button
-        onClick={() => navigateToPage('/users')}
-        className="page-button"
-      >
-        View All Users
-      </button> 
     </div>
   );
 };
