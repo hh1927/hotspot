@@ -74,9 +74,9 @@ class CreateCuser(Resource):
 
 
 # corrected
-@api.route("/cusers/all")
-class ListCuser(Resource):
-    """
+@api.route("/cList") #updated API route
+class ListCuser(user_name, party_size, Resource): #added additional parameters related to consumer
+    """                                           #parameters then used to select consumers 
     This class returns a list of all consumer users
     """
 
@@ -123,8 +123,8 @@ class Buser(Resource):
 
 # corrected
 @api.route("/blist")  #updated api route
-class ListBuser(name, age_rest, business_type, Resource): #added additional inputs to determine business 
-                                                          #inputs then used to call blist
+class ListBuser(name, age_rest, business_type, Resource): #added additional parameters related to business 
+                                                          #paramaters then used to select businesses
     """
     This class supports fetching a list of all business users,
     specifically the users who are hosting events.
