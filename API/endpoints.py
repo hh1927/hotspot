@@ -142,7 +142,7 @@ class ListBuser(Resource):
             return allBusers
 
 
-# corrected
+""" corrected
 @api.route("/Inv")
 class Inv(Resource):
     """
@@ -161,9 +161,10 @@ class Inv(Resource):
             raise (wz.NotFound("invite couldnt be found."))
         else:
             return allInvs
+ """
 
 
-# corrected
+""" corrected
 @api.route("/Inv_Response")
 class Inv_Response(Resource):
     """
@@ -182,6 +183,7 @@ class Inv_Response(Resource):
             raise (wz.NotFound("invite couldnt be found."))
         else:
             return allInvRes
+"""
 
 
 # corrected
@@ -354,3 +356,23 @@ class DeleteBuser(Resource):
             raise (wz.NotFound(f"buser {username} not found."))
         else:
             return f"{username} deleted."
+
+# corrected
+@api.route("/cusers/<party>")
+class partySize(Resource):
+    """
+    This class supports consumer users
+    telling us their party size 
+    """
+
+    @api.response(HTTPStatus.OK, "Success")
+    @api.response(HTTPStatus.NOT_FOUND, "Not Found")
+    @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
+    def post(self, party):
+        """
+        This method tells us party size
+        """
+        ret = db.add_party(username, party)
+        if ret == db.NOT_FOUND:
+            raise (wz.NotFound("User db could not be found."))
+        return f"{party} added."
