@@ -235,3 +235,14 @@ def fetch_invResponse():
     A function to return invite responses
     """
     return {"Catch": ["Sara", 4], "Penny Farthing": ["John", 3]}
+
+
+def add_party(username, party):
+    """
+    Add party size to the user database.
+    """
+    if user_exists(username):
+        dbc.insert_doc(USERS, {USER_NM: username}, {PARTY: party})
+        return OK
+    else:
+        return OK
