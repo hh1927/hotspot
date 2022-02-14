@@ -90,6 +90,7 @@ def fetch_busers():
     """
     A function to return all busers in the data store.
     """
+    print("IN BUSERS", dbc.fetch_all(BUSERS, BUSER_NM))
     return dbc.fetch_all(BUSERS, BUSER_NM)
 
 
