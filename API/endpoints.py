@@ -74,15 +74,18 @@ class CreateCuser(Resource):
 
 
 # corrected
-@api.route("/cusers/all")
+# updated API route
+@api.route("/cList")
+# added additional parameters related to consumer
 class ListCuser(Resource):
     """
+    #parameters then used to select consumers
     This class returns a list of all consumer users
     """
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def get(self):
+    def get(self, user_name, party_size):
         """
         This method returns all customer users.
         """
@@ -122,8 +125,11 @@ class Buser(Resource):
 
 
 # corrected
-@api.route("/busers/all")
+# updated api route
+@api.route("/blist")
 class ListBuser(Resource):
+    # added additional parameters related to business
+    # paramaters then used to select businesses
     """
     This class supports fetching a list of all business users,
     specifically the users who are hosting events.
@@ -131,7 +137,7 @@ class ListBuser(Resource):
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def get(self):
+    def get(self, name, age_rest, business_type):
         """
         This method returns all business users.
         """
@@ -149,7 +155,6 @@ class Inv(Resource):
     This class supports fetching a list of all invites,
     from the business including time, place and number of people allowed.
     """
-
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     def get(self):
@@ -354,3 +359,24 @@ class DeleteBuser(Resource):
             raise (wz.NotFound(f"buser {username} not found."))
         else:
             return f"{username} deleted."
+
+
+# corrected
+@api.route("/cusers/<party>")
+class partySize(Resource):
+    """
+    This class supports consumer users
+    telling us their party size
+    """
+
+    @api.response(HTTPStatus.OK, "Success")
+    @api.response(HTTPStatus.NOT_FOUND, "Not Found")
+    @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
+    def post(self, username, party):
+        """
+        This method tells us party size
+        """
+        ret = db.add_party(username, party)
+        if ret == db.NOT_FOUND:
+            raise (wz.NotFound("User db could not be found."))
+        return f"{party} added."
