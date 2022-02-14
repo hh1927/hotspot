@@ -20,8 +20,8 @@ HOTSPOT_HOME = os.environ["HOTSPOT_HOME"]
 # else:
 # DB_NAME = "cloudDB"
 
-CUSERS = "cusers"
-BUSERS = "busers"
+CUSERS = "consumer"
+BUSERS = "business"
 
 # fields in db
 CUSER_NM = "cuserName"
@@ -90,10 +90,7 @@ def fetch_busers():
     """
     A function to return all busers in the data store.
     """
-    # return dbc.fetch_all(BUSERS, BUSER_NM)
-    return {"Catch": [("clubbing", "brunch"), "NYC"],
-            "Penny Farthing": [("bars", "sports"), "NYC"],
-            "Fleur Room": [("art", "clubbing"), "NYC"]}
+    return dbc.fetch_all(BUSERS, BUSER_NM)
 
 
 def add_buser(busername):
