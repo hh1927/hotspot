@@ -137,7 +137,7 @@ class ListBuser(Resource):
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def get(self, name, age_rest, business_type):
+    def get(self):
         """
         This method returns all business users.
         """
