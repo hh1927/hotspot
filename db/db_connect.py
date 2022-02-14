@@ -12,11 +12,11 @@ import bson.json_util as bsutil
 user_nm = "hotspot"
 cloud_svc = "cluster0.q05tp.mongodb.net"
 # hide later
-passwd = os.environ.get("MONGO_PASSWD", 'Test123')
+passwd = "2Dfw8bK4m3raavKh"
 cloud_mdb = "mongodb+srv"
 db_params = "retryWrites=true&w=majority"
 
-db_nm = "myFirstDatabase"
+db_nm = "hotspot"
 if int(os.environ.get("TEST_MODE", "")) == 1:
     dn_nm = "test_myFirstDatabase"
 
