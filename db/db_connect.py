@@ -18,7 +18,7 @@ db_params = "retryWrites=true&w=majority"
 
 db_nm = "hotspot"
 if int(os.environ.get("TEST_MODE", "")) == 1:
-    dn_nm = "test_myFirstDatabase"
+    dn_nm = "hotspot"
 
 
 REMOTE = "0"
