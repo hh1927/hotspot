@@ -12,7 +12,7 @@ import bson.json_util as bsutil
 user_nm = "hotspot"
 cloud_svc = "cluster0.q05tp.mongodb.net"
 # hide later
-passwd = "2Dfw8bK4m3raavKh"
+passwd = "GdfqZFngsJV47rtk"
 cloud_mdb = "mongodb+srv"
 db_params = "retryWrites=true&w=majority"
 
