@@ -39,6 +39,8 @@ def get_client():
         client = pm.MongoClient()
     else:
         print("Connecting to Mongo remotely.")
+        print("HELLO " + f"mongodb+srv://{user_nm}:{passwd}@" + f"/{cloud_svc}/{db_nm}?"
+            + "retryWrites=true&w=majority"")
         client = pm.MongoClient(
             f"mongodb+srv://{user_nm}:{passwd}@" + f"/{cloud_svc}/{db_nm}?"
             + "retryWrites=true&w=majority"
