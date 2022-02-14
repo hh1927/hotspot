@@ -15,8 +15,8 @@ unit: FORCE
 	$(TESTFINDER) --with-coverage
 
 lint: FORCE
-	black -l 79 db/*.py
-	black -l 79 API/*.py
+	# black -l 79 db/*.py
+	# black -l 79 API/*.py
 	$(LINTER) db/*.py
 	$(LINTER) API/*.py
 
