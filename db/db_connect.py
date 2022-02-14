@@ -11,7 +11,8 @@ import bson.json_util as bsutil
 # all of these will eventually be put in the env:
 user_nm = "hotspot"
 cloud_svc = "cluster0.q05tp.mongodb.net"
-passwd = os.environ.get("MONGO_PASSWD", 'Test123') #hide later
+# hide later
+passwd = os.environ.get("MONGO_PASSWD", 'Test123')
 cloud_mdb = "mongodb+srv"
 db_params = "retryWrites=true&w=majority"
 
@@ -40,7 +41,7 @@ def get_client():
         print("Connecting to Mongo remotely.")
         client = pm.MongoClient(
             f"mongodb+srv://{user_nm}:{passwd}.@" + f"/{cloud_svc}?{db_nm}?"
-            +"retryWrites=true&w=majority",
+            + "retryWrites=true&w=majority",
             server_api=ServerApi("1"),
             tls=True,
             tlsAllowInvalidCertificates=True
