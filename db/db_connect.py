@@ -43,7 +43,7 @@ def get_client():
             + "retryWrites=true&w=majority")
         client = pm.MongoClient(
             f"mongodb+srv://{user_nm}:{passwd}@" + f"{cloud_svc}/{db_nm}?"
-            + "retryWrites=true&w=majority"
+            + "retryWrites=true&w=majority",ssl=True,ssl_cert_reqs='CERT_NONE'
         )
     return client
 
