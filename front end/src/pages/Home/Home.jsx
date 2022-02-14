@@ -19,6 +19,7 @@ export default function Home(){
           <label>
             Username: <input type="text" />
           </label>
+          <br />
           <label>
             Password: <input type="text" />
           </label>
