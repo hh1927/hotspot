@@ -20,8 +20,8 @@ HOTSPOT_HOME = os.environ["HOTSPOT_HOME"]
 # else:
 # DB_NAME = "cloudDB"
 
-CUSERS = "consumer"
-BUSERS = "business"
+CUSERS = "cusers"
+BUSERS = "busers"
 
 # fields in db
 CUSER_NM = "cuserName"
@@ -90,8 +90,12 @@ def fetch_busers():
     """
     A function to return all busers in the data store.
     """
-    print("IN BUSERS", dbc.fetch_all(BUSERS, BUSER_NM))
-    return dbc.fetch_all(BUSERS, BUSER_NM)
+    # return dbc.fetch_all(BUSERS, BUSER_NM)
+    return {
+        "Catch": [("clubbing", "brunch"), "NYC"],
+        "Penny Farthing": [("bars", "sports"), "NYC"],
+        "Fleur Room": [("art", "clubbing"), "NYC"],
+    }
 
 
 def add_buser(busername):
@@ -235,13 +239,12 @@ def fetch_invResponse():
     return {"Catch": ["Sara", 4], "Penny Farthing": ["John", 3]}
 
 
-"""
 def add_party(username, party):
-
-    Add party size to the user database.
-    if user_exists(username):
-        dbc.insert_doc(USERS, {USER_NM: username}, {PARTY: party})
+    """
+    Add party sizes to the user database.
+    """
+    if cuser_exists(username):
+        dbc.insert_doc(CUSERS, {CUSER_NM: username}, {PARTY: party})
         return OK
     else:
         return OK
-"""
