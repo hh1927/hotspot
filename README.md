@@ -46,7 +46,7 @@
 ## Frontend Walkthrough
  
  # CUSER SIDE
-    - Logo briefly shows when opening the app
+     - Logo briefly shows when opening the app
              - goes away without interaction
     - Homepage opens up to a list carousel with 4 interactable "buttons"
           EVENT: The image of the Event (Flyer) or Space with small description of the event location and time
@@ -83,6 +83,44 @@
     - Confirmation Page
           - shows event page without interaction options
           - after the day is complete this returns the Homepage that reveals the next days carousel of events
+ 
+# BUSER SIDE
+    - Logo briefly shows when opening the app
+             - goes away without interaction
+    - Homepage opens up to a selection of events (up to six)
+          EVENT: The image of the Event (Flyer) or Space 
+             - when tapped, they can edit the information of the event. They can save or delete it here.
+             - if the event already began, it will bring them to a list of guests that have RSVP'd already.
+             - Empty event slots-- marked by '+' will allow them to add a new event.
+          CREATE
+             - when tapped, it gives another method of creating an event
+          PROFILE
+             - when tapped, it will ask the user to update their permanent information/standards of the venue. This is non specific to the event or promotion.
+ 
+    - Venue Page is accessible through the profile button.
+          - shows the user their current information. 
+          EDIT: Must hit edit button to edit. Otherwise for visual display only
+          - Age Requirements can be filled out here
+          - vibe and bar type can also be selected from a variety of descriptors.
+          - User can see photos present and add/remove photos from library
+          SAVE/EXIT: Will return to visual display. No longer editable.
+ 
+     - Event Page is accessible through the profile button.
+          - shows the user event specific information. 
+          EDIT: Must hit edit button to edit. Otherwise for visual display only
+          - Location, Date, Time, Max Guests allowed can be edited here
+          - vibe and bar type can also be selected from a variety of descriptors.
+          - User can see photos present and add/remove photos from library
+          PUBLISH: Will return to visual display. No longer editable. Shares to Cuser.
+          DELETE: Will return to event list. Removed from list. Removes from Cuser.
+          DRAFT: Will return to visual display. No longer editable. 
+ 
+    - RSVP/Guest Page
+          - when tapped, displays General Information of the guest
+                 Party Size
+                 Name and Age of Each Guest (will expose according to size)
+          - when tapped returns to guest list
+          REMIND: sends a notification to all the guests about the event they registered for.
  
 
   
