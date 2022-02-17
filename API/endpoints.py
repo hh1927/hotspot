@@ -12,17 +12,12 @@ import werkzeug.exceptions as wz
 import db.db as db
 
 # from flask.json import JSONEncoder
-
 # from bson import json_util
-
 # define a cu
 # stom encoder point to the json_util provided by pymongo
 # (or its dependency bson)
-
-
 # class CustomJSONEncoder(JSONEncoder):
-#    def default(self, obj): return json_util.default(obj)
-
+# def default(self, obj): return json_util.default(obj)
 
 app = Flask(__name__)
 api = Api(app)
@@ -76,16 +71,16 @@ class CreateCuser(Resource):
 # corrected
 # updated API route
 @api.route("/cList")
-# added additional parameters related to consumer
 class ListCuser(Resource):
+    # added additional parameters related to consumer
     """
-    #parameters then used to select consumers
+    parameters then used to select consumers
     This class returns a list of all consumer users
     """
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def get(self, user_name, party_size):
+    def get(self):
         """
         This method returns all customer users.
         """
@@ -134,7 +129,6 @@ class ListBuser(Resource):
     This class supports fetching a list of all business users,
     specifically the users who are hosting events.
     """
-
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     def get(self):
@@ -350,15 +344,15 @@ class DeleteBuser(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.FORBIDDEN, "A user can only delete themselves.")
-    def post(self, username):
+    def post(self, buserName):
         """
         This method deletes a buser from the user db.
         """
-        ret = db.del_user(username)
+        ret = db.del_user(buserName)
         if ret == db.NOT_FOUND:
-            raise (wz.NotFound(f"buser {username} not found."))
+            raise (wz.NotFound(f"buser {buserName} not found."))
         else:
-            return f"{username} deleted."
+            return f"{buserName} deleted."
 
 
 # corrected
@@ -372,11 +366,11 @@ class partySize(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
-    def post(self, username, party):
+    def post(self, cusername, party):
         """
         This method tells us party size
         """
-        ret = db.add_party(username, party)
+        ret = db.add_party(cusername, party)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         return f"{party} added."
