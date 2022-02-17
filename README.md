@@ -48,7 +48,7 @@
  # CUSER SIDE
      - Logo briefly shows when opening the app
              - goes away without interaction
-    - Homepage opens up to a list carousel with 4 interactable "buttons"
+    - Main page opens up to a list carousel with 4 interactable "buttons"
           EVENT: The image of the Event (Flyer) or Space with small description of the event location and time
              - when tapped, a more comprehensive description is revealed. 
              - when tapped again, the description is re-concealed.
@@ -87,7 +87,7 @@
 # BUSER SIDE
     - Logo briefly shows when opening the app
              - goes away without interaction
-    - Homepage opens up to a selection of events (up to six)
+    - Main page opens up to a selection of events (up to six)
           EVENT: The image of the Event (Flyer) or Space 
              - when tapped, they can edit the information of the event. They can save or delete it here.
              - if the event already began, it will bring them to a list of guests that have RSVP'd already.
@@ -122,5 +122,17 @@
           - when tapped returns to guest list
           REMIND: sends a notification to all the guests about the event they registered for.
  
+ # SHARED
+    - Logo briefly shows when opening the app
+             - goes away without interaction
+    - Homepage opens up to login page if user has never logged in
+          LOGIN: when tapped,
+             - will prompt you to fill out username and password -- additional page?
+             - will bring you to either cuser or buser Main page pending type of account.
+          CREATE:
+             - will ask what type of account
+             - will ask for user name and password creation
+             - will bring to either cuser or buser side edit profile pending response
+
 
   
