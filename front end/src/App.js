@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import Home from './pages/Home/Home';
-import Create from './pages/createAcc/createAcc';
+import Create from './pages/CreateAcc/CreateAcc';
 import Users from './pages/Users/Users';
 
 import './App.css';
@@ -17,7 +17,7 @@ function App() {
               <Home />
             </Route>
             <Route exact={true} path={'/createAcc'}>
-              <createAcc />
+              <Create />
             </Route>
             <Route exact={true} path={'/users'}>
               <Users />
