@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+//import axios from 'axios';
 import {useHistory} from 'react-router-dom';
 
 import './createAcc.css';
 
-export default function createAcc(){
+export default function CreateAcc(){
   const history = useHistory();
 
   function navigateToPage(path) {
