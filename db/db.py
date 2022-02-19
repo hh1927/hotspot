@@ -248,3 +248,15 @@ def add_party(username, party):
         return OK
     else:
         return OK
+
+ def get_party(username):
+     """
+     Function to return user's party size
+     """
+     # temporarily hard coded
+     return 4
+     """
+     cusers = db.fetch_one(CUSERS, filters={USER_NM: username})
+     psize = cusers[PARTY]
+     return psize
+     """
