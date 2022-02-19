@@ -184,3 +184,17 @@ class EndpointTestCase(TestCase):
         ret = rl.get()
         for val in ret.values():
             self.assertIsInstance(val, list)  
+            
+    def test_partySize(self):
+        """
+        See if we can successfully post party size
+        """
+        np = ep.add_Party(Resource)
+        username = "tester"
+        add_cuser(username)
+        db.add_party(username, 4)
+        ret = np.post(username)
+        print(f'post {ret=}')
+        psize = get_party(username)
+        print(f'{psize=}')
+        self.assertIn(4, psize)
