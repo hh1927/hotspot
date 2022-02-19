@@ -75,18 +75,20 @@ class CreateCuser(Resource):
 
 # corrected
 @api.route("/cList") #updated API route
-class ListCuser(user_name, party_size, Resource): #added additional parameters related to consumer
+class ListCuser(user_name, party_size, new_interests, new_neighborhood, Resource): #added additional parameters related to consumer
     """                                           #parameters then used to select consumers 
     This class returns a list of all consumer users
     """
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def get(self):
+    def patch(self, new_interests, new_neighborhood):
         """
         This method returns all customer users.
         """
-        allCusers = db.fetch_cusers()
+        update_neighborhood = db.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}}) #added line to incorporate updating of users neighborhood 
+        update_interests = db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}}) #added line to incorporate updating of users interests 
+        allCusers = db.fetch_cusers()        
         if allCusers is None:
             raise (wz.NotFound("user couldnt be found."))
         else:
