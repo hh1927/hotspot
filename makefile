@@ -18,7 +18,7 @@ unit: FORCE
 lint: FORCE
 	# black -l 79 db/*.py
 	# black -l 79 API/*.py
-	$(LINTER) db/*.py
+	$(LINTER) ./*.py
 	$(LINTER) API/*.py
 
 docs: FORCE
@@ -38,8 +38,8 @@ dev_env: FORCE
 
 all_tests: FORCE
 	cd $(API_DIR); make tests
-	cd $(DB_DIR); make tests
+	cd $(./*.py); make tests
 
 all_docs: FORCE
 	cd $(API_DIR); make docs
-	cd $(DB_DIR); make docs
+	cd $(./*.py); make docs
