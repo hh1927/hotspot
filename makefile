@@ -1,7 +1,7 @@
 include common.mk
 LINTER = flake8
 API_DIR = API
-DB_DIR = db
+DB_DIR = .
 REQ_DIR = .
 PYDOC = python3 -m pydoc -w
 TESTFINDER = nose2
@@ -38,8 +38,8 @@ dev_env: FORCE
 
 all_tests: FORCE
 	cd $(API_DIR); make tests
-	cd $(./*.py); make tests
+	cd $(DB_DIR); make tests
 
 all_docs: FORCE
 	cd $(API_DIR); make docs
-	cd $(./*.py); make docs
+	cd $(DB_DIR; make docs
