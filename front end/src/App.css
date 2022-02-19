@@ -52,3 +52,11 @@
 .page-button:hover {
   background-color: #CBD5E1;
 }
+
+body {
+  background-color: #282c34;
+  color: #df80ff;
+  padding: 40px;
+  font-family: Arial;
+  text-align: center;
+}
