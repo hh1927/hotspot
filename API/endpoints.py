@@ -123,7 +123,7 @@ class Buser(Resource):
 
 # corrected
 @api.route("/blist")  #updated api route
-class ListBuser(name, age_rest, business_type, Resource): #added additional parameters related to business 
+class ListBuser(business_name, age_rest, business_type, new_quota, Resource): #added additional parameters related to business 
                                                           #paramaters then used to select businesses
     """
     This class supports fetching a list of all business users,
@@ -132,10 +132,11 @@ class ListBuser(name, age_rest, business_type, Resource): #added additional para
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def get(self):
+    def patch(self, new_quota):
         """
         This method returns all business users.
         """
+        update_quota = db.busers.updateOne({name:business_name},{$set:{quota:new_quota}}) #added line to incorporate updating of business quota 
         allBusers = db.fetch_busers()
         if allBusers is None:
             raise (wz.NotFound("user couldnt be found."))
