@@ -17,8 +17,8 @@ unit: FORCE
 lint: FORCE
 	# black -l 79 db/*.py
 	# black -l 79 API/*.py
-	$(LINTER) db/*.py
-	$(LINTER) API/*.py
+	$(LINTER) ./*.py
+	$(LINTER) ./*.py
 
 docs: FORCE
 	$(PYDOC) ./*.py
