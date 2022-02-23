@@ -252,3 +252,23 @@ class eventInfo(Resource):
         elif ret == db.DUPLICATE:
             raise (wz.NotAcceptable(f"event {eventName} is coming up soon."))
         return f"{eventName} is ready for tonight."
+
+ 
+@api.route('/busers/delete')
+class DeleteEvent(Resource):
+    """
+    This class enables deleting an event after it occurs
+    """
+    @api.response(HTTPStatus.OK, 'Success')
+    @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
+    @api.response(HTTPStatus.FORBIDDEN,
+                  'Only the admin can delete it.')
+    def post(self, location):
+        """
+        This method deletes an event from the event db.
+        """
+        ret = db.del_event(location)
+        if ret == db.NOT_FOUND:
+            raise (wz.NotFound(f"Event at {location} not found."))
+        else:
+            return f"{location} has all events deleted."
