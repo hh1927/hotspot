@@ -185,7 +185,7 @@ def add_event(eventName, location, price, hours):
      """
     Add events to the event database.
     """
-     if event_exists(eventName):
+     if event_exists(eventName, location):
         return DUPLICATE
     else:
         dbc.insert_doc(
@@ -199,3 +199,12 @@ def add_event(eventName, location, price, hours):
         )
         return OK
     
+def del_event(eventName, location):
+    """
+    Delete event from the db.
+    """
+    if not event_exists(eventName, location):
+        return NOT_FOUND
+    else:
+        dbc.del_one(EVENTS, filters={LOCATION: location}, {EVENT_NM: eventName})
+        return OK
