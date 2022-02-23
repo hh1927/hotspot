@@ -180,3 +180,22 @@ def event_exists(eventName,location):
     rec = dbc.fetch_one(EVENTS, filters={LOCATION: location}, {EVENT_NM: eventName})
     print(f"{rec=}")
     return rec is not None
+
+def add_event(eventName, location, price, hours):
+     """
+    Add events to the event database.
+    """
+     if event_exists(eventName):
+        return DUPLICATE
+    else:
+        dbc.insert_doc(
+            EVENTS,
+            {
+                EVENT_NM: eventName,
+                LOCATION: location,
+                PRICE: price,
+                HOURS: hours,
+            },
+        )
+        return OK
+    
