@@ -263,12 +263,12 @@ class DeleteEvent(Resource):
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
     @api.response(HTTPStatus.FORBIDDEN,
                   'Only the admin can delete it.')
-    def post(self, location):
+    def post(self, eventName, location):
         """
         This method deletes an event from the event db.
         """
-        ret = db.del_event(location)
+        ret = db.del_event(eventName, location)
         if ret == db.NOT_FOUND:
-            raise (wz.NotFound(f"Event at {location} not found."))
+            raise (wz.NotFound(f"{eventName} at {location} not found."))
         else:
-            return f"{location} has all events deleted."
+            return f"{eventName} has been deleted."
