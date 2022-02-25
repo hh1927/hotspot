@@ -53,10 +53,32 @@
   background-color: #CBD5E1;
 }
 
-body {
+.body {
   background-color: #282c34;
   color: #df80ff;
   padding: 40px;
   font-family: Arial;
   text-align: center;
 }
+.form {
+  width: 80%;
+  margin: 0 auto;
+}
+label,
+.input {
+  /* In order to define widths */
+  display: inline-block;
+}
+.label {
+  width: 30%;
+  /* Positions the label text beside the input */
+  text-align: right;
+}
+
+.box{
+  height:200px;
+  width:200px;
+  background:linear-gradient(rgba(250,0,0,0.5),transparent);
+  background-color:orange /*this your primary color*/
+}
+
