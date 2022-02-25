@@ -43,6 +43,14 @@ export default function CreateAcc(){
           <label>
             Phone Number: <input type="text" />
           </label>
+          <br />
+          <label>
+            Type of Account: 
+            <select id="dropdown" >
+            <option value="Customer">Customer</option>
+            <option value="Business">Business</option> //next need to handle the value and pass it
+          </select>
+          </label>
         </form>
 
       </div>

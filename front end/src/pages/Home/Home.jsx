@@ -9,7 +9,7 @@ export default function Home(){
   }
 
   return (
-    <div className="box">
+    <div className="login">
       <h1>HotSpot </h1>
       <div>
         <p className="quote">"Events for tonight and only tonight."</p>
