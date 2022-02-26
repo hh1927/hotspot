@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom';
 
 import './RSVP.css';
 
-export default function Profile(){
+export default function RSVP(){
   const history = useHistory();
 
   function navigateToPage(path) {

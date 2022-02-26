@@ -26,6 +26,9 @@ function App() {
             <Route exact={true} path={'/RSVP'}>
               <RSVP />
             </Route>
+            <Route exact={true} path={'/Cuserprofile'}>
+              <Cuserprofile />
+            </Route>
           </Switch>
         </Router>
       </div>
