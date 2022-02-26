@@ -12,7 +12,7 @@ export default function CreateAcc(){
   }
 
   return (
-    <div className="content">
+    <div className="login">
       <h1>Create an Account </h1>
       <div>
         <form>
@@ -42,6 +42,15 @@ export default function CreateAcc(){
           <br />
           <label>
             Phone Number: <input type="text" />
+          </label>
+          <br />
+          <label>
+            Type of Account: 
+            <select id="dropdown" >
+            <option >Select...</option>
+            <option value="Customer">Customer</option>
+            <option value="Business">Business</option> //next need to handle the value and pass it
+          </select>
           </label>
         </form>
 
