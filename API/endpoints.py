@@ -78,8 +78,7 @@ class cUser(Resource):
 # CHECK
 # updated API route
 @api.route("/cList")
-class cList(user_name, party_size, new_interests, new_neighborhood, Resource): #added additional parameters related to consumer
-                                                                                #parameters then used to select consumers
+class cList(user_name, party_size Resource):         #updated parameters to be in correspondence w workflow
     """
     parameters then used to select consumers
     This class returns a list of all consumer users
@@ -87,12 +86,10 @@ class cList(user_name, party_size, new_interests, new_neighborhood, Resource): #
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def patch(self, new_interests, new_neighborhood): #added parameters needed to update clist
+    def get(self):                                   #modified parameters & changed function to get
         """
         This method returns all customer users.
         """
-        update_neighborhood = db.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}}) #added line to incorporate updating of users neighborhood 
-        update_interests = db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}}) #added line to incorporate updating of users interests 
         allCusers = db.fetch_cusers()
         if allCusers is None:
             raise (wz.NotFound("user couldnt be found."))
@@ -131,7 +128,7 @@ class bUser(Resource):
 # CHECK
 # updated api route
 @api.route("/blist")
-class bList(business_name, age_rest, business_type, new_quota, Resource):
+class bList(business_name, age_rest, business_type, Resource):  #updated parameters to be in correspondence to to workflow
     # added additional parameters related to business
     # paramaters then used to select businesses
     """
@@ -140,11 +137,10 @@ class bList(business_name, age_rest, business_type, new_quota, Resource):
     """
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def patch(self, new_quota): # added paramaters needed to update quota
+    def get(self):                                             #modified parameters & changed function to get
         """
         This method returns all business users.
         """
-        update_quota = db.busers.updateOne({name:business_name},{$set:{quota:new_quota}}) #added line to incorporate updating of business quota 
         allBusers = db.fetch_busers()
         if allBusers is None:
             raise (wz.NotFound("user couldnt be found."))
