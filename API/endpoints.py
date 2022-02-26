@@ -271,3 +271,22 @@ class DeleteEvent(Resource):
             raise (wz.NotFound(f"{eventName} at {location} not found."))
         else:
             return f"{eventName} has been deleted."
+        
+@api.route("/bquota")
+class bquota(new_quota, Resource): #added parameter needed to update bquota
+    """
+    This class will serve as live, fetchable documentation of what endpoints
+    are available in the system.
+    """
+
+    @api.response(HTTPStatus.OK, "Success")
+    @api.response(HTTPStatus.NOT_FOUND, "Not Found")
+    def patch(self, new_quota):
+        """
+        """
+        update_quota = db.busers.updateOne({name:business_name},{$set:{quota:new_quota}}) #added line to incorporate updating of business quota 
+        allBusers = db.fetch_busers()
+        if allBusers is None:
+            raise (wz.NotFound("user couldnt be found."))
+        else:
+            return allBusers
