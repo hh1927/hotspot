@@ -87,7 +87,7 @@ class cList(user_name, party_size, new_interests, new_neighborhood, Resource): #
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def patch(self, new_interests, new_neighborhood):
+    def patch(self, new_interests, new_neighborhood): #added parameters needed to update clist
         """
         This method returns all customer users.
         """
@@ -131,7 +131,7 @@ class bUser(Resource):
 # CHECK
 # updated api route
 @api.route("/blist")
-class bList(Resource):
+class bList(business_name, age_rest, business_type, new_quota, Resource):
     # added additional parameters related to business
     # paramaters then used to select businesses
     """
@@ -140,10 +140,11 @@ class bList(Resource):
     """
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def get(self):
+    def patch(self, new_quota): # added paramaters needed to update quota
         """
         This method returns all business users.
         """
+        update_quota = db.busers.updateOne({name:business_name},{$set:{quota:new_quota}}) #added line to incorporate updating of business quota 
         allBusers = db.fetch_busers()
         if allBusers is None:
             raise (wz.NotFound("user couldnt be found."))
