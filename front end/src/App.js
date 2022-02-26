@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Create from './pages/CreateAcc/CreateAcc';
 import Users from './pages/Users/Users';
+import Users from './pages/RSVP/RSVP';
 
 import './App.css';
 
@@ -21,6 +22,9 @@ function App() {
             </Route>
             <Route exact={true} path={'/users'}>
               <Users />
+            </Route>
+            <Route exact={true} path={'/RSVP'}>
+              <RSVP />
             </Route>
           </Switch>
         </Router>
