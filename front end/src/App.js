@@ -7,6 +7,7 @@ import Users from './pages/Users/Users';
 import RSVP from './pages/RSVP/RSVP';
 import Cuserprofile from './pages/Cuserprofile/Cuserprofile';
 import Confirmation from './pages/Confirmation/Confirmation';
+import EventInfo from './pages/EventInfo/EventInfo';
 
 import './App.css';
 
@@ -33,6 +34,9 @@ function App() {
             </Route>
             <Route exact={true} path={'/Confirmation'}>
               <Confirmation />
+            </Route>
+            <Route exact={true} path={'/EventInfo'}>
+              <EventInfo />
             </Route>
           </Switch>
         </Router>
