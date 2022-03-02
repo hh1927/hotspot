@@ -6,6 +6,7 @@ import Create from './pages/CreateAcc/CreateAcc';
 import Users from './pages/Users/Users';
 import RSVP from './pages/RSVP/RSVP';
 import Cuserprofile from './pages/Cuserprofile/Cuserprofile';
+import Confirmation from './pages/Confirmation/Confirmation';
 
 import './App.css';
 
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <Route exact={true} path={'/Cuserprofile'}>
               <Cuserprofile />
+            </Route>
+            <Route exact={true} path={'/Confirmation'}>
+              <Confirmation />
             </Route>
           </Switch>
         </Router>
