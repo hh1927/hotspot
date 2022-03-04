@@ -95,7 +95,7 @@ class EndpointTestCase(TestCase):
         db.add_cuser(newUser)
         cUser = ep.DeletecUser(Resource)
         cUser.post(newUser)
-        self.assertNotIn(newUser, db.get_cusers)
+        self.assertNotIn(newUser, db.fetch_cusers)
         
      def deletebUser(self):
         """
@@ -105,4 +105,14 @@ class EndpointTestCase(TestCase):
         db.add_buser(newUser)
         bUser = ep.DeletebUser(Resource)
         bUser.post(newUser)
-        self.assertNotIn(newUser, db.get_busers)
+        self.assertNotIn(newUser, db.fetch_busers)
+
+     def deleteEvent(self):
+        """
+        Deleting a deleteEvent
+        """
+        db.add_event("testEvent", "testLocation", "testPrice", "testHours")
+        newevent = ep.del_event(Resource)
+        eventInfo.post(newevent)
+        self.assertNotIn(newevent, db.fetch_events)
+        
