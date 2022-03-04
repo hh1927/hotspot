@@ -78,7 +78,8 @@ class cUser(Resource):
 # CHECK
 # updated API route
 @api.route("/cList")
-class cList(user_name, party_size Resource):         #updated parameters to be in correspondence w workflow
+class cList(Resource):         
+    # updated parameters to be in correspondence w workflow
     """
     parameters then used to select consumers
     This class returns a list of all consumer users
@@ -86,7 +87,8 @@ class cList(user_name, party_size Resource):         #updated parameters to be i
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def get(self):                                   #modified parameters & changed function to get
+    def get(self,user_name, party_size):
+        # modified parameters & changed function to get
         """
         This method returns all customer users.
         """
@@ -128,7 +130,8 @@ class bUser(Resource):
 # CHECK
 # updated api route
 @api.route("/blist")
-class bList(business_name, age_rest, business_type, Resource):  #updated parameters to be in correspondence to to workflow
+class bList(Resource):  
+    # updated parameters to be in correspondence to to workflow
     # added additional parameters related to business
     # paramaters then used to select businesses
     """
@@ -137,7 +140,7 @@ class bList(business_name, age_rest, business_type, Resource):  #updated paramet
     """
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def get(self):                                             #modified parameters & changed function to get
+    def get(self,business_name, age_rest, business_type):                                             #modified parameters & changed function to get
         """
         This method returns all business users.
         """
