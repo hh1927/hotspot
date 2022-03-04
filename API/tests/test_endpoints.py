@@ -96,3 +96,13 @@ class EndpointTestCase(TestCase):
         cUser = ep.DeletecUser(Resource)
         cUser.post(newUser)
         self.assertNotIn(newUser, db.get_cusers)
+        
+     def deletebUser(self):
+        """
+        Deleting a bUser
+        """
+        newUser = new_entitity_name("newUser")
+        db.add_buser(newUser)
+        bUser = ep.DeletebUser(Resource)
+        bUser.post(newUser)
+        self.assertNotIn(newUser, db.get_busers)
