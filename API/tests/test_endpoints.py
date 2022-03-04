@@ -45,43 +45,6 @@ class EndpointTestCase(TestCase):
         ret = cbu.post(new_user)
         busers = db.get_busers()
         self.assertIn(new_buser, busers)
-     
-    def test_inv_response(self): 
-        """
-        See if we can successfully create a new invite.
-        Post-condition: user is in DB.
-        """
-        inv_response = ep.Inv_Response(Resource)
-        new_inv_response = new_entity_name("invite response")
-        # ret = inv_response.post(new_inv_response)
-        invite_responses = db.get_inv_response()
-        #self.assertIn(new_inv_response, invite_responses)
-
-    def test_inv1(self): 
-        """
-        Post-condition 1: return is a dictionary.
-        """
-        invs = ep.Inv(Resource)
-        ret = invs.get()
-        self.assertIsInstance(ret, dict)
-          
-    def test_inv2(self):
-        """
-        Post-condition 2: keys to the dict are strings
-        """
-        invs = ep.Inv(Resource)
-        ret = invs.get()
-        for key in ret:
-            self.assertIsInstance(key, str)
-
-    def test_inv3(self):
-        """
-        Post-condition 3: the values in the dict are themselves dicts
-        """
-        invs = ep.Inv(Resource)
-        ret = invs.get()
-        for val in ret.values():
-            self.assertIsInstance(val, list)
     
     def test_ClientList1(self): 
         """
@@ -108,85 +71,8 @@ class EndpointTestCase(TestCase):
         ret = cl.get()
         for val in ret.values():
             self.assertIsInstance(val, list)
-            
-    def test_ClientHist1(self): 
-        """
-        Post-condition 1: return is a dictionary.
-        """
-        cl = ep.ClientHist(Resource)
-        ret = cl.get()
-        self.assertIsInstance(ret, dict)
-          
-    def test_ClientHist2(self):
-        """
-        Post-condition 2: keys to the dict are strings
-        """
-        cl = ep.ClientHist(Resource)
-        ret = cl.get()
-        for key in ret:
-            self.assertIsInstance(key, str)
 
-    def test_ClientHist3(self):
-        """
-        Post-condition 3: the values in the dict are themselves dicts
-        """
-        cl = ep.ClientHist(Resource)
-        ret = cl.get()
-        for val in ret.values():
-            self.assertIsInstance(val, list)
-     
-    def test_recList1(self):
-        """
-        Post-condition 1: return is a dictionary.
-        """
-        rl = ep.recList(Resource)
-        ret = rl.get()
-        self.assertIsInstance(ret, dict)
-          
-    def test_recList2(self):
-        """
-        Post-condition 2: keys to the dict are strings
-        """
-        rl = ep.recList(Resource)
-        ret = rl.get()
-        for key in ret:
-            self.assertIsInstance(key, str)
-
-    def test_recList3(self):
-        """
-        Post-condition 3: the values in the dict are themselves dicts
-        """
-        rl = ep.recList(Resource)
-        ret = rl.get()
-        for val in ret.values():
-            self.assertIsInstance(val, list)
-     
-    def test_revHist1(self):
-        """
-        Post-condition 1: return is a dictionary.
-        """
-        rl = ep.revHist(Resource)
-        ret = rl.get()
-        self.assertIsInstance(ret, dict)
-          
-    def test_revHist2(self):
-        """
-        Post-condition 2: keys to the dict are strings
-        """
-        rl = ep.revHist(Resource)
-        ret = rl.get()
-        for key in ret:
-            self.assertIsInstance(key, str)
-
-    def test_revHist3(self):
-        """
-        Post-condition 3: the values in the dict are themselves dicts
-        """
-        rl = ep.revHist(Resource)
-        ret = rl.get()
-        for val in ret.values():
-            self.assertIsInstance(val, list)  
-            
+ 
     def test_partySize(self):
         """
         See if we can successfully post party size
@@ -200,3 +86,13 @@ class EndpointTestCase(TestCase):
         psize = get_party(username)
         print(f'{psize=}')
         self.assertIn(4, psize)
+        
+     def deletecUser(self):
+        """
+        Deleting a cUser
+        """
+        newUser = new_entitity_name("newUser")
+        db.add_cuser(newUser)
+        cUser = ep.DeletecUser(Resource)
+        cUser.post(newUser)
+        self.assertNotIn(newUser, db.get_cusers)
