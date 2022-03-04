@@ -102,6 +102,11 @@ def fetch_busers():
         "Fleur Room": [("art", "clubbing"), "NYC"],
     }
 
+def fetch_events():
+    """
+    A function to return all events in the data store.
+    """
+    return dbc.fetch_all(EVENTS, EVENT_NM)
 
 def add_buser(busername):
     """
