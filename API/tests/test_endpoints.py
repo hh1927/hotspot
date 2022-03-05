@@ -115,4 +115,10 @@ class EndpointTestCase(TestCase):
         newevent = ep.del_event(Resource)
         eventInfo.post(newevent)
         self.assertNotIn(newevent, db.fetch_events)
-        
+       
+    def bquota(self):
+	    new_quota = new_entitity_name(8)
+        business_name = new_entitity_name("test name")
+        bquota_list = ep.bquota(Resource)
+	    ret = bquota_list.updateOne({name:business_name},{$set:{quota:new_quota}})
+	    self.assertIn(bquota_list)
