@@ -15,7 +15,8 @@ import './App.css';
 function App() {
   return (
     <div className="root">
-      <div className="content">
+      <div className="content"
+      span className="font-link">
         <Router>
           <Switch>
             <Route exact={true} path={'/'}>

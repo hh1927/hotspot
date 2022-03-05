@@ -10,17 +10,17 @@ export default function Home(){
 
   return (
     <div className="login">
-      <h1>HotSpot </h1>
+      <h1 style={{ fontSize: "5rem" }}>HotSpot </h1>
       <div>
-        <p className="quote">"Events for tonight and only tonight."</p>
+        <p style={{ fontSize: "2rem" }}className="quote">"Events for tonight and only tonight."</p>
       </div>
       <div>
         <form>
-          <label>
+          <label style={{ fontSize: "2rem" }}>
             Username: <input type="text" />
           </label>
           <br />
-          <label>
+          <label style={{ fontSize: "2rem" }}>
             Password: <input type="text" />
           </label>
         </form>
