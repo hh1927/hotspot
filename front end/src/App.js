@@ -8,6 +8,7 @@ import RSVP from './pages/RSVP/RSVP';
 import Cuserprofile from './pages/Cuserprofile/Cuserprofile';
 import Confirmation from './pages/Confirmation/Confirmation';
 import EventInfo from './pages/EventInfo/EventInfo';
+import VenueProfile from './pages/VenueProfile/VenueProfile';
 
 import './App.css';
 
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route exact={true} path={'/EventInfo'}>
               <EventInfo />
+            </Route>
+            <Route exact={true} path={'/VenueProfile'}>
+              <VenueProfile />
             </Route>
           </Switch>
         </Router>
