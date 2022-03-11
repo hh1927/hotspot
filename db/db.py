@@ -154,6 +154,17 @@ def fetch_clientList(busername):
     """return {"Sara": ["woman", 25, 3],
             "John": ["man", 21, 1],
             "Jane": ["woman", 32, 5]}"""
+    
+def reset_party(username):
+    """
+    reset party sizes at the end of the night - CHECK AGAIN
+    """
+    if cuser_exists(username):
+        dbc.insert_doc(CUSERS, {CUSER_NM: username}, {PARTY: 0}
+        return ok
+    else:
+        return ok
+        
 
 def add_party(username, party):
     """
