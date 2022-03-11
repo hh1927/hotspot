@@ -106,7 +106,17 @@ class EndpointTestCase(TestCase):
         bUser = ep.DeletebUser(Resource)
         bUser.post(newUser)
         self.assertNotIn(newUser, db.fetch_busers)
+	
 
+     def resetPartySize(self):
+	"Resetting Party Size for the next nights events"
+	newPartySize = new_entitity_name("newUser")
+	db.add_cuser(newUser)
+	db.add_party(newUser, 4)
+	db.reset_party(newUser)
+	partySize.update(newUser)
+	self.assertNotIn(newUser, db.fetch_cusers)
+	
      def deleteEvent(self):
         """
         Deleting a deleteEvent
