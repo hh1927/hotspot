@@ -28,5 +28,6 @@ export default function VenueProfile(){
       >
         Return
       </button>
+    </div>
   );
 };
