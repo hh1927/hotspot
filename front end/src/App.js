@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import Home from './pages/Home/Home';
-import Create from './pages/CreateAcc/CreateAcc';
+import Create from './pages/CreateAcc/createAcc';
 import Users from './pages/Users/Users';
 import RSVP from './pages/RSVP/RSVP';
 import Cuserprofile from './pages/Cuserprofile/Cuserprofile';
