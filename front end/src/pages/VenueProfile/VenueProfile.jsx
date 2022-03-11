@@ -2,9 +2,9 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
 
-import './EventInfo.css';
+import './VenueProfile.css';
 
-export default function EventInfo(){
+export default function VenueProfile(){
   const history = useHistory();
 
   function navigateToPage(path) {
