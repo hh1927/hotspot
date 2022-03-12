@@ -86,6 +86,14 @@ class EndpointTestCase(TestCase):
         psize = get_party(username)
         print(f'{psize=}')
         self.assertIn(4, psize)
+	
+    def test_retrievePartySize(self):
+        """
+        See if we can successfully retrieve correct values
+        """
+        evInf = ep.add_party(7)
+	party_size= ep.fetch_psize()
+        self.assertIn(evInf, party_size)
         
      def deletecUser(self):
         """
@@ -142,7 +150,7 @@ class EndpointTestCase(TestCase):
         cDaily = ep.cDaily(Resource)
 	db.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}})  
         db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}})
-	self.assertIn(cdaily, db.fetch_cusers)	
+	self.assertIn(cdaily, db.fetch_cusers)
 	
     def test_eventInfoExists(self):
         """
