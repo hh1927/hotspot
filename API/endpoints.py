@@ -58,11 +58,11 @@ class cUser(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
-    def post(self, username, age, gender, interests): #changed parameters of cUser to match workflow
+    def post(self, username, age, gender, interests, neighborhood): #updated parameters of cUser to match workflow
         """
         This method creates a new Customer User.
         """
-        ret = db.add_cuser(username, age, gender, interests) #updated database query
+        ret = db.add_cuser(username, age, gender, interests, neighborhood) # database query updated to include fields from parameters
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
@@ -110,11 +110,11 @@ class bUser(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
-    def post(self, username):
+    def post(self, username, business_name, age_restrictions, business_type, quota):  #updated parameters of bUser to match workflow
         """
         This method creates a new Business User.
         """
-        ret = db.add_buser(username)
+        ret = db.add_buser(username, business_name, age_restrictions, business_type, quota)  # database query updated to include fields from parameters
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
