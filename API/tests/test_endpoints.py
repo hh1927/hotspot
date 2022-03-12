@@ -109,7 +109,9 @@ class EndpointTestCase(TestCase):
 	
 
      def resetPartySize(self):
-	"Resetting Party Size for the next nights events"
+	"""
+	Resetting Party Size for the next nights events
+	"""
 	newPartySize = new_entitity_name("newUser")
 	db.add_cuser(newUser)
 	db.add_party(newUser, 4)
@@ -141,3 +143,12 @@ class EndpointTestCase(TestCase):
 	db.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}})  
         db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}})
 	self.assertIn(cdaily, db.fetch_cusers)	
+	
+    def test_eventInfo(self):
+        """
+        See if we can successfully post event info 
+        """
+        evInf = ep.add_event("Test event", "Test location", "test price", "test hours")
+	isExists = event_exists("Test event", "Test location")
+        self.assertTrue(4, isExists)
+	
