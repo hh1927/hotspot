@@ -48,7 +48,7 @@ class Endpoints(Resource):
         return {"Available endpoints": endpoints}
 
 
-# CHECK
+# CHECK api route
 @api.route("/cusers/create/<username>")
 class cUser(Resource):
     """
@@ -58,11 +58,11 @@ class cUser(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
-    def post(self, username):
+    def post(self, username, age, gender, interests): #changed parameters of cUser to match workflow
         """
         This method creates a new Customer User.
         """
-        ret = db.add_cuser(username)
+        ret = db.add_cuser(username, age, gender, interests) #updated database query
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
