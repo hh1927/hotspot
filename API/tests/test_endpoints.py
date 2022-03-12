@@ -34,6 +34,7 @@ class EndpointTestCase(TestCase):
         ret = ccu.post(new_cuser)
         cusers = db.get_cusers()
         self.assertIn(new_cuser, cusers)
+   
           
     def test_buser(self):
         """
@@ -45,6 +46,7 @@ class EndpointTestCase(TestCase):
         ret = cbu.post(new_user)
         busers = db.get_busers()
         self.assertIn(new_buser, busers)
+
     
     def test_ClientList1(self): 
         """
@@ -136,12 +138,23 @@ class EndpointTestCase(TestCase):
         eventInfo.post(newevent)
         self.assertNotIn(newevent, db.fetch_events)
        
-    def bquota(self):
+    def update_bquota(self):
 	new_quota = new_entitity_name(8)
         business_name = new_entitity_name("test name")
         bquota_list = ep.bquota(Resource)
 	ret = bquota_list.updateOne({name:business_name},{$set:{quota:new_quota}})
 	self.assertIn(bquota_list)
+   
+      
+     def test_retrieve_Bquota(self):
+        """
+        See if we can successfully retrieve correct values
+        """
+        new_quota = new_entitity_name(5)
+        business_name = new_entitity_name("test name, retrieval")
+	evInf = bquota_list.updateOne({name:business_name},{$set:{quota:new_quota}})
+	bquota_updated= ep.fetch_bquota()
+        self.assertIn(evInf, bquota_updated)
 
     def cDaily(self):
 	new_neighborhood = new_entitity_name("test_neighborhood")
