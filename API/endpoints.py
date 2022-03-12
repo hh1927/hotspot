@@ -48,7 +48,7 @@ class Endpoints(Resource):
         return {"Available endpoints": endpoints}
 
 
-# CHECK api route
+# CHECK api route 
 @api.route("/cusers/create/<username>")
 class cUser(Resource):
     """
@@ -99,7 +99,7 @@ class cList(Resource):
             return allCusers
 
 
-# CHECK
+# CHECK api route
 @api.route("/busers/create/<username>")
 class bUser(Resource):
     """
