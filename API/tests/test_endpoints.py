@@ -144,11 +144,19 @@ class EndpointTestCase(TestCase):
         db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}})
 	self.assertIn(cdaily, db.fetch_cusers)	
 	
-    def test_eventInfo(self):
+    def test_eventInfoExists(self):
         """
         See if we can successfully post event info 
         """
         evInf = ep.add_event("Test event", "Test location", "test price", "test hours")
 	isExists = event_exists("Test event", "Test location")
         self.assertTrue(4, isExists)
+	
+     def test_eventInfo(self):
+        """
+        See if we can successfully retrieve correct values
+        """
+        evInf = ep.add_event("Test event", "Test location", "test price", "test hours")
+	allEvents = ep.fetch_events()
+        self.assertIn(evInf, allEvents)
 	
