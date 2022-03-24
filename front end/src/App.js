@@ -1,8 +1,9 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
+import Login from './pages/Login/Login';
+import CreateAcc from './pages/CreateAcc/CreateAcc';
 import Home from './pages/Home/Home';
-import Create from './pages/CreateAcc/createAcc';
 import Users from './pages/Users/Users';
 import RSVP from './pages/RSVP/RSVP';
 import Cuserprofile from './pages/Cuserprofile/Cuserprofile';
@@ -20,10 +21,13 @@ function App() {
         <Router>
           <Switch>
             <Route exact={true} path={'/'}>
+              <Login />
+            </Route>
+            <Route exact={true} path={'/home'}>
               <Home />
             </Route>
             <Route exact={true} path={'/createAcc'}>
-              <Create />
+              <CreateAcc />
             </Route>
             <Route exact={true} path={'/users'}>
               <Users />

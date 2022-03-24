@@ -57,7 +57,7 @@ export default function CreateAcc(){
       </div>
       
       <button
-        onClick={() => navigateToPage('/homepage')} //need to decide on page after login
+        onClick={() => navigateToPage('/home')} //need to decide on page after login
         className="page-button"
       >
         Create

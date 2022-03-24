@@ -36,13 +36,13 @@ export default function RSVP(){
       </div>
       
       <button
-        onClick={() => navigateToPage('/homepage')} //need to decide on page RSVP
+        onClick={() => navigateToPage('/home')} //need to decide on page RSVP
         className="page-button"
       >
         RSVP
       </button>
       <button
-        onClick={() => navigateToPage('/homepage')} //returns to homepage to continue scrolling
+        onClick={() => navigateToPage('/home')} //returns to homepage to continue scrolling
         className="page-button"
       >
         Cancel
