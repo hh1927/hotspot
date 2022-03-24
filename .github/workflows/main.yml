@@ -32,8 +32,8 @@ jobs:
       - name: Install Python packages.
         run: pip install -r requirements-dev.txt
 
-      - name: Run Python unittests
-        run: make all_tests
+      # - name: Run Python unittests
+      #  run: make all_tests
         
       # Deploy to Heroku
       - uses: akhileshns/heroku-deploy@v3.12.12
