@@ -305,11 +305,10 @@ class cDaily(new_interests, new_neighborhood, Resource): #added parameters neede
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     def patch(self,new_interests, new_neighborhood):
         """
-        """
         update_neighborhood = db.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}}) #added line to incorporate updating of users neighborhood 
         update_interests = db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}})          #added line to incorporate updating of users interests        
         if allCusers is None:
             raise (wz.NotFound("user couldnt be found."))
         else:
             return allCusers
-
+        """
