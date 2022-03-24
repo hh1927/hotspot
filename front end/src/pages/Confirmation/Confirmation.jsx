@@ -15,6 +15,11 @@ export default function Confirmation(){
     <div className="invite">
       <h1>HotSpot </h1>
       <div>
+      <a href = '/cuserprofile'>
+      <button id= "profButton"> Profile </button>
+      </a>
+      </div>
+      <div>
         <p className="quote">"You're Signed Up For"</p>
       </div>
       <div>
