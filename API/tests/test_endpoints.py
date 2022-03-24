@@ -112,7 +112,6 @@ class EndpointTestCase(TestCase):
         bUser = ep.DeletebUser(Resource)
         bUser.post(newUser)
         self.assertNotIn(newUser, db.fetch_busers)
-	
 
      def resetPartySize(self):
     	"""
