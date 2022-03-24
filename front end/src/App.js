@@ -26,7 +26,7 @@ function App() {
             <Route exact={true} path={'/home'}>
               <Home />
             </Route>
-            <Route exact={true} path={'/createAcc'}>
+            <Route exact={true} path={'/createacc'}>
               <CreateAcc />
             </Route>
             <Route exact={true} path={'/users'}>
