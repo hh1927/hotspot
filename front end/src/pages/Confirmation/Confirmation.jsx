@@ -18,9 +18,14 @@ export default function Confirmation(){
         <p className="quote">"You're Signed Up For"</p>
       </div>
       <div>
-      <p className="content">"Event Name / Date / Location / Party Size / Etc Will Go Here"</p> 
+        <div id="invite">
+          <img src="https://picsum.photos/1000"/>
+        </div>
       </div>
-      //infomation should be taken from the invite they selected. Will be stuck on this page for rest of 24 hr span.
+      <div>
+      <p className="content">"Event Name / Date / Location / Party Size / Etc Will Go Here"</p> 
+      <p className="content">"Content Wont Disapear for 24 hours"</p>
+      </div>
     </div>
   );
 };
