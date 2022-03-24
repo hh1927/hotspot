@@ -94,7 +94,7 @@ class EndpointTestCase(TestCase):
         See if we can successfully retrieve correct values
         """
         evInf = ep.add_party(7)
-	party_size= ep.fetch_psize()
+	party_size = ep.fetch_psize()
         self.assertIn(evInf, party_size)
         
      def deletecUser(self):
