@@ -17,7 +17,7 @@ export default function RSVP(){
         <form>
           <label>
             Number of Guests: <input type="text" /> 
-          </label> //need to establish a drop down to create form for that # of guests
+          </label> 
           <br />
           <label>
             Name of Guest: <input type="text" />
