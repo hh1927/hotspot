@@ -36,7 +36,7 @@ export default function RSVP(){
       </div>
       
       <button
-        onClick={() => navigateToPage('/home')} //need to decide on page RSVP
+        onClick={() => navigateToPage('/confirmation')} //need to decide on page RSVP
         className="page-button"
       >
         RSVP
