@@ -286,13 +286,13 @@ class bquota(new_quota, Resource): #added parameter needed to update bquota
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     def patch(self, new_quota):
         """
-        """
         update_quota = db.busers.updateOne({name:business_name},{$set:{quota:new_quota}}) #added line to incorporate updating of business quota 
         allBusers = db.fetch_busers()
         if allBusers is None:
             raise (wz.NotFound("user couldnt be found."))
         else:
             return allBusers
+        """
 
 @api.route("/cDaily")
 class cDaily(new_interests, new_neighborhood, Resource): #added parameters needed for updating customer preferences
