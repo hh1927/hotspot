@@ -221,7 +221,8 @@ class partySize(Resource):
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         return f"{party} added."
-    
+
+
 @api.route("/busers/eventInfo")
 class eventInfo(Resource):
     """
