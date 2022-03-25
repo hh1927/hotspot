@@ -136,7 +136,7 @@ class bUser(Resource):
 # CHECK
 # updated api route
 @api.route("/blist")
-class bList(Resource): 
+class bList(Resource):
     # updated parameters to be in correspondence to to workflow
     # added additional parameters related to business
     # paramaters then used to select businesses
@@ -158,26 +158,6 @@ class bList(Resource):
             return allBusers
 
 # CHECK
-'''@api.route("/clientList")
-class cList(Resource):
-    """
-    This class supports the client List for the Business Users
-    Providing a list of clients for that business for specific event,
-    including number of total people per party (Party Size)
-    """
-
-    @api.response(HTTPStatus.OK, "Success")
-    @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def get(self):
-        """
-        returns the client list for the business user
-        """
-        allClientList = db.fetch_clientList()
-        if allClientList is None:
-            raise (wz.NotFound("Client List couldnt be found."))
-        else:
-            return allClientList'''
-
 @api.route("/cusers/delete/<username>")
 
 
