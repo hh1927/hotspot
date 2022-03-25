@@ -243,7 +243,7 @@ class eventInfo(Resource):
             raise (wz.NotAcceptable(f"event {eventName} is coming up soon."))
         return f"{eventName} is ready for tonight."
 
- 
+
 @api.route('/busers/delete')
 class DeleteEvent(Resource):
     """
@@ -262,7 +262,7 @@ class DeleteEvent(Resource):
             raise (wz.NotFound(f"{eventName} at {location} not found."))
         else:
             return f"{eventName} has been deleted."
-        
+
 @api.route("/bquota")
 # added parameter needed to update bquota
 class bquota(Resource): 
