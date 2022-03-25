@@ -80,7 +80,7 @@ class cUser(Resource):
 # CHECK
 # updated API route
 @api.route("/cList")
-class cList(Resource):      
+class cList(Resource):
     # updated parameters to be in correspondence w workflow
     """
     parameters then used to select consumers
@@ -113,13 +113,13 @@ class bUser(Resource):
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
     # updated parameters of bUser to match workflow
-    def post(self, username, business_name, 
+    def post(self, username, business_name,
              age_restrictions, business_type, quota):
         """
         This method creates a new Business User.
         """
         # database query updated to include fields from parameters
-        ret = db.add_buser(username, business_name, 
+        ret = db.add_buser(username, business_name,
                            age_restrictions, business_type, quota)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
@@ -136,7 +136,7 @@ class bUser(Resource):
 # CHECK
 # updated api route
 @api.route("/blist")
-class bList(Resource):  
+class bList(Resource): 
     # updated parameters to be in correspondence to to workflow
     # added additional parameters related to business
     # paramaters then used to select businesses
@@ -147,7 +147,7 @@ class bList(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     # modified parameters & changed function to get
-    def get(self,business_name, age_rest, business_type):
+    def get(self, business_name, age_rest, business_type):
         """
         This method returns all business users.
         """
@@ -158,7 +158,7 @@ class bList(Resource):
             return allBusers
 
 # CHECK
-@api.route("/clientList")
+'''@api.route("/clientList")
 class cList(Resource):
     """
     This class supports the client List for the Business Users
@@ -176,9 +176,11 @@ class cList(Resource):
         if allClientList is None:
             raise (wz.NotFound("Client List couldnt be found."))
         else:
-            return allClientList
+            return allClientList'''
 
 @api.route("/cusers/delete/<username>")
+
+
 class DeletecUser(Resource):
     """
     This class enables deleting a cuser.
