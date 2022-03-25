@@ -150,7 +150,7 @@ class ListBuser(business_name, age_rest, business_type, new_quota, Resource): #a
 @api.route("/Inv")
 class Inv(Resource):
     """
-    This class supports fetching a list of all invites,
+    This class supports fetching a list of all invites, 
     from the business including time, place and number of people allowed.
     """
 
