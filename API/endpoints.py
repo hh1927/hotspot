@@ -283,23 +283,24 @@ class DeleteEvent(Resource):
             return f"{eventName} has been deleted."
         
 @api.route("/bquota")
-class bquota(new_quota, Resource): #added parameter needed to update bquota
+# added parameter needed to update bquota
+class bquota(Resource): 
     """
-    This class will serve as live, fetchable documentation of what endpoints
-    are available in the system.
+    This endpoint will update the value of business quota
     """
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     def patch(self, new_quota):
         """
-        update_quota = db.busers.updateOne({name:business_name},{$set:{quota:new_quota}}) #added line to incorporate updating of business quota 
-        allBusers = db.fetch_busers()
-        if allBusers is None:
-            raise (wz.NotFound("user couldnt be found."))
-        else:
-            return allBusers
         """
+        # added line to incorporate updating of business quota
+        ret = db.update_bquota(new_quota)
+        if ret == db.NOT_FOUND:
+            raise (wz.NotFound("Quota not found."))
+        else:
+            return f"Quota updated to {new_quota}."  
+            
 
 @api.route("/cDaily")
 class cDaily(new_interests, new_neighborhood, Resource): #added parameters needed for updating customer preferences
