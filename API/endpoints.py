@@ -24,12 +24,12 @@ api = Api(app)
 # app.json_encoder = CustomJSONEncoder
 
 
-#PATCH
-##bQuota
-##cDaily
+# PATCH
+# #bQuota
+# #cDaily
 
-#POST
-##eventInfo
+# POST
+# #eventInfo
 
 # CHECK
 @api.route("/endpoints")
@@ -48,7 +48,7 @@ class Endpoints(Resource):
         return {"Available endpoints": endpoints}
 
 
-# CHECK api route 
+# CHECK api route
 @api.route("/cusers/create/<username>")
 class cUser(Resource):
     """
@@ -58,11 +58,13 @@ class cUser(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
-    def post(self, username, age, gender, interests, neighborhood): #updated parameters of cUser to match workflow
+    #updated parameters of cUser to match workflow
+    def post(self, username, age, gender, interests, neighborhood):
         """
         This method creates a new Customer User.
         """
-        ret = db.add_cuser(username, age, gender, interests, neighborhood) # database query updated to include fields from parameters
+        # database query updated to include fields from parameters
+        ret = db.add_cuser(username, age, gender, interests, neighborhood)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
