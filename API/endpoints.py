@@ -299,5 +299,5 @@ class cDaily(Resource):
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("interests not found."))
         else:
-            return f"Interest and Neighborhood updated"  
-      
+            return f"Interest and Neighborhood updated" 
+
