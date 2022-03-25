@@ -156,8 +156,6 @@ class bList(Resource):
             raise (wz.NotFound("user couldnt be found."))
         else:
             return allBusers
-
-# CHECK
 @api.route("/cusers/delete/<username>")
 
 
@@ -229,7 +227,6 @@ class eventInfo(Resource):
     """
     This class supports bUsers inputting their daily event information for the cUsers.
     """
-
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
