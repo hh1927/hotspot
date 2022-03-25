@@ -38,6 +38,7 @@ INTERESTS = "clubInterestType"
 CITY = "city"
 LOCATIONTYPE = "locationType"
 PARTY = "sizeOfParty"
+QUOTA = "quota"
 
 OK = 0
 NOT_FOUND = 1
@@ -224,3 +225,15 @@ def del_event(eventName, location):
     else:
         dbc.del_one(EVENTS, filters={LOCATION: location}, {EVENT_NM: eventName})
         return OK
+
+def update_bquota(bUser, new_quota):
+    """
+    Update old bquota in db.
+    """
+    if not buser_exists(bUser):
+        return NOT_FOUND
+    else:
+        dbc.update_one(USERS, filters={USER_NM: bUser},
+                       updates={"$set": {QUOTA: new_quota}})
+    return OK
+                       
