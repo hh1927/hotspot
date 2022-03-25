@@ -226,7 +226,8 @@ class partySize(Resource):
 @api.route("/busers/eventInfo")
 class eventInfo(Resource):
     """
-    This class supports bUsers inputting their daily event information for the cUsers.
+    This class supports bUsers inputting
+    their daily event information for the cUsers.
     """
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
