@@ -9,14 +9,14 @@ function Home() {
             <div>
 
                 <div id="invite">
-                    <img src="https://picsum.photos/1000"/>
+                    <img src="https://picsum.photos/1000" onClick={<a href = '/eventinfo'></a>}/>
                 </div>
 
             </div>
             <a href = '/rsvp'>
             <button id= "resButton"> RSVP </button>
             </a>
-            <a href = '/home'>
+            <a href = '/chome'>
             <button id= "nextButton"> Next </button>
             </a>
             </>

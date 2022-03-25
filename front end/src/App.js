@@ -3,13 +3,13 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import Login from './pages/Login/Login';
 import CreateAcc from './pages/CreateAcc/CreateAcc';
-import Home from './pages/Home/Home';
+import Home from './pages/CUSERSIDE/CHome/CHome';
 import Users from './pages/Users/Users';
-import RSVP from './pages/RSVP/RSVP';
-import Cuserprofile from './pages/Cuserprofile/Cuserprofile';
-import Confirmation from './pages/Confirmation/Confirmation';
-import EventInfo from './pages/EventInfo/EventInfo';
-import VenueProfile from './pages/VenueProfile/VenueProfile';
+import RSVP from './pages/CUSERS/RSVP/RSVP';
+import Cuserprofile from './pages/CUSERSIDE/Cuserprofile/Cuserprofile';
+import Confirmation from './pages/CUSERSIDE/Confirmation/Confirmation';
+import EventInfo from './pages/EventInfo/CUSERSIDE/EventInfo';
+import VenueProfile from './pages/VenueProfile/BUSERSIDE/VenueProfile';
 
 import './App.css';
 
@@ -23,8 +23,8 @@ function App() {
             <Route exact={true} path={'/'}>
               <Login />
             </Route>
-            <Route exact={true} path={'/home'}>
-              <Home />
+            <Route exact={true} path={'/chome'}>
+              <CHome />
             </Route>
             <Route exact={true} path={'/createacc'}>
               <CreateAcc />

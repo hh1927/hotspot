@@ -27,7 +27,7 @@ export default function Cuserprofile(){
       </div>
       
       <button
-        onClick={() => navigateToPage('/home')} //need to return to homepage to scroll
+        onClick={() => navigateToPage('/chome')} //need to return to homepage to scroll
         className="page-button"
       >
         RSVP

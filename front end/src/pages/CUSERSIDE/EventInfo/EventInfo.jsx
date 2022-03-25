@@ -40,19 +40,19 @@ export default function EventInfo(){
       </div>
       
       <button
-        onClick={() => navigateToPage('/homepage')} // must remove event from list of events
+        onClick={() => navigateToPage('/chome')} // must remove event from list of events
         className="page-button"
       >
         Delete
       </button>
       <button
-        onClick={() => navigateToPage('/homepage')} //needs to prevent users from updating w/o hitting edit beyond this point
+        onClick={() => navigateToPage('/chome')} //needs to prevent users from updating w/o hitting edit beyond this point
         className="page-button"
       >
         Publish
       </button>
       <button
-        onClick={() => navigateToPage('/homepage')} //needs to allow users to update info. MUST UPDATE
+        onClick={() => navigateToPage('/chome')} //needs to allow users to update info. MUST UPDATE
         className="page-button"
       >
         Edit

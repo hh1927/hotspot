@@ -42,7 +42,7 @@ export default function RSVP(){
         RSVP
       </button>
       <button
-        onClick={() => navigateToPage('/home')} //returns to homepage to continue scrolling
+        onClick={() => navigateToPage('/chome')} //returns to homepage to continue scrolling
         className="page-button"
       >
         Cancel
