@@ -160,6 +160,8 @@ class Inv(Resource):
         """
         This method returns all invs.
         """
+
+
         allInvs = db.fetch_invs()
         if allInvs is None:
             raise (wz.NotFound("invite couldnt be found."))
@@ -178,6 +180,8 @@ class Inv_Response(Resource):
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
+
+
     def get(self):
         """
         returns invite responses
