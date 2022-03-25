@@ -24,9 +24,16 @@ class DBTestCase(TestCase):
         fake_data = {FAKE_USER: {}}
         return True
 
-    def test_get_users(self):
+    def test_get_cusers(self):
         """
         Can we fetch user db?
         """
-        users = db.get_users()
+        users = db.get_cusers()
+        self.assertIsInstance(users, dict)
+        
+     def test_get_busers(self):
+        """
+        Can we fetch user db?
+        """
+        users = db.get_busers()
         self.assertIsInstance(users, dict)
