@@ -58,7 +58,7 @@ class cUser(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
-    #updated parameters of cUser to match workflow
+    # updated parameters of cUser to match workflow
     def post(self, username, age, gender, interests, neighborhood):
         """
         This method creates a new Customer User.
@@ -80,7 +80,7 @@ class cUser(Resource):
 # CHECK
 # updated API route
 @api.route("/cList")
-class cList(Resource):         
+class cList(Resource):        
     # updated parameters to be in correspondence w workflow
     """
     parameters then used to select consumers
@@ -89,7 +89,7 @@ class cList(Resource):
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def get(self,user_name, party_size):
+    def get(self, user_name, party_size):
         # modified parameters & changed function to get
         """
         This method returns all customer users.
@@ -112,11 +112,13 @@ class bUser(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
-    def post(self, username, business_name, age_restrictions, business_type, quota):  #updated parameters of bUser to match workflow
+    # updated parameters of bUser to match workflow
+    def post(self, username, business_name, age_restrictions, business_type, quota):
         """
         This method creates a new Business User.
         """
-        ret = db.add_buser(username, business_name, age_restrictions, business_type, quota)  # database query updated to include fields from parameters
+        # database query updated to include fields from parameters
+        ret = db.add_buser(username, business_name, age_restrictions, business_type, quota)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
