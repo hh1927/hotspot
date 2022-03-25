@@ -12,7 +12,6 @@ import os
 import db.db_connect as dbc
 
 HOTSPOT_HOME = os.environ["HOTSPOT_HOME"]
-heroku git:remote -a hotspot
 # TEST_MODE = os.environ.get("TEST_MODE", 0)
 
 # if TEST_MODE:
