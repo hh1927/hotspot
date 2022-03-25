@@ -263,9 +263,9 @@ class DeleteEvent(Resource):
         else:
             return f"{eventName} has been deleted."
 
+
 @api.route("/bquota")
-# added parameter needed to update bquota
-class bquota(Resource): 
+class bquota(Resource):
     """
     This endpoint will update the value of business quota
     """
@@ -280,8 +280,8 @@ class bquota(Resource):
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("Quota not found."))
         else:
-            return f"Quota updated to {new_quota}."  
-            
+            return f"Quota updated to {new_quota}."
+
 
 @api.route("/cDaily")
 # added parameters needed for updating customer preferences
