@@ -39,6 +39,7 @@ CITY = "city"
 LOCATIONTYPE = "locationType"
 PARTY = "sizeOfParty"
 QUOTA = "quota"
+INTERESTS = "interests"
 
 OK = 0
 NOT_FOUND = 1
@@ -237,3 +238,15 @@ def update_bquota(bUser, new_quota):
                        updates={"$set": {QUOTA: new_quota}})
     return OK
                        
+def update_cdaily(cUser, new_interests, new_neighborhood):
+    """
+    Update consumers new interests and neighborhood
+    """
+    if not cuser_exists(cUser):
+        return NOT_FOUND
+    else:
+        dbc.update_one(USERS, filters={USER_NM: cUser},
+                       updates={"$set": {INTERESTS: new_interests}}
+                       updates={"$set": {LOCATION: new_neighborhood})
+    return OK  
+                                
