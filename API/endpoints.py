@@ -291,11 +291,11 @@ class bquota(Resource):
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def patch(self, new_quota):
+    def patch(self, username, new_quota):
         """
         """
         # added line to incorporate updating of business quota
-        ret = db.update_bquota(new_quota)
+        ret = db.update_bquota(username, new_quota)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("Quota not found."))
         else:
