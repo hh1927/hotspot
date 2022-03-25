@@ -303,20 +303,20 @@ class bquota(Resource):
             
 
 @api.route("/cDaily")
-class cDaily(new_interests, new_neighborhood, Resource): #added parameters needed for updating customer preferences
+# added parameters needed for updating customer preferences
+class cDaily(Resource):
     """
     This class will serve as live, fetchable documentation of what endpoints
     are available in the system.
     """
-
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def patch(self,new_interests, new_neighborhood):
+    def patch(username, new_interests, new_neighborhood, self):
         """
-        update_neighborhood = db.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}}) #added line to incorporate updating of users neighborhood 
-        update_interests = db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}})          #added line to incorporate updating of users interests        
-        if allCusers is None:
-            raise (wz.NotFound("user couldnt be found."))
+        """
+        ret = db.update_cdaily(username, new_interests, new_neighborhood)
+        if ret == db.NOT_FOUND:
+            raise (wz.NotFound("interests not found."))
         else:
-            return allCusers
-        """
+            return f"Interest and Neighborhood updated"  
+      
