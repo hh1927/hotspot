@@ -156,9 +156,9 @@ class bList(Resource):
             raise (wz.NotFound("user couldnt be found."))
         else:
             return allBusers
+
+
 @api.route("/cusers/delete/<username>")
-
-
 class DeletecUser(Resource):
     """
     This class enables deleting a cuser.
