@@ -80,7 +80,7 @@ class cUser(Resource):
 # CHECK
 # updated API route
 @api.route("/cList")
-class cList(Resource):        
+class cList(Resource):      
     # updated parameters to be in correspondence w workflow
     """
     parameters then used to select consumers
@@ -113,12 +113,14 @@ class bUser(Resource):
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
     # updated parameters of bUser to match workflow
-    def post(self, username, business_name, age_restrictions, business_type, quota):
+    def post(self, username, business_name, 
+             age_restrictions, business_type, quota):
         """
         This method creates a new Business User.
         """
         # database query updated to include fields from parameters
-        ret = db.add_buser(username, business_name, age_restrictions, business_type, quota)
+        ret = db.add_buser(username, business_name, 
+                           age_restrictions, business_type, quota)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
@@ -144,7 +146,8 @@ class bList(Resource):
     """
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def get(self,business_name, age_rest, business_type):                                             #modified parameters & changed function to get
+    # modified parameters & changed function to get
+    def get(self,business_name, age_rest, business_type):
         """
         This method returns all business users.
         """
