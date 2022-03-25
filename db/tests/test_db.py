@@ -37,4 +37,11 @@ class DBTestCase(TestCase):
         """
         users = db.get_busers()
         self.assertIsInstance(users, dict)
+        
+      def test_get_event_info(self):
+        """
+        Can we fetch event_info db?
+        """
+        users = db.get_event_info()
+        self.assertIsInstance(users, dict)
 
