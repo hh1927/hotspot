@@ -2,8 +2,8 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import Login from './pages/Login/Login';
-import CreateAcc from './pages/CreateAcc/CreateAcc';
-import Home from './pages/CUSERSIDE/CHome/CHome';
+import CreateAcc from './pages/createAcc/CreateAcc';
+import Home from './pages/CUSERSIDE/CHOME/CHOME';
 import Users from './pages/Users/Users';
 import RSVP from './pages/CUSERS/RSVP/RSVP';
 import Cuserprofile from './pages/CUSERSIDE/Cuserprofile/Cuserprofile';
