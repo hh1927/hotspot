@@ -3,13 +3,13 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import Login from './pages/Login/Login';
 import CreateAcc from './pages/createAcc/CreateAcc';
-import Home from './pages/CUSERSIDE/CHOME/CHOME';
+import CHome from './pages/CUSERSIDE/CHOME/CHOME';
 import Users from './pages/Users/Users';
-import RSVP from './pages/CUSERS/RSVP/RSVP';
+import RSVP from './pages/CUSERSIDE/RSVP/RSVP';
 import Cuserprofile from './pages/CUSERSIDE/Cuserprofile/Cuserprofile';
 import Confirmation from './pages/CUSERSIDE/Confirmation/Confirmation';
-import EventInfo from './pages/EventInfo/CUSERSIDE/EventInfo';
-import VenueProfile from './pages/VenueProfile/BUSERSIDE/VenueProfile';
+import EventInfo from './pages/CUSERSIDE/EventInfo/EventInfo';
+import VenueProfile from './pages/BUSERSIDE/VenueProfile/VenueProfile';
 
 import './App.css';
 

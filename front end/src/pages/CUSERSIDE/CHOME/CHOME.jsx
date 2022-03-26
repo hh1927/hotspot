@@ -1,4 +1,4 @@
-import './Home.css';
+import './CHOME.css';
 
 function Home() {
     return (
