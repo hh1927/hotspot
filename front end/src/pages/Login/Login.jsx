@@ -28,7 +28,7 @@ export default function Home(){
       </div>
       
       <button
-        onClick={() => navigateToPage('/home')} //need to decide on page after login
+        onClick={() => navigateToPage('/Chome')} //need to decide on page after login
         className="page-button"
       >
         Login
