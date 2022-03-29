@@ -162,7 +162,7 @@ def reset_party(username):
     reset party sizes at the end of the night - CHECK AGAIN
     """
     if cuser_exists(username):
-        dbc.insert_doc(CUSERS, {CUSER_NM: username}, {PARTY: 0}
+        dbc.insert_doc(CUSERS, {CUSER_NM: username}, {PARTY: 0})
         return OK
     else:
         return OK
@@ -175,8 +175,7 @@ def add_party(username, party):
     if cuser_exists(username):
         dbc.insert_doc(CUSERS, {CUSER_NM: username}, {PARTY: party})
         return OK
-    else:
-        return OK
+
 
  def get_party(username):
      """
