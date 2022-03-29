@@ -244,7 +244,7 @@ class eventInfo(Resource):
         return f"{eventName} is ready for tonight."
 
 
-@api.route('/busers/deleteEvent')
+@api.route('/busers/deleteEvent/<eventName>/<location>')
 class deleteEvent(Resource):
     """
     This class enables deleting an event after it occurs
