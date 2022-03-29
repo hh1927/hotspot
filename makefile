@@ -1,4 +1,13 @@
+LINTER = flake8
+API_DIR = API
+DB_DIR = .
+REQ_DIR = .
+PYDOC = python3 -m pydoc -w
+TESTFINDER = nose2
+
 include common.mk
+
+export TEST_MODE = 1
 
 prod: all_tests github
 
