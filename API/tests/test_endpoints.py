@@ -1,18 +1,16 @@
+
 from unittest import TestCase, skip
 from flask_restx import Resource, Api
-import random
 
 import API.endpoints as ep
 import db.data as db
+import random
 
-
+HUGE_NUM = 10000000000000
 
 #import sys
 #sys.path.insert(0, '/home/runner/work/hotspot/hotspot/API')
 #sys.path.insert(0, '/home/runner/work/hotspot/hotspot/db')
-
-
-HUGE_NUM = 10000000000000  # any big number will do!
 
 
 def new_entity_name(entity_type):
