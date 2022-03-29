@@ -19,4 +19,4 @@ deploy:
       api_key: 92a28ac8-3a56-4f37-817e-671bb43c527f
       app: teamhotspot
       on:
-          branch: master
+          branch: scratch/githubActions
