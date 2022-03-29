@@ -204,7 +204,7 @@ def add_event(eventName, location, price, hours):
     """
      if event_exists(eventName, location):
         return DUPLICATE
-    else:
+     else:
         dbc.insert_doc(
             EVENTS,
             {
