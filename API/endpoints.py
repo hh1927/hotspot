@@ -49,7 +49,7 @@ class Endpoints(Resource):
 
 
 # CHECK api route
-@api.route("/cusers/create/<username>")
+@api.route("/cUsers")
 class cUser(Resource):
     """
     This class supports adding Customer users.
@@ -102,7 +102,7 @@ class cList(Resource):
 
 
 # CHECK api route
-@api.route("/busers/create/<username>")
+@api.route("/bUsers")
 class bUser(Resource):
     """
     This class supports business users,
@@ -135,7 +135,7 @@ class bUser(Resource):
 
 # CHECK
 # updated api route
-@api.route("/blist")
+@api.route("/bList")
 class bList(Resource):
     # updated parameters to be in correspondence to to workflow
     # added additional parameters related to business
@@ -158,8 +158,8 @@ class bList(Resource):
             return allBusers
 
 
-@api.route("/cusers/delete/<username>")
-class DeletecUser(Resource):
+@api.route("/cusers/deletecUser")
+class deletecUser(Resource):
     """
     This class enables deleting a cuser.
     While 'Forbidden` is a possible return value, we have not yet implemented
@@ -180,8 +180,8 @@ class DeletecUser(Resource):
             return f"{username} deleted."
 
 
-@api.route("/busers/delete/<username>")
-class DeletebUser(Resource):
+@api.route("/busers/deletebUser")
+class deletebUser(Resource):
     """
     This class enables deleting a buser.
     While 'Forbidden` is a possible return value, we have not yet implemented
@@ -203,7 +203,7 @@ class DeletebUser(Resource):
 
 
 # corrected
-@api.route("/cusers/<party>")
+@api.route("/cusers/partySize")
 class partySize(Resource):
     """
     This class supports consumer users
@@ -244,8 +244,8 @@ class eventInfo(Resource):
         return f"{eventName} is ready for tonight."
 
 
-@api.route('/busers/delete')
-class DeleteEvent(Resource):
+@api.route('/busers/deleteEvent')
+class deleteEvent(Resource):
     """
     This class enables deleting an event after it occurs
     """
