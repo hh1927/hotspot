@@ -11,12 +11,12 @@ dev_env: FORCE
 	pip install -r $(REQ_DIR)/requirements-dev.txt
 
 all_tests: FORCE
-	cd $(API_DIR); make tests
-	cd $(DB_DIR); make tests
+	cd $(API_DIR); 
+	cd $(DB_DIR); 
 
 all_docs: FORCE
-	cd $(API_DIR); make docs
-	cd $(DB_DIR); make docs
+	cd $(API_DIR); 
+	cd $(DB_DIR); 
 
 heroku_remote:
 	heroku git:remote -a teamhotspot
