@@ -1,13 +1,13 @@
 from unittest import TestCase, skip
 from flask_restx import Resource, Api
 
-import db.data as db
+import db.db as db
 import API.endpoints as ep
 
 import random
-import sys
-sys.path.insert(0, '/home/runner/work/hotspot/hotspot/API')
-sys.path.insert(0, '/home/runner/work/hotspot/hotspot/db')
+#import sys
+#sys.path.insert(0, '/home/runner/work/hotspot/hotspot/API')
+#sys.path.insert(0, '/home/runner/work/hotspot/hotspot/db')
 
 
 HUGE_NUM = 10000000000000  # any big number will do!
