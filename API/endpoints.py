@@ -9,7 +9,7 @@ from flask import Flask
 from flask_restx import Resource, Api
 import werkzeug.exceptions as wz
 
-import db.db as db
+import db.data as db
 
 # from flask.json import JSONEncoder
 # from bson import json_util
