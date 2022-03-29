@@ -216,14 +216,14 @@ def add_event(eventName, location, price, hours):
         )
         return OK
     
-def del_event(eventName, location):
+def del_event(eventName):
     """
     Delete event from the db.
     """
-    if not event_exists(eventName, location):
+    if not event_exists(eventName):
         return NOT_FOUND
     else:
-        dbc.del_one(EVENTS, filters={LOCATION: location}, {EVENT_NM: eventName})
+        dbc.del_one(EVENTS, filters={EVENT_NM: eventName})
         return OK
 
 def update_bquota(bUser, new_quota):
