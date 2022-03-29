@@ -245,8 +245,8 @@ def update_cdaily(cUser, new_interests, new_neighborhood):
         return NOT_FOUND
     else:
         dbc.update_one(USERS, filters={USER_NM: cUser},
-                       updates={"$set": {INTERESTS: new_interests}}
-                       updates={"$set": {LOCATION: new_neighborhood})
+                       updates={"$set": {INTERESTS: new_interests}},
+                       updates={"$set": {LOCATION: new_neighborhood}})
     return OK  
                                 
 def fetch_psize(cUser, psize):
