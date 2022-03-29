@@ -175,6 +175,8 @@ def add_party(username, party):
     if cuser_exists(username):
         dbc.insert_doc(CUSERS, {CUSER_NM: username}, {PARTY: party})
         return OK
+    else:
+        return NOT_FOUND
 
 
  def get_party(username):
