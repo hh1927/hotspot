@@ -1,7 +1,7 @@
 from unittest import TestCase, skip
 from flask_restx import Resource, Api
 
-import db.db as db
+import db.data as db
 import API.endpoints as ep
 
 import random
