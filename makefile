@@ -13,7 +13,7 @@ prod: all_tests github
 
 github: FORCE
 	- git commit -a
-	git push origin master
+	git push origin scratch/githubActions
 
 dev_env: FORCE
 	- ./setup.sh HOME_HOTSPOT
