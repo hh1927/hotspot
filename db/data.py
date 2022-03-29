@@ -189,12 +189,12 @@ def get_party(username):
      return psize
      """
 
-def event_exists(eventName,location):
+def event_exists(eventName):
     """
     See if a event already exists in the db.
     Returns True or False.
     """
-    rec = dbc.fetch_one(EVENTS, filters={LOCATION: location}, {EVENT_NM: eventName})
+    rec = dbc.fetch_one(EVENTS, filters={EVENT_NM: eventName})
     print(f"{rec=}")
     return rec is not None
 
