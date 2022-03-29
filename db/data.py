@@ -163,9 +163,9 @@ def reset_party(username):
     """
     if cuser_exists(username):
         dbc.insert_doc(CUSERS, {CUSER_NM: username}, {PARTY: 0}
-        return ok
+        return OK
     else:
-        return ok
+        return OK
         
 
 def add_party(username, party):
