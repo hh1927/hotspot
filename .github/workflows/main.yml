@@ -39,6 +39,6 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
             heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-            heroku_app_name: "hotspot"
+            heroku_app_name: "teamhotspot"
             heroku_email: "hh1927@nyu.edu"
             branch: "scratch/githubActions"
