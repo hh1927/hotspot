@@ -283,7 +283,7 @@ class bquota(Resource):
             return f"Quota updated to {new_quota}."
 
 
-@api.route("/cDaily")
+@api.route("/cDaily/<username>/<new_interests>/<new_neighborhood>")
 # added parameters needed for updating customer preferences
 class cDaily(Resource):
     """
@@ -292,7 +292,7 @@ class cDaily(Resource):
     """
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def patch(username, new_interests, new_neighborhood, self):
+    def patch(self, username, new_interests, new_neighborhood):
         """
         """
         ret = db.update_cdaily(username, new_interests, new_neighborhood)
