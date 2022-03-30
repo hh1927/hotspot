@@ -180,7 +180,7 @@ class deletecUser(Resource):
             return f"{username} deleted."
 
 
-@api.route("/busers/deletebUser")
+@api.route("/busers/deletebUser/<buserName>")
 class deletebUser(Resource):
     """
     This class enables deleting a buser.
