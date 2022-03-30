@@ -203,7 +203,7 @@ class deletebUser(Resource):
 
 
 # corrected
-@api.route("/cusers/partySize")
+@api.route("/cusers/partySize/<cusername>/<party>")
 class partySize(Resource):
     """
     This class supports consumer users
