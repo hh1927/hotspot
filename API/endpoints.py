@@ -264,7 +264,7 @@ class deleteEvent(Resource):
             return f"{eventName} has been deleted."
 
 
-@api.route("/bquota")
+@api.route("/bquota/<username>/<new_quota>")
 class bquota(Resource):
     """
     This endpoint will update the value of business quota
