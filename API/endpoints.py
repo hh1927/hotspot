@@ -147,7 +147,7 @@ class bList(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     # modified parameters & changed function to get
-    def get(self, business_name, age_rest, business_type):
+    def get(self):
         """
         This method returns all business users.
         """
