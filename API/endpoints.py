@@ -158,7 +158,7 @@ class bList(Resource):
             return allBusers
 
 
-@api.route("/cusers/deletecUser")
+@api.route("/cusers/deletecUser/<username>")
 class deletecUser(Resource):
     """
     This class enables deleting a cuser.
