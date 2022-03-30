@@ -49,7 +49,7 @@ class Endpoints(Resource):
 
 
 # CHECK api route
-@api.route("/cUsers")
+@api.route("/cUsers/<username>/<age>/<gender>/<interests>/<neighborhoods>")
 class cUser(Resource):
     """
     This class supports adding Customer users.
