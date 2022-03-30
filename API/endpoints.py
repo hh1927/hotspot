@@ -79,7 +79,7 @@ class cUser(Resource):
 
 # CHECK
 # updated API route
-@api.route("/cList")
+@api.route("/cList/<user_name>/<party_size>")
 class cList(Resource):
     # updated parameters to be in correspondence w workflow
     """
