@@ -13,11 +13,11 @@ export default function EventInfo(){
 
   return (
     <div className="content">
-      <div> //need ability to add photos
+      <div>
         <form>
           <label>
             Location: <input type="text" /> 
-          </label> //need to establish a drop down to create form for that # of guests
+          </label>
           <br />
           <label>
             Date: <input type="text" />
@@ -55,7 +55,7 @@ export default function EventInfo(){
         onClick={() => navigateToPage('/chome')} //needs to allow users to update info. MUST UPDATE
         className="page-button"
       >
-        Edit
+        Save
       </button>
     </div>
   );

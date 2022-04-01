@@ -9,7 +9,8 @@ function Home() {
             <div>
 
                 <div id="invite">
-                    <img src="https://picsum.photos/1000" onClick={<a href = '/eventinfo'></a>}/>
+                    <a href = '/eventinfo'>
+                    <img src="https://picsum.photos/1000" /></a>
                 </div>
 
             </div>

@@ -30,7 +30,7 @@ export default function Cuserprofile(){
         onClick={() => navigateToPage('/chome')} //need to return to homepage to scroll
         className="page-button"
       >
-        RSVP
+        Return
       </button>
     </div>
   );
