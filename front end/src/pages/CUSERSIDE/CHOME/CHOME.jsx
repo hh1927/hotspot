@@ -10,7 +10,7 @@ function Home() {
             <div>
 
                 <div id="invite">
-                    <a href = '/eventinfo'>
+                    <a href = '/venueprofile'>
                     <img src="https://picsum.photos/1000" /></a>
                 </div>
 

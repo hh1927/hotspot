@@ -13,6 +13,7 @@ export default function VenueProfile(){
 
   return (
     <div className="content">
+      <a href = '/chome'><h1>HotSpot </h1></a>
       <div>
         <p className="content">Event Name</p>
         <p className="content">Time</p>
@@ -23,7 +24,7 @@ export default function VenueProfile(){
         <p className="content">Party Description</p>
       </div>
       <button
-        onClick={() => navigateToPage('/homepage')} //needs to allow users to update info. MUST UPDATE
+        onClick={() => navigateToPage('/chome')} //needs to allow users to update info. MUST UPDATE
         className="page-button"
       >
         Return

@@ -8,8 +8,8 @@ import Users from './pages/Users/Users';
 import RSVP from './pages/CUSERSIDE/RSVP/RSVP';
 import Cuserprofile from './pages/CUSERSIDE/Cuserprofile/Cuserprofile';
 import Confirmation from './pages/CUSERSIDE/Confirmation/Confirmation';
-import EventInfo from './pages/CUSERSIDE/EventInfo/EventInfo';
-import VenueProfile from './pages/BUSERSIDE/VenueProfile/VenueProfile';
+import EventInfo from './pages/BUSERSIDE/EventInfo/EventInfo';
+import VenueProfile from './pages/CUSERSIDE/VenueProfile/VenueProfile';
 
 import './App.css';
 
