@@ -223,7 +223,7 @@ class partySize(Resource):
         return f"{party} added."
 
 
-@api.route("/busers/eventInfo")
+@api.route("/busers/eventInfo/<eventName>/<location>/<price>/<hours>")
 class eventInfo(Resource):
     """
     This class supports bUsers inputting
