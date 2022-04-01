@@ -1,6 +1,6 @@
 import './CHOME.css';
 
-function Home() {
+function Chome() {
     return (
         <>
             <a href = '/chome'><h1>HotSpot </h1></a>
@@ -25,4 +25,4 @@ function Home() {
     )
 }
 
-export default Home;
+export default Chome;

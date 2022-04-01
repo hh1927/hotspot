@@ -49,7 +49,7 @@ export default function CreateAcc(){
             <select id="dropdown" >
             <option >Select...</option>
             <option value="Customer">Customer</option>
-            <option value="Business">Business</option> //next need to handle the value and pass it
+            <option value="Business">Business</option>
           </select>
           </label>
         </form>
@@ -60,7 +60,13 @@ export default function CreateAcc(){
         onClick={() => navigateToPage('/CHome')} //need to decide on page after login
         className="page-button"
       >
-        Create
+        Create Personal
+      </button>
+      <button
+        onClick={() => navigateToPage('/BHome')} //need to decide on page after login
+        className="page-button"
+      >
+        Create Business
       </button>
     </div>
   );

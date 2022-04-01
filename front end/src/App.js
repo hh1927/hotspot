@@ -10,6 +10,7 @@ import Cuserprofile from './pages/CUSERSIDE/Cuserprofile/Cuserprofile';
 import Confirmation from './pages/CUSERSIDE/Confirmation/Confirmation';
 import EventInfo from './pages/BUSERSIDE/EventInfo/EventInfo';
 import VenueProfile from './pages/CUSERSIDE/VenueProfile/VenueProfile';
+import BHome from './pages/BUSERSIDE/BHOME/BHOME';
 
 import './App.css';
 
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route exact={true} path={'/chome'}>
               <CHome />
+            </Route>
+            <Route exact={true} path={'/bhome'}>
+              <BHome />
             </Route>
             <Route exact={true} path={'/createacc'}>
               <CreateAcc />

@@ -31,7 +31,13 @@ export default function Home(){
         onClick={() => navigateToPage('/Chome')} //need to decide on page after login
         className="page-button"
       >
-        Login
+        Login Personal
+      </button>
+      <button
+        onClick={() => navigateToPage('/Bhome')} //need to decide on page after login
+        className="page-button"
+      >
+        Login Business
       </button>
       <button
         onClick={() => navigateToPage('/CreateAcc')} //need to talk to backend for create account page
