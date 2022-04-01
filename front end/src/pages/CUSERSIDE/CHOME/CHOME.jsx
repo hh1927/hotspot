@@ -3,6 +3,7 @@ import './CHOME.css';
 function Home() {
     return (
         <>
+            <a href = '/chome'><h1>HotSpot </h1></a>
             <a href = '/cuserprofile'>
             <button id= "profButton"> Profile </button>
             </a>

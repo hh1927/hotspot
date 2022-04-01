@@ -13,15 +13,16 @@ export default function Cuserprofile(){
 
   return (
     <div className="content">
+      <a href = '/chome'><h1>HotSpot </h1></a>
       <div>
         <form>
           <label>
             Location: <input type="text" /> 
-          </label> //need to find way to get current location
+          </label> 
           <br />
           <label>
             Bar Type <input type="text" />
-          </label> //need to imput method where cuser can add photos
+          </label> 
         </form>
 
       </div>
