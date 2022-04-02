@@ -76,6 +76,15 @@ class EndpointTestCase(TestCase):
         ret = cl.get()
         for val in ret.values():
             self.assertIsInstance(val, list)
+           
+    def test_bList3(self):
+        """
+        Post-condition 3: the values in the dict are themselves dicts
+        """
+        bl = ep.bList(Resource)
+        ret = bl.get()
+        for val in ret.values():
+            self.assertIsInstance(val, list)
 
     def test_partySize(self):
         """
