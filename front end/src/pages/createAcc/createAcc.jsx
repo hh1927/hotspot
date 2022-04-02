@@ -11,7 +11,16 @@ export default function CreateAcc(){
     history.push(path);
   }
 
-  const[post, setPost] = React.useState(null);
+  const[post, setPost] = React.useState({
+    user: '',
+    password: '',
+    firstname: '',
+    lastname: '',
+    dob: '',
+    email: '',
+    phone: '',
+    type: ''
+  });
    
   React.useEffect(() => {
     axios.get(baseURL).then((response) => {
