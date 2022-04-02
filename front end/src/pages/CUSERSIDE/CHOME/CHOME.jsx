@@ -1,6 +1,17 @@
 import './CHOME.css';
+import React from 'react';
+import axios from 'axios';
+const baseURL = //our API
 
 function Chome() {
+    const [post, setPost] = React.useState(null);
+    React.useEffect(() => {
+        axios.get(baseURL).then((response) => {
+            SVGTextPositioningElement(response.data);
+        });
+    } );
+    if(!post) return null;
+    //would return post.promo for event promo pic
     return (
         <>
             <a href = '/chome'><h1>HotSpot </h1></a>
@@ -24,5 +35,4 @@ function Chome() {
             </>
     )
 }
-
 export default Chome;
