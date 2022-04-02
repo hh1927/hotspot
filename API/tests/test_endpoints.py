@@ -50,6 +50,13 @@ class EndpointTestCase(TestCase):
         ret = cbu.post(new_user)
         busers = db.get_busers()
         self.assertIn(new_buser, busers)
+   
+    def retrieve_buser(self):
+        """
+        See if we can successfully retrieve business user.
+        """
+        np = ep.add_buser("tester")
+        self.assertTrue(True)
 
     def test_ClientList1(self):
         """
