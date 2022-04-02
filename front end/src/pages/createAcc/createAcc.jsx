@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
-
+const baseURL = //api location here
 import './CreateAcc.css';
 
 export default function CreateAcc(){
@@ -10,6 +10,31 @@ export default function CreateAcc(){
   function navigateToPage(path) {
     history.push(path);
   }
+
+  const[post, setPost] = React.useState(null);
+   
+  React.useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setPost(response.data);
+    });
+  });
+
+  function createAccount(){
+    axios.post(baseURL, {
+      user,
+      password,
+      firstname,
+      lastname,
+      dob,
+      email,
+      phone,
+      type
+
+    }).then((response) => {
+      setPost(response.data)
+    })
+  }
+
 
   return (
     <div className="login">
