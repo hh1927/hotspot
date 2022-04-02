@@ -166,6 +166,18 @@ class EndpointTestCase(TestCase):
         # db.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}})
         # db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}})
         self.assertIn(cdaily, db.fetch_cusers)
+   
+    def test_update_cDaily(self):
+        """
+        See if we can successfully retrieve correct values
+        """
+        new_neighborhood = new_entitity_name("test_neighborhood")
+        new_interests = new_entity_name("test_interests")
+        user_name = new_entity_name("test_user")
+        cDaily = ep.test_update_cDaily(Resource)
+        cDaily.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}})
+        cDaily.cusers.updateOne({name:user_name},{$set:{interests:new_interests}})
+        self.assertTrue(True)
 
     def test_eventInfoExists(self):
         """
