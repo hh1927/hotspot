@@ -1,26 +1,31 @@
-from unittest import TestCase, skip 
-from flask_restx import Resource, Api
-import random
-sys.path.insert(0,'/home/runner/work/hotspot/hotspot/API')
-import API.endpoints as ep
-import db.db as db
 
-HUGE_NUM = 10000000000000  # any big number will do!
+from unittest import TestCase, skip
+from flask_restx import Resource, Api
+import API.endpoints as ep
+import db.data as db
+import random
+
+HUGE_NUM = 10000000000000
+
+#import sys
+#sys.path.insert(0, '/home/runner/work/hotspot/hotspot/API')
+#sys.path.insert(0, '/home/runner/work/hotspot/hotspot/db')
+
 
 def new_entity_name(entity_type):
     int_name = random.randint(0, HUGE_NUM)
     return f"new {entity_type}" + str(int_name)
 
+
 class EndpointTestCase(TestCase):
     def setUp(self):
-         pass
+        pass
 
     def tearDown(self):
-         pass
+        pass
 
     def test_hello(self):
         self.assertTrue(True)
-
 
     @skip("In the middle of making this work.")
     def test_cuser(self):
@@ -33,7 +38,7 @@ class EndpointTestCase(TestCase):
         ret = ccu.post(new_cuser)
         cusers = db.get_cusers()
         self.assertIn(new_cuser, cusers)
-          
+
     def test_buser(self):
         """
         See if we can successfully create a new business user.
@@ -44,52 +49,22 @@ class EndpointTestCase(TestCase):
         ret = cbu.post(new_user)
         busers = db.get_busers()
         self.assertIn(new_buser, busers)
-     
-    def test_inv_response(self): 
+   
+    def retrieve_buser(self):
         """
-        See if we can successfully create a new invite.
-        Post-condition: user is in DB.
+        See if we can successfully retrieve business user.
         """
-        inv_response = ep.Inv_Response(Resource)
-        new_inv_response = new_entity_name("invite response")
-        # ret = inv_response.post(new_inv_response)
-        invite_responses = db.get_inv_response()
-        #self.assertIn(new_inv_response, invite_responses)
+        np = ep.add_buser("tester")
+        self.assertTrue(True)
 
-    def test_inv1(self): 
-        """
-        Post-condition 1: return is a dictionary.
-        """
-        invs = ep.Inv(Resource)
-        ret = invs.get()
-        self.assertIsInstance(ret, dict)
-          
-    def test_inv2(self):
-        """
-        Post-condition 2: keys to the dict are strings
-        """
-        invs = ep.Inv(Resource)
-        ret = invs.get()
-        for key in ret:
-            self.assertIsInstance(key, str)
-
-    def test_inv3(self):
-        """
-        Post-condition 3: the values in the dict are themselves dicts
-        """
-        invs = ep.Inv(Resource)
-        ret = invs.get()
-        for val in ret.values():
-            self.assertIsInstance(val, list)
-    
-    def test_ClientList1(self): 
+    def test_ClientList1(self):
         """
         Post-condition 1: return is a dictionary.
         """
         cl = ep.ClientList(Resource)
         ret = cl.get()
         self.assertIsInstance(ret, dict)
-          
+
     def test_ClientList2(self):
         """
         Post-condition 2: keys to the dict are strings
@@ -107,81 +82,132 @@ class EndpointTestCase(TestCase):
         ret = cl.get()
         for val in ret.values():
             self.assertIsInstance(val, list)
-            
-    def test_ClientHist1(self): 
-        """
-        Post-condition 1: return is a dictionary.
-        """
-        cl = ep.ClientHist(Resource)
-        ret = cl.get()
-        self.assertIsInstance(ret, dict)
-          
-    def test_ClientHist2(self):
-        """
-        Post-condition 2: keys to the dict are strings
-        """
-        cl = ep.ClientHist(Resource)
-        ret = cl.get()
-        for key in ret:
-            self.assertIsInstance(key, str)
-
-    def test_ClientHist3(self):
+           
+    def test_bList3(self):
         """
         Post-condition 3: the values in the dict are themselves dicts
         """
-        cl = ep.ClientHist(Resource)
-        ret = cl.get()
+        bl = ep.bList(Resource)
+        ret = bl.get()
         for val in ret.values():
             self.assertIsInstance(val, list)
-     
-    def test_recList1(self):
-        """
-        Post-condition 1: return is a dictionary.
-        """
-        rl = ep.recList(Resource)
-        ret = rl.get()
-        self.assertIsInstance(ret, dict)
-          
-    def test_recList2(self):
-        """
-        Post-condition 2: keys to the dict are strings
-        """
-        rl = ep.recList(Resource)
-        ret = rl.get()
-        for key in ret:
-            self.assertIsInstance(key, str)
 
-    def test_recList3(self):
+    def test_partySize(self):
         """
-        Post-condition 3: the values in the dict are themselves dicts
+        See if we can successfully post party size
         """
-        rl = ep.recList(Resource)
-        ret = rl.get()
-        for val in ret.values():
-            self.assertIsInstance(val, list)
-     
-    def test_revHist1(self):
-        """
-        Post-condition 1: return is a dictionary.
-        """
-        rl = ep.revHist(Resource)
-        ret = rl.get()
-        self.assertIsInstance(ret, dict)
-          
-    def test_revHist2(self):
-        """
-        Post-condition 2: keys to the dict are strings
-        """
-        rl = ep.revHist(Resource)
-        ret = rl.get()
-        for key in ret:
-            self.assertIsInstance(key, str)
+        np = ep.add_Party(Resource)
+        username = "tester"
+        add_cuser(username)
+        db.add_party(username, 4)
+        ret = np.post(username)
+        print(f'post {ret=}')
+        psize = get_party(username)
+        print(f'{psize=}')
+        self.assertIn(4, psize)
 
-    def test_revHist3(self):
+    def test_retrievePartySize(self):
         """
-        Post-condition 3: the values in the dict are themselves dicts
+        See if we can successfully retrieve correct values
         """
-        rl = ep.revHist(Resource)
-        ret = rl.get()
-        for val in ret.values():
-            self.assertIsInstance(val, list)  
+        evInf = ep.add_party(7)
+        # party_size = ep.fetch_psize()
+        self.assertTrue(True)
+
+    def deletecUser(self):
+        """
+        Deleting a cUser
+        """
+        newUser = new_entitity_name("newUser")
+        db.add_cuser(newUser)
+        cUser = ep.DeletecUser(Resource)
+        cUser.post(newUser)
+        self.assertNotIn(newUser, db.fetch_cusers)
+
+    def deletebUser(self):
+        """
+        Deleting a bUser
+        """
+        newUser = new_entitity_name("newUser")
+        db.add_buser(newUser)
+        bUser = ep.DeletebUser(Resource)
+        bUser.post(newUser)
+        self.assertNotIn(newUser, db.fetch_busers)
+
+    def resetPartySize(self):
+        """
+        Resetting Party Size for the next nights events
+        """
+        newPartySize = new_entitity_name("newUser")
+        db.add_cuser(newUser)
+        db.add_party(newUser, 4)
+        db.reset_party(newUser)
+        partySize.update(newUser)
+        self.assertNotIn(newUser, db.fetch_cusers)
+
+    def deleteEvent(self):
+        """
+        Deleting a deleteEvent
+        """
+        db.add_event("testEvent", "testLocation", "testPrice", "testHours")
+        newevent = ep.del_event(Resource)
+        eventInfo.post(newevent)
+        self.assertNotIn(newevent, db.fetch_events)
+
+    def update_bquota(self):
+        new_quota = new_entitity_name(8)
+        business_name = new_entitity_name("test name")
+        bquota_list = ep.bquota(Resource)
+        # ret = bquota_list.updateOne({name:business_name},{$set:{quota:new_quota}})
+        # self.assertIn(bquota_list)
+        self.assertTrue(True)
+
+    def test_retrieve_Bquota(self):
+        """
+        See if we can successfully retrieve correct values
+        """
+        new_quota = new_entitity_name(5)
+        business_name = new_entitity_name("test name, retrieval")
+        # evInf = bquota_list.updateOne({name:business_name},{$set:{quota:new_quota}})
+        bquota_updated = ep.fetch_bquota()
+        # self.assertIn(evInf, bquota_updated)
+        self.assertTrue(True)
+
+    def cDaily(self):
+        new_neighborhood = new_entitity_name("test_neighborhood")
+        new_interests = new_entity_name("test_interests")
+        user_name = new_entity_name("test_user")
+        cDaily = ep.cDaily(Resource)
+        # db.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}})
+        # db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}})
+        self.assertIn(cdaily, db.fetch_cusers)
+   
+    def test_update_cDaily(self):
+        """
+        See if we can successfully retrieve correct values
+        """
+        new_neighborhood = new_entitity_name("test_neighborhood")
+        new_interests = new_entity_name("test_interests")
+        user_name = new_entity_name("test_user")
+        cDaily = ep.test_update_cDaily(Resource)
+        cDaily.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}})
+        cDaily.cusers.updateOne({name:user_name},{$set:{interests:new_interests}})
+        self.assertTrue(True)
+
+    def test_eventInfoExists(self):
+        """
+        See if we can successfully post event info
+        """
+        evInf = ep.add_event("Test event", "Test location",
+                             "test price", "test hours")
+        isExists = event_exists("Test event", "Test location")
+        self.assertTrue(4, isExists)
+
+    def test_eventInfo(self):
+        """
+        See if we can successfully retrieve correct values
+        """
+        evInf = ep.add_event("Test event", "Test location",
+                             "test price", "test hours")
+        allEvents = ep.fetch_events()
+        self.assertIn(evInf, allEvents)

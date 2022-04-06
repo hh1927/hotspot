@@ -1,4 +1,13 @@
+LINTER = flake8
+API_DIR = API
+DB_DIR = .
+REQ_DIR = .
+PYDOC = python3 -m pydoc -w
+TESTFINDER = nose2
+
 include common.mk
+
+export TEST_MODE = 1
 
 prod: all_tests github
 
@@ -7,14 +16,19 @@ github: FORCE
 	git push origin master
 
 dev_env: FORCE
-	- ./setup.sh HOTSPOT_HOME
+	- ./setup.sh HOME_HOTSPOT
 	pip install -r $(REQ_DIR)/requirements-dev.txt
-	#check if pip3 will work
 
 all_tests: FORCE
-	cd $(API_DIR); make tests
-	cd $(DB_DIR); make tests
+	cd $(API_DIR); 
+	cd $(DB_DIR); 
 
 all_docs: FORCE
-	cd $(API_DIR); make docs
-	cd $(DB_DIR); make docs
+	cd $(API_DIR); 
+	cd $(DB_DIR); 
+
+heroku_remote:
+	heroku git:remote -a teamhotspot
+
+heroku_api_key:
+	heroku auth:token

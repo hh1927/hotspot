@@ -11,13 +11,14 @@ import bson.json_util as bsutil
 # all of these will eventually be put in the env:
 user_nm = "hotspot"
 cloud_svc = "cluster0.q05tp.mongodb.net"
-passwd = os.environ.get("MONGO_PASSWD", "Test123")  # hide later
+# hide later
+passwd = "GdfqZFngsJV47rtk"
 cloud_mdb = "mongodb+srv"
 db_params = "retryWrites=true&w=majority"
 
-db_nm = "myFirstDatabase"
-if int(os.environ.get("TEST_MODE", "")) == 1:
-    dn_nm = "test_myFirstDatabase"
+db_nm = "hotspot"
+#if int(os.environ.get("TEST_MODE", "")) == 1:
+    #dn_nm = "hotspot"
 
 
 REMOTE = "0"
@@ -38,13 +39,11 @@ def get_client():
         client = pm.MongoClient()
     else:
         print("Connecting to Mongo remotely.")
+        print("HELLO " + f"mongodb+srv://{user_nm}:{passwd}@" + f"{cloud_svc}/{db_nm}?"
+            + "retryWrites=true&w=majority")
         client = pm.MongoClient(
-            f"mongodb+srv://{user_nm}:{passwd}.@"
-            + f"/{cloud_svc}?{db_nm}?"
-            + "retryWrites=true&w=majority",
-            server_api=ServerApi("1"),
-            tls=True,
-            tlsAllowInvalidCertificates=True,
+            f"mongodb+srv://{user_nm}:{passwd}@" + f"{cloud_svc}/{db_nm}?"
+            + "retryWrites=true&w=majority"
         )
     return client
 
@@ -64,10 +63,9 @@ def del_one(collect_nm, filters={}):
 
 
 def fetch_all(collect_nm, key_nm):
-    all_docs = {}
+    all_docs = []
     for doc in client[db_nm][collect_nm].find():
-        print(doc)
-        all_docs[doc[key_nm]] = json.loads(bsutil.dumps(doc))
+        all_docs.append(json.loads(bsutil.dumps(doc)))
     return all_docs
 
 
