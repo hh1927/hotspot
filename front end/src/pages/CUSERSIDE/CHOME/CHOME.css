@@ -1,0 +1,32 @@
+#profButton {
+    margin-top: 2vh;
+    margin-left: 0;
+    margin-right: auto;
+    margin-bottom: 3vh;
+    width: 10%;
+    height: 2.2em;
+
+}
+
+#invite img {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#resButton {
+    margin-top: 2vh;
+    margin-left: 0;
+    margin-right: auto;
+    width: 30%;
+    height: 2.2em;
+}
+
+#nextButton {
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: 0;
+    width: 30%;
+    height: 2.2em;
+}
+

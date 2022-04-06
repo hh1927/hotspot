@@ -94,7 +94,9 @@ class cList(Resource):
         """
         This method returns all customer users.
         """
-        allCusers = db.fetch_cusers()
+        update_neighborhood = db.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}}) #added line to incorporate updating of users neighborhood 
+        update_interests = db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}}) #added line to incorporate updating of users interests 
+        allCusers = db.fetch_cusers()        
         if allCusers is None:
             raise (wz.NotFound("user couldnt be found."))
         else:
@@ -151,6 +153,7 @@ class bList(Resource):
         """
         This method returns all business users.
         """
+        update_quota = db.busers.updateOne({name:business_name},{$set:{quota:new_quota}}) #added line to incorporate updating of business quota 
         allBusers = db.fetch_busers()
         if allBusers is None:
             raise (wz.NotFound("user couldnt be found."))
