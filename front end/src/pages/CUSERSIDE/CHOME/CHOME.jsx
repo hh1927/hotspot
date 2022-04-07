@@ -1,9 +1,9 @@
-import './CHOME.css';
+import './CHome.css';
 import React from 'react';
 import axios from 'axios';
 const baseURL = //our API
 
-function Chome() {
+function CHome() {
     const [post, setPost] = React.useState(null);
     React.useEffect(() => {
         axios.get(baseURL).then((response) => {
@@ -14,7 +14,7 @@ function Chome() {
     //would return post.promo for event promo pic
     return (
         <>
-            <a href = '/chome'><h1>HotSpot </h1></a>
+            <a href = '/cHome'><h1>HotSpot </h1></a>
             <a href = '/cuserprofile'>
             <button id= "profButton"> Profile </button>
             </a>
@@ -26,13 +26,13 @@ function Chome() {
                 </div>
 
             </div>
-            <a href = '/rsvp'>
+            <a href = '/rSVP'>
             <button id= "resButton"> RSVP </button>
             </a>
-            <a href = '/chome'>
+            <a href = '/cHome'>
             <button id= "nextButton"> Next </button>
             </a>
             </>
     )
 }
-export default Chome;
+export default CHome;

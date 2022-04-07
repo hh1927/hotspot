@@ -3,9 +3,9 @@ import axios from 'axios';
 import {useHistory} from 'react-router-dom';
 const baseURL = //api location here
 
-import './CreateAcc.css';
+import './createAcc.css';
 
-export default function CreateAcc(){
+export default function createAcc(){
   const history = useHistory();
 
   function navigateToPage(path) {

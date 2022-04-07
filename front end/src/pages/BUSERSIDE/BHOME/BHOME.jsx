@@ -1,6 +1,6 @@
-import './BHOME.css';
+import './BHome.css';
 
-function Bhome() {
+function BHome() {
     return (
         <>
             <a href = '/bhome'><h1>HotSpot </h1></a>
@@ -32,4 +32,4 @@ function Bhome() {
     )
 }
 
-export default Bhome;
+export default BHome;
