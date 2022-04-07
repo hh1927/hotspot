@@ -13,7 +13,7 @@ export default function Confirmation(){
 
   return (
     <div className="invite">
-      <a href = '/chome'><h1>HotSpot </h1></a>
+      <a href = '/cHome'><h1>HotSpot </h1></a>
       <div>
       <a href = '/cuserprofile'>
       <button id= "profButton"> Profile </button>

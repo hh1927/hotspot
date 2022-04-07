@@ -28,19 +28,19 @@ export default function Home(){
       </div>
       
       <button
-        onClick={() => navigateToPage('/Chome')} //need to decide on page after login
+        onClick={() => navigateToPage('/cHome')} //need to decide on page after login
         className="page-button"
       >
         Login Personal
       </button>
       <button
-        onClick={() => navigateToPage('/Bhome')} //need to decide on page after login
+        onClick={() => navigateToPage('/bHome')} //need to decide on page after login
         className="page-button"
       >
         Login Business
       </button>
       <button
-        onClick={() => navigateToPage('/CreateAcc')} //need to talk to backend for create account page
+        onClick={() => navigateToPage('/createAcc')} //need to talk to backend for create account page
         className="page-button"
       >
         Create Account

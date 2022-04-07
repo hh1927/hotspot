@@ -13,7 +13,7 @@ export default function RSVP(){
 
   return (
     <div className="content">
-      <a href = '/chome'><h1>HotSpot </h1></a>
+      <a href = '/cHome'><h1>HotSpot </h1></a>
       <div>
         <form>
           <label>
@@ -43,7 +43,7 @@ export default function RSVP(){
         RSVP
       </button>
       <button
-        onClick={() => navigateToPage('/chome')} //returns to homepage to continue scrolling
+        onClick={() => navigateToPage('/cHome')} //returns to homepage to continue scrolling
         className="page-button"
       >
         Cancel

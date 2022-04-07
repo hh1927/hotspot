@@ -13,7 +13,7 @@ export default function Cuserprofile(){
 
   return (
     <div className="content">
-      <a href = '/chome'><h1>HotSpot </h1></a>
+      <a href = '/cHome'><h1>HotSpot </h1></a>
       <div>
         <form>
           <label>
@@ -28,7 +28,7 @@ export default function Cuserprofile(){
       </div>
       
       <button
-        onClick={() => navigateToPage('/chome')} //need to return to homepage to scroll
+        onClick={() => navigateToPage('/cHome')} //need to return to homepage to scroll
         className="page-button"
       >
         Return

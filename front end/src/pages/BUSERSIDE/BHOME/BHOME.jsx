@@ -3,7 +3,7 @@ import './BHome.css';
 function BHome() {
     return (
         <>
-            <a href = '/bhome'><h1>HotSpot </h1></a>
+            <a href = '/bHome'><h1>HotSpot </h1></a>
             <div>
 
                 <div id="invite">
