@@ -1,9 +1,10 @@
+
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
-const baseURL = //api location here
+import ('./CreateAcc.css');
 
-import './CreateAcc.css';
+const baseURL = //api location here
 
 export default function CreateAcc(){
   const history = useHistory();
