@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
 const baseURL = //api location here
+
 import './CreateAcc.css';
 
 export default function CreateAcc(){
@@ -91,13 +92,13 @@ export default function CreateAcc(){
       </div>
       
       <button
-        onClick={() => navigateToPage('/CHome')} //need to decide on page after login
+        onClick={() => navigateToPage('/chome')} //need to decide on page after login
         className="page-button"
       >
         Create Personal
       </button>
       <button
-        onClick={() => navigateToPage('/BHome')} //need to decide on page after login
+        onClick={() => navigateToPage('/bhome')} //need to decide on page after login
         className="page-button"
       >
         Create Business
