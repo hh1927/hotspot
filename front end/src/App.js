@@ -31,7 +31,7 @@ function App() {
               <BHome />
             </Route>
             <Route exact={true} path={'/createAcc'}>
-              <createAcc />
+              <CreateAcc />
             </Route>
             <Route exact={true} path={'/users'}>
               <Users />
