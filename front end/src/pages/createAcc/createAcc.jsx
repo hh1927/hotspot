@@ -3,9 +3,9 @@ import axios from 'axios';
 import {useHistory} from 'react-router-dom';
 const baseURL = //api location here
 
-import './createAcc.css';
+import './CreateAcc.css';
 
-export default function createAcc(){
+export default function CreateAcc(){
   const history = useHistory();
 
   function navigateToPage(path) {
@@ -92,13 +92,13 @@ export default function createAcc(){
       </div>
       
       <button
-        onClick={() => navigateToPage('/chome')} //need to decide on page after login
+        onClick={() => navigateToPage('/cHome')} //need to decide on page after login
         className="page-button"
       >
         Create Personal
       </button>
       <button
-        onClick={() => navigateToPage('/bhome')} //need to decide on page after login
+        onClick={() => navigateToPage('/bHome')} //need to decide on page after login
         className="page-button"
       >
         Create Business
