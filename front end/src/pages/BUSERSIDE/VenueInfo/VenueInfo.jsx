@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom';
 
 import './VenueInfo.css';
 
-export default function EventInfo(){
+export default function VenueInfo(){
   const history = useHistory();
 
   function navigateToPage(path) {
@@ -17,23 +17,15 @@ export default function EventInfo(){
       <div>
         <form>
           <label>
-            Location: <input type="text" /> 
+            Vibe: <input type="text" />
           </label>
           <br />
           <label>
-            Date: <input type="text" />
+            Age Requirement: <input type="text" />
           </label>
           <br />
           <label>
-            Time: <input type="text" />
-          </label>
-          <br />
-          <label>
-            Max Guests Allowed: <input type="text" />
-          </label>
-          <br />
-          <label>
-            General Description: <input type="text" />
+            Bar Type: <input type="text" />
           </label>
           <br />
         </form>
