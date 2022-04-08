@@ -64,7 +64,14 @@ class DBTestCase(TestCase):
     
     def test_fetch_buser(self):
         """
-        Can we fetch user db?
+        Can we fetch buser db?
         """
         busers = db.fetch_busers()
         self.assertIsInstance(busers, list)
+
+    def test_fetch_cuser(self):
+        """
+        Can we fetch cuser db?
+        """
+        cusers = db.fetch_cusers()
+        self.assertIsInstance(cusers, list)
