@@ -14,6 +14,7 @@ import BHome from './pages/BUSERSIDE/BHome/BHome';
 import BSettings from './pages/BUSERSIDE/BSettings/BSettings';
 import VenueInfo from './pages/BUSERSIDE/VenueInfo/VenueInfo';
 import GuestList from './pages/BUSERSIDE/GuestList/GuestList';
+import GuestProfile from './pages/BUSERSIDE/GuestList/GuestProfile';
 
 import './App.css';
 
@@ -61,7 +62,10 @@ function App() {
               <VenueProfile />
             </Route>
             <Route exact={true} path={'/guestList'}>
-              <guestList />
+              <GuestList />
+            </Route>
+            <Route exact={true} path={'/guestProfile'}>
+              <GuestProfile />
             </Route>
           </Switch>
         </Router>
