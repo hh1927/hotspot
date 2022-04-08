@@ -11,6 +11,7 @@ import Confirmation from './pages/CUSERSIDE/Confirmation/Confirmation';
 import EventInfo from './pages/BUSERSIDE/EventInfo/EventInfo';
 import VenueProfile from './pages/CUSERSIDE/VenueProfile/VenueProfile';
 import BHome from './pages/BUSERSIDE/BHome/BHome';
+import VenueInfo from './pages/BUSERSIDE/VenueInfo/VenueInfo';
 
 import './App.css';
 
@@ -47,6 +48,9 @@ function App() {
             </Route>
             <Route exact={true} path={'/eventInfo'}>
               <EventInfo />
+            </Route>
+            <Route exact={true} path={'/venueInfo'}>
+              <VenueInfo />
             </Route>
             <Route exact={true} path={'/venueProfile'}>
               <VenueProfile />
