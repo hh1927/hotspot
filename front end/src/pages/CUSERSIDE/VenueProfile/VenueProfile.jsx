@@ -24,7 +24,7 @@ export default function VenueProfile(){
         <p className="content">Party Description</p>
       </div>
       <button
-        onClick={() => navigateToPage('/cHome')} //needs to allow users to update info. MUST UPDATE
+        onClick={() => navigateToPage('/cHome')}
         className="page-button"
       >
         Return
