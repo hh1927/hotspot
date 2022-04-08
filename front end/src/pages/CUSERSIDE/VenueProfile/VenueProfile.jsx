@@ -24,7 +24,7 @@ export default function VenueProfile(){
         <p className="content">Party Description</p>
       </div>
       <button
-        onClick={() => navigateToPage('/cHome')}
+        onClick={() => navigateToPage('/bSettings')}
         className="page-button"
       >
         Return
