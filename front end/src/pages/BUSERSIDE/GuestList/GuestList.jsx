@@ -32,4 +32,4 @@ function GuestList() {
     )
 }
 
-export default BHome;
+export default GuestList;
