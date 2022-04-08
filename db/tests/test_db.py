@@ -53,4 +53,11 @@ class DBTestCase(TestCase):
         new_buser = ep.add_buser("tester")
         busers = db.get_busers()
         self.asserIn(new_buser, busers)
-    
+        
+     def test_cuser_exists(self): 
+        """
+        testing that cuser_exists works
+        """
+        new_cuser = ep.add_cuser("tester")
+        cusers = db.get_cusers()
+        self.asserIn(new_cuser, cusers)
