@@ -50,6 +50,15 @@ export default function VenueInfo(){
       >
         Save
       </button>
+
+      <br />
+
+      <button
+        onClick={() => navigateToPage('/bHome')} //needs to send to settings page
+        className="page-button"
+      >
+        Settings
+      </button>
     </div>
   );
 };
