@@ -1,11 +1,11 @@
 """
-This file holds the tests for db.py.
+This file holds the tests for data.py.
 """
 
 from unittest import TestCase, skip
 # import random
 
-import db.db as db
+import db.data as db
 
 FAKE_USER = "Fake user"
 
