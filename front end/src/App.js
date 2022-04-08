@@ -13,6 +13,7 @@ import VenueProfile from './pages/CUSERSIDE/VenueProfile/VenueProfile';
 import BHome from './pages/BUSERSIDE/BHome/BHome';
 import BSettings from './pages/BUSERSIDE/BSettings/BSettings';
 import VenueInfo from './pages/BUSERSIDE/VenueInfo/VenueInfo';
+import GuestList from './pages/BUSERSIDE/GuestList/GuestList';
 
 import './App.css';
 
@@ -58,6 +59,9 @@ function App() {
             </Route>
             <Route exact={true} path={'/venueProfile'}>
               <VenueProfile />
+            </Route>
+            <Route exact={true} path={'/guestList'}>
+              <guestList />
             </Route>
           </Switch>
         </Router>
