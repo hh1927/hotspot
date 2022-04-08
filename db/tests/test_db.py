@@ -3,6 +3,7 @@ This file holds the tests for data.py.
 """
 
 from unittest import TestCase, skip
+import API.endpoints as ep
 # import random
 
 import db.data as db
@@ -44,4 +45,19 @@ class DBTestCase(TestCase):
         """
         users = db.get_event_info()
         self.assertIsInstance(users, dict)
-
+        
+     def test_buser_exists(self): 
+        """
+        testing that buser_exists works
+        """
+        new_buser = ep.add_buser("tester")
+        busers = db.get_busers()
+        self.asserIn(new_buser, busers)
+        
+     def test_cuser_exists(self): 
+        """
+        testing that cuser_exists works
+        """
+        new_cuser = ep.add_cuser("tester")
+        cusers = db.get_cusers()
+        self.asserIn(new_cuser, cusers)
