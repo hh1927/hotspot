@@ -97,12 +97,14 @@ def fetch_busers():
     """
     A function to return all busers in the data store.
     """
-    # return dbc.fetch_all(BUSERS, BUSER_NM)
+    return dbc.fetch_all(BUSERS, BUSER_NM)
+    """
     return {
         "Catch": [("clubbing", "brunch"), "NYC"],
         "Penny Farthing": [("bars", "sports"), "NYC"],
         "Fleur Room": [("art", "clubbing"), "NYC"],
     }
+    """
 
 def fetch_events():
     """
