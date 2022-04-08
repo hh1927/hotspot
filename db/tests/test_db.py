@@ -61,3 +61,10 @@ class DBTestCase(TestCase):
         new_cuser = ep.add_cuser("tester")
         cusers = db.get_cusers()
         self.asserIn(new_cuser, cusers)
+    
+    def test_fetch_buser(self):
+        """
+        Can we fetch user db?
+        """
+        busers = db.fetch_busers()
+        self.assertIsInstance(busers, list)
