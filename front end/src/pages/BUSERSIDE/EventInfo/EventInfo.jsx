@@ -13,7 +13,7 @@ export default function EventInfo(){
 
   return (
     <div className="content">
-      <a href = '/chome'><h1>HotSpot </h1></a>
+      <a href = '/cHome'><h1>HotSpot </h1></a>
       <div>
         <form>
           <label>

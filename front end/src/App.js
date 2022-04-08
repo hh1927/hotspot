@@ -11,6 +11,7 @@ import Confirmation from './pages/CUSERSIDE/Confirmation/Confirmation';
 import EventInfo from './pages/BUSERSIDE/EventInfo/EventInfo';
 import VenueProfile from './pages/CUSERSIDE/VenueProfile/VenueProfile';
 import BHome from './pages/BUSERSIDE/BHome/BHome';
+import BSettings from './pages/BUSERSIDE/BSettings/BSettings';
 import VenueInfo from './pages/BUSERSIDE/VenueInfo/VenueInfo';
 
 import './App.css';
@@ -30,6 +31,9 @@ function App() {
             </Route>
             <Route exact={true} path={'/bHome'}>
               <BHome />
+            </Route>
+            <Route exact={true} path={'/bSettings'}>
+              <BSettings />
             </Route>
             <Route exact={true} path={'/createAcc'}>
               <CreateAcc />

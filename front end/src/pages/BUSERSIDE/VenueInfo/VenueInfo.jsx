@@ -13,7 +13,7 @@ export default function VenueInfo(){
 
   return (
     <div className="content">
-      <a href = '/chome'><h1>HotSpot </h1></a>
+      <a href = '/bHome'><h1>HotSpot </h1></a>
       <div>
         <form>
           <label>
