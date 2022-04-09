@@ -189,7 +189,7 @@ class EndpointTestCase(TestCase):
         # db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}})
         self.assertIn(cdaily, db.fetch_cusers)
    
-    def test_update_cDaily(self):
+    def test_retrieve_cDaily(self):
         """
         See if we can successfully retrieve correct values
         """
