@@ -38,6 +38,13 @@ class EndpointTestCase(TestCase):
         ret = ccu.post(new_cuser)
         cusers = db.get_cusers()
         self.assertIn(new_cuser, cusers)
+        
+     def retrieve_cuser(self):
+        """
+        See if we can successfully retrieve business user.
+        """
+        np = ep.add_cuser("cuser tester")
+        self.assertTrue(True)
 
     def test_buser(self):
         """
