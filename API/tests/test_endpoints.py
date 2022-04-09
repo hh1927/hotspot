@@ -41,7 +41,7 @@ class EndpointTestCase(TestCase):
         
      def retrieve_cuser(self):
         """
-        See if we can successfully retrieve business user.
+        See if we can successfully retrieve consumer user.
         """
         np = ep.add_cuser("cuser tester")
         self.assertTrue(True)
