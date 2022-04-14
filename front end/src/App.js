@@ -14,7 +14,7 @@ import BHome from './pages/BUSERSIDE/BHome/BHome';
 import BSettings from './pages/BUSERSIDE/BSettings/BSettings';
 import VenueInfo from './pages/BUSERSIDE/VenueInfo/VenueInfo';
 import GuestList from './pages/BUSERSIDE/GuestList/GuestList';
-import GuestProfile from './pages/BUSERSIDE/GuestList/GuestProfile';
+import GuestProfile from './pages/BUSERSIDE/GuestProfile/GuestProfile';
 
 import './App.css';
 

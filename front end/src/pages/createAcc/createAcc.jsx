@@ -94,13 +94,13 @@ export default function CreateAcc(){
       </div>
       
       <button
-        onClick={() => navigateToPage('/cHome')} //need to decide on page after login
+        onClick={() => window.location.href='/cHome'} //need to decide on page after login
         className="page-button"
       >
         Create Personal
       </button>
       <button
-        onClick={() => navigateToPage('/bHome')} //need to decide on page after login
+        onClick={() => window.location.href='/bHome'} //need to decide on page after login
         className="page-button"
       >
         Create Business
