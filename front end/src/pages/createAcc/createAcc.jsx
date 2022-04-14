@@ -4,9 +4,10 @@ import axios from 'axios';
 import {useHistory} from 'react-router-dom';
 import ('./CreateAcc.css');
 
-const baseURL = //api location here
+//const baseURL = //api location here
 
 export default function CreateAcc(){
+  /*
   const history = useHistory();
 
   function navigateToPage(path) {
@@ -45,7 +46,7 @@ export default function CreateAcc(){
       setPost(response.data)
     })
   }
-
+*/
 
   return (
     <div className="login">
