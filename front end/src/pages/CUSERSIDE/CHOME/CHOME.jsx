@@ -1,9 +1,10 @@
 import './CHome.css';
 import React from 'react';
 import axios from 'axios';
-const baseURL = //our API
+//const baseURL = //our API
 
 function CHome() {
+    /*
     const [post, setPost] = React.useState(null);
     React.useEffect(() => {
         axios.get(baseURL).then((response) => {
@@ -12,6 +13,7 @@ function CHome() {
     } );
     if(!post) return null;
     //would return post.promo for event promo pic
+    */
     return (
         <>
             <a href = '/cHome'><h1>HotSpot </h1></a>
