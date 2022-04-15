@@ -9,19 +9,25 @@ function BHome() {
             </a>
             <div>
 
-                <div id="invite">
+                <div class= "event-container">
+                    <div class="grid-item1">
                     <a href = '/eventinfo'>
-                    <img id= 'event' src="https://picsum.photos/1000" /></a>
+                    <img src="https://picsum.photos/1000" alt= 'event'/></a></div>
+                    <div class="grid-item2">
                     <a href = '/eventinfo'>
-                    <img id= 'event' src="https://picsum.photos/1000" /></a>
+                    <img src="https://picsum.photos/1000" alt= 'event'/></a></div>
+                    <div class="grid-item3">
                     <a href = '/eventinfo'>
-                    <img id= 'event' src="https://picsum.photos/1000" /></a>
+                    <img src="https://picsum.photos/1000" alt= 'event'/></a></div>
+                    <div class="grid-item4">
                     <a href = '/eventinfo'>
-                    <img id= 'event' src="https://picsum.photos/1000" /></a>
+                    <img src="https://picsum.photos/1000" alt= 'event'/></a></div>
+                    <div class="grid-item5">
                     <a href = '/eventinfo'>
-                    <img id= 'event' src="https://picsum.photos/1000" /></a>
+                    <img  src="https://picsum.photos/1000" alt= 'event'/></a></div>
+                    <div class="grid-item6">
                     <a href = '/eventinfo'>
-                    <img id= 'event' src="https://picsum.photos/1000" /></a>
+                    <img src="https://picsum.photos/1000" alt= 'event'/></a></div>
                 </div>
 
             </div>

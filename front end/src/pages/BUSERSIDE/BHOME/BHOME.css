@@ -1,7 +1,43 @@
-#event img{
-    width: 50%;
-    margin-bottom: 3vh;
-    margin-top: 3vh;
-    margin-left: 3vh;
-    margin-right: 3vh;
+.event-container{
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: fit-content(200px) fit-content(300px);
+    grid-template-rows: 225px 225px 225px;
+    grid-row-gap: 50px;
+    grid-column-gap: 50px;
 }
+
+.grid-item1{
+    display: block;
+    object-fit: contain;
+    max-width: 200px;
+    
+
+}
+.grid-item2{
+    display: block;
+    object-fit: contain;
+    max-width: 200px;
+
+}
+.grid-item3{
+    display: block;
+    object-fit: contain;
+    max-width: 200px;
+}
+.grid-item4{
+    display: block;
+    object-fit: contain;
+    max-width: 200px;
+}
+.grid-item5{
+    display: block;
+    object-fit: contain;
+    max-width: 200px;
+}
+.grid-item6{
+    display: block;
+    object-fit: contain;
+    max-width: 200px;
+}
+

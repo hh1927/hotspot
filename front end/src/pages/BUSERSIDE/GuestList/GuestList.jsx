@@ -6,19 +6,55 @@ function GuestList() {
             <a href = '/bHome'><h1>HotSpot </h1></a>
             <div>
 
-                <div id="invite">
-                    <a href = '/bHome'> should eventually link to cuserprofile (non mutable)
-                    <img id= 'event' src="https://picsum.photos/1000" /></a>
-                    <a href = '/bHome'>
-                    <img id= 'event' src="https://picsum.photos/1000" /></a>
-                    <a href = '/bHome'>
-                    <img id= 'event' src="https://picsum.photos/1000" /></a>
-                    <a href = '/bHome'>
-                    <img id= 'event' src="https://picsum.photos/1000" /></a>
-                    <a href = '/bHome'>
-                    <img id= 'event' src="https://picsum.photos/1000" /></a>
-                    <a href = '/bHome'>
-                    <img id= 'event' src="https://picsum.photos/1000" /></a>
+                <div class="guestlist-container">
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
+                    <a href = '/guestprofile'>
+                    <img src="https://picsum.photos/1000" alt= 'guestpropic'/></a>
                 </div>
 
             </div>
