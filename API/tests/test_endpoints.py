@@ -197,7 +197,7 @@ class EndpointTestCase(TestCase):
         # evInf = bquota_list.updateOne({name:business_name},{$set:{quota:new_quota}})
         bquota_updated = ep.fetch_bquota()
         # self.assertIn(evInf, bquota_updated)
-        self.assertTrue(True)
+        self.assertIn(bquota_updated, ep)
 
     def cDaily(self):
         new_neighborhood = new_entitity_name("test_neighborhood")
@@ -206,7 +206,7 @@ class EndpointTestCase(TestCase):
         cDaily = ep.cDaily(Resource)
         # db.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}})
         # db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}})
-        self.assertIn(cdaily, db.fetch_cusers)
+        self.assertIn(cdaily, ep.fetch_cusers)
    
     def test_retrieve_cDaily(self):
         """
@@ -235,5 +235,7 @@ class EndpointTestCase(TestCase):
         """
         evInf = ep.add_event("Test event", "Test location",
                              "test price", "test hours")
-        allEvents = ep.fetch_events()
-        self.assertIn(evInf, allEvents)
+         np = ep.add_buser("tester")
+         cl = ep.cList(Resource)
+         allEvents = ep.fetch_events(Resource)
+         self.assertIn(evInf, allEvents)
