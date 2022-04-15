@@ -91,3 +91,6 @@ label,
   font-family: 'Bebas Neue', cursive;
 } 
 
+.settings {
+  text-align: right; 
+}

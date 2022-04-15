@@ -4,6 +4,9 @@ function BHome() {
     return (
         <>
             <a href = '/bHome'><h1>HotSpot </h1></a>
+            <a href = '/bsettings'>
+            <button id= "settings"> icon here</button>
+            </a>
             <div>
 
                 <div id="invite">
@@ -25,7 +28,7 @@ function BHome() {
             <a href = '/eventinfo'>
             <button id= "resButton"> CREATE </button>
             </a>
-            <a href = '/buserprofile'>
+            <a href = '/venueinfo'>
             <button id= "nextButton"> PROFILE </button>
             </a>
             </>

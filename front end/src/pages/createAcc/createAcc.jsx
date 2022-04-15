@@ -51,6 +51,9 @@ export default function CreateAcc(){
   return (
     <div className="login">
       <h1>Create an Account </h1>
+      <a href = '/bsettings'>
+            <button id= "settings"> icon here</button>
+            </a>
       <div>
         <form>
           <label>

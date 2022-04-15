@@ -28,13 +28,13 @@ export default function Home(){
       </div>
       
       <button
-        onClick={() => navigateToPage('/cHome')} //need to decide on page after login
+        onClick={() => navigateToPage('/cHome')}
         className="page-button"
       >
         Login Personal
       </button>
       <button
-        onClick={() => navigateToPage('/bHome')} //need to decide on page after login
+        onClick={() => navigateToPage('/bHome')} 
         className="page-button"
       >
         Login Business

@@ -14,6 +14,9 @@ export default function BSettings(){
   return (
     <div className="content">
       <a href = '/bHome'><h1>HotSpot </h1></a>
+      <a href = '/bsettings'>
+            <button id= "settings"> icon here</button>
+            </a>
       <div>
         <form>
           <label>
@@ -29,12 +32,6 @@ export default function BSettings(){
         className="page-button"
       >
         Home
-      </button>
-      <button
-        onClick={() => navigateToPage('/venueInfo')} //needs to prevent users from updating w/o hitting edit beyond this point
-        className="page-button"
-      >
-        Back
       </button>
     </div>
   );

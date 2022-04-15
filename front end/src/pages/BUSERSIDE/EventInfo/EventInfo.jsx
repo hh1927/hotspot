@@ -14,6 +14,9 @@ export default function EventInfo(){
   return (
     <div className="content">
       <a href = '/cHome'><h1>HotSpot </h1></a>
+      <a href = '/bsettings'>
+            <button id= "settings"> icon here</button>
+            </a>
       <div>
         <form>
           <label>

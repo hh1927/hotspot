@@ -17,6 +17,9 @@ function CHome() {
     return (
         <>
             <a href = '/cHome'><h1>HotSpot </h1></a>
+            <a href = '/bsettings'>
+            <button id= "settings"> icon here</button>
+            </a>
             <a href = '/cuserprofile'>
             <button id= "profButton"> Profile </button>
             </a>

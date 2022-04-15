@@ -14,6 +14,9 @@ export default function VenueInfo(){
   return (
     <div className="content">
       <a href = '/bHome'><h1>HotSpot </h1></a>
+      <a href = '/bsettings'>
+            <button id= "settings"> icon here</button>
+            </a>
       <div>
         <form>
           <label>

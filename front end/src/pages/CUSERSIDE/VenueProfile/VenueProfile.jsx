@@ -14,6 +14,9 @@ export default function VenueProfile(){
   return (
     <div className="content">
       <a href = '/chome'><h1>HotSpot </h1></a>
+      <a href = '/bsettings'>
+            <button id= "settings"> icon here</button>
+            </a>
       <div>
         <p className="content">Event Name</p>
         <p className="content">Time</p>

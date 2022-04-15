@@ -4,6 +4,9 @@ function GuestProfile() {
     return (
         <>
             <a href = '/bHome'><h1>HotSpot </h1></a>
+            <a href = '/bsettings'>
+            <button id= "settings"> icon here</button>
+            </a>
             <div>
 
                 <div id="invite">
