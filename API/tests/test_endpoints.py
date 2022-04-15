@@ -39,12 +39,13 @@ class EndpointTestCase(TestCase):
         cusers = db.get_cusers()
         self.assertIn(new_cuser, cusers)
         
-     def retrieve_cuser(self):
+     def test_fetchCuser(self):
         """
-        See if we can successfully retrieve consumer user.
+        See if we can successfully fetch consumer user.
         """
-        np = ep.add_cuser("cuser tester")
-        self.assertTrue(True)
+        np = ep.add_buser("tester")
+        cl = ep.cList(Resource)
+        self.assertIn(cl, np)
 
     def test_buser(self):
         """
