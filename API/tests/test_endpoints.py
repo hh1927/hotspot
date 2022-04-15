@@ -92,6 +92,14 @@ class EndpointTestCase(TestCase):
         for val in ret.values():
             self.assertIsInstance(val, list)
     
+    def test_blist1(self):
+        """
+        Post-condition 1: return is a dictionary.
+        """
+        bl = ep.ClientList(Resource)
+        ret = bl.get()
+        self.assertIsInstance(ret, dict)
+    
     def test_blist2(self):
         """
         Post-condition 2: keys to the dict are strings
