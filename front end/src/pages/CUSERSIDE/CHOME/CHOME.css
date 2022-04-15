@@ -9,6 +9,7 @@
 }
 
 #invite img {
+    display: block;
     max-width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -30,3 +31,7 @@
     height: 2.2em;
 }
 
+.back{
+    background:linear-gradient(rgba(250,0,0,0.5),transparent);
+    background-color:rgb(153, 0, 255); /*this your primary color*/
+}

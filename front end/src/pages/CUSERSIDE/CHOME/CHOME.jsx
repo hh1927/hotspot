@@ -15,7 +15,7 @@ function CHome() {
     //would return post.promo for event promo pic
     */
     return (
-        <>
+        <div>
             <a href = '/cHome'><h1>HotSpot </h1></a>
             <a href = '/bsettings'>
             <button id= "settings"> icon here</button>
@@ -37,7 +37,7 @@ function CHome() {
             <a href = '/cHome'>
             <button id= "nextButton"> Next </button>
             </a>
-            </>
+            </div>
     )
 }
 export default CHome;
