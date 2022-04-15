@@ -1,4 +1,6 @@
 body {
+  background:linear-gradient(rgba(250,0,0,0.5),transparent);
+  background-color:rgb(153, 0, 255); /*this your primary color*/
   margin: 0;
   padding: 0;
   max-width: 100vw;

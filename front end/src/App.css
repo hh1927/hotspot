@@ -54,8 +54,10 @@
 }
 
 .body {
-  background-color: #282c34;
-  color: #df80ff;
+  /*background-color: #282c34;
+  color: #df80ff;*/
+  background:linear-gradient(rgba(250,0,0,0.5),transparent);
+  background-color:rgb(153, 0, 255); /*this your primary color*/
   padding: 40px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
