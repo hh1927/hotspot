@@ -16,15 +16,17 @@ function CHome() {
     */
     return (
         <div>
+           <div className='heading'>
             <a href = '/cHome'><h1>HotSpot </h1></a>
+            
             <a href = '/bsettings'>
             <button id= "settings"> icon here</button>
             </a>
             <a href = '/cuserprofile'>
             <button id= "profButton"> Profile </button>
             </a>
+            </div>
             <div>
-
                 <div id="invite">
                     <a href = '/venueprofile'>
                     <img src="https://picsum.photos/1000" /></a>
