@@ -226,7 +226,7 @@ class partySize(Resource):
         return f"{party} added."
 
 
-@api.route("/busers/eventInfo/<eventName>/<location>/<price>/<hours>")
+@api.route("/busers/eventInfo/<business_name>/<eventName>/<location>/<price>/<hours>")
 class eventInfo(Resource):
     """
     This class supports bUsers inputting
@@ -235,11 +235,11 @@ class eventInfo(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
-    def post(self, eventName, location, price, hours):
+    def post(self, business_name, eventName, location, price, hours):
         """
         This method creates a new event.
         """
-        ret = db.add_event(eventName, location, price, hours)
+        ret = db.add_event(business_name, eventName, location, price, hours)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("Event doesnt exist yet. Please try again."))
         elif ret == db.DUPLICATE:
@@ -247,7 +247,7 @@ class eventInfo(Resource):
         return f"{eventName} is ready for tonight."
 
 
-@api.route('/busers/deleteEvent/<eventName>/<location>')
+@api.route('/busers/deleteEvent/<business_name>/<eventName>/<location>/<price>/<hours>')
 class deleteEvent(Resource):
     """
     This class enables deleting an event after it occurs
@@ -256,11 +256,11 @@ class deleteEvent(Resource):
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
     @api.response(HTTPStatus.FORBIDDEN,
                   'Only the admin can delete it.')
-    def post(self, eventName, location):
+    def post(self, business_name, eventName, location, price, hours):
         """
         This method deletes an event from the event db.
         """
-        ret = db.del_event(eventName, location)
+        ret = db.del_event(business_name, eventName, location, price, hours)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound(f"{eventName} at {location} not found."))
         else:
