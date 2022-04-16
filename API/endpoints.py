@@ -49,7 +49,7 @@ class Endpoints(Resource):
 
 
 # CHECK api route
-@api.route("/cUsers/<username>/<age>/<gender>/<interests>/<neighborhoods>")
+@api.route("/cUsers/<username>/<age>//<interests>/<neighborhoods>")
 class cUser(Resource):
     """
     This class supports adding Customer users.
@@ -59,12 +59,12 @@ class cUser(Resource):
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
     # updated parameters of cUser to match workflow
-    def post(self, username, age, gender, interests, neighborhood):
+    def post(self, username, age, interests, neighborhood):
         """
         This method creates a new Customer User.
         """
         # database query updated to include fields from parameters
-        ret = db.add_cuser(username, age, gender, interests, neighborhood)
+        ret = db.add_cuser(username, age, interests, neighborhood)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
@@ -98,7 +98,7 @@ class cList(Resource):
         update_interests = db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}}) #added line to incorporate updating of users interests 
         allCusers = db.fetch_cusers()        
         if allCusers is None:
-            raise (wz.NotFound("user couldnt be found."))
+            raise (wz.NotFound(f"{user_name} couldnt be found."))
         else:
             return allCusers
 
@@ -161,7 +161,7 @@ class bList(Resource):
             return allBusers
 
 
-@api.route("/cusers/deletecUser/<username>")
+@api.route("/cusers/deletecUser/<username>/<age>/<interests>/<neighborhood>")
 class deletecUser(Resource):
     """
     This class enables deleting a cuser.
@@ -172,7 +172,7 @@ class deletecUser(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.FORBIDDEN, "A user can only delete themselves.")
-    def post(self, username):
+    def post(self, username, age, interests, neighborhood):
         """
         This method deletes a user from the user db.
         """
@@ -183,7 +183,7 @@ class deletecUser(Resource):
             return f"{username} deleted."
 
 
-@api.route("/busers/deletebUser/<buserName>")
+@api.route("/busers/deletebUser/<username>")
 class deletebUser(Resource):
     """
     This class enables deleting a buser.
@@ -198,11 +198,11 @@ class deletebUser(Resource):
         """
         This method deletes a buser from the user db.
         """
-        ret = db.del_user(buserName)
+        ret = db.del_user(username)
         if ret == db.NOT_FOUND:
-            raise (wz.NotFound(f"buser {buserName} not found."))
+            raise (wz.NotFound(f"buser {username} not found."))
         else:
-            return f"{buserName} deleted."
+            return f"{username} deleted."
 
 
 # corrected
@@ -216,11 +216,11 @@ class partySize(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
-    def post(self, cusername, party):
+    def post(self, username, party_size):
         """
         This method tells us party size
         """
-        ret = db.add_party(cusername, party)
+        ret = db.add_party(username, party_size)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         return f"{party} added."
