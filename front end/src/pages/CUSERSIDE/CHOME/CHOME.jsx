@@ -31,6 +31,7 @@ function CHome() {
                 </div>
 
             </div>
+            <div className='buttoncentering'>
             <a href = '/rSVP'>
             <button id= "resButton"> RSVP </button>
             </a>
@@ -38,6 +39,7 @@ function CHome() {
             <button id= "nextButton"> Next </button>
             </a>
             </div>
+        </div>
     )
 }
 export default CHome;
