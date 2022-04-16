@@ -104,7 +104,7 @@ class cList(Resource):
 
 
 # CHECK api route
-@api.route("/bUsers/<username>/<business_name>")
+@api.route("/bUsers/<age_restriction>/<business_name>/<business_type>/<username>/<quota>")
 class bUser(Resource):
     """
     This class supports business users,
