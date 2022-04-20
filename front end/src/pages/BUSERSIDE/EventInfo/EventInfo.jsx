@@ -5,10 +5,42 @@ import {useHistory} from 'react-router-dom';
 import './EventInfo.css';
 
 export default function EventInfo(){
+  const [EventInfo, setEventInfo] = useState(undefined);
+  const [error, setError] = useState(undefined);
+
+  const [refresh, setRefresh] = useState(0);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [newEvent, setNewEvent] = useState('');
   const history = useHistory();
 
   function navigateToPage(path) {
     history.push(path);
+  }
+
+  useEffect(() => {
+    axios.get('https://teamhotspot.herokuapp.com/busers/eventInfo')
+      .then((response) => {
+        if (response.data){
+          setNewEvent(response.data);
+        }
+      })
+      .catch(error => {
+        setError(error);
+        console.log(error);
+      });
+  }, [refresh])
+
+  const handleEventInfo = () => {
+    axios.post(`https://demo-repo23.herokuapp.com/busers/eventInfo/${business_name}/${eventName}/${location}/${price}/${hours}`)
+      .then(() => {
+        setIsModalOpen(false);
+        setRefresh(refresh + 1);
+      })
+      .catch(error => {
+        setError(error);
+        console.log(error);
+      })
   }
 
   return (
