@@ -37,6 +37,27 @@ function CHome() {
         .then(function () {
         // always executed
         });
+    
+    useEffect(() =>
+       {
+        axios
+            .post('website.heroku.com/cDaily/‘,
+        {
+		username: "SELECT username from cDaily"
+		new_interests:  "SELECT new_interests from cDaily"
+		new_neighborhood:  "SELECT new_neighborhood from cDaily"
+    })
+        .then(function () {
+        // handle success
+        console.log(“updated cDaily);
+        })
+        .catch(function (error) {
+        // handle error
+        console.log("error in updating customer preferences);
+        })
+        .then(function () {
+        // always executed
+        });
         
     return (
         <div>
