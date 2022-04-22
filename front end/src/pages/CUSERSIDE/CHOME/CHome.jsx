@@ -28,7 +28,7 @@ function CHome() {
         .then(function () 
         {
         // handle success
-        console.log("deleted cuser);
+        console.log("deleted cuser");
         })
         .catch(function (error) {
         // handle error
@@ -49,7 +49,7 @@ function CHome() {
     })
         .then(function () {
         // handle success
-        console.log(“updated cDaily);
+        console.log(“updated cDaily");
         })
         .catch(function (error) {
         // handle error
