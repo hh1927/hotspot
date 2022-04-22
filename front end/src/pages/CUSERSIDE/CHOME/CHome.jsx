@@ -53,7 +53,7 @@ function CHome() {
         })
         .catch(function (error) {
         // handle error
-        console.log("error in updating customer preferences);
+        console.log("error in updating customer preferences");
         })
         .then(function () {
         // always executed
