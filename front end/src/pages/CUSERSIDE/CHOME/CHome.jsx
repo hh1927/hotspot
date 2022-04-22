@@ -18,7 +18,7 @@ function CHome() {
     useEffect(() =>
     {
       axios
-         .post('website.heroku.com/deleteCuser/',
+         .post('website.heroku.com/deletecUser/',
     {
           username: "SELECT username from cuser"
           age:  "SELECT age from cuser"
