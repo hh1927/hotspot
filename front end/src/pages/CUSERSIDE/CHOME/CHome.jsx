@@ -14,6 +14,30 @@ function CHome() {
     if(!post) return null;
     //would return post.promo for event promo pic
     */
+    
+    useEffect(() =>
+    {
+      axios
+         .post('website.heroku.com/deleteCuser/',
+    {
+          username: "SELECT username from cuser"
+          age:  "SELECT age from cuser"
+          interests:  "SELECT interests from cuser"
+          neighborhood: "SELECT neighborhood from cuser"
+    })
+        .then(function () 
+        {
+        // handle success
+        console.log("deleted cuser);
+        })
+        .catch(function (error) {
+        // handle error
+        console.log("error in deleting cuser");
+        })
+        .then(function () {
+        // always executed
+        });
+        
     return (
         <div>
            <div className='heading'>
