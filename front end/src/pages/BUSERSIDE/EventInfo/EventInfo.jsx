@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
+import Main from './components/FileUpload'
 
 import './EventInfo.css';
 
@@ -37,6 +38,9 @@ export default function EventInfo(){
           <br />
           <label>
             General Description: <input type="text" />
+          </label>
+          <label>
+            <h1>File Upload</h1>
           </label>
           <br />
         </form>
