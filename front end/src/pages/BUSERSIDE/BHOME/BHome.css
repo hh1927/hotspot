@@ -8,13 +8,18 @@
 }
 
 .gallery {
+
     display: grid;
-    grid-template-columns: repeat(2, 2fr);
-    grid-template-rows: repeat(3, 5vw);
+    grid-template-columns: repeat(12, 1fr);
+    /*grid-template-rows: repeat(3, vw); */
     grid-gap: 10px;
 }
 
 .grid-item1{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
     display: block;
     object-fit: contain;
     max-width: 200px;
@@ -22,27 +27,47 @@
 
 }
 .grid-item2{
+    grid-column-start: 7;
+    grid-column-end: 12;
+    grid-row-start: 1;
+    grid-row-end: 2;
     display: block;
     object-fit: contain;
     max-width: 200px;
 
 }
 .grid-item3{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 4;
     display: block;
     object-fit: contain;
     max-width: 200px;
 }
 .grid-item4{
+    grid-column-start: 7;
+    grid-column-end: 12;
+    grid-row-start: 3;
+    grid-row-end: 4;
     display: block;
     object-fit: contain;
     max-width: 200px;
 }
 .grid-item5{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 5;
+    grid-row-end: 6;
     display: block;
     object-fit: contain;
     max-width: 200px;
 }
 .grid-item6{
+    grid-column-start: 7;
+    grid-column-end: 12;
+    grid-row-start: 5;
+    grid-row-end: 6;
     display: block;
     object-fit: contain;
     max-width: 200px;
