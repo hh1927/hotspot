@@ -65,7 +65,7 @@ function CHome() {
             <a href = '/cHome'><h1>HotSpot </h1></a>
             
             <a href = '/bsettings'>
-            <button id= "settings"> icon here</button>
+            <button id= "settings"> <img src="https://img.icons8.com/nolan/64/apple-settings.png"/> </button>
             </a>
             <a href = '/cuserprofile'>
             <button id= "profButton"> Profile </button>
