@@ -1,5 +1,5 @@
 import './CHome.css';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 //const baseURL = //our API
 
@@ -20,9 +20,9 @@ function CHome() {
       axios
          .post('website.heroku.com/deletecUser/',
     {
-          username: "SELECT username from cuser"
-          age:  "SELECT age from cuser"
-          interests:  "SELECT interests from cuser"
+          username: "SELECT username from cuser",
+          age:  "SELECT age from cuser",
+          interests:  "SELECT interests from cuser",
           neighborhood: "SELECT neighborhood from cuser"
     })
         .then(function () 
@@ -37,19 +37,19 @@ function CHome() {
         .then(function () {
         // always executed
         });
-    
+    });
     useEffect(() =>
        {
         axios
-            .post('website.heroku.com/cDaily/‘,
+            .post('website.heroku.com/cDaily/',
         {
-		username: "SELECT username from cDaily"
-		new_interests:  "SELECT new_interests from cDaily"
+		username: "SELECT username from cDaily",
+		new_interests:  "SELECT new_interests from cDaily",
 		new_neighborhood:  "SELECT new_neighborhood from cDaily"
     })
         .then(function () {
         // handle success
-        console.log(“updated cDaily");
+        console.log("updated cDaily");
         })
         .catch(function (error) {
         // handle error
@@ -58,7 +58,7 @@ function CHome() {
         .then(function () {
         // always executed
         });
-        
+    });  
     return (
         <div>
            <div className='heading'>
@@ -87,6 +87,6 @@ function CHome() {
             </a>
             </div>
         </div>
-    )
+    );
 }
 export default CHome;

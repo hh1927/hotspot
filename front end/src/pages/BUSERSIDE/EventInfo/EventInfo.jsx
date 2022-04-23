@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
-import Main from './front end/src/components/Main.jsx';
+//import Main from './front end/src/components/Main.jsx';
 
 import './EventInfo.css';
 
