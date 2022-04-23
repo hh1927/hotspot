@@ -7,6 +7,13 @@
     grid-column-gap: 50px;
 }
 
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: repeat(3, 5vw);
+    grid-gap: 10px;
+}
+
 .grid-item1{
     display: block;
     object-fit: contain;
@@ -39,5 +46,11 @@
     display: block;
     object-fit: contain;
     max-width: 200px;
+}
+
+.gallery_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 

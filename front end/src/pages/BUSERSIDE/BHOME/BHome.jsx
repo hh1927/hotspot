@@ -10,24 +10,26 @@ function BHome() {
             <div>
 
                 <div class= "event-container">
+                    <div class = "gallery">
                     <div class="grid-item1">
                     <a href = '/eventinfo'>
-                    <img src="https://picsum.photos/1000" alt= 'event'/></a></div>
+                    <img src="https://picsum.photos/1000" class = 'gallery_img' alt= 'event'/></a></div>
                     <div class="grid-item2">
                     <a href = '/eventinfo'>
-                    <img src="https://picsum.photos/1000" alt= 'event'/></a></div>
+                    <img src="https://picsum.photos/1000" class = 'gallery_img' alt= 'event'/></a></div>
                     <div class="grid-item3">
                     <a href = '/eventinfo'>
-                    <img src="https://picsum.photos/1000" alt= 'event'/></a></div>
+                    <img src="https://picsum.photos/1000" class = 'gallery_img' alt= 'event'/></a></div>
                     <div class="grid-item4">
                     <a href = '/eventinfo'>
-                    <img src="https://picsum.photos/1000" alt= 'event'/></a></div>
+                    <img src="https://picsum.photos/1000" class = 'gallery_img' alt= 'event'/></a></div>
                     <div class="grid-item5">
                     <a href = '/eventinfo'>
-                    <img  src="https://picsum.photos/1000" alt= 'event'/></a></div>
+                    <img  src="https://picsum.photos/1000" class = 'gallery_img' alt= 'event'/></a></div>
                     <div class="grid-item6">
                     <a href = '/eventinfo'>
-                    <img src="https://picsum.photos/1000" alt= 'event'/></a></div>
+                    <img src="https://picsum.photos/1000" class = 'gallery_img' alt= 'event'/></a></div>
+                    </div>
                 </div>
 
             </div>
