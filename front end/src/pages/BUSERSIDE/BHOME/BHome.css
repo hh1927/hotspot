@@ -1,8 +1,8 @@
 .event-container{
     display: grid;
     overflow: hidden;
-    grid-template-columns: fit-content(200px) fit-content(300px);
-    grid-template-rows: 225px 225px 225px;
+    /*grid-template-columns: fit-content(200px) fit-content(300px);
+    grid-template-rows: 225px 225px 225px; */git 
     grid-row-gap: 50px;
     grid-column-gap: 50px;
 }
