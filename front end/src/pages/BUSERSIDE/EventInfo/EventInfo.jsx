@@ -40,7 +40,7 @@ export default function EventInfo(){
             General Description: <input type="text" />
           </label>
           <label>
-            <h1>File Upload</h1>
+            File Upload: <input type= "file"/>
           </label>
           <br />
         </form>
