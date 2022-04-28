@@ -43,6 +43,17 @@ export default function CreateAcc(){
         console.log(error);
       })
   }
+  const handleBuserAcct = () => {
+    axios.post(`https://teamhotspot.herokuapp.com/createacc/blist`)
+      .then(() => {
+        setIsModalOpen(false);
+        setRefresh(refresh + 1);
+      })
+      .catch(error => {
+        setError(error);
+        console.log(error);
+      })
+  }
 
 
   /*
@@ -129,8 +140,12 @@ export default function CreateAcc(){
             <option value="Business">Business</option>
           </select>
           </label>
-          <div className="create-account">
+          <div className="create-Caccount">
               <button className="button" onClick={handleCuserAcct}>Create New Customer User</button>
+              <button className="button" onClick={() => setIsModalOpen(false)}> Cancel </button>
+          </div>
+          <div className="create-Baccount">
+              <button className="button" onClick={handleBuserAcct}>Create New Business User</button>
               <button className="button" onClick={() => setIsModalOpen(false)}> Cancel </button>
           </div>
         </form>
