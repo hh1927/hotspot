@@ -29,8 +29,8 @@ export default function RSVP(){
        });
    }, [refresh])
 
-   const handleEventInfo = () => {
-     axios.post(`https://demo-repo23.herokuapp.com/cList/${user_name}/${party_size}`)
+   const handlePartyInfo = () => {
+     axios.post(`https://teamhotspot.herokuapp.com/cList/${user_name}/${party_size}`)
        .then(() => {
          setIsModalOpen(false);
          setRefresh(refresh + 1);
@@ -68,6 +68,7 @@ export default function RSVP(){
       </div>
       
       <button
+        onClick={handlePartyInfo}>Add party information
         onClick={() => navigateToPage('/confirmation')} //need to decide on page RSVP
         className="page-button"
       >
