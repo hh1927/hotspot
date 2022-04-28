@@ -7,8 +7,45 @@ import ('./CreateAcc.css');
 //const baseURL = //api location here
 
 export default function CreateAcc(){
-  /*
+  const [createCacc, setCuserAccounts] = useState(undefined);
+  const [createBacc, setBuserAccounts] = useState(undefined);
+  const [error, setError] = useState(undefined);
+
+  const [refresh, setRefresh] = useState(undefined);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [newCuserName, setNewCAccountName] = useState('');
+  const [newBuserName, setNewBAccountName] = useState('');
+
   const history = useHistory();
+
+  useEffect(() => {
+    axios.get('https://teamhotspot.herokuapp.com/createacc/clist')
+      .then((response) => {
+        if (response.data){
+          setUsers(response.data);
+        }
+      })
+      .catch(error => {
+        setError(error);
+        console.log(error);
+      });
+  }, [refresh])
+
+  const handleCuserAcct = () => {
+    axios.post(`https://teamhotspot.herokuapp.com/createacc/clist`)
+      .then(() => {
+        setIsModalOpen(false);
+        setRefresh(refresh + 1);
+      })
+      .catch(error => {
+        setError(error);
+        console.log(error);
+      })
+  }
+
+
+  /*
 
   function navigateToPage(path) {
     history.push(path);
@@ -92,6 +129,10 @@ export default function CreateAcc(){
             <option value="Business">Business</option>
           </select>
           </label>
+          <div className="create-account">
+              <button className="button" onClick={handleCuserAcct}>Create New Customer User</button>
+              <button className="button" onClick={() => setIsModalOpen(false)}> Cancel </button>
+          </div>
         </form>
 
       </div>
