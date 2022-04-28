@@ -6,6 +6,32 @@ import './VenueProfile.css';
 
 export default function VenueProfile(){
   const history = useHistory();
+  const [newVenueProfile, setVenueProfile] = useState(undefined);
+
+  useEffect(() => {
+    axios.get('https://teamhotspot.herokuapp.com/VenueProfile/bQuota')
+      .then((response) => {
+        if (response.data){
+          setUsers(response.data);
+        }
+      })
+      .catch(error => {
+        setError(error);
+        console.log(error);
+      });
+  }, [refresh])
+
+  const handleBquota = () => {
+    axios.post(`https://teamhotspot.herokuapp.com/VenueProfile/bQuota`)
+      .then(() => {
+        setIsModalOpen(false);
+        setRefresh(refresh + 1);
+      })
+      .catch(error => {
+        setError(error);
+        console.log(error);
+      })
+  }
 
   function navigateToPage(path) {
     history.push(path);
@@ -27,6 +53,7 @@ export default function VenueProfile(){
         <p className="content">Party Description</p>
       </div>
       <button
+        onClick={handleCuserAcct}
         onClick={() => navigateToPage('/bSettings')}
         className="page-button"
       >

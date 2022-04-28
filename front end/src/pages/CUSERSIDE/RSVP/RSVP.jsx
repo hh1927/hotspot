@@ -68,7 +68,7 @@ export default function RSVP(){
       </div>
       
       <button
-        onClick={handlePartyInfo}>Add party information
+        onClick={handlePartyInfo}
         onClick={() => navigateToPage('/confirmation')} //need to decide on page RSVP
         className="page-button"
       >

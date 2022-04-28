@@ -7,6 +7,7 @@ import './EventInfo.css';
 export default function EventInfo(){
   const [EventInfo, setEventInfo] = useState(undefined);
   const [error, setError] = useState(undefined);
+  const [details, setDetails] = useState({business_name: '',eventName: '',location: '',price: '',hours: ''});
 
   const [refresh, setRefresh] = useState(0);
 
@@ -32,7 +33,7 @@ export default function EventInfo(){
   }, [refresh])
 
   const handleEventInfo = () => {
-    axios.post(`https://demo-repo23.herokuapp.com/busers/eventInfo/${business_name}/${eventName}/${location}/${price}/${hours}`)
+    axios.post(`https://teamhotspot.herokuapp.com/busers/eventInfo/${business_name}/${eventName}/${location}/${price}/${hours}`)
       .then(() => {
         setIsModalOpen(false);
         setRefresh(refresh + 1);
@@ -72,6 +73,10 @@ export default function EventInfo(){
           </label>
           <br />
         </form>
+        <div className="Update Event Info">
+              <button className="button" onClick={handleEventInfo}>Taking event info</button>
+              <button className="button" onClick={() => setIsModalOpen(false)}> Cancel </button>
+          </div>
 
       </div>
       
