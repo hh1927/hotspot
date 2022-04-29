@@ -35,6 +35,7 @@ export default function RSVP(){
         </form>
 
       </div>
+
       
       <button
         onClick={() => navigateToPage('/confirmation')} //need to decide on page RSVP
