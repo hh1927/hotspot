@@ -52,7 +52,7 @@ export default function CreateAcc(){
     <div className="login">
       <h1>Create an Account </h1>
       <a href = '/bsettings'>
-            <button id= "settings"> icon here</button>
+            <button id= "settings"> <img src="https://img.icons8.com/nolan/64/apple-settings.png"/></button>
             </a>
       <div>
         <form>
