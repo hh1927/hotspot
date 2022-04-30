@@ -21,6 +21,27 @@ function BHome() {
         // always executed
         });
     });
+    useEffect(() =>
+    {
+      axios
+         .post('website.heroku.com/bquota/',
+    {
+          username: "SELECT username from buser",
+          new_quota:  "SELECT quota from buser",
+    })
+        .then(function () 
+        {
+        // handle success
+        console.log("updated bquota");
+        })
+        .catch(function (error) {
+        // handle error
+        console.log("error in deleting cuser");
+        })
+        .then(function () {
+        // always executed
+        });
+    });
     return (
         <>
             <a href = '/bHome'><h1>HotSpot </h1></a>
