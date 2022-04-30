@@ -1,6 +1,26 @@
 import './BHome.css';
 
 function BHome() {
+     useEffect(() =>
+    {
+      axios
+         .post('website.heroku.com/deletebUser/',
+    {
+          username: "SELECT buserName from buser",
+    })
+        .then(function () 
+        {
+        // handle success
+        console.log("deleted buser");
+        })
+        .catch(function (error) {
+        // handle error
+        console.log("error in deleting cuser");
+        })
+        .then(function () {
+        // always executed
+        });
+    });
     return (
         <>
             <a href = '/bHome'><h1>HotSpot </h1></a>
