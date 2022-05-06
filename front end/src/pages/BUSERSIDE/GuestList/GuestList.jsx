@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom';
 
 import './GuestList.css';
 
-export default function GuestList() {
+/*function GuestList() {
     const history = useHistory();
     const [newcList, setcList] = useState(undefined);
 
@@ -106,4 +106,4 @@ export default function GuestList() {
     )
 }
 
-export default GuestList;
+export default GuestList;*/
