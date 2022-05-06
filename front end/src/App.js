@@ -7,6 +7,7 @@ import CHome from './pages/CUSERSIDE/CHome/CHome';
 import Users from './pages/Users/Users';
 import RSVP from './pages/CUSERSIDE/RSVP/RSVP';
 import Cuserprofile from './pages/CUSERSIDE/Cuserprofile/Cuserprofile';
+import Cuserprofile from './pages/CUSERSIDE/CSettings/CSettings';
 import Confirmation from './pages/CUSERSIDE/Confirmation/Confirmation';
 import EventInfo from './pages/BUSERSIDE/EventInfo/EventInfo';
 import VenueProfile from './pages/CUSERSIDE/VenueProfile/VenueProfile';
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route exact={true} path={'/bSettings'}>
               <BSettings />
+            </Route>
+            <Route exact={true} path={'/cSettings'}>
+              <cSettings />
             </Route>
             <Route exact={true} path={'/createAcc'}>
               <CreateAcc />
