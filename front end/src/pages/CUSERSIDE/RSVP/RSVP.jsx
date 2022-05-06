@@ -30,6 +30,7 @@ export default function RSVP(){
    }, [refresh])
 
    const handlePartyInfo = () => {
+     //Within then block add console.log to test the post request
      axios.post(`https://teamhotspot.herokuapp.com/cList/${user_name}/${party_size}`)
        .then(() => {
          setIsModalOpen(false);
@@ -69,7 +70,7 @@ export default function RSVP(){
       
       <button
         onClick={handlePartyInfo}
-        onClick={() => navigateToPage('/confirmation')} //need to decide on page RSVP
+        //onClick={() => {navigateToPage('/confirmation')}} //need to decide on page RSVP
         className="page-button"
       >
         RSVP
