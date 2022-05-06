@@ -87,6 +87,7 @@ export default function EventInfo(){
         Delete
       </button>
       <button
+        onClick={handleEventInfo}
         onClick={() => navigateToPage('/bHome')} //needs to prevent users from updating w/o hitting edit beyond this point
         className="page-button"
       >
