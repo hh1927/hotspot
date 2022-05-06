@@ -64,12 +64,12 @@ class cUser(Resource):
         This method creates a new Customer User.
         """
         # database query updated to include fields from parameters
-        ret = db.add_cuser(username, age, interests, neighborhood)
+        ret = db.add_cuser(cusername, age, interests, neighborhood)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
-            raise (wz.NotAcceptable(f"user {username} already exists."))
-        return f"{username} added."
+            raise (wz.NotAcceptable(f"user {cusername} already exists."))
+        return f"{cusername} added."
 
         # json_data = request.get_json(force=True)
         # json_data['name'] = username
@@ -79,7 +79,7 @@ class cUser(Resource):
 
 # CHECK
 # updated API route
-@api.route("/cList/<user_name>/<party_size>")
+@api.route("/cList/<cuserName>/<party_size>")
 class cList(Resource):
     # updated parameters to be in correspondence w workflow
     """
@@ -89,16 +89,16 @@ class cList(Resource):
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def get(self, user_name, party_size):
+    def get(self, cuserName, party_size):
         # modified parameters & changed function to get
         """
         This method returns all customer users.
         """
-        update_neighborhood = db.cusers.update_one({"name":user_name},{"$set":{"neighborhood":"new_neighborhood"}}) #added line to incorporate updating of users neighborhood 
-        update_interests = db.cusers.update_one({"name":user_name},{"$set":{"interests":"new_interests"}}) #added line to incorporate updating of users interests 
+        #update_neighborhood = db.cusers.update_one({"name":cuserName},{"$set":{"neighborhood":"new_neighborhood"}}) #added line to incorporate updating of users neighborhood 
+        #update_interests = db.cusers.update_one({"name":cuserName},{"$set":{"interests":"new_interests"}}) #added line to incorporate updating of users interests 
         allCusers = db.fetch_cusers()        
         if allCusers is None:
-            raise (wz.NotFound(f"{user_name} couldnt be found."))
+            raise (wz.NotFound(f"{cuserName} couldnt be found."))
         else:
             return allCusers
 
@@ -115,21 +115,21 @@ class bUser(Resource):
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
     # updated parameters of bUser to match workflow
-    def post(self, username, business_name,
+    def post(self, buserName, business_name,
              age_restrictions, business_type, quota):
         """
         This method creates a new Business User.
         """
         # database query updated to include fields from parameters
-        ret = db.add_buser(username, business_name,
+        ret = db.add_buser(buserName, business_name,
                            age_restrictions, business_type, quota)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
-            raise (wz.NotAcceptable(f"user {username} already exists."))
-        return f"{username} added."
+            raise (wz.NotAcceptable(f"user {buserName} already exists."))
+        return f"{buserName} added."
         # json_data = request.get_json(force=True)
-        # json_data['name'] = username
+        # json_data['name'] = buserName
         # print(json_data)
         # db.add_buser(json_data)
         # return jsonify(json_data)
@@ -149,11 +149,11 @@ class bList(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     # modified parameters & changed function to get
-    def get(self):
+    def get(self,buserName):
         """
         This method returns all business users.
         """
-        update_quota = db.busers.updateOne({name:business_name},{$set:{quota:new_quota}}) #added line to incorporate updating of business quota 
+        #update_quota = db.busers.update_one({"name":buserName},{"$set":{quota:new_quota}}) #added line to incorporate updating of business quota 
         allBusers = db.fetch_busers()
         if allBusers is None:
             raise (wz.NotFound("user couldnt be found."))
