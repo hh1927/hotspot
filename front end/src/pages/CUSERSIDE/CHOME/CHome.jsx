@@ -1,19 +1,42 @@
 import './CHome.css';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import {useHistory} from 'react-router-dom';
 //const baseURL = //our API
 
 function CHome() {
-    /*
-    const [post, setPost] = React.useState(null);
-    React.useEffect(() => {
-        axios.get(baseURL).then((response) => {
-            SVGTextPositioningElement(response.data);
+    
+    const history = useHistory();
+    const [newVenueProfile, setVenueProfile] = useState(undefined);
+
+    useEffect(() => {
+        axios.get('https://teamhotspot.herokuapp.com/cHome/bList')
+        .then((response) => {
+            if (response.data){
+            setUsers(response.data);
+            }
+        })
+        .catch(error => {
+            setError(error);
+            console.log(error);
         });
-    } );
-    if(!post) return null;
-    //would return post.promo for event promo pic
-    */
+    }, [refresh])
+
+    const handleBlist = () => {
+        axios.post(`https://teamhotspot.herokuapp.com/cHome/bList`)
+        .then(() => {
+            setIsModalOpen(false);
+            setRefresh(refresh + 1);
+        })
+        .catch(error => {
+            setError(error);
+            console.log(error);
+        })
+    }
+
+    function navigateToPage(path) {
+        history.push(path);
+    }
     return (
         <div>
            <div className='heading'>
@@ -39,6 +62,9 @@ function CHome() {
             </a>
             <a href = '/cHome'>
             <button id= "nextButton"> Next </button>
+            </a>
+            <a href = '/cHome'>
+            <button onClick={handleBlist} id= "nextButton"> Business List </button>
             </a>
             </div>
         </div>
