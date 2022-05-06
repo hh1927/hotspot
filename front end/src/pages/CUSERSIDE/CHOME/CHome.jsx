@@ -1,6 +1,7 @@
 import './CHome.css';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import invite from "./eventpics.json"
 //const baseURL = //our API
 
 function CHome() {
@@ -72,10 +73,15 @@ function CHome() {
             </a>
             </div>
             <div>
-                <div id="invite">
-                    <a href = '/venueprofile'>
-                    <img src="https://picsum.photos/1000" /></a>
-                </div>
+                <div id="invite" >
+                    <div> 
+                        {invite.map((name, i) =>
+                    <div key = {i}>
+                        <img src= {record.path} /> 
+                        </div> },
+                    <a href = '/venueprofile'> 
+                </div> );
+                        
 
             </div>
             <div className='buttoncentering'>
