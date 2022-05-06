@@ -94,8 +94,8 @@ class cList(Resource):
         """
         This method returns all customer users.
         """
-        update_neighborhood = db.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}}) #added line to incorporate updating of users neighborhood 
-        update_interests = db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}}) #added line to incorporate updating of users interests 
+        update_neighborhood = db.cusers.update_one({"name":user_name},{"$set":{"neighborhood":"new_neighborhood"}}) #added line to incorporate updating of users neighborhood 
+        update_interests = db.cusers.update_one({"name":user_name},{"$set":{"interests":"new_interests"}}) #added line to incorporate updating of users interests 
         allCusers = db.fetch_cusers()        
         if allCusers is None:
             raise (wz.NotFound(f"{user_name} couldnt be found."))
