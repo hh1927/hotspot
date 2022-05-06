@@ -6,7 +6,7 @@ import './GuestList.css';
 
 export default function GuestList() {
     const history = useHistory();
-    const [newVenueProfile, setVenueProfile] = useState(undefined);
+    const [newcList, setcList] = useState(undefined);
 
     useEffect(() => {
         axios.get('https://teamhotspot.herokuapp.com/GuestList/cList')
