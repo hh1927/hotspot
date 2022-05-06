@@ -13,8 +13,8 @@ export default function BSettings(){
 
   return (
     <div className="content">
-      <a href = '/bHome'><h1>HotSpot </h1></a>
-      <a href = '/bsettings'>
+      <a href = '/cHome'><h1>HotSpot </h1></a>
+      <a href = '/csettings'>
             <button id= "settings"> <img src="https://img.icons8.com/nolan/64/apple-settings.png"/></button>
             </a>
       <div>
@@ -28,7 +28,7 @@ export default function BSettings(){
       </div>
       
       <button
-        onClick={() => navigateToPage('/bHome')} // must remove event from list of events
+        onClick={() => navigateToPage('/cHome')} // must remove event from list of events
         className="page-button"
       >
         Home
