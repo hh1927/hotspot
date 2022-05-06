@@ -53,8 +53,8 @@ export default function VenueProfile(){
         <p className="content">Party Description</p>
       </div>
       <button
-        onClick={handleCuserAcct}
-        onClick={() => navigateToPage('/bSettings')}
+        onClick={handleBquota}
+        //onClick={() => navigateToPage('/bSettings')}
         className="page-button"
       >
         Return
