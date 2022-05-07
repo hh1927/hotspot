@@ -41,4 +41,4 @@ jobs:
             heroku_api_key: ${{secrets.HEROKU_API_KEY}}
             heroku_app_name: "teamhotspot"
             heroku_email: "hh1927@nyu.edu"
-            
+            justlogin: true
