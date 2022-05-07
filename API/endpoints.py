@@ -49,7 +49,7 @@ class Endpoints(Resource):
 
 
 # CHECK api route
-@api.route("/cUsers/<username>/<age>/<interests>/<neighborhoods>")
+@api.route("/cUsers/<username>")
 class cUser(Resource):
     """
     This class supports adding Customer users.
@@ -59,12 +59,12 @@ class cUser(Resource):
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
     # updated parameters of cUser to match workflow
-    def post(self, username, age, interests, neighborhood):
+    def post(self, username):
         """
         This method creates a new Customer User.
         """
         # database query updated to include fields from parameters
-        ret = db.add_cuser(username, age, interests, neighborhood)
+        ret = db.cuser.insert(username)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
@@ -79,7 +79,7 @@ class cUser(Resource):
 
 # CHECK
 # updated API route
-@api.route("/cList/<user_name>/<party_size>")
+@api.route("/cList/<user_name>")
 class cList(Resource):
     # updated parameters to be in correspondence w workflow
     """
@@ -89,13 +89,13 @@ class cList(Resource):
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def get(self, user_name, party_size):
+    def get(self, user_name):
         # modified parameters & changed function to get
         """
         This method returns all customer users.
         """
-        update_neighborhood = db.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}}) #added line to incorporate updating of users neighborhood 
-        update_interests = db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}}) #added line to incorporate updating of users interests 
+        update_neighborhood = db.cusers.update({name:user_name},{{neighborhood:new_neighborhood}}) #added line to incorporate updating of users neighborhood 
+        update_interests = db.cusers.update({name:user_name},{{interests:new_interests}}) #added line to incorporate updating of users interests 
         allCusers = db.fetch_cusers()        
         if allCusers is None:
             raise (wz.NotFound(f"{user_name} couldnt be found."))
@@ -104,7 +104,7 @@ class cList(Resource):
 
 
 # CHECK api route
-@api.route("/bUsers/<age_restriction>/<business_name>/<business_type>/<username>/<quota>")
+@api.route("/bUsers/<username>")
 class bUser(Resource):
     """
     This class supports business users,
@@ -115,14 +115,12 @@ class bUser(Resource):
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
     # updated parameters of bUser to match workflow
-    def post(self, username, business_name,
-             age_restrictions, business_type, quota):
+    def post(self, username):
         """
         This method creates a new Business User.
         """
         # database query updated to include fields from parameters
-        ret = db.add_buser(username, business_name,
-                           age_restrictions, business_type, quota)
+        ret = db.buser.insert(username)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
@@ -303,3 +301,4 @@ class cDaily(Resource):
             raise (wz.NotFound("interests not found."))
         else:
             return f"{new_interests} and {new_neighborhood} updated"
+
