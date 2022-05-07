@@ -38,7 +38,7 @@ function CHome() {
         .then(function () {
         // always executed
         });
-    });
+    },[]);
     useEffect(() =>
        {
         axios
@@ -47,7 +47,7 @@ function CHome() {
 		username: "SELECT username from cDaily",
 		new_interests:  "SELECT new_interests from cDaily",
 		new_neighborhood:  "SELECT new_neighborhood from cDaily"
-    })
+    }[])
         .then(function () {
         // handle success
         console.log("updated cDaily");
@@ -75,23 +75,26 @@ function CHome() {
             <div>
                 <div id="invite" >
                     <div> 
-                        {invite.map((name, i) =>
-                    <div key = {i}>
-                        <img src= {record.path} /> 
-                        </div> },
+                    {
+                        invite(
+                        map((name, i) =>
+                        <div key = {i}>
+                            <img src= {record.path} /> 
+                        </div> 
+                    ))};
                     <a href = '/venueprofile'> 
-                </div> );
-                        
-
+                    </a>
+                </div> ;
             </div>
             <div className='buttoncentering'>
-            <a href = '/rSVP'>
-            <button id= "resButton"> RSVP </button>
-            </a>
-            <a href = '/cHome'>
-            <button id= "nextButton"> Next </button>
-            </a>
+                <a href = '/rSVP'>
+                <button id= "resButton"> RSVP </button>
+                </a>
+                <a href = '/cHome'>
+                <button id= "nextButton"> Next </button>
+                </a>
             </div>
+        </div>
         </div>
     );
 }
