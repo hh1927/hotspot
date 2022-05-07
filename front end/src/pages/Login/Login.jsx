@@ -1,8 +1,8 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
-export default function Home(){
+export default function Home() {
   const history = useHistory();
 
   function navigateToPage(path) {
@@ -13,7 +13,7 @@ export default function Home(){
     <div className="login">
       <h1 style={{ fontSize: "5rem" }}>HotSpot </h1>
       <div>
-        <p style={{ fontSize: "2rem" }}className="quote">"Events for tonight and only tonight."</p>
+        <p style={{ fontSize: "2rem" }} className="quote">"Events for tonight and only tonight."</p>
       </div>
       <div>
         <form>
@@ -27,7 +27,7 @@ export default function Home(){
         </form>
 
       </div>
-      
+
       <button
         onClick={() => navigateToPage('/cHome')}
         className="page-button"
@@ -35,7 +35,7 @@ export default function Home(){
         Login Personal
       </button>
       <button
-        onClick={() => navigateToPage('/bHome')} 
+        onClick={() => navigateToPage('/bHome')}
         className="page-button"
       >
         Login Business

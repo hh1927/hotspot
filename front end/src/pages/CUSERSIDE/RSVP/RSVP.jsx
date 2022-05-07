@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import './RSVP.css';
 
-export default function RSVP(){
+export default function RSVP() {
   const history = useHistory();
 
   function navigateToPage(path) {
@@ -13,12 +13,12 @@ export default function RSVP(){
 
   return (
     <div className="content">
-      <a href = '/cHome'><h1>HotSpot </h1></a>
+      <a href='/cHome'><h1>HotSpot </h1></a>
       <div>
         <form>
           <label>
-            Number of Guests: <input type="text" /> 
-          </label> 
+            Number of Guests: <input type="text" />
+          </label>
           <br />
           <label>
             Name of Guest: <input type="text" />
@@ -36,7 +36,7 @@ export default function RSVP(){
 
       </div>
 
-      
+
       <button
         onClick={() => navigateToPage('/confirmation')} //need to decide on page RSVP
         className="page-button"

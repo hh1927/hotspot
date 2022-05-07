@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Login from './pages/Login/Login';
 import CreateAcc from './pages/CreateAcc/CreateAcc';
@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="root">
       <div className="content"
-      span className="font-link">
+        span className="font-link">
         <Router>
           <Switch>
             <Route exact={true} path={'/'}>

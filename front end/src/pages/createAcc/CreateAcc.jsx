@@ -1,12 +1,12 @@
 
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import {useHistory} from 'react-router-dom';
-import ('./CreateAcc.css');
+import { useHistory } from 'react-router-dom';
+import('./CreateAcc.css');
 
 //const baseURL = //api location here
 
-export default function CreateAcc(){
+export default function CreateAcc() {
   /*
   const history = useHistory();
 
@@ -51,9 +51,9 @@ export default function CreateAcc(){
   return (
     <div className="login">
       <h1>Create an Account </h1>
-      <a href = '/bsettings'>
-            <button id= "settings"> <img src="https://img.icons8.com/nolan/64/apple-settings.png"/></button>
-            </a>
+      <a href='/bsettings'>
+        <button id="settings"> <img src="https://img.icons8.com/nolan/64/apple-settings.png" /></button>
+      </a>
       <div>
         <form>
           <label>
@@ -85,25 +85,25 @@ export default function CreateAcc(){
           </label>
           <br />
           <label>
-            Type of Account: 
+            Type of Account:
             <select id="dropdown" >
-            <option >Select...</option>
-            <option value="Customer">Customer</option>
-            <option value="Business">Business</option>
-          </select>
+              <option >Select...</option>
+              <option value="Customer">Customer</option>
+              <option value="Business">Business</option>
+            </select>
           </label>
         </form>
 
       </div>
-      
+
       <button
-        onClick={() => window.location.href='/cHome'} //need to decide on page after login
+        onClick={() => window.location.href = '/cHome'} //need to decide on page after login
         className="page-button"
       >
         Create Personal
       </button>
       <button
-        onClick={() => window.location.href='/bHome'} //need to decide on page after login
+        onClick={() => window.location.href = '/bHome'} //need to decide on page after login
         className="page-button"
       >
         Create Business
