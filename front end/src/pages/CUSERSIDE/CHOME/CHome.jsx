@@ -34,9 +34,31 @@ function CHome() {
         })
     }
 
-    function navigateToPage(path) {
-        history.push(path);
-    }
+    useEffect(() =>
+     {
+        axios.get('website.heroku.com/cDaily/')
+        .then((response) => 
+        {
+            console.log("sucessfully deleted cUser")
+        })
+        .catch(error => {
+        });
+    }, [])
+
+    useEffect(() =>
+    {
+       axios.post('website.heroku.com/cDaily/')
+       .then((response) => 
+       {
+            console.log("sucessfully updated cDaily")
+       })
+       .catch(error => {
+        console.log("found error")
+
+       });
+   }, [])
+
+
     return (
         <div>
            <div className='heading'>
