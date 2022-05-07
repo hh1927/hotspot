@@ -7,54 +7,80 @@ function GuestList() {
             <div>
 
                 <div class="guestlist-container">
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
-                    <a href='/guestprofile'>
-                        <img src="https://picsum.photos/1000" alt='guestpropic' /></a>
+                    <div class="gallery">
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                        <a href='/guestprofile'>
+                            <img src="https://picsum.photos/1000" alt='guestpropic' />
+                        </a>
+                    </div>
                 </div>
 
             </div>
