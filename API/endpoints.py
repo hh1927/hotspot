@@ -79,9 +79,8 @@ class cUser(Resource):
 
 # CHECK
 # updated API route
-@api.route("/cList/<cuserName>/<party_size>")
+@api.route("/consumer")
 class cList(Resource):
-    # updated parameters to be in correspondence w workflow
     """
     parameters then used to select consumers
     This class returns a list of all consumer users
@@ -89,13 +88,11 @@ class cList(Resource):
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def get(self, cuserName, party_size):
+    def get(self):
         # modified parameters & changed function to get
         """
         This method returns all customer users.
         """
-        #update_neighborhood = db.cusers.update_one({"name":cuserName},{"$set":{"neighborhood":"new_neighborhood"}}) #added line to incorporate updating of users neighborhood 
-        #update_interests = db.cusers.update_one({"name":cuserName},{"$set":{"interests":"new_interests"}}) #added line to incorporate updating of users interests 
         allCusers = db.fetch_cusers()        
         if allCusers is None:
             raise (wz.NotFound(f"{cuserName} couldnt be found."))
@@ -137,7 +134,7 @@ class bUser(Resource):
 
 # CHECK
 # updated api route
-@api.route("/bList")
+@api.route("/business/username")
 class bList(Resource):
     # updated parameters to be in correspondence to to workflow
     # added additional parameters related to business
@@ -149,16 +146,16 @@ class bList(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     # modified parameters & changed function to get
-    def get(self,buserName):
+    def get(self,username):
         """
         This method returns all business users.
         """
-        #update_quota = db.busers.update_one({"name":buserName},{"$set":{quota:new_quota}}) #added line to incorporate updating of business quota 
-        allBusers = db.fetch_busers()
+        return db.fetch_buser
+        '''allBusers = db.fetch_busers()
         if allBusers is None:
             raise (wz.NotFound("user couldnt be found."))
         else:
-            return allBusers
+            return allBusers'''
 
 
 @api.route("/cusers/deletecUser/<username>/<age>/<interests>/<neighborhood>")
