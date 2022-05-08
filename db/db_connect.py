@@ -34,12 +34,12 @@ def get_client():
     Also set global client variable.
     """
     global client
-        if os.environ.get("LOCAL_MONGO", REMOTE) == LOCAL:
-         print("Connecting to Mongo locally.")
-         client = pm.MongoClient()
-     else:
-         print("Connecting to Mongo remotely.")
-         print("HELLO " + f"mongodb+srv://{user_nm}:{passwd}@" + f"{cloud_svc}/{db_nm}?"
+    if os.environ.get("LOCAL_MONGO", REMOTE) == LOCAL:
+        print("Connecting to Mongo locally.")
+        client = pm.MongoClient()
+    else:
+        print("Connecting to Mongo remotely.")
+        print("HELLO " + f"mongodb+srv://{user_nm}:{passwd}@" + f"{cloud_svc}/{db_nm}?"
              + "retryWrites=true&w=majority")
          client = pm.MongoClient(
              f"mongodb+srv://{user_nm}:{passwd}@" + f"{cloud_svc}/{db_nm}?"
