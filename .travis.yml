@@ -15,7 +15,7 @@ script:
 #deploy to heroku on push to master
 deploy:
     - provider: heroku
-      api_key: $57b2464e-0c47-4296-aec6-f44f9ae93969
+      api_key: 57b2464e-0c47-4296-aec6-f44f9ae93969
       app: teamhotspot
       on:
           branch: scratch/githubActions
