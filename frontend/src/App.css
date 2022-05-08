@@ -1,0 +1,97 @@
+.root {
+  minheight: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote {
+  font-style: italic;
+}
+
+.quote-author {
+  opacity: 0.8;
+}
+
+.content {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.page-button {
+  min-width: 300px;
+  max-width: 400px;
+  border: 1px solid #94a3b8;
+  background-color: #e2e8f0;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button {
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  border: 1px solid #94a3b8;
+  background-color: #e2e8f0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.page-button:hover {
+  background-color: #cbd5e1;
+}
+
+.body {
+  /*background-color: #282c34;
+  color: #df80ff;*/
+  background: linear-gradient(rgba(250, 0, 0, 0.5), transparent);
+  background-color: rgb(153, 0, 255); /*this your primary color*/
+  padding: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+.form {
+  width: 80%;
+  margin: 0 auto;
+}
+label,
+.input {
+  /* In order to define widths */
+  display: inline-block;
+}
+.label {
+  width: 30%;
+  /* Positions the label text beside the input */
+  text-align: right;
+}
+
+.login {
+  background: linear-gradient(rgba(250, 0, 0, 0.5), transparent);
+  background-color: rgb(153, 0, 255); /*this your primary color*/
+  height: 900px;
+  width: 10000px;
+  /*width: 400px;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.font-link {
+  font-family: "Bebas Neue", cursive;
+}
+
+.settings {
+  text-align: right;
+}
