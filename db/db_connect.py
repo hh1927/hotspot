@@ -34,10 +34,13 @@ def get_client():
     Also set global client variable.
     """
     global client
-    try:
-        client = MongoClient('mongodb+srv://hotspot:{passwd}@cluster0.q05tp.mongodb.net/hotspot?retryWrites=true&w=majority')
-    except:
-        print("failed to connect to mongo")
+    if os.environ.get("LOCAL_MONGO", REMOTE) == LOCAL:
+        print("Connecting to Mongo locally.")
+    else:
+        try:
+            client = MongoClient('mongodb+srv://hotspot:{passwd}@cluster0.q05tp.mongodb.net/hotspot?retryWrites=true&w=majority')
+        except:
+            print("failed to connect to mongo")
     return client
 
 
