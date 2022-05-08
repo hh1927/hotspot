@@ -35,7 +35,7 @@ def get_client():
     """
     global client
     try:
-        client = MongoClient(f"mongodb+srv://hotspot:{passwd}@cluster0.q05tp.mongodb.net/hotspot?retryWrites=true&w=majority")
+        client = MongoClient('mongodb+srv://hotspot:{passwd}@cluster0.q05tp.mongodb.net/hotspot?retryWrites=true&w=majority')
     except:
         print("failed to connect to mongo")
     return client
