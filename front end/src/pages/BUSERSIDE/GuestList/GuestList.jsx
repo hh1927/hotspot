@@ -38,48 +38,6 @@ function GuestList() {
                         <a href='/guestprofile'>
                             <img src="https://picsum.photos/1000" alt='guestpropic' />
                         </a>
-                        <a href='/guestprofile'>
-                            <img src="https://picsum.photos/1000" alt='guestpropic' />
-                        </a>
-                        <a href='/guestprofile'>
-                            <img src="https://picsum.photos/1000" alt='guestpropic' />
-                        </a>
-                        <a href='/guestprofile'>
-                            <img src="https://picsum.photos/1000" alt='guestpropic' />
-                        </a>
-                        <a href='/guestprofile'>
-                            <img src="https://picsum.photos/1000" alt='guestpropic' />
-                        </a>
-                        <a href='/guestprofile'>
-                            <img src="https://picsum.photos/1000" alt='guestpropic' />
-                        </a>
-                        <a href='/guestprofile'>
-                            <img src="https://picsum.photos/1000" alt='guestpropic' />
-                        </a>
-                        <a href='/guestprofile'>
-                            <img src="https://picsum.photos/1000" alt='guestpropic' />
-                        </a>
-                        <a href='/guestprofile'>
-                            <img src="https://picsum.photos/1000" alt='guestpropic' />
-                        </a>
-                        <a href='/guestprofile'>
-                            <img src="https://picsum.photos/1000" alt='guestpropic' />
-                        </a>
-                        <a href='/guestprofile'>
-                            <img src="https://picsum.photos/1000" alt='guestpropic' />
-                        </a>
-                        <a href='/guestprofile'>
-                            <img src="https://picsum.photos/1000" alt='guestpropic' />
-                        </a>
-                        <a href='/guestprofile'>
-                            <img src="https://picsum.photos/1000" alt='guestpropic' />
-                        </a>
-                        <a href='/guestprofile'>
-                            <img src="https://picsum.photos/1000" alt='guestpropic' />
-                        </a>
-                        <a href='/guestprofile'>
-                            <img src="https://picsum.photos/1000" alt='guestpropic' />
-                        </a>
                     </div>
                 </div>
 

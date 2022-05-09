@@ -1,0 +1,52 @@
+{
+    "1": {
+        "id": 1,
+        "name": "Hannah Harvard",
+        "image": "hannah.png"
+    },
+    "2": {
+        "id": 2,
+        "name": "Ally Hu",
+        "image": "ally.png"
+    },
+    "3": {
+        "id": 3,
+        "name": "Julianna Ng",
+        "image": "julianna.png"
+    },
+    "4": {
+        "id": 4,
+        "name": "Ava Manson",
+        "image": "ava.png"
+    },
+    "5": {
+        "id": 5,
+        "name": "Isaac Heid",
+        "image": "isaac.png"
+    },
+    "6": {
+        "id": 6,
+        "name": "Riley Noel",
+        "image": "riley.png"
+    },
+    "7": {
+        "id": 7,
+        "name": "Marie Geier",
+        "image": "marie.png"
+    },
+    "8": {
+        "id": 8,
+        "name": "Lucas Lampe",
+        "image": "lucas.png"
+    },
+    "9": {
+        "id": 9,
+        "name": "Brandon Castro",
+        "image": "brandon.png"
+    },
+    "10": {
+        "id": 10,
+        "name": "Donovan Crossen",
+        "image": "donovan.png"
+    }
+}
