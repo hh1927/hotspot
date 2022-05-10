@@ -58,13 +58,6 @@ export default function VenueInfo() {
       </button>
 
       <br />
-
-      <button
-        onClick={() => navigateToPage("/bSettings")} //needs to send to settings page
-        className="page-button"
-      >
-        Settings
-      </button>
     </div>
   );
 }
