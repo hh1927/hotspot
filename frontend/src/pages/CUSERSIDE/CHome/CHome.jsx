@@ -1,8 +1,7 @@
 import "./CHome.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import invite from "./eventpics.json";
-//const baseURL = //our API
+//import invite from "./eventpics.json";
 
 function CHome() {
   /*
@@ -39,6 +38,7 @@ function CHome() {
         });
   }, []);
   */
+ /*
   useEffect(() => {
     axios
       .post(
@@ -62,6 +62,7 @@ function CHome() {
         // always executed
       });
   });
+  */
   return (
     <div>
       <div className="heading">
@@ -81,7 +82,7 @@ function CHome() {
       </div>
       <div>
         <div id="invite">
-          <div>
+          {/* <div>
             {invite(
               map((name, i) => (
                 <div key={i}>
@@ -90,7 +91,7 @@ function CHome() {
               ))
             )}
             <a href="/venueprofile"></a>
-          </div>{" "}
+          </div>{" "} */}
         </div>
         <div className="buttoncentering">
           <a href="/rSVP">

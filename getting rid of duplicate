@@ -1,0 +1,35 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is up to date with 'origin/master'.
+#
+# Changes to be committed:
+#	deleted:    ../front end/src/App.js
+#	deleted:    ../front end/src/pages/BUSERSIDE/BHOME/BHome.jsx
+#	deleted:    ../front end/src/pages/BUSERSIDE/BSettings/BSettings.jsx
+#	deleted:    ../front end/src/pages/BUSERSIDE/EventInfo/EventInfo.jsx
+#	deleted:    ../front end/src/pages/BUSERSIDE/GuestList/GuestList.css
+#	deleted:    ../front end/src/pages/BUSERSIDE/GuestList/GuestList.jsx
+#	deleted:    ../front end/src/pages/BUSERSIDE/GuestProfile/GuestProfile.jsx
+#	deleted:    ../front end/src/pages/BUSERSIDE/VenueInfo/VenueInfo.jsx
+#	deleted:    ../front end/src/pages/CUSERSIDE/CHOME/CHome.jsx
+#	deleted:    ../front end/src/pages/CUSERSIDE/CSettings/CSettings.jsx
+#	deleted:    ../front end/src/pages/CUSERSIDE/Confirmation/Confirmation.jsx
+#	deleted:    ../front end/src/pages/CUSERSIDE/Csideeventinfo/Csideeventinfo.jsx
+#	deleted:    ../front end/src/pages/CUSERSIDE/Cuserprofile/Cuserprofile.jsx
+#	deleted:    ../front end/src/pages/CUSERSIDE/RSVP/RSVP.jsx
+#	deleted:    ../front end/src/pages/CUSERSIDE/VenueProfile/VenueProfile.jsx
+#	deleted:    ../front end/src/pages/Login/Login.jsx
+#	deleted:    ../front end/src/pages/createAcc/CreateAcc.jsx
+#
+# Untracked files:
+#	../frontend/.DS_Store
+#	../frontend/.gitignore
+#	../frontend/Makefile
+#	../frontend/README.md
+#	../frontend/package-lock.json
+#	../frontend/package.json
+#	../frontend/public/
+#
