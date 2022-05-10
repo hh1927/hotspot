@@ -3,7 +3,6 @@
 HOST=127.0.0.1
 PORT=8000
 
-export HOTSPOT_HOME = /home/runner/work/hotspot/hotspot/API
 if [ $ANUBIS ]
 then
     HOST=0.0.0.0
