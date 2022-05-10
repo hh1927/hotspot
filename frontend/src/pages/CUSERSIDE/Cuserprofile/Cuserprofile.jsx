@@ -46,6 +46,22 @@ export default function Cuserprofile() {
               <option value="Sports Bar">Sports Bar</option>
               <option value="Wine Bar">Wine Bar</option>
               <option value="Rooftop">Rooftop</option>
+              <option value="Live Music">Live Music</option>
+              <option value="LGBTQ">LGBTQ</option>
+            </select>
+          </label>
+          <br />
+          <label>
+            Vibe:
+            <select id="dropdown">
+              <option>Select...</option>
+              <option value="Grunge">Grunge</option>
+              <option value="Chill">Chill</option>
+              <option value="Romantic">Romantic</option>
+              <option value="High Concept">High Concept</option>
+              <option value="College">College</option>
+              <option value="Exclusive">Exclusive</option>
+              <option value="Popular">Popular</option>
             </select>
           </label>
         </form>
