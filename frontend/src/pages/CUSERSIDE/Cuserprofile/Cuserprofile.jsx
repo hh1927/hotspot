@@ -23,6 +23,10 @@ export default function Cuserprofile() {
       </a>
       <div>
         <form>
+
+          <label>
+            Profile Picture: <input type="file" />
+          </label>
           <label>
             Location:
             <select id="dropdown">

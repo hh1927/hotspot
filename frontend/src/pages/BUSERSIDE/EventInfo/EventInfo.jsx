@@ -45,7 +45,7 @@ export default function EventInfo() {
             General Description: <input type="text" />
           </label>
           <label>
-            File Upload: <input type="file" />
+            Flyer Upload: <input type="file" />
           </label>
           <br />
         </form>
