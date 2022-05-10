@@ -9,76 +9,34 @@ function GuestList() {
       <div>
         <div class="guestlist-container">
           <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
+            <img src="ally.png" alt="guestpropic" />
           </a>
           <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
+            <img src="brandon.png" alt="guestpropic" />
           </a>
           <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
+            <img src="riley.png" alt="guestpropic" />
           </a>
           <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
+            <img src="marie.png" alt="guestpropic" />
           </a>
           <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
+            <img src="hannah.png" alt="guestpropic" />
           </a>
           <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
+            <img src="donovan.png" alt="guestpropic" />
           </a>
           <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
+            <img src="isaac.png" alt="guestpropic" />
           </a>
           <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
+            <img src="lucas.png" alt="guestpropic" />
           </a>
           <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
+            <img src="julianna.png" alt="guestpropic" />
           </a>
           <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
-          </a>
-          <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
-          </a>
-          <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
-          </a>
-          <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
-          </a>
-          <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
-          </a>
-          <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
-          </a>
-          <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
-          </a>
-          <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
-          </a>
-          <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
-          </a>
-          <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
-          </a>
-          <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
-          </a>
-          <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
-          </a>
-          <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
-          </a>
-          <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
-          </a>
-          <a href="/guestprofile">
-            <img src="https://picsum.photos/1000" alt="guestpropic" />
+            <img src="ava.png" alt="guestpropic" />
           </a>
         </div>
       </div>
