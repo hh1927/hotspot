@@ -35,6 +35,10 @@ export default function VenueInfo() {
             Bar Type: <input type="text" />
           </label>
           <br />
+          <label>
+            Venue Image: <input type="file" />
+          </label>
+          <br />
         </form>
       </div>
 
