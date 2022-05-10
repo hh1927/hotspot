@@ -35,7 +35,7 @@ export default function BSettings() {
         onClick={() => navigateToPage("/cHome")} // must remove event from list of events
         className="page-button"
       >
-        Home
+        Back
       </button>
     </div>
   );
