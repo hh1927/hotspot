@@ -16,6 +16,34 @@ function CHome() {
     */
   const [interest, setInterest] = useState()
   const [neighborhood, setNeighborhood] = useState()
+  const history = useHistory();
+    const [newVenueProfile, setVenueProfile] = useState(undefined);
+
+    useEffect(() => {
+        axios.get('https://teamhotspot.herokuapp.com/cHome/bList')
+        .then((response) => {
+            if (response.data){
+            setUsers(response.data);
+            }
+        })
+        .catch(error => {
+            setError(error);
+            console.log(error);
+        });
+    }, [refresh])
+
+    const handleBlist = () => {
+        axios.post(`https://teamhotspot.herokuapp.com/cHome/bList`)
+        .then(() => {
+            setIsModalOpen(false);
+            setRefresh(refresh + 1);
+        })
+        .catch(error => {
+            setError(error);
+            console.log(error);
+        })
+    }
+
   /*
     useEffect(() => {
         axios
@@ -100,6 +128,9 @@ function CHome() {
           <a href="/cHome">
             <button id="nextButton"> Next </button>
           </a>
+          <a href = '/cHome'>
+            <button onClick={handleBlist} id= "nextButton"> Business List </button>
+           </a>
         </div>
       </div>
     </div>
