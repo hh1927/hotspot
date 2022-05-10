@@ -16,54 +16,54 @@ function BHome() {
         <div class="event-container">
           <div class="gallery">
             <div class="grid-item1">
-              <a href="/eventinfo">
+              <a href="/guestList">
                 <img
-                  src="https://picsum.photos/1000"
+                  src="kindregardsparty.png"
                   class="gallery_img"
                   alt="event"
                 />
               </a>
             </div>
             <div class="grid-item2">
-              <a href="/eventinfo">
+              <a href="/guestList">
                 <img
-                  src="https://picsum.photos/1000"
+                  src="lebainparty.png"
                   class="gallery_img"
                   alt="event"
                 />
               </a>
             </div>
             <div class="grid-item3">
-              <a href="/eventinfo">
+              <a href="/guestList">
                 <img
-                  src="https://picsum.photos/1000"
+                  src="downtimeparty.png"
                   class="gallery_img"
                   alt="event"
                 />
               </a>
             </div>
             <div class="grid-item4">
-              <a href="/eventinfo">
+              <a href="/guestList">
                 <img
-                  src="https://picsum.photos/1000"
+                  src="joyfaceparty.png"
                   class="gallery_img"
                   alt="event"
                 />
               </a>
             </div>
             <div class="grid-item5">
-              <a href="/eventinfo">
+              <a href="/guestList">
                 <img
-                  src="https://picsum.photos/1000"
+                  src="mcsorelysparty.png"
                   class="gallery_img"
                   alt="event"
                 />
               </a>
             </div>
             <div class="grid-item6">
-              <a href="/eventinfo">
+              <a href="/guestList">
                 <img
-                  src="https://picsum.photos/1000"
+                  src="georgiaroomparty.png"
                   class="gallery_img"
                   alt="event"
                 />
