@@ -14,7 +14,7 @@ export default function EventInfo() {
 
   return (
     <div className="content">
-      <a href="/cHome">
+      <a href="/bHome">
         <h1>HotSpot </h1>
       </a>
       <a href="/bsettings">

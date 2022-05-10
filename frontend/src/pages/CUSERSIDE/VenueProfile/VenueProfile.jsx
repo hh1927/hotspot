@@ -3,6 +3,8 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 import "./VenueProfile.css";
+import "./venpics/kindregards.jpeg"
+
 
 export default function VenueProfile() {
   const history = useHistory();
@@ -22,6 +24,11 @@ export default function VenueProfile() {
           <img src="https://img.icons8.com/nolan/64/apple-settings.png" />
         </button>
       </a>
+      <div id="venue">
+        <a href="/venueProfile">
+          <img id="example" src="kindregards.jpeg" />
+        </a>
+      </div>
       <div>
         <p className="content">Event Name</p>
         <p className="content">Time</p>

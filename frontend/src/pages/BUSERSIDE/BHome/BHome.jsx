@@ -20,7 +20,7 @@ function BHome() {
                 <img
                   src="kindregardsparty.png"
                   class="gallery_img"
-                  alt="event"
+                  alt="kindregardsparty"
                 />
               </a>
             </div>
@@ -29,7 +29,7 @@ function BHome() {
                 <img
                   src="lebainparty.png"
                   class="gallery_img"
-                  alt="event"
+                  alt="lebainparty"
                 />
               </a>
             </div>
@@ -38,7 +38,7 @@ function BHome() {
                 <img
                   src="downtimeparty.png"
                   class="gallery_img"
-                  alt="event"
+                  alt="downtimeparty"
                 />
               </a>
             </div>
@@ -47,7 +47,7 @@ function BHome() {
                 <img
                   src="joyfaceparty.png"
                   class="gallery_img"
-                  alt="event"
+                  alt="joyfaceparty"
                 />
               </a>
             </div>
@@ -56,7 +56,7 @@ function BHome() {
                 <img
                   src="mcsorelysparty.png"
                   class="gallery_img"
-                  alt="event"
+                  alt="mcsorelysparty"
                 />
               </a>
             </div>
@@ -65,7 +65,7 @@ function BHome() {
                 <img
                   src="georgiaroomparty.png"
                   class="gallery_img"
-                  alt="event"
+                  alt="georgiaroomparty"
                 />
               </a>
             </div>
