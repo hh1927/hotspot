@@ -110,6 +110,19 @@ class bUser(Resource):
     This class supports business users,
     specifically the users who are hosting events.
     """
+    @api.response(HTTPStatus.OK, "Success")
+    @api.response(HTTPStatus.NOT_FOUND, "Not Found")
+    # modified parameters & changed function to get
+    def get(self,username):
+        """
+        This method returns all business users.
+        """
+        return db.fetch_buser
+        '''allBusers = db.fetch_busers()
+        if allBusers is None:
+            raise (wz.NotFound("user couldnt be found."))
+        else:
+            return allBusers'''
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
@@ -132,32 +145,6 @@ class bUser(Resource):
         # print(json_data)
         # db.add_buser(json_data)
         # return jsonify(json_data)
-
-
-# CHECK
-# updated api route
-@api.route("/business/<username>")
-class bList(Resource):
-    # updated parameters to be in correspondence to to workflow
-    # added additional parameters related to business
-    # paramaters then used to select businesses
-    """
-    This class supports fetching a list of all business users,
-    specifically the users who are hosting events.
-    """
-    @api.response(HTTPStatus.OK, "Success")
-    @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    # modified parameters & changed function to get
-    def get(self,username):
-        """
-        This method returns all business users.
-        """
-        return db.fetch_buser
-        '''allBusers = db.fetch_busers()
-        if allBusers is None:
-            raise (wz.NotFound("user couldnt be found."))
-        else:
-            return allBusers'''
 
 
 @api.route("/consumers/delete/<username>")
