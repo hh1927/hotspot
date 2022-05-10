@@ -13,6 +13,37 @@ import ava from "./propics/ava.png";
 
 
 function GuestList() {
+  const history = useHistory();
+    const [newcList, setcList] = useState(undefined);
+
+    useEffect(() => {
+        axios.get('https://teamhotspot.herokuapp.com/GuestList/cList')
+        .then((response) => {
+            if (response.data){
+            setUsers(response.data);
+            }
+        })
+        .catch(error => {
+            setError(error);
+            console.log(error);
+        });
+    }, [refresh])
+
+    const handlecList = () => {
+        axios.post(`https://teamhotspot.herokuapp.com/GuestList/cList`)
+        .then(() => {
+            setIsModalOpen(false);
+            setRefresh(refresh + 1);
+        })
+        .catch(error => {
+            setError(error);
+            console.log(error);
+        })
+    }
+
+    function navigateToPage(path) {
+        history.push(path);
+    }
   return (
     <>
       <a href="/bHome">
@@ -57,6 +88,9 @@ function GuestList() {
       </a>
       <a href="/venueInfo">
         <button id="nextButton"> VIEW VENUE </button>
+      </a>
+      <a href = '/eventInfo'>
+            <button onClick={handleBquota} id= "resButton"> VIEW CUSTOMER LIST </button>
       </a>
     </>
   );
