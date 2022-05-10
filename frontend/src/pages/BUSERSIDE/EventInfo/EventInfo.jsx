@@ -8,18 +8,18 @@ import "./EventInfo.css";
 export default function EventInfo() {
   const [EventInfo, setEventInfo] = useState(undefined);
   const [error, setError] = useState(undefined);
-  const [details, setDetails] = useState({business_name: '',eventName: '',location: '',price: '',hours: ''});
+  const [details, setDetails] = useState({ business_name: '', eventName: '', location: '', price: '', hours: '' });
 
   const [refresh, setRefresh] = useState(0);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newEvent, setNewEvent] = useState('');
   const history = useHistory();
-  
-   useEffect(() => {
+
+  useEffect(() => {
     axios.get('https://teamhotspot.herokuapp.com/busers/eventInfo')
       .then((response) => {
-        if (response.data){
+        if (response.data) {
           setNewEvent(response.data);
         }
       })
@@ -39,7 +39,7 @@ export default function EventInfo() {
         setError(error);
         console.log(error);
       })
-
+  }
   function navigateToPage(path) {
     history.push(path);
   }
@@ -94,6 +94,7 @@ export default function EventInfo() {
         className="page-button"
       >
         Update Event Info
+      </button>
       <button
         onClick={() => navigateToPage("/bHome")} //needs to prevent users from updating w/o hitting edit beyond this point
         className="page-button"
@@ -109,3 +110,4 @@ export default function EventInfo() {
     </div>
   );
 }
+
