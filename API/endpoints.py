@@ -190,7 +190,7 @@ class deletebUser(Resource):
 
 
 # corrected
-@api.route("/consumer/<party_size>")
+@api.route("/consumer/<username>/<party_size>")
 class partySize(Resource):
     """
     This class supports consumer users
@@ -200,14 +200,14 @@ class partySize(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
-    def post(self, username, quota):
+    def post(self, username, party_size):
         """
         This method tells us party size
         """
-        ret = db.add_party(username, quota)
+        ret = db.add_party(username, party_size)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
-        return f"{party} added."
+        return f"{party_size} added."
 
 
 @api.route("/events/<business_name>/<address>/<event_name>/<fee>/<hours>")
