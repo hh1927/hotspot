@@ -143,7 +143,7 @@ class bUser(Resource):
         # return jsonify(json_data)
 
 
-@api.route("/consumers/delete/<username>")
+@api.route("/consumer/delete/<username>")
 class deletecUser(Resource):
     """
     This class enables deleting a cuser.
@@ -188,7 +188,7 @@ class deletebUser(Resource):
 
 
 # corrected
-@api.route("/business/<quota>")
+@api.route("/consumer/<party_size>")
 class partySize(Resource):
     """
     This class supports consumer users
@@ -249,7 +249,7 @@ class deleteEvent(Resource):
             return f"{eventName} has been deleted."
 
 
-@api.route("/business/<username>")
+@api.route("/business/<username>/<quota>")
 class bquota(Resource):
     """
     This endpoint will update the value of business quota
