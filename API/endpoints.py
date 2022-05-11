@@ -137,7 +137,8 @@ class bUser(Resource):
             raise (wz.NotFound("Business could not be found."))
         elif ret == db.DUPLICATE:
             raise (wz.NotAcceptable(f"user {business_name} already exists."))
-        return f"{business_name} added."
+        else: 
+             return f"{business_name} added."
         # json_data = request.get_json(force=True)
         # json_data['name'] = buserName
         # print(json_data)
