@@ -179,7 +179,7 @@ class deletebUser(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.FORBIDDEN, "A user can only delete themselves.")
-    def post(self, username):
+    def post(self, business_name):
         """
         This method deletes a buser from the user db.
         """
