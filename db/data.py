@@ -26,20 +26,29 @@ EVENTS = "events"
 
 # fields in db
 CUSER_NM = "username"
-BUSER_NM = "business_name"
-EVENT_NM = "event_name"
-LOCATION = "location"
-PRICE = "price"
-HOURS = "hours"
-NAME = "name"
-GENDER = "gender"
 AGE = "age"
-INTERESTS = "clubInterestType"
-CITY = "city"
-LOCATIONTYPE = "locationType"
-PARTY = "sizeOfParty"
-QUOTA = "quota"
 INTERESTS = "interests"
+NEIGHBORHOOD = "neighborhood"
+PARTY = "party_size"
+
+
+BUSER_NM = "business_name"
+AGE_RESTRICTIONS = "age_restrictions"
+B_USERNAME = "username"
+QUOTA = "quota"
+LOCATIONTYPE = "business_type"
+
+
+EVENT_NM = "event_name"
+LOCATION = "address"
+PRICE = "fee"
+HOURS = "hours"
+
+
+
+
+
+
 
 OK = 0
 NOT_FOUND = 1
