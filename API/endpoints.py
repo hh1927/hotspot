@@ -219,11 +219,11 @@ class eventInfo(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
-    def post(self, buser_nm,address,event_nm,fee,hours):
+    def post(self, buser_nm, address, event_nm, fee,mhours):
         """
         This method creates a new event.
         """
-        ret = db.add_event(buser_nm,address,event_nm,fee,hours)
+        ret = db.add_event(buser_nm, address, event_nm, fee, hours)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("Event doesnt exist yet. Please try again."))
         elif ret == db.DUPLICATE:
