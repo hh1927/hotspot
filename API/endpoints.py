@@ -82,7 +82,6 @@ class cUser(Resource):
         This method creates a new Customer User.
         """
         # database query updated to include fields from parameters
-        req.form
         ret = db.add_cuser(username, age, interests, neighborhood, party_size)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
