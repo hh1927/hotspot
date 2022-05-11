@@ -20,14 +20,14 @@ HOTSPOT_HOME = os.environ["HOTSPOT_HOME"]
 # else:
 # DB_NAME = "cloudDB"
 
-CUSERS = "cusers"
-BUSERS = "busers"
+CUSERS = "consumer"
+BUSERS = "business"
 EVENTS = "events"
 
 # fields in db
-CUSER_NM = "cuserName"
-BUSER_NM = "buserName"
-EVENT_NM = "eventName"
+CUSER_NM = "username"
+BUSER_NM = "business_name"
+EVENT_NM = "event_name"
 LOCATION = "location"
 PRICE = "price"
 HOURS = "hours"
