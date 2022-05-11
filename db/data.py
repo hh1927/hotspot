@@ -239,6 +239,27 @@ def del_event(eventName):
     else:
         dbc.del_one(EVENTS, filters={EVENT_NM: eventName})
         return OK
+    
+def del_buser(buser_nm):
+    """
+    Delete event from the db.
+    """
+    if not buser_exists(buser_nm):
+        return NOT_FOUND
+    else:
+        dbc.del_one(BUSERS, filters={BUSER_NM: buser_nm})
+        return OK
+    
+def del_cuser(cuser_nm):
+    """
+    Delete event from the db.
+    """
+    if not cuser_exists(cuser_nm):
+        return NOT_FOUND
+    else:
+        dbc.del_one(CUSERS, filters={CUSER_NM: cuser_nm})
+        return OK
+
 
 def update_bquota(bUser, new_quota):
     """
