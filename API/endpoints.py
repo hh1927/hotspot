@@ -160,7 +160,7 @@ class deletecUser(Resource):
         """
         This method deletes a user from the user db.
         """
-        ret = db.del_user(username)
+        ret = db.del_cuser(username)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound(f"Cuser {username} not found."))
         else:
@@ -182,7 +182,7 @@ class deletebUser(Resource):
         """
         This method deletes a buser from the user db.
         """
-        ret = db.del_user(business_name)
+        ret = db.del_buser(business_name)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound(f"buser {business_name} not found."))
         else:
