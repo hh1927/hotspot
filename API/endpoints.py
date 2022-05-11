@@ -81,7 +81,7 @@ class cUser(Resource):
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
             raise (wz.NotAcceptable(f"user {username} already exists."))
-        return f"{cusername} added."
+        return f"{username} added."
 
         # json_data = request.get_json(force=True)
         # json_data['name'] = username
@@ -114,7 +114,7 @@ class bList(Resource):
 
 
 # CHECK api route
-@api.route("/business/<username>")
+@api.route("/business/<business_name>")
 class bUser(Resource):
     """
     This class supports business users,
@@ -124,18 +124,18 @@ class bUser(Resource):
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
     # updated parameters of bUser to match workflow
-    def post(self, username):
+    def post(self, business_name):
         """
         This method creates a new Business User.
         """
         # database query updated to include fields from parameters
-        ret = db.add_buser(username, business_name,
+        ret = db.add_buser(business_name,
                            age_restrictions, business_type, quota)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
         elif ret == db.DUPLICATE:
-            raise (wz.NotAcceptable(f"user {buserName} already exists."))
-        return f"{buserName} added."
+            raise (wz.NotAcceptable(f"user {business_name} already exists."))
+        return f"{business_ame} added."
         # json_data = request.get_json(force=True)
         # json_data['name'] = buserName
         # print(json_data)
@@ -165,7 +165,7 @@ class deletecUser(Resource):
             return f"{username} deleted."
 
 
-@api.route("/business/delete/<username>")
+@api.route("/business/delete/<business_name>")
 class deletebUser(Resource):
     """
     This class enables deleting a buser.
@@ -180,11 +180,11 @@ class deletebUser(Resource):
         """
         This method deletes a buser from the user db.
         """
-        ret = db.del_user(username)
+        ret = db.del_user(business_name)
         if ret == db.NOT_FOUND:
-            raise (wz.NotFound(f"buser {username} not found."))
+            raise (wz.NotFound(f"buser {business_name} not found."))
         else:
-            return f"{username} deleted."
+            return f"{business_name} deleted."
 
 
 # corrected
@@ -208,7 +208,7 @@ class partySize(Resource):
         return f"{party} added."
 
 
-@api.route("/events/<events_id>")
+@api.route("/events/<business_name>")
 class eventInfo(Resource):
     """
     This class supports bUsers inputting
@@ -217,19 +217,19 @@ class eventInfo(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
-    def post(self, events_id):
+    def post(self, business_name):
         """
         This method creates a new event.
         """
-        ret = db.add_event(business_name, address, event_name, fee, hours)
+        ret = db.add_event(address, event_name, fee, hours)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("Event doesnt exist yet. Please try again."))
         elif ret == db.DUPLICATE:
-            raise (wz.NotAcceptable(f"event {eventName} is coming up soon."))
-        return f"{eventName} is ready for tonight."
+            raise (wz.NotAcceptable(f"event {event_Name} is already planned."))
+        return f"{event_Name} is ready for tonight."
 
 
-@api.route('/business/delete/<username>')
+@api.route('/events/delete/<business_name>')
 class deleteEvent(Resource):
     """
     This class enables deleting an event after it occurs
@@ -242,14 +242,14 @@ class deleteEvent(Resource):
         """
         This method deletes an event from the event db.
         """
-        ret = db.del_event(business_name, eventName, location, price, hours)
+        ret = db.del_event(business_name, event_name, address, price, hours)
         if ret == db.NOT_FOUND:
-            raise (wz.NotFound(f"{eventName} at {location} not found."))
+            raise (wz.NotFound(f"{event_name} at {business_name} not found."))
         else:
-            return f"{eventName} has been deleted."
+            return f"{event_name} has been deleted."
 
 
-@api.route("/business/<username>/<quota>")
+@api.route("/business/<business_name>/<quota>")
 class bquota(Resource):
     """
     This endpoint will update the value of business quota
