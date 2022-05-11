@@ -126,7 +126,7 @@ def add_buser(age_restrictions,buser_nm,business_type,business_name,quota):
     """
     Add a buser to business db
     """
-    if buser_exists(busername):
+    if buser_exists(buser_nm):
         return DUPLICATE
     else:
         return "HERE!"
