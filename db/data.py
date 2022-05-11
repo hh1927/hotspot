@@ -203,25 +203,26 @@ def get_party(username):
      return psize
      """
 
-def event_exists(eventName):
+def event_exists(buser_nm):
     """
     See if a event already exists in the db.
     Returns True or False.
     """
-    rec = dbc.fetch_one(EVENTS, filters={EVENT_NM: eventName})
+    rec = dbc.fetch_one(EVENTS, filters={BUSER_NM: buser_nm})
     print(f"{rec=}")
     return rec is not None
 
-def add_event(eventName, location, price, hours):
+def add_event(buser_nm,eventName, location, price, hours):
      """
     Add events to the event database.
     """
-     if event_exists(eventName, location):
+     if event_exists(buser_nm):
         return DUPLICATE
      else:
         dbc.insert_doc(
             EVENTS,
             {
+                BUSER_NM: buser_nm
                 EVENT_NM: eventName,
                 LOCATION: location,
                 PRICE: price,
@@ -230,14 +231,14 @@ def add_event(eventName, location, price, hours):
         )
         return OK
     
-def del_event(eventName):
+def del_event(buser_nm):
     """
     Delete event from the db.
     """
-    if not event_exists(eventName):
+    if not event_exists(buser_nm):
         return NOT_FOUND
     else:
-        dbc.del_one(EVENTS, filters={EVENT_NM: eventName})
+        dbc.del_one(EVENTS, filters={BUSER__NM: buser_nm})
         return OK
     
 def del_buser(buser_nm):
