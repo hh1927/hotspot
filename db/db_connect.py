@@ -77,4 +77,4 @@ def fetch_all(collect_nm, key_nm):
 
 
 def insert_doc(collect_nm, doc):
-    client[db_nm][collect_nm].insert_one(doc)
+    return client[db_nm][collect_nm].insert_one(doc)
