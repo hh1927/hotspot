@@ -142,7 +142,7 @@ def add_buser(busername,age_rest,user_name,quota, btype):
         return OK
 
 
-def add_cuser(cusername):
+def add_cuser(cusername,age,interests,neighborhood,party):
     """
     Add a cuser to business db
     """
