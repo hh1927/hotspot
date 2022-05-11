@@ -146,7 +146,7 @@ def add_cuser(cusername,age,interests,neighborhood,party):
     """
     Add a cuser to business db
     """
-    if cuser_exists(cusername,age,interests,neighborhood,party):
+    if cuser_exists(cusername):
         return DUPLICATE
     else:
         dbc.insert_doc(
