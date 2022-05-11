@@ -212,7 +212,7 @@ def event_exists(buser_nm):
     print(f"{rec=}")
     return rec is not None
 
-def add_event(buser_nm, event_name, address, fee, hours):
+def add_event(buser_nm, event_nm, address, fee, hours):
      """
     Add events to the event database.
     """
@@ -223,7 +223,7 @@ def add_event(buser_nm, event_name, address, fee, hours):
             EVENTS,
             {
                 BUSER_NM: buser_nm,
-                EVENT_NM: event_name,
+                EVENT_NM: event_nm,
                 ADDRESS: address,
                 FEE: fee,
                 HOURS: hours,
