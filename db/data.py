@@ -29,19 +29,19 @@ CUSER_NM = "username"
 AGE = "age"
 INTERESTS = "interests"
 NEIGHBORHOOD = "neighborhood"
-PARTY = "party_size"
+PARTY_SIZE = "party_size"
 
 
 BUSER_NM = "business_name"
 AGE_RESTRICTIONS = "age_restrictions"
-B_USERNAME = "username"
+USERNAME = "username"
 QUOTA = "quota"
-LOCATIONTYPE = "business_type"
+BUSINESS_TYPE = "business_type"
 
 
 EVENT_NM = "event_name"
-LOCATION = "address"
-PRICE = "fee"
+ADDRESS = "address"
+FEE = "fee"
 HOURS = "hours"
 
 
