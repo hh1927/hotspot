@@ -50,9 +50,9 @@ class Endpoints(Resource):
 
 # CHECK api route
 @api.route("/consumer")
-class cUser(Resource):
+class cList(Resource):
     """
-    This class supports adding Customer users.
+    This class supports getting Customer users.
     """
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
@@ -66,11 +66,18 @@ class cUser(Resource):
             raise (wz.NotFound(f"{username} couldnt be found."))
         else:
             return allCusers
+
+
+@api.route("/consumer/<username>/<age>/<interests>/<neighborhood>/<party_size>")
+class cUser(Resource):
+    """
+    This class supports adding Customer users.
+    """
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
     # updated parameters of cUser to match workflow
-    def post(self,username, age, interests, neighborhood):
+    def post(self,username, age, interests, neighborhood, party_size):
         """
         This method creates a new Customer User.
         """
@@ -82,11 +89,6 @@ class cUser(Resource):
         elif ret == db.DUPLICATE:
             raise (wz.NotAcceptable(f"user {username} already exists."))
         return f"{username} added."
-
-        # json_data = request.get_json(force=True)
-        # json_data['name'] = username
-        # db.add_cuser(json_data)
-        # return f"{username} added."
 
 
 @api.route("/business")
