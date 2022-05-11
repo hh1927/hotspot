@@ -131,8 +131,8 @@ class bUser(Resource):
         This method creates a new Business User.
         """
         # database query updated to include fields from parameters
-        ret = db.add_buser(business_name, username,
-                           age_restrictions, business_type, quota)
+        ret = db.add_buser(age_restrictions, business_name, 
+                            business_type, username, quota)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("Business could not be found."))
         elif ret == db.DUPLICATE:
