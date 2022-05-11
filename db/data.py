@@ -238,7 +238,7 @@ def del_event(buser_nm):
     if not event_exists(buser_nm):
         return NOT_FOUND
     else:
-        dbc.del_one(EVENTS, filters={BUSER__NM: buser_nm})
+        dbc.del_one(EVENTS, filters={BUSER_NM: buser_nm})
         return OK
     
 def del_buser(buser_nm):
