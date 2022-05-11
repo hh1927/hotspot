@@ -6,46 +6,15 @@ import("./CreateAcc.css");
 //const baseURL = //api location here
 
 export default function CreateAcc() {
-  /*
-  const history = useHistory();
+  const [user, setUser] = useState("")
+  const [pass, setPass] = useState("")
+  const [first, setFirst] = useState("")
+  const [last, setLast] = useState("")
+  const [dob, setDOB] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
+  const [type, setType] = useState("")
 
-  function navigateToPage(path) {
-    history.push(path);
-  }
-
-  const[post, setPost] = React.useState({
-    user: '',
-    password: '',
-    firstname: '',
-    lastname: '',
-    dob: '',
-    email: '',
-    phone: '',
-    type: ''
-  });
-   
-  React.useEffect(() => {
-    axios.get(baseURL).then((response) => {
-      setPost(response.data);
-    });
-  });
-
-  function createAccount(){
-    axios.post(baseURL, {
-      user,
-      password,
-      firstname,
-      lastname,
-      dob,
-      email,
-      phone,
-      type
-
-    }).then((response) => {
-      setPost(response.data)
-    })
-  }
-*/
 
   return (
     <div className="login">
@@ -59,31 +28,31 @@ export default function CreateAcc() {
       <div>
         <form>
           <label>
-            Username: <input type="text" />
+            Username: <input type="text" value = {user}/>
           </label>
           <br />
           <label>
-            Password: <input type="text" />
+            Password: <input type="text" value = {pass}/>
           </label>
           <br />
           <label>
-            First Name: <input type="text" />
+            First Name: <input type="text" value = {first}/>
           </label>
           <br />
           <label>
-            Last Name: <input type="text" />
+            Last Name: <input type="text" value = {last}/>
           </label>
           <br />
           <label>
-            Date of Birth (MM/DD/YYYY): <input type="text" />
+            Date of Birth (MM/DD/YYYY): <input type="text" value = {dob}/>
           </label>
           <br />
           <label>
-            Email: <input type="text" />
+            Email: <input type="text" value = {email}/>
           </label>
           <br />
           <label>
-            Phone Number: <input type="text" />
+            Phone Number: <input type="text" value = {phone}/>
           </label>
           <br />
           <label>
@@ -93,6 +62,7 @@ export default function CreateAcc() {
               <option value="Customer">Customer</option>
               <option value="Business">Business</option>
             </select>
+            value = {type}
           </label>
         </form>
       </div>
