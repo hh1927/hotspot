@@ -13,7 +13,7 @@ export default function VenueProfile() {
   useEffect(() => {
     axios.get('https://teamhotspot.herokuapp.com/VenueProfile/bQuota')
       .then((response) => {
-        if (response.data){
+        if (response.data) {
           setUsers(response.data);
         }
       })
@@ -74,7 +74,8 @@ export default function VenueProfile() {
         onClick={handleBquota}
         className="page-button"
       >
-          Update Quota
+        Update Quota
+      </button>
     </div>
   );
 }

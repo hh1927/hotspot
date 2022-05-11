@@ -28,15 +28,15 @@ export default function Home() {
         </form>
       </div>
 
-      <button onClick={() => navigateToPage("/cHome")} className="page-button">
+      <button onClick={() => navigateToPage("/cHome")} className="button1">
         Login Personal
       </button>
-      <button onClick={() => navigateToPage("/bHome")} className="page-button">
+      <button onClick={() => navigateToPage("/bHome")} className="button1">
         Login Business
       </button>
       <button
         onClick={() => navigateToPage("/createAcc")} //need to talk to backend for create account page
-        className="page-button"
+        className="button1"
       >
         Create Account
       </button>
