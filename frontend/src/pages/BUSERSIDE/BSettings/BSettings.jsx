@@ -16,12 +16,6 @@ export default function BSettings() {
       <a href="/bHome">
         <h1>HotSpot </h1>
       </a>
-      <a href="/bsettings">
-        <button id="settings">
-          {" "}
-          <img src="https://img.icons8.com/nolan/64/apple-settings.png" />
-        </button>
-      </a>
       <div>
         <form>
           <label>
@@ -33,7 +27,7 @@ export default function BSettings() {
 
       <button
         onClick={() => navigateToPage("/bHome")} // must remove event from list of events
-        className="page-button"
+        className="button1"
       >
         Back
       </button>

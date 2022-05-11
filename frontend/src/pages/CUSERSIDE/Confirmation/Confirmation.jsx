@@ -49,9 +49,9 @@ export default function Confirmation() {
 
         <button
           onClick={() => navigateToPage("/cHome")} // must route to function
-          className="page-button"
+          className="button1"
         >
-          Send
+          Share
         </button>
       </div>
       <div>

@@ -20,31 +20,31 @@ function CHome() {
   const history = useHistory();
   const [newVenueProfile, setVenueProfile] = useState(undefined);
 
-    /*
-    useEffect(() => {
-        axios.get('https://teamhotspot.herokuapp.com/cHome/bList')
-        .then((response) => {
-            if (response.data){
-            setUsers(response.data);
-            }
-        })
-        .catch(error => {
-            setError(error);
-            console.log(error);
-        });
-    }, [refresh])
+  /*
+  useEffect(() => {
+      axios.get('https://teamhotspot.herokuapp.com/cHome/bList')
+      .then((response) => {
+          if (response.data){
+          setUsers(response.data);
+          }
+      })
+      .catch(error => {
+          setError(error);
+          console.log(error);
+      });
+  }, [refresh])
 
-    const handleBlist = () => {
-        axios.post(`https://teamhotspot.herokuapp.com/cHome/bList`)
-        .then(() => {
-            setIsModalOpen(false);
-            setRefresh(refresh + 1);
-        })
-        .catch(error => {
-            setError(error);
-            console.log(error);
-        })
-    }
+  const handleBlist = () => {
+      axios.post(`https://teamhotspot.herokuapp.com/cHome/bList`)
+      .then(() => {
+          setIsModalOpen(false);
+          setRefresh(refresh + 1);
+      })
+      .catch(error => {
+          setError(error);
+          console.log(error);
+      })
+  }
 */
   /*
     useEffect(() => {
@@ -125,14 +125,14 @@ function CHome() {
         </div>
         <div className="buttoncentering">
           <a href="/rSVP">
-            <button id="resButton"> RSVP </button>
+            <button id="resButton" className="button1"> RSVP </button>
           </a>
           <a href="/cHome">
-            <button id="nextButton"> Next </button>
+            <button id="nextButton" className="button1"> Next </button>
           </a>
-          <a href = '/cHome'>
-            <button id= "nextButton"> Business List </button>
-           </a>
+          <a href='/cHome'>
+            <button id="nextButton" className="page-button"> Business List </button>
+          </a>
         </div>
       </div>
     </div>

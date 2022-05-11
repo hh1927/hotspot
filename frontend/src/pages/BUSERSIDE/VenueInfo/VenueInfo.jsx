@@ -44,19 +44,19 @@ export default function VenueInfo() {
 
       <button
         onClick={() => navigateToPage("/bHome")} // must remove event from list of events
-        className="page-button"
+        className="button1"
       >
         Delete
       </button>
       <button
         onClick={() => navigateToPage("/bHome")} //needs to prevent users from updating w/o hitting edit beyond this point
-        className="page-button"
+        className="button1"
       >
         Publish
       </button>
       <button
         onClick={() => navigateToPage("/bHome")} //needs to allow users to update info. MUST UPDATE
-        className="page-button"
+        className="button1"
       >
         Save
       </button>

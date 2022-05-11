@@ -7,8 +7,8 @@ import "./RSVP.css";
 export default function RSVP() {
   const [RSVP, setRSVP] = useState(undefined);
   const [error, setError] = useState(undefined);
-  const[refresh, setRefresh] = useState(0);
-  const[isModalOpen, setIsModalOpen] = useState(false);
+  const [refresh, setRefresh] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [newEvent, setNewEvent] = useState('');
   const history = useHistory();
 
@@ -16,32 +16,32 @@ export default function RSVP() {
     history.push(path);
   }
 
- useEffect(() => {
-     axios.get('https://teamhotspot.herokuapp.com/cList')
-       .then((response) => {
-         if (response.data){
-           setNewEvent(response.data);
-         }
-       })
-       .catch(error => {
-         setError(error);
-         console.log(error);
-       });
-   }, [refresh])
+  useEffect(() => {
+    axios.get('https://teamhotspot.herokuapp.com/cList')
+      .then((response) => {
+        if (response.data) {
+          setNewEvent(response.data);
+        }
+      })
+      .catch(error => {
+        setError(error);
+        console.log(error);
+      });
+  }, [refresh])
 
-   const handlePartyInfo = () => {
-     //Within then block add console.log to test the post request
-     axios.post(`https://teamhotspot.herokuapp.com/cList/${user_name}/${party_size}`)
-       .then(() => {
-         setIsModalOpen(false);
-         setRefresh(refresh + 1);
-       })
-       .catch(error => {
-         setError(error);
-         console.log(error);
-       })
-   }
- 
+  const handlePartyInfo = () => {
+    //Within then block add console.log to test the post request
+    axios.post(`https://teamhotspot.herokuapp.com/cList/${user_name}/${party_size}`)
+      .then(() => {
+        setIsModalOpen(false);
+        setRefresh(refresh + 1);
+      })
+      .catch(error => {
+        setError(error);
+        console.log(error);
+      })
+  }
+
 
   return (
     <div className="content">
@@ -70,19 +70,19 @@ export default function RSVP() {
       </div>
       <button
         onClick={handlePartyInfo}
-          className="page-button"
+        className="page-button"
       >
         Party Size
       </button>
       <button
         onClick={() => navigateToPage("/confirmation")} //need to decide on page RSVP
-        className="page-button"
+        className="button1"
       >
         RSVP
       </button>
       <button
         onClick={() => navigateToPage("/cHome")} //returns to homepage to continue scrolling
-        className="page-button"
+        className="button1"
       >
         Cancel
       </button>

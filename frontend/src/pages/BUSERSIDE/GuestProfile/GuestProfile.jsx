@@ -23,6 +23,12 @@ function GuestProfile() {
           <p className="content">Age</p>
           <p className="content">Number of Guests</p>
         </div>
+        <button
+          onClick={() => navigateToPage("/guestList")}
+          className="button1"
+        >
+          Return
+        </button>
       </div>
     </>
   );

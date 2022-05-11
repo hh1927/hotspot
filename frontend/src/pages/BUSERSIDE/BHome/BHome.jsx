@@ -1,4 +1,12 @@
 import "./BHome.css";
+import "./eventpics/kindregardsparty.png";
+import "./eventpics/lebainparty.png";
+import "./eventpics/mcsorleysparty.png";
+import "./eventpics/downtimeparty.png";
+import "./eventpics/joyfaceparty.png";
+import "./eventpics/georgiaroomparty.png";
+
+
 
 function BHome() {
   return (
@@ -54,9 +62,9 @@ function BHome() {
             <div class="grid-item5">
               <a href="/guestList">
                 <img
-                  src="mcsorelysparty.png"
+                  src="mcsorleysparty.png"
                   class="gallery_img"
-                  alt="mcsorelysparty"
+                  alt="mcsorleysparty"
                 />
               </a>
             </div>
@@ -73,10 +81,10 @@ function BHome() {
         </div>
       </div>
       <a href="/eventinfo">
-        <button id="resButton"> CREATE </button>
+        <button id="resButton" className="button1"> CREATE </button>
       </a>
       <a href="/venueinfo">
-        <button id="nextButton"> PROFILE </button>
+        <button id="nextButton" className="button1"> PROFILE </button>
       </a>
     </>
   );

@@ -28,31 +28,31 @@ export default function CreateAcc() {
       <div>
         <form>
           <label>
-            Username: <input type="text" value = {user}/>
+            Username: <input type="text" value={user} />
           </label>
           <br />
           <label>
-            Password: <input type="text" value = {pass}/>
+            Password: <input type="text" value={pass} />
           </label>
           <br />
           <label>
-            First Name: <input type="text" value = {first}/>
+            First Name: <input type="text" value={first} />
           </label>
           <br />
           <label>
-            Last Name: <input type="text" value = {last}/>
+            Last Name: <input type="text" value={last} />
           </label>
           <br />
           <label>
-            Date of Birth (MM/DD/YYYY): <input type="text" value = {dob}/>
+            Date of Birth (MM/DD/YYYY): <input type="text" value={dob} />
           </label>
           <br />
           <label>
-            Email: <input type="text" value = {email}/>
+            Email: <input type="text" value={email} />
           </label>
           <br />
           <label>
-            Phone Number: <input type="text" value = {phone}/>
+            Phone Number: <input type="text" value={phone} />
           </label>
           <br />
           <label>
@@ -69,13 +69,13 @@ export default function CreateAcc() {
 
       <button
         onClick={() => (window.location.href = "/cHome")} //need to decide on page after login
-        className="page-button"
+        className="button1"
       >
         Create Personal
       </button>
       <button
         onClick={() => (window.location.href = "/bHome")} //need to decide on page after login
-        className="page-button"
+        className="button1"
       >
         Create Business
       </button>

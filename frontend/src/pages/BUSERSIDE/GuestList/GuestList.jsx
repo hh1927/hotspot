@@ -1,49 +1,49 @@
 import "./GuestList.css";
-import ally from "./propics/ally.png";
-import brandon from "./propics/brandon.png";
-import riley from "./propics/riley.png";
-import marie from "./propics/marie.png";
-import hannah from "./propics/hannah.png";
-import donovan from "./propics/donovan.png";
-import isaac from "./propics/isaac.png";
-import lucas from "./propics/lucas.png";
-import julianna from "./propics/julianna.png";
-import ava from "./propics/ava.png";
+import "./propics/ally.png";
+import "./propics/brandon.png";
+import "./propics/riley.png";
+import "./propics/marie.png";
+import "./propics/hannah.png";
+import "./propics/donovan.png";
+import "./propics/isaac.png";
+import "./propics/lucas.png";
+import "./propics/julianna.png";
+import "./propics/ava.png";
 
 
 
 function GuestList() {
   const history = useHistory();
-    const [newcList, setcList] = useState(undefined);
+  const [newcList, setcList] = useState(undefined);
 
-    useEffect(() => {
-        axios.get('https://teamhotspot.herokuapp.com/GuestList/cList')
-        .then((response) => {
-            if (response.data){
-            setUsers(response.data);
-            }
-        })
-        .catch(error => {
-            setError(error);
-            console.log(error);
-        });
-    }, [refresh])
+  useEffect(() => {
+    axios.get('https://teamhotspot.herokuapp.com/GuestList/cList')
+      .then((response) => {
+        if (response.data) {
+          setUsers(response.data);
+        }
+      })
+      .catch(error => {
+        setError(error);
+        console.log(error);
+      });
+  }, [refresh])
 
-    const handlecList = () => {
-        axios.post(`https://teamhotspot.herokuapp.com/GuestList/cList`)
-        .then(() => {
-            setIsModalOpen(false);
-            setRefresh(refresh + 1);
-        })
-        .catch(error => {
-            setError(error);
-            console.log(error);
-        })
-    }
+  const handlecList = () => {
+    axios.post(`https://teamhotspot.herokuapp.com/GuestList/cList`)
+      .then(() => {
+        setIsModalOpen(false);
+        setRefresh(refresh + 1);
+      })
+      .catch(error => {
+        setError(error);
+        console.log(error);
+      })
+  }
 
-    function navigateToPage(path) {
-        history.push(path);
-    }
+  function navigateToPage(path) {
+    history.push(path);
+  }
   return (
     <>
       <a href="/bHome">
@@ -84,13 +84,13 @@ function GuestList() {
         </div>
       </div>
       <a href="/eventInfo">
-        <button id="resButton"> VIEW EVENT </button>
+        <button id="resButton" className="button1"> VIEW EVENT </button>
       </a>
       <a href="/venueInfo">
-        <button id="nextButton"> VIEW VENUE </button>
+        <button id="nextButton" className="button1" > VIEW VENUE </button>
       </a>
-      <a href = '/eventInfo'>
-            <button onClick={handleBquota} id= "resButton"> VIEW CUSTOMER LIST </button>
+      <a href='/eventInfo'>
+        <button onClick={handleBquota} id="resButton" className="page-button" > VIEW CUSTOMER LIST </button>
       </a>
     </>
   );
