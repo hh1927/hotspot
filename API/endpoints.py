@@ -107,7 +107,7 @@ class bList(Resource):
         """
         This method returns all business users.
         """
-        return db.fetch_buser
+        return db.fetch_buser()
         '''allBusers = db.fetch_busers()
         if allBusers is None:
             raise (wz.NotFound("user couldnt be found."))
