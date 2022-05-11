@@ -142,21 +142,21 @@ def add_buser(age_restrictions,buser_nm,business_type,business_name,quota):
         return OK
 
 
-def add_cuser(cusername,age,interests,neighborhood,party):
+def add_cuser(cuser_nm,age,interests,neighborhood,party_size):
     """
     Add a cuser to business db
     """
-    if cuser_exists(cusername):
+    if cuser_exists(cuser_nm):
         return DUPLICATE
     else:
         dbc.insert_doc(
             CUSERS,
             {
-                CUSER_NM: cusername,
+                CUSER_NM: cuser_nm,
                 AGE: age,
                 INTERESTS: interests,
                 NEIGHBORHOOD: neighborhood,
-                PARTY_SIZE: party
+                PARTY_SIZE: party_size
             },
         )
         return OK
