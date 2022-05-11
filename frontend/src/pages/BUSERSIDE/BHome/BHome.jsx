@@ -1,10 +1,10 @@
 import "./BHome.css";
-import "./eventpics/kindregardsparty.png";
-import "./eventpics/lebainparty.png";
-import "./eventpics/mcsorleysparty.png";
-import "./eventpics/downtimeparty.png";
-import "./eventpics/joyfaceparty.png";
-import "./eventpics/georgiaroomparty.png";
+import img1 from "./eventpics/kindregardsparty.png";
+import img2 from "./eventpics/lebainparty.png";
+import img3 from "./eventpics/mcsorleysparty.png";
+import img4 from "./eventpics/downtimeparty.png";
+import img5 from "./eventpics/joyfaceparty.png";
+import img6 from "./eventpics/georgiaroomparty.png";
 
 
 
@@ -26,16 +26,16 @@ function BHome() {
             <div class="grid-item1">
               <a href="/guestList">
                 <img
-                  src="kindregardsparty.png"
+                  src={img1}
                   class="gallery_img"
-                  alt="kindregardsparty"
+                  alt="kindregardspartys"
                 />
               </a>
             </div>
             <div class="grid-item2">
               <a href="/guestList">
                 <img
-                  src="lebainparty.png"
+                  src={img2}
                   class="gallery_img"
                   alt="lebainparty"
                 />
@@ -44,7 +44,7 @@ function BHome() {
             <div class="grid-item3">
               <a href="/guestList">
                 <img
-                  src="downtimeparty.png"
+                  src={img3}
                   class="gallery_img"
                   alt="downtimeparty"
                 />
@@ -53,7 +53,7 @@ function BHome() {
             <div class="grid-item4">
               <a href="/guestList">
                 <img
-                  src="joyfaceparty.png"
+                  src={img4}
                   class="gallery_img"
                   alt="joyfaceparty"
                 />
@@ -62,7 +62,7 @@ function BHome() {
             <div class="grid-item5">
               <a href="/guestList">
                 <img
-                  src="mcsorleysparty.png"
+                  src={img5}
                   class="gallery_img"
                   alt="mcsorleysparty"
                 />
@@ -71,7 +71,7 @@ function BHome() {
             <div class="grid-item6">
               <a href="/guestList">
                 <img
-                  src="georgiaroomparty.png"
+                  src={img6}
                   class="gallery_img"
                   alt="georgiaroomparty"
                 />

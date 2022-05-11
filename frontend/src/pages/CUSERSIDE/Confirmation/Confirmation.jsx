@@ -13,9 +13,9 @@ export default function Confirmation() {
 
   return (
     <div className="invite">
-      <a href="/confirmation">
-        <h1>HotSpot </h1>
-      </a>
+
+      <h1>HotSpot </h1>
+
 
       <div>
         <p className="quote">"You're Signed Up For"</p>

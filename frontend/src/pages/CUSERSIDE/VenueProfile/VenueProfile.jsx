@@ -3,12 +3,12 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 import "./VenueProfile.css";
-import "./venpics/kindregards.jpeg";
-import "./venpics/lebain.jpg";
-import "./venpics/mcsorleys.jpeg";
-import "./venpics/downtime.jpeg";
-import "./venpics/joyface.jpeg";
-import "./venpics/georgiaroom.jpeg";
+import kindregards from "./venpics/kindregards.jpeg";
+import lebain from "./venpics/lebain.jpg";
+import mcsorleys from "./venpics/mcsorleys.jpeg";
+import downtime from "./venpics/downtime.jpeg";
+import joyface from "./venpics/joyface.jpeg";
+import georgiaroom from "./venpics/georgiaroom.jpeg";
 
 
 export default function VenueProfile() {
@@ -63,7 +63,7 @@ export default function VenueProfile() {
       </a>
       <div id="venue">
         <a href="/venueProfile">
-          <img id="example" src="kindregards.jpeg" />
+          <img id="example" src={georgiaroom} />
         </a>
       </div>
       <div>
@@ -82,11 +82,11 @@ export default function VenueProfile() {
         Return
       </button>
       <button
-
+        // onClick={()  handleBquota }
         className="button1"
       >
+        Return
       </button>
-    </div>
+    </div >
   );
 }
-//onClick={handleBquota} 

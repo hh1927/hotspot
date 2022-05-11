@@ -1,16 +1,14 @@
 import "./GuestList.css";
-import "./propics/ally.png";
-import "./propics/brandon.png";
-import "./propics/riley.png";
-import "./propics/marie.png";
-import "./propics/hannah.png";
-import "./propics/donovan.png";
-import "./propics/isaac.png";
-import "./propics/lucas.png";
-import "./propics/julianna.png";
-import "./propics/ava.png";
-
-
+import ally from "./propics/ally.png";
+import brandon from "./propics/brandon.png";
+import riley from "./propics/riley.png";
+import marie from "./propics/marie.png";
+import hannah from "./propics/hannah.png";
+import donovan from "./propics/donovan.png";
+import isaac from "./propics/isaac.png";
+import lucas from "./propics/lucas.png";
+import julianna from "./propics/julianna.png";
+import ava from "./propics/ava.png";
 
 function GuestList() {
   const history = useHistory();
@@ -52,34 +50,34 @@ function GuestList() {
       <div>
         <div class="guestlist-container">
           <a href="/guestprofile">
-            <img src="/propics/ally.png" alt="ally" />
+            <img src={ally} alt="ally" />
           </a>
           <a href="/guestprofile">
-            <img src="/src/propics/brandon.png" alt="brandon" />
+            <img src={brandon} alt="brandon" />
           </a>
           <a href="/guestprofile">
-            <img src="/src/propics/riley.png" alt="riley" />
+            <img src={riley} alt="riley" />
           </a>
           <a href="/guestprofile">
-            <img src="/src/propics/marie.png" alt="marie" />
+            <img src={marie} alt="marie" />
           </a>
           <a href="/guestprofile">
-            <img src="/src/propics/hannah.png" alt="hannah" />
+            <img src={hannah} alt="hannah" />
           </a>
           <a href="/guestprofile">
-            <img src="/src/propics/donovan.png" alt="donovan" />
+            <img src={donovan} alt="donovan" />
           </a>
           <a href="/guestprofile">
-            <img src="/src/propics/isaac.png" alt="isaac" />
+            <img src={isaac} alt="isaac" />
           </a>
           <a href="/guestprofile">
-            <img src="/src/propics/lucas.png" alt="lucas" />
+            <img src={lucas} alt="lucas" />
           </a>
           <a href="/guestprofile">
-            <img src="/src/propics/julianna.png" alt="julianna" />
+            <img src={julianna} alt="julianna" />
           </a>
           <a href="/guestprofile">
-            <img src="/src/propics/ava.png" alt="ava" />
+            <img src={ava} alt="ava" />
           </a>
         </div>
       </div>
@@ -89,9 +87,9 @@ function GuestList() {
       <a href="/venueInfo">
         <button id="nextButton" className="button1" > VIEW VENUE </button>
       </a>
-      <a href='/eventInfo'>
-        <button onClick={handleBquota} id="resButton" className="button2" > VIEW CUSTOMER LIST </button>
-      </a>
+
+      <button onClick={handleBquota} id="resButton" className="button2" > VIEW CUSTOMER LIST </button>
+
     </>
   );
 }

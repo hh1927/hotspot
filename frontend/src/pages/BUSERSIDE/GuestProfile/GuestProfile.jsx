@@ -1,4 +1,5 @@
 import "./GuestProfile.css";
+import ally from "./ally.png";
 
 function GuestProfile() {
   return (
@@ -15,11 +16,11 @@ function GuestProfile() {
       <div>
         <div id="invite">
           <a href="/guestList">
-            <img id="event" src="https://picsum.photos/1000" />
+            <img id="event" src={ally} />
           </a>
         </div>
         <div>
-          <p className="content">Name</p>
+          <p className="content">Name </p>
           <p className="content">Age</p>
           <p className="content">Number of Guests</p>
         </div>

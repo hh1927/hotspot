@@ -133,9 +133,9 @@ function CHome() {
           <a href="/cHome">
             <button id="nextButton" className="button1"> Next </button>
           </a>
-          <a href='/cHome'>
-            <button className="button2"> Business List </button>
-          </a>
+
+          <button className="button2"> Business List </button>
+
         </div>
       </div>
     </div >
