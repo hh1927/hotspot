@@ -54,7 +54,18 @@ class cUser(Resource):
     """
     This class supports adding Customer users.
     """
-
+    @api.response(HTTPStatus.OK, "Success")
+    @api.response(HTTPStatus.NOT_FOUND, "Not Found")
+    def get(self):
+        # modified parameters & changed function to get
+        """
+        This method returns all customer users.
+        """
+        allCusers = db.fetch_cusers()        
+        if allCusers is None:
+            raise (wz.NotFound(f"{username} couldnt be found."))
+        else:
+            return allCusers
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
@@ -64,8 +75,6 @@ class cUser(Resource):
         This method creates a new Customer User.
         """
         # database query updated to include fields from parameters
-
-
         req.form
         ret = db.add_cuser(username, age, interests, neighborhood)
         if ret == db.NOT_FOUND:
@@ -80,40 +89,19 @@ class cUser(Resource):
         # return f"{username} added."
 
 
-# CHECK
-# updated API route
-@api.route("/consumer/<username>")
-class cList(Resource):
+@api.route("/business")
+class bList(Resource):
+    # updated parameters to be in correspondence to to workflow
+    # added additional parameters related to business
+    # paramaters then used to select businesses
     """
-    parameters then used to select consumers
-    This class returns a list of all consumer users
-    """
-
-    @api.response(HTTPStatus.OK, "Success")
-    @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def get(self,username):
-        # modified parameters & changed function to get
-        """
-        This method returns all customer users.
-        """
-        allCusers = db.fetch_cusers()        
-        if allCusers is None:
-            raise (wz.NotFound(f"{username} couldnt be found."))
-        else:
-            return allCusers
-
-
-# CHECK api route
-@api.route("/business/<username>")
-class bUser(Resource):
-    """
-    This class supports business users,
+    This class supports fetching a list of all business users,
     specifically the users who are hosting events.
     """
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    # modified parameters & changed function to get
-    def get(self,username):
+     # modified parameters & changed function to get
+    def get(self):
         """
         This method returns all business users.
         """
@@ -124,6 +112,14 @@ class bUser(Resource):
         else:
             return allBusers'''
 
+
+# CHECK api route
+@api.route("/business/<username>")
+class bUser(Resource):
+    """
+    This class supports business users,
+    specifically the users who are hosting events.
+    """
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
