@@ -129,18 +129,21 @@ def add_buser(age_restrictions,buser_nm,business_type,business_name,quota):
     if buser_exists(busername):
         return DUPLICATE
     else:
-        dbc.insert_doc(
-            BUSERS,
-            {
-                AGE_RESTRICTIONS: age_restrictions,
-                BUSER_NM: buser_nm,
-                BUSINESS_TYPE: business_type,
-                QUOTA: quota,
-                USERNAME: business_name
-            },
-        )
+        try:
+            dbc.insert_doc(
+                BUSERS,
+                {
+                    AGE_RESTRICTIONS: age_restrictions,
+                    BUSER_NM: buser_nm,
+                    BUSINESS_TYPE: business_type,
+                    QUOTA: quota,
+                    USERNAME: business_name
+                },
+            )
         #return OK
-        return "IT WORKS"
+            return "IT WORKS"
+        except:
+            return "IT DOESNT WORK"
 
 
 def add_cuser(cusername,age,interests,neighborhood,party):
