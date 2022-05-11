@@ -125,7 +125,7 @@ class bUser(Resource):
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
     # updated parameters of bUser to match workflow
-    def post(self, business_name,username,age_restrictions,business_type,quota):
+    def post(self, business_name, username, age_restrictions, business_type,quota):
         """
         This method creates a new Business User.
         """
@@ -270,7 +270,7 @@ class bquota(Resource):
             return f"Quota updated to {quota}."
 
 
-@api.route("/consumer/<username>")
+@api.route("/consumer/<username>/<interests>/<neighborhood>")
 # added parameters needed for updating customer preferences
 class cDaily(Resource):
     """
