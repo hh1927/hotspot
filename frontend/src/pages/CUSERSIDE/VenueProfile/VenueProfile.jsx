@@ -58,7 +58,7 @@ export default function VenueProfile() {
       <a href="/csettings">
         <button id="settings">
           {" "}
-          <img src="https://img.icons8.com/nolan/64/apple-settings.png" />
+          <img src="https://img.icons8.com/ios-filled/50/000000/settings.png" />
         </button>
       </a>
       <div id="venue">

@@ -70,7 +70,7 @@ export default function RSVP() {
       </div>
       <button
         onClick={handlePartyInfo}
-        className="page-button"
+        className="button2"
       >
         Party Size
       </button>

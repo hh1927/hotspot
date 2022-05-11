@@ -78,6 +78,35 @@
   }
 }
 
+.button2{
+  display:inline-block;
+  padding:0.35em 1.2em;
+  background-color: #04b8ff;
+  border:0.1em solid #ffffff;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#ffffff;
+  text-align:center;
+  transition: all 0.2s;
+}
+
+.button2:hover{
+  color:#ffffff;
+  background-color:#ffffff00;
+  border:0.1em solid #ffffff;
+  
+}
+
+@media all and (max-width:30em){
+.button2{
+  display:block;
+  margin:0.4em auto;
+  }
+}
 .page-button:hover {
   background-color: #cbd5e1;
 }
@@ -124,4 +153,7 @@ label,
 
 .settings {
   text-align: right;
+  background: transparent!important;
+  background-color: none;
+
 }

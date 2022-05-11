@@ -26,6 +26,12 @@ export default function BSettings() {
       </div>
 
       <button
+        onClick={() => navigateToPage("/bSettings")} // must remove event from list of events
+        className="button1"
+      >
+        Update
+      </button>
+      <button
         onClick={() => navigateToPage("/bHome")} // must remove event from list of events
         className="button1"
       >

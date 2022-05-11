@@ -52,7 +52,7 @@ export default function EventInfo() {
       <a href="/bsettings">
         <button id="settings">
           {" "}
-          <img src="https://img.icons8.com/nolan/64/apple-settings.png" />
+          <img src="https://img.icons8.com/ios-filled/50/000000/settings.png" />
         </button>
       </a>
       <div>
@@ -91,7 +91,7 @@ export default function EventInfo() {
       </button>
       <button
         onClick={handleEventInfo}
-        className="page-button"
+        className="button2"
       >
         Update Event Info
       </button>
