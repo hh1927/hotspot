@@ -219,7 +219,7 @@ class eventInfo(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
-    def post(self, buser_nm, address, event_nm, fee,mhours):
+    def post(self, buser_nm, address, event_nm, fee,hours):
         """
         This method creates a new event.
         """
