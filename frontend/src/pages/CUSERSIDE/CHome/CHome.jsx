@@ -1,6 +1,7 @@
 import "./CHome.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 //import invite from "./eventpics.json";
 
 function CHome() {
@@ -17,8 +18,9 @@ function CHome() {
   const [interest, setInterest] = useState()
   const [neighborhood, setNeighborhood] = useState()
   const history = useHistory();
-    const [newVenueProfile, setVenueProfile] = useState(undefined);
+  const [newVenueProfile, setVenueProfile] = useState(undefined);
 
+    /*
     useEffect(() => {
         axios.get('https://teamhotspot.herokuapp.com/cHome/bList')
         .then((response) => {
@@ -43,7 +45,7 @@ function CHome() {
             console.log(error);
         })
     }
-
+*/
   /*
     useEffect(() => {
         axios
@@ -129,7 +131,7 @@ function CHome() {
             <button id="nextButton"> Next </button>
           </a>
           <a href = '/cHome'>
-            <button onClick={handleBlist} id= "nextButton"> Business List </button>
+            <button id= "nextButton"> Business List </button>
            </a>
         </div>
       </div>
@@ -137,3 +139,4 @@ function CHome() {
   );
 }
 export default CHome;
+//onClick={handleBlist}

@@ -9,7 +9,13 @@ import "./venpics/kindregards.jpeg"
 export default function VenueProfile() {
   const history = useHistory();
   const [newVenueProfile, setVenueProfile] = useState(undefined);
+  const [refresh, setRefresh] = useState("")
+  const [users, setUsers] = useState("")
 
+  function navigateToPage(path) {
+    history.push(path);
+  }
+/*
   useEffect(() => {
     axios.get('https://teamhotspot.herokuapp.com/VenueProfile/bQuota')
       .then((response) => {
@@ -38,7 +44,7 @@ export default function VenueProfile() {
   function navigateToPage(path) {
     history.push(path);
   }
-
+*/
   return (
     <div className="content">
       <a href="/chome">
@@ -70,11 +76,13 @@ export default function VenueProfile() {
       >
         Return
       </button>
-      <button
-        onClick={handleBquota}
-        className="page-button"
+      <button 
+        
+        className="page-button" 
       >
           Update Quota
+      </button>
     </div>
   );
 }
+//onClick={handleBquota} 

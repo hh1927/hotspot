@@ -5,6 +5,8 @@ import { useHistory } from "react-router-dom";
 import "./Cuserprofile.css";
 
 export default function Cuserprofile() {
+  const [neighborhood, setNeighborhood] = useState("")
+  const [interest, setInterest] = useState("")
   const history = useHistory();
 
   function navigateToPage(path) {
@@ -38,6 +40,7 @@ export default function Cuserprofile() {
               <option value="Staten Island">Staten Island</option>
               <option value="Long Island">Long Island</option>
             </select>
+            value = {neighborhood}
           </label>
           <br />
           <label>
@@ -53,6 +56,7 @@ export default function Cuserprofile() {
               <option value="Live Music">Live Music</option>
               <option value="LGBTQ">LGBTQ</option>
             </select>
+            value = {interest}
           </label>
           <br />
           <label>
