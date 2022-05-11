@@ -45,31 +45,15 @@ FEE = "fee"
 HOURS = "hours"
 
 
-
-
-
-
-
 OK = 0
 NOT_FOUND = 1
 DUPLICATE = 2
+
 
 client = dbc.get_client()
 if client is None:
     print("Failed to connect to MongoDB.")
     exit(1)
-
-# def create_cuser(name, demographic, age, categories, location):
-#    """
-#    A function that will save a user to the data base
-#    """
-#    user = {"name": name,
-#            "age": age,
-#            "demographic": demographic,
-#            "Interest Categories": categories,
-#            "location": location}
-#    create = json.dumps(user)
-#    print(create)
 
 
 def buser_exists(busername):
@@ -97,9 +81,6 @@ def fetch_cusers():
     A function to return all cusers in the data store.
     """
     return dbc.fetch_all(CUSERS, CUSER_NM)
-    """return {"Sara": ["woman", 25, ("clubbing", "brunch"), "NYC"],
-            "John": ["man", 21, ("bars", "sports"), "NYC"],
-            "Jane": ["woman", 32, ("art", "sports"), "NYC"]}"""
 
 
 def fetch_busers():
@@ -107,20 +88,14 @@ def fetch_busers():
     A function to return all busers in the data store.
     """
     return dbc.fetch_all(BUSERS, BUSER_NM)
-    """
-    return {
-        "Catch": [("clubbing", "brunch"), "NYC"],
-        "Penny Farthing": [("bars", "sports"), "NYC"],
-        "Fleur Room": [("art", "clubbing"), "NYC"],
-    }
-    """
+
 
 def fetch_events():
     """
     A function to return all events in the data store.
     """
-    #return dbc.fetch_all(EVENTS, EVENT_NM, LOCATION, PRICE, HOURS)
     return dbc.fetch_all(EVENTS, EVENT_NM)
+
 
 def add_buser(age_restrictions,buser_nm,business_type,business_name,quota):
     """
@@ -161,16 +136,15 @@ def add_cuser(cuser_nm,age,interests,neighborhood,party_size):
         )
         return OK
 
+
 def fetch_clientList(busername):
     """
     A function to returns list of clients,
     their sex, age, and size of additional party
     """
     return dbc.fetch_all(CUSERS, CUSER_NM, AGE, PARTY, {"owner": busername})
-    """return {"Sara": ["woman", 25, 3],
-            "John": ["man", 21, 1],
-            "Jane": ["woman", 32, 5]}"""
-    
+
+
 def reset_party(username):
     """
     reset party sizes at the end of the night - CHECK AGAIN
@@ -196,12 +170,8 @@ def get_party(username):
      Function to return user's party size
      """
      # temporarily hard coded
-     return 4
-     """
-     cusers = db.fetch_one(CUSERS, filters={USER_NM: username})
-     psize = cusers[PARTY]
-     return psize
-     """
+     return dbc.fetch_one(CUSERS, CUSER_NM:)
+
 
 def event_exists(buser_nm):
     """
@@ -211,6 +181,7 @@ def event_exists(buser_nm):
     rec = dbc.fetch_one(EVENTS, filters={BUSER_NM: buser_nm})
     print(f"{rec=}")
     return rec is not None
+
 
 def add_event(buser_nm, event_nm, address, fee, hours):
      """
@@ -230,7 +201,8 @@ def add_event(buser_nm, event_nm, address, fee, hours):
             },
         )
         return OK
-    
+
+
 def del_event(buser_nm):
     """
     Delete event from the db.
@@ -240,7 +212,8 @@ def del_event(buser_nm):
     else:
         dbc.del_one(EVENTS, filters={BUSER_NM: buser_nm})
         return OK
-    
+
+
 def del_buser(buser_nm):
     """
     Delete event from the db.
@@ -250,7 +223,8 @@ def del_buser(buser_nm):
     else:
         dbc.del_one(BUSERS, filters={BUSER_NM: buser_nm})
         return OK
-    
+
+
 def del_cuser(cuser_nm):
     """
     Delete event from the db.
@@ -285,15 +259,5 @@ def update_cdaily(cUser, new_interests, new_neighborhood):
         dbc.update_one(USERS, filters={USER_NM: cUser},
                        updates={"$set": {LOCATION: new_neighborhood}})
     return OK  
-                                
-def fetch_psize(cUser, psize):
-    """
-    Finding the party size 
-    """
-    if not cuser_exists(cUser):
-        return NOT_FOUND
-    else:
-        dbc.fetch_one(PARTY, filters={USER_NM: cUser})
-    return OK
-                                
+      
                                 
