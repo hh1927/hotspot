@@ -16,11 +16,7 @@ export default function Confirmation() {
       <a href="/confirmation">
         <h1>HotSpot </h1>
       </a>
-      <div>
-        <a href="/cuserprofile">
-          <button id="profButton"> Profile </button>
-        </a>
-      </div>
+
       <div>
         <p className="quote">"You're Signed Up For"</p>
       </div>

@@ -9,7 +9,7 @@ function GuestProfile() {
       <a href="/bsettings">
         <button id="settings">
           {" "}
-          <img src="https://img.icons8.com/nolan/64/apple-settings.png" />
+          <img src="https://img.icons8.com/ios-filled/50/000000/settings.png" />
         </button>
       </a>
       <div>
@@ -23,12 +23,13 @@ function GuestProfile() {
           <p className="content">Age</p>
           <p className="content">Number of Guests</p>
         </div>
-        <button
-          onClick={() => navigateToPage("/guestList")}
-          className="button1"
-        >
-          Return
-        </button>
+        <a href="/guestList">
+          <button
+            className="button1"
+          >
+            Return
+          </button>
+        </a>
       </div>
     </>
   );

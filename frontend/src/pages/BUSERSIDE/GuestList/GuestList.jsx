@@ -90,7 +90,7 @@ function GuestList() {
         <button id="nextButton" className="button1" > VIEW VENUE </button>
       </a>
       <a href='/eventInfo'>
-        <button onClick={handleBquota} id="resButton" className="page-button" > VIEW CUSTOMER LIST </button>
+        <button onClick={handleBquota} id="resButton" className="button2" > VIEW CUSTOMER LIST </button>
       </a>
     </>
   );

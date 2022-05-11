@@ -93,7 +93,7 @@ export default function Users() {
       </div>
 
       <div>
-        <button className="page-button" onClick={() => setIsModalOpen(true)}>
+        <button className="button2" onClick={() => setIsModalOpen(true)}>
           {" "}
           Add New User{" "}
         </button>

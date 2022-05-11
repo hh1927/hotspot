@@ -103,11 +103,14 @@ function CHome() {
         <a href="/csettings">
           <button id="settings">
             {" "}
-            <img src="https://img.icons8.com/nolan/64/apple-settings.png" />{" "}
+            <img src="https://img.icons8.com/ios-filled/50/000000/settings.png" />{" "}
           </button>
         </a>
         <a href="/cuserprofile">
-          <button id="profButton"> Profile </button>
+          <button id="settings">
+            {" "}
+            <img src="https://img.icons8.com/material-sharp/50/000000/gender-neutral-user.png" />{" "}
+          </button>
         </a>
       </div>
       <div>
@@ -131,11 +134,11 @@ function CHome() {
             <button id="nextButton" className="button1"> Next </button>
           </a>
           <a href='/cHome'>
-            <button id="nextButton" className="page-button"> Business List </button>
+            <button className="button2"> Business List </button>
           </a>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 export default CHome;

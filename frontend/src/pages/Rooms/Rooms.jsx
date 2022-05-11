@@ -97,7 +97,7 @@ export default function Rooms() {
         )}
       </div>
       <div>
-        <button className="page-button" onClick={() => setIsModalOpen(true)}>
+        <button className="button2" onClick={() => setIsModalOpen(true)}>
           {" "}
           Add New Room{" "}
         </button>
