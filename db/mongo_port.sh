@@ -1,13 +1,18 @@
 #!/bin/bash
 
 export passwd=$MONGO_PASSWD
-export db="myFirstDatabase"
-export collect="Cusers" #maybe cuser_nm
-export key="cuserName"
+export db="hotspot"
+export collect="business"
+export key="business_name"
 
 python3 mongo_port.py $db $collect $key $passwd
 
-export collect="Busers"
-export key="busername"
+export collect="consumer"
+export key="username"
+
+python3 mongo_port.py $db $collect $key $passwd
+
+export collect="events"
+export key="event_name"
 
 python3 mongo_port.py $db $collect $key $passwd
