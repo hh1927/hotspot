@@ -122,7 +122,7 @@ def fetch_events():
     #return dbc.fetch_all(EVENTS, EVENT_NM, LOCATION, PRICE, HOURS)
     return dbc.fetch_all(EVENTS, EVENT_NM)
 
-def add_buser(busername,age_rest,user_name,quota, btype):
+def add_buser(buser_nm,age_restrictions,username,quota, business_type):
     """
     Add a buser to business db
     """
@@ -132,11 +132,10 @@ def add_buser(busername,age_rest,user_name,quota, btype):
         dbc.insert_doc(
             BUSERS,
             {
-                BUSER_NM: busername,
-                AGE_RESTRICTIONS: age_rest,
-                B_USERNAME: user_name,
+                BUSER_NM: buser_nm,
+                AGE_RESTRICTIONS: age_restrictions,
                 QUOTA: quota,
-                LOCATIONTYPE: btype
+                BUSINESS_TYPE: business_type
             },
         )
         return OK
