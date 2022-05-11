@@ -116,7 +116,7 @@ class bList(Resource):
 
 
 # CHECK api route
-@api.route("/business/<business_name>/<age_restrictions>/<business_type>/<quota>")
+@api.route("/business/<business_name>/<username>/<age_restrictions>/<business_type>/<quota>")
 class bUser(Resource):
     """
     This class supports business users,
@@ -126,12 +126,12 @@ class bUser(Resource):
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
     # updated parameters of bUser to match workflow
-    def post(self, business_name,age_restrictions,business_type,quota):
+    def post(self, business_name,username,age_restrictions,business_type,quota):
         """
         This method creates a new Business User.
         """
         # database query updated to include fields from parameters
-        ret = db.add_buser(business_name,
+        ret = db.add_buser(business_name, username,
                            age_restrictions, business_type, quota)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("Business could not be found."))
