@@ -122,7 +122,7 @@ def fetch_events():
     #return dbc.fetch_all(EVENTS, EVENT_NM, LOCATION, PRICE, HOURS)
     return dbc.fetch_all(EVENTS, EVENT_NM)
 
-def add_buser(buser_nm,age_restrictions,username,quota, business_type):
+def add_buser(buser_nm,age_restrictions,quota, business_type):
     """
     Add a buser to business db
     """
