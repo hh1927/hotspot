@@ -156,7 +156,7 @@ def add_cuser(cusername,age,interests,neighborhood,party):
                 AGE: age,
                 INTERESTS: interests,
                 NEIGHBORHOOD: neighborhood,
-                PARTY: party
+                PARTY_SIZE: party
             },
         )
         return OK
