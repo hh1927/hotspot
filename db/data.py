@@ -74,7 +74,7 @@ if client is None:
 
 def buser_exists(busername):
     """
-    See if a buser with username is in the db.
+    See if a buser with the business name is in the db.
     Returns True or False.
     """
     rec = dbc.fetch_one(BUSERS, filters={BUSER_NM: busername})
@@ -122,7 +122,7 @@ def fetch_events():
     #return dbc.fetch_all(EVENTS, EVENT_NM, LOCATION, PRICE, HOURS)
     return dbc.fetch_all(EVENTS, EVENT_NM)
 
-def add_buser(busername):
+def add_buser(busername,age_rest,user_name,quota, btype):
     """
     Add a buser to business db
     """
@@ -133,8 +133,10 @@ def add_buser(busername):
             BUSERS,
             {
                 BUSER_NM: busername,
-                "LocationType": ["bars, arts"],
-                "City": "NYC",
+                AGE_RESTRICTIONS: age_rest,
+                B_USERNAME: user_name,
+                QUOTA: quota,
+                LOCATIONTYPE: btype
             },
         )
         return OK
@@ -144,17 +146,17 @@ def add_cuser(cusername):
     """
     Add a cuser to business db
     """
-    if cuser_exists(cusername):
+    if cuser_exists(cusername,age,interests,neighborhood,party):
         return DUPLICATE
     else:
         dbc.insert_doc(
             CUSERS,
             {
                 CUSER_NM: cusername,
-                "Gender": "xxxx",
-                "Age": "00",
-                "Interests": ["xxxx", "xxxx"],
-                "Location": "NYC",
+                AGE: age,
+                INTERESTS: interests,
+                NEIGHBORHOOD: neighborhood,
+                PARTY: party
             },
         )
         return OK
@@ -245,7 +247,7 @@ def update_bquota(bUser, new_quota):
     if not buser_exists(bUser):
         return NOT_FOUND
     else:
-        dbc.update_one(USERS, filters={USER_NM: bUser},
+        dbc.update_one(USERS, filters={BUSER_NM: bUser},
                        updates={"$set": {QUOTA: new_quota}})
     return OK
                        
