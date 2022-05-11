@@ -222,7 +222,7 @@ def add_event(buser_nm, eventName, address, fee, hours):
         dbc.insert_doc(
             EVENTS,
             {
-                BUSER_NM: buser_nm
+                BUSER_NM: buser_nm,
                 EVENT_NM: eventName,
                 ADDRESS: address,
                 FEE: fee,
