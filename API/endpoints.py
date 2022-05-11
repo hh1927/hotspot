@@ -210,7 +210,7 @@ class partySize(Resource):
         return f"{party} added."
 
 
-@api.route("/events/<business_name>")
+@api.route("/events/<business_name>/<address>/<event_name>/<fee>/<hours>")
 class eventInfo(Resource):
     """
     This class supports bUsers inputting
@@ -219,11 +219,11 @@ class eventInfo(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
-    def post(self, business_name):
+    def post(self, buser_nm, eventName, address, fee, hours):
         """
         This method creates a new event.
         """
-        ret = db.add_event(address, event_name, fee, hours)
+        ret = db.add_event(buser_nm, eventName, address, fee, hours)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("Event doesnt exist yet. Please try again."))
         elif ret == db.DUPLICATE:
