@@ -137,14 +137,6 @@ def add_cuser(cuser_nm,age,interests,neighborhood,party_size):
         return OK
 
 
-def fetch_clientList(busername):
-    """
-    A function to returns list of clients,
-    their sex, age, and size of additional party
-    """
-    return dbc.fetch_all(CUSERS, CUSER_NM, AGE, PARTY, {"owner": busername})
-
-
 def reset_party(username):
     """
     reset party sizes at the end of the night - CHECK AGAIN
