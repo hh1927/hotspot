@@ -258,3 +258,12 @@ def update_cdaily(cUser, new_interests, new_neighborhood):
     return OK  
       
                                 
+def fetch_psize(cUser, psize):
+    """
+    Finding the party size 
+    """
+    if not cuser_exists(cUser):
+        return NOT_FOUND
+    else:
+        dbc.fetch_one(PARTY, filters={USER_NM: cUser})
+    return OK
