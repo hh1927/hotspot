@@ -219,16 +219,16 @@ class eventInfo(Resource):
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
-    def post(self, buser_nm, address, event_nm, fee, hours):
+    def post(self, business_name, address, event_name, fee, hours):
         """
         This method creates a new event.
         """
-        ret = db.add_event(buser_nm, address, event_nm, fee, hours)
+        ret = db.add_event(business_name, address, event_name, fee, hours)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("Event doesnt exist yet. Please try again."))
         elif ret == db.DUPLICATE:
-            raise (wz.NotAcceptable(f"event {event_nm} is already planned."))
-        return f"{event_nm} is ready for tonight at {buser_nm}."
+            raise (wz.NotAcceptable(f"{business_name} already has an event planned."))
+        return f"{event_name} is ready for tonight at {business_name}."
      
 
 @api.route('/events/delete/<business_name>')
@@ -240,15 +240,15 @@ class deleteEvent(Resource):
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
     @api.response(HTTPStatus.FORBIDDEN,
                   'Only the admin can delete it.')
-    def post(self, buser_nm):
+    def post(self, business_name):
         """
         This method deletes an event from the event db.
         """
-        ret = db.del_event(buser_nm)
+        ret = db.del_event(business_name)
         if ret == db.NOT_FOUND:
-            raise (wz.NotFound(f"events at {buser_nm} not found."))
+            raise (wz.NotFound(f"events at {business_name} not found."))
         else:
-            return f"{buser_nm} has had events deleted."
+            return f"{business_name} has had events deleted."
 
 
 @api.route("/business/<business_name>/<quota>")
@@ -259,11 +259,11 @@ class bquota(Resource):
 
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def patch(self, username, quota):
+    def patch(self, business_name, quota):
         """
         """
         # added line to incorporate updating of business quota
-        ret = db.update_bquota(username, quota)
+        ret = db.update_bquota(business_name, quota)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("Quota not found."))
         else:
