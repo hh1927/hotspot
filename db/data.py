@@ -154,12 +154,12 @@ def add_party(username, party):
         return OK
 
 
-def get_party(username):
+'''def get_party(username):
      """
      Function to return user's party size
      """
      # temporarily hard coded
-     return dbc.fetch_one(CUSERS, CUSER_NM:username)
+     return dbc.fetch_one(CUSERS, CUSER_NM:username)'''
 
 
 def event_exists(buser_nm):
