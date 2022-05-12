@@ -1,8 +1,117 @@
 .guestlist-container {
   display: grid;
   overflow: hidden;
-  grid-template-columns: 50px 50px 50px 50px 50px;
-  grid-auto-rows: 50px;
-  grid-row-gap: 25px;
-  grid-column-gap: 25px;
+  /*grid-template-columns: fit-content(200px) fit-content(300px);
+    grid-template-rows: 225px 225px 225px; */
+  grid-row-gap: 50px;
+  grid-column-gap: 50px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  /*grid-template-rows: repeat(3, vw); */
+  grid-gap: 10px;
+}
+
+.grid-person1 {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: block;
+  object-fit: contain;
+  max-width: 200px;
+}
+.grid-person2 {
+  grid-column-start: 7;
+  grid-column-end: 12;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: block;
+  object-fit: contain;
+  max-width: 200px;
+}
+.grid-person3 {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display: block;
+  object-fit: contain;
+  max-width: 200px;
+}
+.grid-person4 {
+  grid-column-start: 7;
+  grid-column-end: 12;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display: block;
+  object-fit: contain;
+  max-width: 200px;
+}
+.grid-person5 {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  display: block;
+  object-fit: contain;
+  max-width: 200px;
+}
+.grid-person6 {
+  grid-column-start: 7;
+  grid-column-end: 12;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  display: block;
+  object-fit: contain;
+  max-width: 200px;
+}
+
+.grid-person7 {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 7;
+  grid-row-end: 8;
+  display: block;
+  object-fit: contain;
+  max-width: 200px;
+}
+
+.grid-person8 {
+  grid-column-start: 7;
+  grid-column-end: 12;
+  grid-row-start: 7;
+  grid-row-end: 8;
+  display: block;
+  object-fit: contain;
+  max-width: 200px;
+}
+
+.grid-person9 {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 9;
+  grid-row-end: 10;
+  display: block;
+  object-fit: contain;
+  max-width: 200px;
+}
+
+
+.grid-person10 {
+  grid-column-start: 7;
+  grid-column-end: 12;
+  grid-row-start: 9;
+  grid-row-end: 10;
+  display: block;
+  object-fit: contain;
+  max-width: 200px;
+}
+
+.gallery_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

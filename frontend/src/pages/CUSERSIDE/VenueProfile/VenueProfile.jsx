@@ -9,6 +9,7 @@ import mcsorleys from "./venpics/mcsorleys.jpeg";
 import downtime from "./venpics/downtime.jpeg";
 import joyface from "./venpics/joyface.jpeg";
 import georgiaroom from "./venpics/georgiaroom.jpeg";
+import settingsimg from "/Users/ramonaflowers/hotspot/frontend/src/pages/BUSERSIDE/settings.png";
 
 
 export default function VenueProfile() {
@@ -58,7 +59,7 @@ export default function VenueProfile() {
       <a href="/csettings">
         <button id="settings">
           {" "}
-          <img src="https://img.icons8.com/ios-filled/50/000000/settings.png" />
+          <img src={settingsimg} />
         </button>
       </a>
       <div id="venue">

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import settingsimg from "/Users/ramonaflowers/hotspot/frontend/src/pages/BUSERSIDE/settings.png";
 import("./CreateAcc.css");
 
+
 //const baseURL = //api location here
+
 
 export default function CreateAcc() {
   const [user, setUser] = useState("")
@@ -22,7 +25,7 @@ export default function CreateAcc() {
       <a href="/bsettings">
         <button id="settings">
           {" "}
-          <img src="https://img.icons8.com/ios-filled/50/000000/settings.png" />
+          <img src={settingsimg} />
         </button>
       </a>
       <div>

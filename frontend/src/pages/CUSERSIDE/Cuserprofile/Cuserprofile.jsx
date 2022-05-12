@@ -3,6 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 import "./Cuserprofile.css";
+import settingsimg from "/Users/ramonaflowers/hotspot/frontend/src/pages/BUSERSIDE/settings.png";
 
 export default function Cuserprofile() {
   const [neighborhood, setNeighborhood] = useState("")
@@ -20,7 +21,7 @@ export default function Cuserprofile() {
       </a>
       <a href="/csettings">
         <button id="settings">
-          <img src="https://img.icons8.com/ios-filled/50/000000/settings.png" />
+          <img src={settingsimg} />
         </button>
       </a>
       <div>
