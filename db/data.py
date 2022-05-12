@@ -176,7 +176,7 @@ def add_event(buser_nm, address, event_nm, fee, hours):
      """
     Add events to the event database.
     """
-     if event_exists(buser_nm):
+     if buser_exists(buser_nm):
         return DUPLICATE
      else:
         dbc.insert_doc(
