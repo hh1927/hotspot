@@ -183,10 +183,10 @@ def add_event(buser_nm, event_nm, address, fee, hours):
             EVENTS,
             {
                 BUSER_NM: buser_nm,
-                EVENT_NM: event_nm,
                 ADDRESS: address,
+                EVENT_NM: event_nm,
                 FEE: fee,
-                HOURS: hours,
+                HOURS: hours
             },
         )
         return OK
