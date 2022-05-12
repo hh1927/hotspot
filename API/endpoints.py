@@ -188,7 +188,7 @@ class deletebUser(Resource):
         else:
             return f"{business_name} deleted."
 
-
+'''
 # corrected
 @api.route("/consumer/<username>/<party_size>")
 class partySize(Resource):
@@ -207,7 +207,7 @@ class partySize(Resource):
         ret = db.add_party(username, party_size)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("User db could not be found."))
-        return f"{party_size} added."
+        return f"{party_size} added."'''
 
 
 @api.route("/events/<business_name>/<address>/<event_name>/<fee>/<hours>")
@@ -274,7 +274,7 @@ class bquota(Resource):
             return f"Quota updated to {quota}."
 
 
-@api.route("/consumer/<username>/<interests>/<neighborhood>")
+@api.route("/consumer/<username>/<interests>/<neighborhood>/<party_size>")
 # added parameters needed for updating customer preferences
 class cDaily(Resource):
     """
@@ -283,11 +283,11 @@ class cDaily(Resource):
     """
     @api.response(HTTPStatus.OK, "Success")
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
-    def patch(self, username, new_interests, new_neighborhood):
+    def patch(self, username, interests, neighborhood, party_size):
         """
         """
-        ret = db.update_cdaily(username, new_interests, new_neighborhood)
+        ret = db.update_cdaily(username, interests, neighborhood, party_size)
         if ret == db.NOT_FOUND:
             raise (wz.NotFound("interests not found."))
         else:
-            return f"{new_interests} and {new_neighborhood} updated"
+            return f"{interests} and {neighborhood} and {party_size} are updated"
