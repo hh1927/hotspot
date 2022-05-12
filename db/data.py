@@ -148,13 +148,10 @@ def fetch_clientList(busername):
 def reset_party(username):
     """
     reset party sizes at the end of the night - CHECK AGAIN
-    
-    if cuser_exists(username):
-        dbc.insert_doc(CUSERS, {CUSER_NM: username}, {PARTY: 0})
-        return OK
-    else:
-        return OK
-     """   
+     Function to return user's party size
+     """
+     # temporarily hard coded
+     return 4
 
 def add_party(username, party):
     """
