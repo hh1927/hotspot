@@ -224,6 +224,7 @@ class eventInfo(Resource):
         This method creates a new event.
         """
         try:
+            print("HERE!")
             ret = db.add_event(buser_nm, address, event_nm, fee, hours)
             if ret == db.NOT_FOUND:
                 raise (wz.NotFound("Event doesnt exist yet. Please try again."))
