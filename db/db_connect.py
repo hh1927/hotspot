@@ -78,3 +78,8 @@ def fetch_all(collect_nm, key_nm):
 
 def insert_doc(collect_nm, doc):
     return client[db_nm][collect_nm].insert_one(doc)
+
+
+def update_fld(db_nm, collect_nm, filters, fld_nm, fld_val):
+    return client[db_nm][collect_nm].update_one(filters, {'$set': {fld_nm: fld_val}},
+                                                upsert=False)
