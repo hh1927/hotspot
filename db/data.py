@@ -140,10 +140,10 @@ def add_cuser(cuser_nm,age,interests,neighborhood,party_size):
 def reset_party(username):
     """
     reset party sizes at the end of the night - CHECK AGAIN
-     Function to return user's party size
-     """
-     # temporarily hard coded
-     return 4
+    Function to return user's party size
+    """
+    # temporarily hard coded
+    return 4
 
 def add_party(username, party):
     """
