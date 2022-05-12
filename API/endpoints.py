@@ -223,17 +223,13 @@ class eventInfo(Resource):
         """
         This method creates a new event.
         """
-        try:
-            print("HERE!")
-            ret = db.add_event(buser_nm, address, event_nm, fee, hours)
-            if ret == db.NOT_FOUND:
-                raise (wz.NotFound("Event doesnt exist yet. Please try again."))
-            elif ret == db.DUPLICATE:
-                raise (wz.NotAcceptable(f"event {event_nm} is already planned."))
-            return f"{event_nm} is ready for tonight at {buser_nm}."
-        except:
-            print("HERE!")
-
+        ret = db.add_event(buser_nm, address, event_nm, fee, hours)
+        if ret == db.NOT_FOUND:
+            raise (wz.NotFound("Event doesnt exist yet. Please try again."))
+        elif ret == db.DUPLICATE:
+            raise (wz.NotAcceptable(f"event {event_nm} is already planned."))
+        return f"{event_nm} is ready for tonight at {buser_nm}."
+     
 
 @api.route('/events/delete/<business_name>')
 class deleteEvent(Resource):
