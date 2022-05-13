@@ -39,7 +39,7 @@ function CHome() {
         });
     });
     useEffect(() =>
-       {
+       { 
         axios
             .post('website.heroku.com/cDaily/',
         {
