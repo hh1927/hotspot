@@ -167,7 +167,7 @@ def event_exists(buser_nm):
     See if a event already exists in the db.
     Returns True or False.
     """
-    rec = dbc.fetch_one(EVENTS, filters={EVENT_NM: buser_nm})
+    rec = dbc.fetch_one(EVENTS, filters={BUSER_NM: buser_nm})
     print(f"{rec=}")
     return rec is not None
 
