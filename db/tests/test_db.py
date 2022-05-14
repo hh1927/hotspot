@@ -39,14 +39,14 @@ class DBTestCase(TestCase):
         users = db.get_busers()
         self.assertIsInstance(users, dict)
         
-      def test_get_event_info(self):
+    def test_get_event_info(self):
         """
         Can we fetch event_info db?
         """
         users = db.get_event_info()
         self.assertIsInstance(users, dict)
         
-     def test_buser_exists(self): 
+    def test_buser_exists(self): 
         """
         testing that buser_exists works
         """
@@ -54,7 +54,7 @@ class DBTestCase(TestCase):
         busers = db.get_busers()
         self.asserIn(new_buser, busers)
         
-     def test_cuser_exists(self): 
+    def test_cuser_exists(self): 
         """
         testing that cuser_exists works
         """
