@@ -39,17 +39,6 @@ class EndpointTestCase(TestCase):
         cusers = db.cList()
         self.assertIn(new_cuser, cusers)
 
-    def test_buser(self):
-        """
-        See if we can successfully create a new business user.
-        Post-condition: user is in DB.
-        """
-        cbu = ep.bUser(Resource)
-        new_buser = new_entity_name("buser")
-        ret = cbu.post("new_user", "15 west 4th", "new grad", "100", "20")
-        busers = db.bList()
-        self.assertIn(new_buser, busers)
-
     def test_retrievePartySize(self):
         """
         See if we can successfully retrieve correct values
