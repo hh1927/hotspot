@@ -46,7 +46,7 @@ class EndpointTestCase(TestCase):
         """
         cbu = ep.bUser(Resource)
         new_buser = new_entity_name("buser")
-        ret = cbu.post("new_user", "", "", "")
+        ret = cbu.post("new_user", "15 west 4th", "new grad", "100")
         busers = db.bList()
         self.assertIn(new_buser, busers)
 
@@ -110,7 +110,7 @@ class EndpointTestCase(TestCase):
         """
         evInf = ep.eventInfo("Test event", "Test location",
                              "test price", "test hours")
-        np = ep.add_buser("tester")
+        np = ep.bUser("tester")
         cl = ep.cList(Resource)
         allEvents = ep.fetch_events(Resource)
         self.assertIn(evInf, allEvents)
