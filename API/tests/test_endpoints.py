@@ -43,7 +43,7 @@ class EndpointTestCase(TestCase):
         """
         See if we can successfully fetch consumer user.
         """
-        np = ep.add_buser("tester")
+        np = ep.bList("tester")
         cl = ep.cList(Resource)
         self.assertIn(cl, np)
 
@@ -62,7 +62,7 @@ class EndpointTestCase(TestCase):
         """
         See if we can successfully fetch business user.
         """
-        np = ep.bUser("tester")
+        np = ep.business_name("tester")
         bl = ep.bList(Resource)
         self.assertIn(bl, np)
 
@@ -83,15 +83,6 @@ class EndpointTestCase(TestCase):
         for key in ret:
             self.assertIsInstance(key, str)
 
-    def test_ClientList3(self):
-        """
-        Post-condition 3: the values in the dict are themselves dicts
-        """
-        cl = ep.cList(Resource)
-        ret = cl.get()
-        for val in ret.values():
-            self.assertIsInstance(val, list)
-    
     def test_blist1(self):
         """
         Post-condition 1: return is a dictionary.
@@ -171,7 +162,7 @@ class EndpointTestCase(TestCase):
         """
         See if we can successfully retrieve correct values
         """
-        new_quota = new_entitity_name(5)
+        new_quota = new_quota(5)
         business_name = new_entitity_name("test name, retrieval")
         # evInf = bquota_list.updateOne({name:business_name},{$set:{quota:new_quota}})
         bquota_updated = ep.fetch_bquota()
@@ -190,8 +181,8 @@ class EndpointTestCase(TestCase):
         """
         See if we can successfully retrieve correct values
         """
-        new_neighborhood = new_entitity_name("test_neighborhood")
-        new_interests = new_entity_name("test_interests")
+        new_neighborhood = new_neighborhood("test_neighborhood")
+        new_interests = new_interests("test_interests")
         user_name = new_entity_name("test_user")
         cDaily = ep.test_update_cDaily(Resource)
         cDaily.cusers.updateOne({name:user_name},{set:{neighborhood:new_neighborhood}})
