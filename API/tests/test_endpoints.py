@@ -46,7 +46,7 @@ class EndpointTestCase(TestCase):
         """
         cbu = ep.bUser(Resource)
         new_buser = new_entity_name("buser")
-        ret = cbu.post("new_user", "15 west 4th", "new grad", "100")
+        ret = cbu.post("new_user", "15 west 4th", "new grad", "100", "20")
         busers = db.bList()
         self.assertIn(new_buser, busers)
 
@@ -103,14 +103,3 @@ class EndpointTestCase(TestCase):
         user_name = new_entity_name("test_user")
         cDaily = ep.cDaily(Resource)
         self.assertIn(cdaily, ep.fetch_cusers)
-
-    def test_eventInfo(self):
-        """
-        See if we can successfully retrieve correct values
-        """
-        evInf = ep.eventInfo("Test event", "Test location",
-                             "test price", "test hours")
-        np = ep.bUser("tester")
-        cl = ep.cList(Resource)
-        allEvents = ep.fetch_events(Resource)
-        self.assertIn(evInf, allEvents)
