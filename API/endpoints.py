@@ -61,14 +61,15 @@ class cList(Resource):
         """
         This method returns all customer users.
         """
-        allCusers = db.fetch_cusers()        
+        allCusers = db.fetch_cusers()
         if allCusers is None:
-            raise (wz.NotFound(f"{username} couldnt be found."))
+            raise (wz.NotFound("Couldnt be found."))
         else:
             return allCusers
 
 
-@api.route("/consumer/<username>/<age>/<interests>/<neighborhood>/<party_size>")
+@api.route(
+    "/consumer/<username>/<age>/<interests>/<neighborhood>/<party_size>")
 class cUser(Resource):
     """
     This class supports adding Customer users.
@@ -77,7 +78,7 @@ class cUser(Resource):
     @api.response(HTTPStatus.NOT_FOUND, "Not Found")
     @api.response(HTTPStatus.NOT_ACCEPTABLE, "A duplicate key")
     # updated parameters of cUser to match workflow
-    def post(self,username, age, interests, neighborhood, party_size):
+    def post(self, username, age, interests, neighborhood, party_size):
         """
         This method creates a new Customer User.
         """
@@ -107,11 +108,6 @@ class bList(Resource):
         This method returns all business users.
         """
         return db.fetch_busers()
-        '''allBusers = db.fetch_busers()
-        if allBusers is None:
-            raise (wz.NotFound("user couldnt be found."))
-        else:
-            return allBusers'''
 
 
 # CHECK api route
