@@ -38,14 +38,6 @@ class EndpointTestCase(TestCase):
         ret = ccu.post(new_cuser)
         cusers = db.cList()
         self.assertIn(new_cuser, cusers)
-        
-    def test_fetchCuser(self):
-        """
-        See if we can successfully fetch consumer user.
-        """
-        np = ep.bList("tester")
-        cl = ep.cList(Resource)
-        self.assertIn(cl, np)
 
     def test_buser(self):
         """
@@ -54,51 +46,9 @@ class EndpointTestCase(TestCase):
         """
         cbu = ep.bUser(Resource)
         new_buser = new_entity_name("buser")
-        ret = cbu.post("new_user")
+        ret = cbu.post("new_user", "", "", "")
         busers = db.bList()
         self.assertIn(new_buser, busers)
-        
-    def test_fetchBuser(self):
-        """
-        See if we can successfully fetch business user.
-        """
-        np = ep.bUser("tester", "", "", "", "")
-        bl = ep.bList(Resource)
-        self.assertIn(bl, np)
-
-    def test_ClientList1(self):
-        """
-        Post-condition 1: return is a dictionary.
-        """
-        cl = ep.cList(Resource)
-        ret = cl.get()
-        self.assertIsInstance(ret, dict)
-
-    def test_cList2(self):
-        """
-        Post-condition 2: keys to the dict are strings
-        """
-        cl = ep.cList(Resource)
-        ret = cl.get()
-        for key in ret:
-            self.assertIsInstance(key, str)
-
-    def test_blist1(self):
-        """
-        Post-condition 1: return is a dictionary.
-        """
-        bl = ep.cList(Resource)
-        ret = bl.get()
-        self.assertIsInstance(ret, dict)
-    
-    def test_blist2(self):
-        """
-        Post-condition 2: keys to the dict are strings
-        """
-        bl = ep.cList(Resource)
-        ret = bl.get()
-        for key in ret:
-            self.assertIsInstance(key, str)
 
     def test_retrievePartySize(self):
         """
@@ -158,7 +108,7 @@ class EndpointTestCase(TestCase):
         """
         See if we can successfully post event info
         """
-        evInf = ep.add_event("Test event", "Test location",
+        evInf = ep.eventInfo("Test event", "Test location",
                              "test price", "test hours")
         isExists = event_exists("Test event", "Test location")
         self.assertTrue(4, isExists)
@@ -167,7 +117,7 @@ class EndpointTestCase(TestCase):
         """
         See if we can successfully retrieve correct values
         """
-        evInf = ep.event_info("Test event", "Test location",
+        evInf = ep.eventInfo("Test event", "Test location",
                              "test price", "test hours")
         np = ep.add_buser("tester")
         cl = ep.cList(Resource)
