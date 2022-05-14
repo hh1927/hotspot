@@ -216,8 +216,8 @@ class EndpointTestCase(TestCase):
         new_interests = new_entity_name("test_interests")
         user_name = new_entity_name("test_user")
         cDaily = ep.test_update_cDaily(Resource)
-        cDaily.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}})
-        cDaily.cusers.updateOne({name:user_name},{$set:{interests:new_interests}})
+        cDaily.cusers.updateOne({name:user_name},{set:{neighborhood:new_neighborhood}})
+        cDaily.cusers.updateOne({name:user_name},{set:{interests:new_interests}})
         self.assertTrue(True)
 
     def test_eventInfoExists(self):
