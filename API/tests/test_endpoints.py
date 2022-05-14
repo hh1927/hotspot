@@ -36,7 +36,7 @@ class EndpointTestCase(TestCase):
         ccu = ep.CreateCuser(Resource)
         new_cuser = new_entity_name("user")
         ret = ccu.post(new_cuser)
-        cusers = db.get_cusers()
+        cusers = db.cList()
         self.assertIn(new_cuser, cusers)
         
     def test_fetchCuser(self):
@@ -52,17 +52,17 @@ class EndpointTestCase(TestCase):
         See if we can successfully create a new business user.
         Post-condition: user is in DB.
         """
-        cbu = ep.Buser(Resource)
+        cbu = ep.bUser(Resource)
         new_buser = new_entity_name("buser")
         ret = cbu.post(new_user)
-        busers = db.get_busers()
+        busers = db.bList()
         self.assertIn(new_buser, busers)
         
     def test_fetchBuser(self):
         """
         See if we can successfully fetch business user.
         """
-        np = ep.add_buser("tester")
+        np = ep.bUser("tester")
         bl = ep.bList(Resource)
         self.assertIn(bl, np)
 
@@ -70,15 +70,15 @@ class EndpointTestCase(TestCase):
         """
         Post-condition 1: return is a dictionary.
         """
-        cl = ep.ClientList(Resource)
+        cl = ep.cList(Resource)
         ret = cl.get()
         self.assertIsInstance(ret, dict)
 
-    def test_ClientList2(self):
+    def test_cList2(self):
         """
         Post-condition 2: keys to the dict are strings
         """
-        cl = ep.ClientList(Resource)
+        cl = ep.cList(Resource)
         ret = cl.get()
         for key in ret:
             self.assertIsInstance(key, str)
@@ -87,7 +87,7 @@ class EndpointTestCase(TestCase):
         """
         Post-condition 3: the values in the dict are themselves dicts
         """
-        cl = ep.ClientList(Resource)
+        cl = ep.cList(Resource)
         ret = cl.get()
         for val in ret.values():
             self.assertIsInstance(val, list)
@@ -96,7 +96,7 @@ class EndpointTestCase(TestCase):
         """
         Post-condition 1: return is a dictionary.
         """
-        bl = ep.ClientList(Resource)
+        bl = ep.cList(Resource)
         ret = bl.get()
         self.assertIsInstance(ret, dict)
     
@@ -104,7 +104,7 @@ class EndpointTestCase(TestCase):
         """
         Post-condition 2: keys to the dict are strings
         """
-        bl = ep.ClientList(Resource)
+        bl = ep.cList(Resource)
         ret = bl.get()
         for key in ret:
             self.assertIsInstance(key, str)
@@ -118,25 +118,12 @@ class EndpointTestCase(TestCase):
         for val in ret.values():
             self.assertIsInstance(val, list)
 
-    def test_partySize(self):
-        """
-        See if we can successfully post party size
-        """
-        np = ep.add_Party(Resource)
-        username = "tester"
-        add_cuser(username)
-        db.add_party(username, 4)
-        ret = np.post(username)
-        print(f'post {ret=}')
-        psize = get_party(username)
-        print(f'{psize=}')
-        self.assertIn(4, psize)
 
     def test_retrievePartySize(self):
         """
         See if we can successfully retrieve correct values
         """
-        evInf = ep.add_party(7)
+        evInf = ep.eventInfo(7)
         # party_size = ep.fetch_psize()
         self.assertTrue(True)
 
@@ -146,7 +133,7 @@ class EndpointTestCase(TestCase):
         """
         newUser = new_entitity_name("newUser")
         db.add_cuser(newUser)
-        cUser = ep.DeletecUser(Resource)
+        cUser = ep.deletecUser(Resource)
         cUser.post(newUser)
         self.assertNotIn(newUser, db.fetch_cusers)
 
@@ -156,7 +143,7 @@ class EndpointTestCase(TestCase):
         """
         newUser = new_entitity_name("newUser")
         db.add_buser(newUser)
-        bUser = ep.DeletebUser(Resource)
+        bUser = ep.deletebUser(Resource)
         bUser.post(newUser)
         self.assertNotIn(newUser, db.fetch_busers)
 
@@ -165,9 +152,8 @@ class EndpointTestCase(TestCase):
         Resetting Party Size for the next nights events
         """
         newPartySize = new_entitity_name("newUser")
-        db.add_cuser(newUser)
-        db.add_party(newUser, 4)
-        db.reset_party(newUser)
+        db.cUser(newUser)
+        db.eventInfo(newUser, 4)
         partySize.update(newUser)
         self.assertNotIn(newUser, db.fetch_cusers)
 
@@ -180,13 +166,6 @@ class EndpointTestCase(TestCase):
         eventInfo.post(newevent)
         self.assertNotIn(newevent, db.fetch_events)
 
-    def update_bquota(self):
-        new_quota = new_entitity_name(8)
-        business_name = new_entitity_name("test name")
-        bquota_list = ep.bquota(Resource)
-        # ret = bquota_list.updateOne({name:business_name},{$set:{quota:new_quota}})
-        # self.assertIn(bquota_list)
-        self.assertTrue(True)
 
     def test_retrieve_Bquota(self):
         """
@@ -204,10 +183,9 @@ class EndpointTestCase(TestCase):
         new_interests = new_entity_name("test_interests")
         user_name = new_entity_name("test_user")
         cDaily = ep.cDaily(Resource)
-        # db.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}})
-        # db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}})
         self.assertIn(cdaily, ep.fetch_cusers)
    
+
     def test_retrieve_cDaily(self):
         """
         See if we can successfully retrieve correct values
