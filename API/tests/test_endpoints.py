@@ -235,7 +235,7 @@ class EndpointTestCase(TestCase):
         """
         evInf = ep.add_event("Test event", "Test location",
                              "test price", "test hours")
-         np = ep.add_buser("tester")
-         cl = ep.cList(Resource)
-         allEvents = ep.fetch_events(Resource)
-         self.assertIn(evInf, allEvents)
+        np = ep.add_buser("tester")
+        cl = ep.cList(Resource)
+        allEvents = ep.fetch_events(Resource)
+        self.assertIn(evInf, allEvents)
