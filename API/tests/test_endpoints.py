@@ -39,7 +39,7 @@ class EndpointTestCase(TestCase):
         cusers = db.get_cusers()
         self.assertIn(new_cuser, cusers)
         
-     def test_fetchCuser(self):
+    def test_fetchCuser(self):
         """
         See if we can successfully fetch consumer user.
         """
