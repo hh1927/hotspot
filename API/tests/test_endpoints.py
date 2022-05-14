@@ -54,7 +54,7 @@ class EndpointTestCase(TestCase):
         """
         cbu = ep.bUser(Resource)
         new_buser = new_entity_name("buser")
-        ret = cbu.post(new_user)
+        ret = cbu.post("new_user")
         busers = db.bList()
         self.assertIn(new_buser, busers)
         
@@ -62,7 +62,7 @@ class EndpointTestCase(TestCase):
         """
         See if we can successfully fetch business user.
         """
-        np = ep.business_name("tester")
+        np = ep.bUser("tester", "", "", "", "")
         bl = ep.bList(Resource)
         self.assertIn(bl, np)
 
@@ -99,16 +99,6 @@ class EndpointTestCase(TestCase):
         ret = bl.get()
         for key in ret:
             self.assertIsInstance(key, str)
-           
-    def test_bList3(self):
-        """
-        Post-condition 3: the values in the dict are themselves dicts
-        """
-        bl = ep.bList(Resource)
-        ret = bl.get()
-        for val in ret.values():
-            self.assertIsInstance(val, list)
-
 
     def test_retrievePartySize(self):
         """
@@ -157,37 +147,12 @@ class EndpointTestCase(TestCase):
         eventInfo.post(newevent)
         self.assertNotIn(newevent, db.fetch_events)
 
-
-    def test_retrieve_Bquota(self):
-        """
-        See if we can successfully retrieve correct values
-        """
-        new_quota = new_quota(5)
-        business_name = new_entitity_name("test name, retrieval")
-        # evInf = bquota_list.updateOne({name:business_name},{$set:{quota:new_quota}})
-        bquota_updated = ep.fetch_bquota()
-        # self.assertIn(evInf, bquota_updated)
-        self.assertIn(bquota_updated, ep)
-
     def cDaily(self):
         new_neighborhood = new_entitity_name("test_neighborhood")
         new_interests = new_entity_name("test_interests")
         user_name = new_entity_name("test_user")
         cDaily = ep.cDaily(Resource)
         self.assertIn(cdaily, ep.fetch_cusers)
-   
-
-    def test_retrieve_cDaily(self):
-        """
-        See if we can successfully retrieve correct values
-        """
-        new_neighborhood = new_neighborhood("test_neighborhood")
-        new_interests = new_interests("test_interests")
-        user_name = new_entity_name("test_user")
-        cDaily = ep.test_update_cDaily(Resource)
-        cDaily.cusers.updateOne({name:user_name},{set:{neighborhood:new_neighborhood}})
-        cDaily.cusers.updateOne({name:user_name},{set:{interests:new_interests}})
-        self.assertTrue(True)
 
     def test_eventInfoExists(self):
         """
@@ -202,7 +167,7 @@ class EndpointTestCase(TestCase):
         """
         See if we can successfully retrieve correct values
         """
-        evInf = ep.add_event("Test event", "Test location",
+        evInf = ep.event_info("Test event", "Test location",
                              "test price", "test hours")
         np = ep.add_buser("tester")
         cl = ep.cList(Resource)
