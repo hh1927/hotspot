@@ -104,15 +104,6 @@ class EndpointTestCase(TestCase):
         cDaily = ep.cDaily(Resource)
         self.assertIn(cdaily, ep.fetch_cusers)
 
-    def test_eventInfoExists(self):
-        """
-        See if we can successfully post event info
-        """
-        evInf = ep.eventInfo("Test event", "Test location",
-                             "test price", "test hours")
-        isExists = event_exists("Test event", "Test location")
-        self.assertTrue(4, isExists)
-
     def test_eventInfo(self):
         """
         See if we can successfully retrieve correct values
