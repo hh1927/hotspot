@@ -25,43 +25,6 @@ class DBTestCase(TestCase):
         fake_data = {FAKE_USER: {}}
         return True
 
-    def test_get_cusers(self):
-        """
-        Can we fetch user db?
-        """
-        users = db.get_cusers()
-        self.assertIsInstance(users, dict)
-        
-    def test_get_busers(self):
-        """
-        Can we fetch user db?
-        """
-        users = db.get_busers()
-        self.assertIsInstance(users, dict)
-        
-      def test_get_event_info(self):
-        """
-        Can we fetch event_info db?
-        """
-        users = db.get_event_info()
-        self.assertIsInstance(users, dict)
-        
-     def test_buser_exists(self): 
-        """
-        testing that buser_exists works
-        """
-        new_buser = ep.add_buser("tester")
-        busers = db.get_busers()
-        self.asserIn(new_buser, busers)
-        
-     def test_cuser_exists(self): 
-        """
-        testing that cuser_exists works
-        """
-        new_cuser = ep.add_cuser("tester")
-        cusers = db.get_cusers()
-        self.asserIn(new_cuser, cusers)
-    
     def test_fetch_buser(self):
         """
         Can we fetch buser db?

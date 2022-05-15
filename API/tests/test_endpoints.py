@@ -36,107 +36,14 @@ class EndpointTestCase(TestCase):
         ccu = ep.CreateCuser(Resource)
         new_cuser = new_entity_name("user")
         ret = ccu.post(new_cuser)
-        cusers = db.get_cusers()
+        cusers = db.cList()
         self.assertIn(new_cuser, cusers)
-        
-     def test_fetchCuser(self):
-        """
-        See if we can successfully fetch consumer user.
-        """
-        np = ep.add_buser("tester")
-        cl = ep.cList(Resource)
-        self.assertIn(cl, np)
-
-    def test_buser(self):
-        """
-        See if we can successfully create a new business user.
-        Post-condition: user is in DB.
-        """
-        cbu = ep.Buser(Resource)
-        new_buser = new_entity_name("buser")
-        ret = cbu.post(new_user)
-        busers = db.get_busers()
-        self.assertIn(new_buser, busers)
-        
-    def test_fetchBuser(self):
-        """
-        See if we can successfully fetch business user.
-        """
-        np = ep.add_buser("tester")
-        bl = ep.bList(Resource)
-        self.assertIn(bl, np)
-
-    def test_ClientList1(self):
-        """
-        Post-condition 1: return is a dictionary.
-        """
-        cl = ep.ClientList(Resource)
-        ret = cl.get()
-        self.assertIsInstance(ret, dict)
-
-    def test_ClientList2(self):
-        """
-        Post-condition 2: keys to the dict are strings
-        """
-        cl = ep.ClientList(Resource)
-        ret = cl.get()
-        for key in ret:
-            self.assertIsInstance(key, str)
-
-    def test_ClientList3(self):
-        """
-        Post-condition 3: the values in the dict are themselves dicts
-        """
-        cl = ep.ClientList(Resource)
-        ret = cl.get()
-        for val in ret.values():
-            self.assertIsInstance(val, list)
-    
-    def test_blist1(self):
-        """
-        Post-condition 1: return is a dictionary.
-        """
-        bl = ep.ClientList(Resource)
-        ret = bl.get()
-        self.assertIsInstance(ret, dict)
-    
-    def test_blist2(self):
-        """
-        Post-condition 2: keys to the dict are strings
-        """
-        bl = ep.ClientList(Resource)
-        ret = bl.get()
-        for key in ret:
-            self.assertIsInstance(key, str)
-           
-    def test_bList3(self):
-        """
-        Post-condition 3: the values in the dict are themselves dicts
-        """
-        bl = ep.bList(Resource)
-        ret = bl.get()
-        for val in ret.values():
-            self.assertIsInstance(val, list)
-
-    def test_partySize(self):
-        """
-        See if we can successfully post party size
-        """
-        np = ep.add_Party(Resource)
-        username = "tester"
-        add_cuser(username)
-        db.add_party(username, 4)
-        ret = np.post(username)
-        print(f'post {ret=}')
-        psize = get_party(username)
-        print(f'{psize=}')
-        self.assertIn(4, psize)
 
     def test_retrievePartySize(self):
         """
         See if we can successfully retrieve correct values
         """
-        evInf = ep.add_party(7)
+        evInf = ep.eventInfo(7)
         # party_size = ep.fetch_psize()
         self.assertTrue(True)
 
@@ -146,7 +53,7 @@ class EndpointTestCase(TestCase):
         """
         newUser = new_entitity_name("newUser")
         db.add_cuser(newUser)
-        cUser = ep.DeletecUser(Resource)
+        cUser = ep.deletecUser(Resource)
         cUser.post(newUser)
         self.assertNotIn(newUser, db.fetch_cusers)
 
@@ -156,7 +63,7 @@ class EndpointTestCase(TestCase):
         """
         newUser = new_entitity_name("newUser")
         db.add_buser(newUser)
-        bUser = ep.DeletebUser(Resource)
+        bUser = ep.deletebUser(Resource)
         bUser.post(newUser)
         self.assertNotIn(newUser, db.fetch_busers)
 
@@ -165,9 +72,8 @@ class EndpointTestCase(TestCase):
         Resetting Party Size for the next nights events
         """
         newPartySize = new_entitity_name("newUser")
-        db.add_cuser(newUser)
-        db.add_party(newUser, 4)
-        db.reset_party(newUser)
+        db.cUser(newUser)
+        db.eventInfo(newUser, 4)
         partySize.update(newUser)
         self.assertNotIn(newUser, db.fetch_cusers)
 
@@ -180,62 +86,9 @@ class EndpointTestCase(TestCase):
         eventInfo.post(newevent)
         self.assertNotIn(newevent, db.fetch_events)
 
-    def update_bquota(self):
-        new_quota = new_entitity_name(8)
-        business_name = new_entitity_name("test name")
-        bquota_list = ep.bquota(Resource)
-        # ret = bquota_list.updateOne({name:business_name},{$set:{quota:new_quota}})
-        # self.assertIn(bquota_list)
-        self.assertTrue(True)
-
-    def test_retrieve_Bquota(self):
-        """
-        See if we can successfully retrieve correct values
-        """
-        new_quota = new_entitity_name(5)
-        business_name = new_entitity_name("test name, retrieval")
-        # evInf = bquota_list.updateOne({name:business_name},{$set:{quota:new_quota}})
-        bquota_updated = ep.fetch_bquota()
-        # self.assertIn(evInf, bquota_updated)
-        self.assertIn(bquota_updated, ep)
-
     def cDaily(self):
         new_neighborhood = new_entitity_name("test_neighborhood")
         new_interests = new_entity_name("test_interests")
         user_name = new_entity_name("test_user")
         cDaily = ep.cDaily(Resource)
-        # db.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}})
-        # db.cusers.updateOne({name:user_name},{$set:{interests:new_interests}})
         self.assertIn(cdaily, ep.fetch_cusers)
-   
-    def test_retrieve_cDaily(self):
-        """
-        See if we can successfully retrieve correct values
-        """
-        new_neighborhood = new_entitity_name("test_neighborhood")
-        new_interests = new_entity_name("test_interests")
-        user_name = new_entity_name("test_user")
-        cDaily = ep.test_update_cDaily(Resource)
-        cDaily.cusers.updateOne({name:user_name},{$set:{neighborhood:new_neighborhood}})
-        cDaily.cusers.updateOne({name:user_name},{$set:{interests:new_interests}})
-        self.assertTrue(True)
-
-    def test_eventInfoExists(self):
-        """
-        See if we can successfully post event info
-        """
-        evInf = ep.add_event("Test event", "Test location",
-                             "test price", "test hours")
-        isExists = event_exists("Test event", "Test location")
-        self.assertTrue(4, isExists)
-
-    def test_eventInfo(self):
-        """
-        See if we can successfully retrieve correct values
-        """
-        evInf = ep.add_event("Test event", "Test location",
-                             "test price", "test hours")
-         np = ep.add_buser("tester")
-         cl = ep.cList(Resource)
-         allEvents = ep.fetch_events(Resource)
-         self.assertIn(evInf, allEvents)

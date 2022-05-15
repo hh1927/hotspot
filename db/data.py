@@ -106,14 +106,14 @@ def add_buser(age_restrictions,buser_nm,business_type,business_name,quota):
     else:
         dbc.insert_doc(
            BUSERS,
-                {
-                    AGE_RESTRICTIONS: age_restrictions,
-                    BUSER_NM: buser_nm,
-                    BUSINESS_TYPE: business_type,
-                    QUOTA: quota,
-                    USERNAME: business_name
-                },
-            )
+           {
+               AGE_RESTRICTIONS: age_restrictions,
+               BUSER_NM: buser_nm,
+               BUSINESS_TYPE: business_type,
+               QUOTA: quota,
+               USERNAME: business_name
+            },
+        )
         return OK
 
 
@@ -176,7 +176,7 @@ def add_event(buser_nm, address, event_nm, fee, hours):
      """
     Add events to the event database.
     """
-     if buser_exists(buser_nm):
+     if event_exists(buser_nm):
         return DUPLICATE
      else:
         dbc.insert_doc(
@@ -232,21 +232,23 @@ def update_bquota(bUser, new_quota):
     if not buser_exists(bUser):
         return NOT_FOUND
     else:
-        dbc.update_one(USERS, filters={BUSER_NM: bUser},
-                       updates={"$set": {QUOTA: new_quota}})
+        dbc.update_fld(dbc.db_nm, BUSERS, {BUSER_NM: bUser},
+                       QUOTA, new_quota)
     return OK
                        
-def update_cdaily(cUser, new_interests, new_neighborhood):
+def update_cdaily(cUser, new_interests, new_neighborhood, party_size):
     """
     Update consumers new interests and neighborhood
     """
     if not cuser_exists(cUser):
         return NOT_FOUND
     else:
-        dbc.update_one(USERS, filters={USER_NM: cUser},
-                       updates={"$set": {INTERESTS: new_interests}})
-        dbc.update_one(USERS, filters={USER_NM: cUser},
-                       updates={"$set": {LOCATION: new_neighborhood}})
+        dbc.update_fld(dbc.db_nm, CUSERS, {CUSER_NM: cUser},
+                       INTERESTS, new_interests)
+        dbc.update_fld(dbc.db_nm, CUSERS, {CUSER_NM: cUser},
+                       NEIGHBORHOOD, new_neighborhood)
+        dbc.update_fld(dbc.db_nm, CUSERS, {CUSER_NM: cUser},
+                       PARTY_SIZE, party_size)
     return OK  
       
                                 
@@ -259,3 +261,4 @@ def fetch_psize(cUser, psize):
     else:
         dbc.fetch_one(PARTY, filters={USER_NM: cUser})
     return OK
+
