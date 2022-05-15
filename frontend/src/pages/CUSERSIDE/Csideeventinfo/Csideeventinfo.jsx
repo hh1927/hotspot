@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 //import Main from './front end/src/components/Main.jsx';
 
 import "./Csideeventinfo.css";
+import settingsimg from "/Users/ramonaflowers/hotspot/frontend/src/pages/BUSERSIDE/settings.png";
 
 export default function EventInfo() {
   const history = useHistory();
@@ -20,7 +21,7 @@ export default function EventInfo() {
       <a href="/csettings">
         <button id="settings">
           {" "}
-          <img src="https://img.icons8.com/ios-filled/50/000000/settings.png" />
+          <img src={settingsimg} />
         </button>
       </a>
       <div>

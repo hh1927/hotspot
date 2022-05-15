@@ -5,6 +5,7 @@ import img3 from "./eventpics/mcsorleysparty.png";
 import img4 from "./eventpics/downtimeparty.png";
 import img5 from "./eventpics/joyfaceparty.png";
 import img6 from "./eventpics/georgiaroomparty.png";
+import settingsimg from "/Users/ramonaflowers/hotspot/frontend/src/pages/BUSERSIDE/settings.png";
 
 
 
@@ -14,12 +15,7 @@ function BHome() {
       <a href="/bHome">
         <h1>HotSpot </h1>
       </a>
-      <a href="/bsettings">
-        <button id="settings">
-          {" "}
-          <img src="https://img.icons8.com/ios-filled/50/000000/settings.png" />
-        </button>
-      </a>
+
       <div>
         <div class="event-container">
           <div class="gallery">
@@ -89,5 +85,10 @@ function BHome() {
     </>
   );
 }
-
+//<a href="/bsettings">
+//<button id="settings">
+//  {" "}
+//  <img src={settingsimg} />
+//</button>
+//</a>
 export default BHome;

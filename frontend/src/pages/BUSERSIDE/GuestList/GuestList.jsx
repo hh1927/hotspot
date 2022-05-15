@@ -11,37 +11,37 @@ import julianna from "./propics/julianna.png";
 import ava from "./propics/ava.png";
 
 function GuestList() {
-  const history = useHistory();
-  const [newcList, setcList] = useState(undefined);
+  //const history = useHistory();
+  //const [newcList, setcList] = useState(undefined);
 
-  useEffect(() => {
-    axios.get('https://teamhotspot.herokuapp.com/GuestList/cList')
-      .then((response) => {
-        if (response.data) {
-          setUsers(response.data);
-        }
-      })
-      .catch(error => {
-        setError(error);
-        console.log(error);
-      });
-  }, [refresh])
+  //useEffect(() => {
+  //  axios.get('https://teamhotspot.herokuapp.com/GuestList/cList')
+  //    .then((response) => {
+  //      if (response.data) {
+  //        setUsers(response.data);
+  //      }
+  //    })
+  //    .catch(error => {
+  //      setError(error);
+  //      console.log(error);
+  //    });
+  //}, [refresh])
 
-  const handlecList = () => {
-    axios.post(`https://teamhotspot.herokuapp.com/GuestList/cList`)
-      .then(() => {
-        setIsModalOpen(false);
-        setRefresh(refresh + 1);
-      })
-      .catch(error => {
-        setError(error);
-        console.log(error);
-      })
-  }
+  //const handlecList = () => {
+  //  axios.post(`https://teamhotspot.herokuapp.com/GuestList/cList`)
+  //    .then(() => {
+  //      setIsModalOpen(false);
+  //      setRefresh(refresh + 1);
+  //    })
+  //    .catch(error => {
+  //      setError(error);
+  //      console.log(error);
+  //    })
+  //}
 
-  function navigateToPage(path) {
-    history.push(path);
-  }
+  // function navigateToPage(path) {
+  //  history.push(path);
+  //}
   return (
     <>
       <a href="/bHome">
@@ -49,36 +49,71 @@ function GuestList() {
       </a>
       <div>
         <div class="guestlist-container">
-          <a href="/guestprofile">
-            <img src={ally} alt="ally" />
-          </a>
-          <a href="/guestprofile">
-            <img src={brandon} alt="brandon" />
-          </a>
-          <a href="/guestprofile">
-            <img src={riley} alt="riley" />
-          </a>
-          <a href="/guestprofile">
-            <img src={marie} alt="marie" />
-          </a>
-          <a href="/guestprofile">
-            <img src={hannah} alt="hannah" />
-          </a>
-          <a href="/guestprofile">
-            <img src={donovan} alt="donovan" />
-          </a>
-          <a href="/guestprofile">
-            <img src={isaac} alt="isaac" />
-          </a>
-          <a href="/guestprofile">
-            <img src={lucas} alt="lucas" />
-          </a>
-          <a href="/guestprofile">
-            <img src={julianna} alt="julianna" />
-          </a>
-          <a href="/guestprofile">
-            <img src={ava} alt="ava" />
-          </a>
+          <div class="gallery">
+            <div class="grid-person1">
+              <a href="/guestprofile">
+                <img src={ally} class="gallery_img" alt="ally" />
+              </a>
+            </div>
+
+
+            <div class="grid-person2">
+              <a href="/guestprofile">
+                <img src={brandon} class="gallery_img" alt="brandon" />
+              </a>
+            </div>
+
+            <div class="grid-person3">
+              <a href="/guestprofile">
+                <img src={riley} class="gallery_img" alt="riley" />
+              </a>
+            </div>
+
+            <div class="grid-person4">
+              <a href="/guestprofile">
+                <img src={marie} class="gallery_img" alt="marie" />
+              </a>
+            </div>
+
+            <div class="grid-person5">
+              <a href="/guestprofile">
+                <img src={hannah} class="gallery_img" alt="hannah" />
+              </a>
+            </div>
+
+            <div class="grid-person6">
+              <a href="/guestprofile">
+                <img src={donovan} class="gallery_img" alt="donovan" />
+              </a>
+            </div>
+
+            <div class="grid-person7">
+              <a href="/guestprofile">
+                <img src={isaac} class="gallery_img" alt="isaac" />
+              </a>
+            </div>
+
+            <div class="grid-person8">
+              <a href="/guestprofile">
+                <img src={lucas} class="gallery_img" alt="lucas" />
+              </a>
+            </div>
+
+
+            <div class="grid-person9">
+              <a href="/guestprofile">
+                <img src={julianna} class="gallery_img" alt="julianna" />
+              </a>
+            </div>
+
+
+            <div class="grid-person10">
+              <a href="/guestprofile">
+                <img src={ava} class="gallery_img" alt="ava" />
+              </a>
+            </div>
+
+          </div>
         </div>
       </div>
       <a href="/eventInfo">
@@ -88,10 +123,9 @@ function GuestList() {
         <button id="nextButton" className="button1" > VIEW VENUE </button>
       </a>
 
-      <button onClick={handleBquota} id="resButton" className="button2" > VIEW CUSTOMER LIST </button>
 
     </>
   );
 }
-
+// onClick={handleBquota} id="resButton" className="button2" > VIEW CUSTOMER LIST 
 export default GuestList;

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 import "./VenueInfo.css";
+import settingsimg from "/Users/ramonaflowers/hotspot/frontend/src/pages/BUSERSIDE/settings.png";
 
 export default function VenueInfo() {
   const history = useHistory();
@@ -18,7 +19,7 @@ export default function VenueInfo() {
       </a>
       <a href="/bsettings">
         <button id="settings">
-          <img src="https://img.icons8.com/ios-filled/50/000000/settings.png" />
+          <img src={settingsimg} />
         </button>
       </a>
       <div>
